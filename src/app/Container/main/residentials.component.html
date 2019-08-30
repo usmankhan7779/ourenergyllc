@@ -1,0 +1,101 @@
+<div class="main-content">
+    <div class="container-fluid container">
+        <section class="residential-main">
+            <div class="heading">
+                <h1>OUR ENERGY RESIDENTIAL ELECTRICITY</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="residential-tabs" (click)="tab1()">
+                        <img src="https://storage.wattcrm.com/wattcrm-images/pics/Residential/NewCustomer.jpg" width="300px" class="pics">
+                        <mat-card-title>New Customer</mat-card-title>
+                        <p style="text-align: center;"> We encourage you to compare electricity rates and service levels.
+                            <span> Make the switch now.</span> You’ll never look back!</p>
+                        <button mat-raised-button routerLink="/search-plan" class="btn">FIND YOUR PLAN</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="residential-tabs" (click)="tab2()">
+                        <img src="https://storage.wattcrm.com/wattcrm-images/pics/Residential/RenewResidentialOP.jpg" width="300px" class="pics">
+                        <mat-card-title>Renew Residential</mat-card-title>
+                        <p style="text-align: center;">
+                            <span> Welcome back!</span> It’s our privilege to continue providing you with the most affordable Texas electricity rates with the premium service that you deserve.</p>
+                        <button mat-raised-button routerLink="/login" class="btn">RENEW YOUR SERVICE</button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <div class="residential-tabs" (click)="tab3()">
+                        <img src="https://storage.wattcrm.com/wattcrm-images/pics/Residential/payyourbillop1.jpg" width="300px" class="pics">
+                        <mat-card-title>Pay Your Bill</mat-card-title>
+                        <p style="text-align: center;">
+                            <span>Safe. Secure. Hassle Free.</span> This will not interrupt your busy schedule. You’ll you wish that everything was just as easy!</p>
+                        <button mat-raised-button routerLink="/login" class="btn">PAY ONLINE NOW</button>
+                    </div>
+                </div>
+            </div>
+            <div class="residential-two">
+                <mat-card class="residential-tabs" *ngIf="tabOne">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
+                            <img class="width-full" src="https://storage.wattcrm.com/wattcrm-images/pics/Residential/NewCustomer.jpg">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
+                            <p>Are you tired of run of the mill energy providers in Texas? Make the switch now. You’ll never look back!
+                            </p>
+                            <p>
+                                <span> We encourage you to compare electricity rates and service levels.</span> Other power and light companies just don’t measure up to the OUR Energy llc high quality standards. Act now and take advantage of our affordable
+                                residential electricity prices. Your ideal Texas energy plan is only a click away!
+                            </p>
+                            <p>
+                                <span> You have the Power to Choose Texas! Make the Right Choice Today!</span>
+                            </p>
+                            <button mat-raised-button class="btn1" routerLink="/search-plan">SIGN UP TODAY!
+                            </button>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card class="residential-tabs" *ngIf="tabTwo">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
+                            <img class="width-full" src="https://storage.wattcrm.com/wattcrm-images/pics/Residential/RenewResidentialOP.jpg">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
+                            <p>
+                                <span> Welcome back!</span> It’s our privilege to continue providing you with the most affordable Texas electricity rates with the premium service that you deserve. It’s not just about our select energy services. We are
+                                all about personalized attention and premium extras. At Our Energy LLC, we constantly seek out new ways to better serve you. We promise to set ourselves apart from the usual humdrum of traditional electric providers.
+                            </p>
+                            <p> You have entrusted us with the essential task of providing your home with electrical energy. For this reason, we’ve made it our mission to go above and beyond your expectations of a quality electric company. As a member of
+                                the Our Energy family, you are invited to partake in our exclusive
+                                <span>Member specials.</span> <a routerLink="/special">Check them out today!</a>
+                            </p>
+                            <p>Have a question about your local Texas electric rates? Do you have any suggestions on how we can improve our TX energy service?
+                                <span>We welcome and encourage your questions and valuable customer feedback.</span> Please feel free to
+                                <a routerLink="/contact"> contact our friendly support team.</a> It is our pleasure to serve you. You have the Power to Choose Texas! Make the Right Choice Today!
+                            </p>
+                            <button mat-raised-button routerLink="/login" class="btn1">RENEW TODAY!</button>
+                        </div>
+                    </div>
+                </mat-card>
+                <mat-card class="residential-tabs" *ngIf="tabThree">
+                    <p>
+                        <span>Safe. Secure. Hassle Free.</span>
+                    </p>
+                    <p> This will not interrupt your busy schedule. You’ll you wish that everything was just as easy</p>
+                    <button mat-raised-button routerLink="/login" class="btn1">PAY ONLINE NOW</button>
+                </mat-card>
+
+            </div>
+        </section>
+    </div>
+</div>
+<div class="member-special">
+    <div class="container">
+        <h3 class="title">MEMBER
+            <strong>SPECIAL</strong>
+        </h3>
+        <p>SIGN UP TODAY AND TAKE ADVANTAGE OF THE LATEST AND GREATEST OUR ENERGY MEMBER SPECIALS!
+            <br /> YOU'LL FIND RAFFLES, FREEBIES, CREDIT GIVEAWAYS AND MORE!</p>
+        <button class="btn btn-warning btn-lg" routerLink="/special">GO NOW!
+        </button>
+    </div>
+</div>

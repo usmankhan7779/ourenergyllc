@@ -1,0 +1,113 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abc">
+            <ng-container matColumnDef="p">
+                <mat-header-cell *matHeaderCellDef> Process </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.process}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ph1">
+                <mat-header-cell *matHeaderCellDef> Residential Phone No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.phone1}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ph2">
+                <mat-header-cell *matHeaderCellDef> Mobile Phone No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.phone2}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="eadd">
+                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email_address}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="addr">
+                <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pm_address2}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="custn">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cust_firstname}} {{element.cust_lastname}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="reqd">
+                <mat-header-cell *matHeaderCellDef> Requested Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.request_date}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ety">
+                <mat-header-cell *matHeaderCellDef> Enrollment Type </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.enrol_type}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cln">
+                <mat-header-cell *matHeaderCellDef> Client Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.client}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cdate">
+                <mat-header-cell *matHeaderCellDef> Date Created </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="padding: 5px 0px 5px 0px"> {{element.date_created | date: 'shortTime'}}<br>{{element.date_created | date: 'fullDate'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="zc">
+                <mat-header-cell *matHeaderCellDef> Zip Code </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.zip_code}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pc">
+                <mat-header-cell *matHeaderCellDef> Promo Code </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.promo_code}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ep">
+                <mat-header-cell *matHeaderCellDef> Product </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.enroll_product}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="r">
+                <mat-header-cell *matHeaderCellDef> Rate </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.rate}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="br">
+                <mat-header-cell *matHeaderCellDef> Batch Rate </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.batch_rate}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ct">
+                <mat-header-cell *matHeaderCellDef> Contract Term </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.contract_term}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pid">
+                <mat-header-cell *matHeaderCellDef> Premise ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.premise_id}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pmd">
+                <mat-header-cell *matHeaderCellDef> DUNS </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pm_duns}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pmc">
+                <mat-header-cell *matHeaderCellDef> City </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pm_city}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pma">
+                <mat-header-cell *matHeaderCellDef> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pm_address1}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="pco">
+                <mat-header-cell *matHeaderCellDef> Country </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pm_county}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="fs">
+                <mat-header-cell *matHeaderCellDef> Flow Status </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.flow_status}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="ccd">
+                <mat-header-cell *matHeaderCellDef> Check Credit Status </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.check_credit_done}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+    </div>
+</div>

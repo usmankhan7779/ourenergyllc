@@ -1,0 +1,31 @@
+<h3 class="text-center">Create Offer</h3>
+<div mat-dialog-content>
+    <form [formGroup]="offerForm">
+        <div class="row">
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input matInput placeholder="Offer Name" formControlName=offer_name maxlength="50">
+                <mat-error *ngIf="offerForm.controls.offer_name.errors?.required"> Offer Name is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-sm-12">
+                <mat-select matInput placeholder="Promotion Code" formControlName=promo_id>
+                    <mat-option value="">--</mat-option>
+                    <mat-option *ngFor="let x of promoCodes" [value]="x"> {{x}} </mat-option>
+                </mat-select>
+                <mat-error *ngIf="offerForm.controls.promo_id.errors?.required"> Promo Code is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input matInput [min]="currentDate" placeholder="Expiry Date" [matDatepicker]="picker1" formControlName=expiry_date>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                <mat-error *ngIf="offerForm.controls.expiry_date.errors?.required"> Expiry Date is required </mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+    <br>
+</div>
+<div mat-dialog-actions>
+    <div class="text-center">
+        <button [disabled]="disabledBtn" mat-raised-button type="submit" (click)="onSubmit()">Save</button>
+        <button [disabled]="disabledBtn" mat-button [mat-dialog-close]>Cancel</button>
+    </div>
+</div>

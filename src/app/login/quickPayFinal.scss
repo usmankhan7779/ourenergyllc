@@ -1,0 +1,58 @@
+    mat-icon {
+        color: #4d4747;
+    }
+    
+    mat-form-field {
+        font-size: 18.2px;
+        font-weight: bold;
+    }
+    
+    .title {
+        text-align: center;
+        font-size: 27px;
+        font-weight: bold;
+        margin-bottom: 24px;
+        margin-top: 0px;
+    }
+    
+    mat-card-header mat-card-title {
+        font-size: 27px;
+        font-weight: bold;
+        border-bottom: 4px ridge #cd0000;
+    }
+    
+    mat-radio-button {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .btn1 {
+        background-color: #161414;
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 25px;
+        padding: 3px 30px;
+    }
+    
+    .btn2 {
+        background-color: #e4e4e4;
+        color: #191919;
+        font-size: 20px;
+        border-radius: 25px;
+        padding: 3px 30px;
+        font-weight: bold;
+    }
+    
+    .cust-info {
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0px !important;
+    }
+    
+    button:disabled,
+    button[disabled] {
+        background-color: rgba(0, 0, 0, .12);
+        color: rgba(0, 0, 0, .26);
+    }

@@ -1,0 +1,16 @@
+<form [formGroup]="tdspRatesFormGroup" (ngSubmit)="submit()">
+    <h3 class="text-center">Edit Rates for {{data.utility_id__nick_name}}</h3>
+    <div class="row">
+        <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <input matInput placeholder="Charges per Month" formControlName="per_month" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <input matInput placeholder="Charges per kWh" formControlName="per_kwh" />
+        </mat-form-field>
+    </div>
+    <div class="text-center">
+        <br>
+        <button color="primary" [disabled]="isBtnDisabled" type="submit" mat-raised-button>Save</button>
+        <button color="primary" [disabled]="isBtnDisabled" type="button" mat-button [mat-dialog-close]>Cancel</button>
+    </div>
+</form>

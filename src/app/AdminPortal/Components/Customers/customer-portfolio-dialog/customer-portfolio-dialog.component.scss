@@ -1,0 +1,34 @@
+mat-table {
+    width: 100%;
+}
+
+.searchBar {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+}
+
+.bill {
+    max-width: 2600px;
+    min-width: 2400px;
+}
+
+::ng-deep .contains {
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        height: 0px !important;
+    }
+    .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after,
+    .mat-input-element:disabled {
+        color: #333
+    }
+    .mat-card {
+        padding: 16px 16px 0px 16px !important;
+    }
+}
+
+p {
+    display: inline;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}

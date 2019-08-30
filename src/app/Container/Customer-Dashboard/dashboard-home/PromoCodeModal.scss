@@ -1,0 +1,35 @@
+.PromoCodes {
+    padding: 24px;
+    h3 {
+        margin-top: 0px;
+        font-weight: bold;
+    }
+    .products {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .productIcon {
+            display: flex;
+            flex-direction: row;
+            .Icon {
+                display: flex;
+                flex-direction: column;
+                margin: 10px;
+                i {
+                    color: goldenrod;
+                    font-size: 30px;
+                }
+            }
+            .product {
+                display: flex;
+                flex-direction: column;
+                margin: 10px 0;
+                border-bottom: 1px solid;
+            }
+        }
+        .button {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

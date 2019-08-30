@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row padding-top-bottom">
+        <div class="col-lg-12 text-center">
+            <div class="title-plan">
+                <h1 class="energy-heading">POWERING TEXAS <span>ONE SMILE AT A TIME.</span></h1>
+            </div>
+            <h2 class="sub-heading">OUR ENERGY RESIDENTIAL AND COMMERCIAL ELECTRICITY. VIEW OUR RATES AND PLANS. SIGN UP NOW AND ENJOY THE DIFFERENCE!</h2>
+        </div>
+    </div>
+    <div class="row padding-top-bottom">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+            <a routerLink="." class="d-inline-block full-radius">
+                <img class="full-radius" src="../assets/img/RESIDENTIAL-ELECTRICITY.png">
+            </a>
+            <h2 class="sub-heading">RESIDENTIAL ELECTRICITY</h2>
+            <p class="energy-tips-detail">
+                We encourage you to compare electricity rates and service levels. OUR Energy stands out on top of all other electric companies in Texas.
+            </p>
+            <p style="margin-top:34px;">
+                <strong>Make the switch now.</strong> You’ll never look back!
+            </p>
+            <button type="button" class="btn-refer text-uppercase" [routerLink]="['/search-plan', '']">
+        <i class="fa fa-location-arrow"></i>
+        Find Your plan
+      </button>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-center">Find Your plan</h4>
+                            <button type="button" data-dismiss="modal" style="background-color:#000;"></button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <div class="input-group mb-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 float-left">
+                                        <div class="input-group-prepend float-left">
+                                            <span class="input-group-text font-size-16">Zip Code</span>
+                                        </div>
+                                        <input type="text" class="form-control width-50" id="zip-code" placeholder="Zip Code">
+                                    </div>
+                                    <div class="input-group mb-3 col-lg-6 col-md-6 col-sm-12 col-xs-12 float-left">
+                                        <div class="input-group-prepend float-left">
+                                            <span class="input-group-text font-size-16">Promo Code</span>
+                                        </div>
+                                        <input type="text" class="form-control width-50" id="promo-code" placeholder="Promo Code">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger background-red float-right">Search</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-center">
+            <a routerLink="." class="d-inline-block full-radius">
+                <img class="full-radius" src="../assets/img/COMMERCIAL-ELECTRICITY.png">
+            </a>
+            <h2 class="sub-heading">COMMERCIAL ELECTRICITY</h2>
+            <p class="energy-tips-detail">
+                <strong>Hire us and we’ll help you save money. </strong>OUR Energy LLC specializes in helping Texas businesses reduce their energy rates far better than other electricity companies.
+            </p>
+            <p>
+                Get your <strong>FREE</strong> Customized Commercial Quote Today!
+            </p>
+            <a routerLink="/commercial" class="btn-refer text-uppercase">
+                <i class="fa fa-location-arrow"></i> Find Your Solution
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="member-special">
+    <div class="container">
+        <h3 class="title">YOU'RE JUST IN TIME!</h3>
+        <p>SIGN UP TODAY AND TAKE ADVANTAGE OF THE OUR ENERGY MEMBER SPECIALS! <br/> JUST ANOTHER GREAT REASON TO SWITCH!</p>
+        <button class="btn btn-lg" routerLink="/special">CHECK OUT THEM !</button>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<mat-card class="EditBillContainer">
+    <mat-card-title>Edit Bill Address</mat-card-title>
+    <div class="fields">
+        <mat-form-field>
+            <input matInput placeholder="Address" [(ngModel)]="streetAddress2">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="City" [(ngModel)]="city">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="State" [(ngModel)]="state">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Zip" [(ngModel)]="zip" (ngModelChange)="ZipCodePattern()" #zips maxlength="10">
+            <mat-hint align="end">{{zips.value?.length || 0}}/10</mat-hint>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <input matInput placeholder="Street Address 1" [(ngModel)]="streetAddress1">
+        </mat-form-field> -->
+    </div>
+    <div class="footer">
+        <button mat-button (click)="submit()">Submit</button>
+        <button mat-button (click)="onCloseConfirm()" class="btn1">Cancel</button>
+    </div>
+</mat-card>

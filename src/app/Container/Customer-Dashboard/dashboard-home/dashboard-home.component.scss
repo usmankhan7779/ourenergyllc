@@ -1,0 +1,286 @@
+.col-container {
+    margin: 10px -10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    background-color: #fff;
+    flex: 1;
+    margin: 10px;
+    flex-direction: row;
+    padding: 10px;
+    // box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .infoBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        .dashboardInfo {
+            padding: 0 10px;
+            width: 100%;
+            mat-card {
+                width: 100%;
+            }
+            mat-card-header {
+                mat-card-title {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+            .accInfo {
+                display: flex;
+                flex-direction: row;
+                font-weight: bold;
+                font-size: 20px;
+                mat-list {
+                    mat-list-item {
+                        height: 25px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .payment {
+                font-weight: bold;
+                font-size: 20px;
+                a {
+                    cursor: pointer;
+                    color: #000;
+                    text-decoration: underline;
+                }
+                a:hover {
+                    color: #cd0000;
+                    text-decoration: none;
+                }
+                .Address {
+                    height: -10px;
+                    margin-left: 31px;
+                    mat-list-item {
+                        height: 25px;
+                        font-size: 14px;
+                    }
+                }
+                span {
+                    margin-right: 5px;
+                    width: 26px;
+                    display: flex;
+                    justify-content: center;
+                }
+                i {
+                    margin-left: 15px;
+                    font-style: italic;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .infoBox-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        justify-content: space-between;
+        align-items: center;
+        .utility {
+            display: flex;
+            flex-direction: column;
+            font-weight: bold;
+            font-size: 20px;
+            mat-list {
+                mat-list-item {
+                    height: 25px;
+                    font-size: 14px;
+                }
+            }
+            div {
+                display: flex;
+                flex-direction: row;
+            }
+            p {
+                background-color: rgb(241, 239, 239);
+                color: #575757;
+                border-radius: 10px;
+                font-size: 15px;
+                padding: 6px;
+            }
+        }
+        .dashboardInfo {
+            padding: 0 10px;
+            width: 100%;
+            .messageProduct {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                .Product_code {
+                    display: flex;
+                    flex-direction: column;
+                    button {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                }
+            }
+            mat-card {
+                width: 100%;
+            }
+            mat-card-header {
+                mat-card-title {
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-bottom: 0px !important;
+                }
+            }
+            .servAdd {
+                display: flex;
+                flex-direction: row;
+                font-weight: bold;
+                font-size: 20px;
+                mat-list {
+                    mat-list-item {
+                        height: 25px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.graphs {
+    // box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 0px 0px 20px 0px;
+}
+
+::ng-deep .mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    display: block;
+    position: relative;
+    // padding: 16px 24px;
+    border-radius: 2px;
+}
+
+.dashboardInfo {
+    width: 100%;
+    .messageProduct {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .Product_code {
+            display: flex;
+            flex-direction: column;
+            button {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+    }
+    mat-card {
+        width: 100%;
+    }
+    p {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    mat-card-header {
+        mat-card-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 0px !important;
+        }
+    }
+}
+
+.example-header-image1 {
+    background-image: url('/assets/img/Icons/Message-Center.png');
+    background-size: cover;
+}
+
+.example-header-image2 {
+    background-image: url('/assets/img/Icons/Account-Information.png');
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+}
+
+.example-header-image3 {
+    background-image: url('/assets/img/Icons/Your-Utility.png');
+    background-size: cover;
+    height: 35px;
+    width: 35px;
+}
+
+.example-header-image4 {
+    background-image: url('/assets/img/Icons/Payment-options.png');
+    background-size: cover;
+}
+
+.example-header-image5 {
+    background-image: url('/assets/img/Icons/Service-Address.png');
+    background-size: cover;
+}
+
+.example-header-image6 {
+    background-image: url('/assets/img/Icons/Terms-and-condition.png');
+    background-size: cover;
+}
+
+.example-header-image7 {
+    background-image: url('/assets/img/Icons/Payment-history-graph.png');
+    background-size: cover;
+}
+
+.example-header-image8 {
+    background-image: url('/assets/img/Icons/Usage-histroy-graph.png');
+    background-size: cover;
+}
+
+.example-header-image9 {
+    background-image: url('/assets/img/Icons/Speed-meter.png');
+    background-size: cover;
+}
+
+.mat-card-avatar {
+    border-radius: 0px;
+}
+
+.spinner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0 20px;
+}
+
+.points {
+    background-color: #cdcdcd;
+    padding: 2px 5px;
+    border-radius: 25px;
+}
+
+.manage-accountSetup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .manage-button {
+        border-radius: 35px;
+        background-color: #000;
+        color: #fff;
+        font-size: 15px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .col-container {
+        display: flex;
+        flex-direction: column;
+        .col .infoBox {
+            width: 100%;
+        }
+    }
+}
+
+h2 {
+    font-weight: bold;
+    margin-top: 70px;
+}

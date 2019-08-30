@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar">
+            <input matInput placeholder="Search..." (keyup)="paymentFilter($event.target.value)">
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginatorPayment [pageSize]="5" [pageSizeOptions]="[5,10]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="paymentDataSource" class="payment">
+            <ng-container matColumnDef="4">
+                <mat-header-cell *matHeaderCellDef> Bill Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{(element.cp_bill_proc_date | date) ? (element.cp_bill_proc_date | date):'--'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="5">
+                <mat-header-cell *matHeaderCellDef> Pay amount </mat-header-cell>
+                <mat-cell *matCellDef="let element"> ${{element.pay_amount}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="7">
+                <mat-header-cell *matHeaderCellDef> Pay Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{(element.pay_date | date) ? (element.pay_date | date):'--'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="8">
+                <mat-header-cell *matHeaderCellDef> Pay Mode </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pay_mode ? element.pay_mode:'--'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="9">
+                <mat-header-cell *matHeaderCellDef> Mode Description </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pay_mode_desc ? element.pay_mode_desc:'--'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="10">
+                <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.pay_status ? element.pay_status:'--'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="11">
+                <mat-header-cell *matHeaderCellDef> Posted Pay Amount </mat-header-cell>
+                <mat-cell *matCellDef="let element"> ${{element.posted_pay_amount}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="12">
+                <mat-header-cell *matHeaderCellDef> Unposted Pay Amount </mat-header-cell>
+                <mat-cell *matCellDef="let element"> ${{element.unposted_pay_amount}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="paymentDisplayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: paymentDisplayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

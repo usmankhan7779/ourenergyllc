@@ -1,0 +1,31 @@
+<h3 class="text-center">Add Product (ID & Name Only)</h3>
+<div mat-dialog-content>
+    <form [formGroup]="productForm">
+        <div class="row">
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input matInput placeholder="Product Id" formControlName=ProductId>
+                <mat-error *ngIf="productForm.controls.ProductId.errors?.required"> Product Id is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <input matInput placeholder="Product Name" formControlName=ProductName>
+                <mat-error *ngIf="productForm.controls.ProductName.errors?.required"> Product Name is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <mat-select placeholder="Product Type" (selectionChange)="changeProductType($event)">
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let type of productTypes" [value]="type[1]">
+                        {{ type[0] }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-slide-toggle color="primary" class="col-lg-12 col-md-12 col-sm-12 col-xs-12" formControlName=PassthruStatus>Passthru</mat-slide-toggle>
+        </div>
+    </form>
+    <br>
+</div>
+<div mat-dialog-actions>
+    <div class="text-center">
+        <button [disabled]="disabledBtn" mat-raised-button type="submit" (click)="onSubmit()">Save</button>
+        <button [disabled]="disabledBtn" mat-button [mat-dialog-close]>Cancel</button>
+    </div>
+</div>

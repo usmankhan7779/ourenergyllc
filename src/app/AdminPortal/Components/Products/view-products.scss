@@ -1,0 +1,90 @@
+body {
+    overflow: hidden;
+}
+
+.mat-column-r,
+.mat-column-br,
+.mat-column-t,
+.mat-column-is {
+    flex: 0 0 120px;
+}
+
+.mat-column-e {
+    flex: 0 0 180px;
+}
+
+.mat-column-sd,
+.mat-column-ed {
+    flex: 0 0 130px;
+}
+
+.mat-column-tdsp {
+    flex: 0 0 220px;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 10px 10px 0;
+    display: flex;
+    flex: 50;
+}
+
+.abc {
+    max-width: 4000px;
+    min-width: 3100px;
+}
+
+.tdsps {
+    text-decoration-line: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 85px;
+    .itemmm {
+        background-color: #eee;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 100px;
+    }
+}
+
+.tdsps:hover {
+    text-decoration-line: none;
+}
+
+.accounts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .one-account {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid #cdcdcd;
+        padding: 0 20px;
+        align-items: center;
+        .account-id {
+            flex: 1;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+    }
+}
+
+.mat-form-field {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}

@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." #siteSearchBar [(ngModel)]="siteSearchParameter">
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #sitePaginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="siteDataSource" class="abc  mat-elevation-z5">
+            <ng-container matColumnDef="n">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="r">
+                <mat-header-cell *matHeaderCellDef> Query </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button [disabled]="isStatusDisabled[element.id]" matTooltip="Click Unresolve" (click)="resolve(element)" mat-icon-button *ngIf="element.status == true">
+                        <i class="successIcon material-icons">check</i>
+                    </button>
+                    <button [disabled]="isStatusDisabled[element.id]" matTooltip="Click Resolve" (click)="resolve(element)" mat-icon-button *ngIf="element.status == false">
+                        <i class="failureIcon material-icons">close</i>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="e">
+                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="m">
+                <mat-header-cell *matHeaderCellDef> Contact No. </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.mobile}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="msg">
+                <mat-header-cell *matHeaderCellDef> Query </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.message}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="date_created">
+                <mat-header-cell *matHeaderCellDef> Query Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.date_created | date}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="siteDisplayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: siteDisplayedColumns"></mat-row>
+        </mat-table>
+    </div>
+</div>

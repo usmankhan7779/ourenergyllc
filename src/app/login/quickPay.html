@@ -1,0 +1,31 @@
+<form class="settings" [formGroup]=quickForm (ngSubmit)=submit() #quick>
+    <h3 class="title"> Quick Pay My Bill </h3>
+    <mat-form-field>
+        <mat-label>Account No.</mat-label>
+        <input matInput formControlName="cust_id" #inputs maxlength="30">
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="quickPay.cust_id.errors?.required">Account No. is required</mat-error>
+        <mat-error *ngIf="quickPay.cust_id.errors?.pattern">Invalid Account No.</mat-error>
+        <mat-hint>Account number as it appears on your payment coupon</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Billing Zip Code</mat-label>
+        <input matInput formControlName="zip_code" #input maxlength="5">
+        <mat-icon matSuffix>place</mat-icon>
+        <mat-error *ngIf="quickPay.zip_code.errors?.required">Billing Zip Code is required</mat-error>
+        <mat-error *ngIf="quickPay.zip_code.errors?.pattern">Invalid Zip Code</mat-error>
+        <mat-error *ngIf="!quickPay.zip_code.errors?.pattern && quickPay.zip_code.errors?.minlength">Minimum of 5 characters required.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Phone No.</mat-label>
+        <input matInput formControlName="phone" #input1 maxlength="12" phone-no blockCopyPaste>
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-error *ngIf="quickPay.phone.errors?.required">Phone No. is required</mat-error>
+        <mat-error *ngIf="quickPay.phone.errors?.pattern">Invalid Phone No.</mat-error>
+        <mat-error *ngIf="!quickPay.phone.errors?.pattern && quickPay.phone.errors?.minlength">Minimum of 10 characters required.</mat-error>
+    </mat-form-field>
+    <div class="text-center">
+        <button mat-button type="submit" [disabled]="sbmtBtn" class="btn1">Verify Account</button>
+        <button mat-button type="button" (click)="cancel()" class="btn2">Cancel</button>
+    </div>
+</form>

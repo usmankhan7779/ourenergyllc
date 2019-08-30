@@ -1,0 +1,36 @@
+<div class="MakePaymentSetting">
+    <div class="Heading">
+        <div>
+            <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+            <h3>Payment Settings</h3>
+        </div>
+    </div>
+</div>
+<div class="my">
+    <mat-table #table [dataSource]="dataSource" class="abc">
+        <ng-container matColumnDef="id">
+            <mat-header-cell *matHeaderCellDef> Send to Sigma </mat-header-cell>
+            <mat-cell *matCellDef="let element; let ind = index;">
+                <mat-slide-toggle (change)="bypassValue(element, ind)" [disabled]="disabledBypass[element.id]" checked="{{element.send_to_sigma}}"></mat-slide-toggle>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="bypass">
+            <mat-header-cell *matHeaderCellDef> UA </mat-header-cell>
+            <mat-cell *matCellDef="let element; let ind = index;">
+                <mat-slide-toggle (change)="uaValue(element, ind)" [disabled]="disabledUA[element.id]" checked="{{element.ua}}"></mat-slide-toggle>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ua">
+            <mat-header-cell *matHeaderCellDef> Pay Status </mat-header-cell>
+            <mat-cell *matCellDef="let element; let ind = index;">
+                <mat-form-field style="width: 300px">
+                    <mat-select [(value)]="PayStatusChoiceValue" (change)="SentToSigma()">
+                        <mat-option *ngFor="let v of PayStatusChoice" [value]="v.value">{{v.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>

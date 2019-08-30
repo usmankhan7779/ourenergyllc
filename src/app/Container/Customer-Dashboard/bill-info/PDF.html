@@ -1,0 +1,11 @@
+<div mat-dialog-title style="background: #fff;display: flex; justify-content: space-between;">
+    <button mat-raised-button color="primary" (click)="PDFDownload()">
+        Download PDF
+    </button>
+    <button [mat-dialog-close] mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+</div>
+<div mat-dialog-content class="pdfviewer">
+    <pdf-viewer src="{{data}}" [autoresize]="true" style="min-height:600px;display:block"></pdf-viewer>
+</div>

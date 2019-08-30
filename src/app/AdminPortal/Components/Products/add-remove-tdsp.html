@@ -1,0 +1,7 @@
+<h3 class="text-center">Add/Remove Utility Provider</h3>
+<div *ngFor="let x of data.message">
+    <mat-slide-toggle style="margin: 10px;" color="primary" [(ngModel)]="x.status" [disabled]="isDisabled[x.duns_number]" (change)="changeTdsp(x)">{{x.company_name}}</mat-slide-toggle>
+</div>
+<div class="text-center">
+    <button mat-button [mat-dialog-close]>Close</button>
+</div>

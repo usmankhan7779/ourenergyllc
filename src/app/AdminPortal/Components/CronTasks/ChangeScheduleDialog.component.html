@@ -1,0 +1,171 @@
+<!-- <div class="mat-elevation-z3">
+    <h2 class="heading text-center">
+        <b>Make Adjustment to Cust Id:</b> 0213120005
+    </h2>
+</div>
+<mat-card style="margin-top:7px;">
+    <div class="row mania">
+        <div class="col-md-4">
+            <b style="font-size:18px;">Credit or Debit : </b>
+        </div>
+        <mat-radio-group>
+            <div class="col-md-3">
+                <mat-radio-button value="1" color="accent" (click)="show = true">
+                    <b>Credit</b>
+                </mat-radio-button>
+            </div>
+            <div class="col-md-3">
+                <mat-radio-button value="2" color="accent">
+                    <b>Debit</b>
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+    </div>
+    <div class="row mania">
+        <div class="col-md-4">
+            <b style="font-size:18px;">Charge or Tax : </b>
+        </div>
+        <mat-radio-group>
+            <div class="col-md-3">
+                <mat-radio-button value="1" color="accent" (click)="charge()">
+                    <b>Charge</b>
+                </mat-radio-button>
+            </div>
+            <div class="col-md-3">
+                <mat-radio-button value="2" color="accent" (click)="tax()">
+                    <b>Tax</b>
+                </mat-radio-button>
+            </div>
+        </mat-radio-group>
+    </div>
+</mat-card>
+<br>
+<form>
+    <mat-card *ngIf="show">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Adjustment Date" [formControl]="startDateControl">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <mat-select placeholder="Adjustment Type">
+                        <mat-option *ngFor="let status of statuses" [value]="status.value">
+                            {{ status.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <mat-select placeholder={{name}}>
+                        <mat-option *ngFor="let status of statuses" [value]="status.value">
+                            {{ status.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <input matInput placeholder="Required Amount" />
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <input matInput placeholder="Adjust Qty (Consumption)" />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <textarea matInput placeholder="Comments"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <textarea matInput placeholder="Internal Cust Notes"></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <mat-select placeholder="Financial Year">
+                        <mat-option *ngFor="let status of statuses" [value]="status.value">
+                            {{ status.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-form-field>
+                    <mat-select placeholder="Financial Month">
+                        <mat-option *ngFor="let status of statuses" [value]="status.value">
+                            {{ status.viewValue }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-card>
+    <br/>
+    <div class="text-center" *ngIf="show">
+        <button mat-raised-button color=accent>Prepare Adjustments</button>
+    </div>
+</form> -->
+<h1>{{data.name}}</h1>
+<mat-form-field>
+    <mat-select placeholder="Hours" [(ngModel)]="data.crontab.hour">
+        <mat-option value="*">--</mat-option>
+        <mat-option *ngFor="let x of hour" [value]="x">
+            {{ x }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select placeholder="Minutes" [(ngModel)]="data.crontab.minute">
+        <mat-option value="*">--</mat-option>
+        <mat-option *ngFor="let x of minute" [value]="x">
+            {{ x }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select placeholder="Day" [(ngModel)]="data.crontab.day_of_week">
+        <mat-option value="*">--</mat-option>
+        <mat-option *ngFor="let x of day" [value]="x.value">
+            {{ x.viewValue }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select placeholder="Date" [(ngModel)]="data.crontab.day_of_month">
+        <mat-option value="*">--</mat-option>
+        <mat-option *ngFor="let x of date" [value]="x">
+            {{ x }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+<mat-form-field>
+    <mat-select placeholder="Month" [(ngModel)]="data.crontab.month_of_year">
+        <mat-option value="*">--</mat-option>
+        <mat-option *ngFor="let x of month" [value]="x.value">
+            {{ x.viewValue }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<div class="text-center">
+    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+</div>

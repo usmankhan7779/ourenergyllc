@@ -1,0 +1,71 @@
+<div class="cont">
+    <mat-card class="mat-elevation-z6">
+        <h2>Confirmation</h2>
+        <p class="spacer">Dear Customer,</p>
+        <p>This is to confirm that a payment has been recieved and will be posted to your account.</p>
+        <p class="spacer">Here are the details:</p>
+        <hr>
+        <div class="main-container">
+            <p>Status/Response</p>
+            <p>Approved</p>
+        </div>
+        <div *ngIf="response?.message.APPR_REF1 != '' && response?.message.APPR_REF1 != undefined && response?.message.APPR_REF1 != null" class="main-container">
+            <p>Ref No.</p>
+            <p>{{response?.message.APPR_REF1}}</p>
+        </div>
+        <div class="main-container">
+            <p>Payment Amount</p>
+            <p>${{response?.message.SCHED_PAY_AMOUNT}}</p>
+        </div>
+        <div class="main-container">
+            <p>Process Date</p>
+            <p>{{date | date}}</p>
+        </div>
+        <div class="main-container">
+            <p>Payment Type</p>
+            <p>{{response?.message.AUTO_PAY == 'N' ? 'Onetime Payment' : 'Recurring Payment'}}</p>
+        </div>
+        <hr>
+        <div class="main-container">
+            <p>Customer No.</p>
+            <p>{{response?.message.CUST_ID}}</p>
+        </div>
+        <div class="main-container">
+            <p>Name</p>
+            <p>{{response?.message.CUST_FIRSTNAME}} {{response?.message.CUST_LASTNAME}}</p>
+        </div>
+        <hr>
+        <div class="main-container">
+            <p>{{response?.message.sched_type == "6" ? "Bank Draft (ACH)" : "Credit/Debit Card"}} Info</p>
+            <div>
+                <div class="inner-container">
+                    <p *ngIf="response?.message.card_type">Card Type: </p>
+                    <p>{{response?.message.card_type}}</p>
+                </div>
+                <div class="inner-container">
+                    <p *ngIf="response?.message.ABA_NBR">Routing No.: </p>
+                    <p>{{response?.message.ABA_NBR}}</p>
+                </div>
+                <div class="inner-container">
+                    <p *ngIf="response?.message.MSK_CARD_NO != '' && response?.message.MSK_CARD_NO != ' ' && response?.message.MSK_CARD_NO != undefined && response?.message.MSK_CARD_NO != null">Card No.: </p>
+                    <p>{{response?.message.MSK_CARD_NO}}</p>
+                </div>
+                <div class="inner-container">
+                    <p *ngIf="response?.message.MSK_ACCT_NO">Account No.: </p>
+                    <p>{{response?.message.MSK_ACCT_NO}}</p>
+                </div>
+                <div class="inner-container">
+                    <p *ngIf="response?.message.EXP_MM != '' && response?.message.EXP_MM != undefined && response?.message.EXP_MM != null">Expiry Date: </p>
+                    <p>{{response?.message.EXP_MM}} {{response?.message.EXP_YYYY}}</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="spacer"></div>
+        <p class="spacer">Sincerely,</p>
+        <p>Customer Service</p>
+        <p>OurEnergy LLC</p>
+        <p>1-888-545-4687</p>
+        <p>www.OUREnergyLLC.com</p>
+    </mat-card>
+</div>

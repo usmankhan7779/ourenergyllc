@@ -1,0 +1,19 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="linkAccountForm" class="ValidationForm" autocomplete="off">
+    <h3 style="margin-bottom:10px;" class="text-center">Link Account to {{data}}</h3>
+    <mat-form-field>
+        <input matInput placeholder="Customer ID (to be attached)" formControlName="cust_id" required>
+        <mat-error *ngIf="linkAccountForm.controls.cust_id.hasError('required')">
+            Custoemr ID is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Zip Code" formControlName="bill_zip" required>
+        <mat-error *ngIf="linkAccountForm.controls.bill_zip.hasError('required')">
+            Zip Code is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <div class="text-center">
+        <button [disabled]="disabledBtn" type="submit" mat-raised-button color="primary">Link Account</button>
+        <button [disabled]="disabledBtn" type="button" mat-button color="primary" [mat-dialog-close]>Close</button>
+    </div>
+</form>

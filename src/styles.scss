@@ -1,0 +1,169 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+body {
+    height: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*:focus {
+    outline: none;
+}
+
+.mat-radio-label {
+    white-space: normal !important;
+}
+
+.mat-tooltip {
+    font-size: 15px !important;
+}
+
+.mat-checkbox-layout {
+    white-space: normal !important;
+}
+
+.mat-step-header .mat-step-icon {
+    background-color: #131212 !important;
+    color: #fff;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.mat-menu-content {
+    padding-bottom: 0px !important;
+}
+
+body {
+    font-family: 'Open Sans'
+}
+
+.mat-tab-body-content {
+    overflow: hidden !important;
+}
+
+.mat-horizontal-stepper-header {
+    display: flex;
+    height: 72px;
+    overflow: hidden;
+    align-items: center;
+    padding: 0 15px !important;
+}
+
+.mat-header-row {
+    background-color: #000;
+    text-align: center;
+    mat-header-cell {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+    }
+}
+
+.mat-row {
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    mat-cell {
+        font-size: 18px !important;
+    }
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #191919;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #191919;
+}
+
+.mat-sort-header-arrow {
+    color: #fff;
+    font-weight: bold;
+}
+
+.mat-card,
+.mat-list-item,
+.mat-table,
+.mat-paginator,
+.mat-form-field,
+.mat-button,
+.mat-menu-item,
+.mat-checkbox,
+.mat-radio-button {
+    font-family: 'Open Sans'
+}
+
+.failureIcon {
+    font-size: 30px;
+    color: #cd0000
+}
+
+.successIcon {
+    font-size: 30px;
+    color: #1d3863;
+}
+
+.normalIcon {
+    font-size: 30px
+}
+
+.mainIcon {
+    font-size: 30px;
+    color: goldenrod
+}
+
+.normalIcon2 {
+    font-size: 40px
+}
+
+.searchBar {
+    font-size: 19px;
+}
+
+.mat-error {
+    text-align: right;
+}
+
+.nullIcon {
+    font-size: 30px;
+    color: white
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: #555;
+    transition: 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    transition: 0.3s;
+}
+
+mark {
+    padding: 0px;
+    background-color: #ff0;
+}
+
+.topIcon {
+    margin-top: -8px;
+}
+
+.tabLabel {
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 13px;
+}

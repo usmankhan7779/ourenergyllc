@@ -1,0 +1,61 @@
+<div class="container-fluid">
+    <mat-form-field>
+        <button mat-icon-button matTooltip="Refresh" matSuffix style="font-size: 27px;" (click)="refresh()">
+              <mat-icon>refresh</mat-icon>
+            </button>
+        <input placeholder="Search" matInput [formControl]="searchControl">
+        <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+              <mat-icon>close</mat-icon>
+            </button>
+    </mat-form-field>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="20" [pageSizeOptions]="[20,40]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abc  mat-elevation-z5">
+            <ng-container matColumnDef="sb">
+                <mat-header-cell *matHeaderCellDef style="width: 50px;"> </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 50px;">
+                    <button mat-icon-button *ngIf="element.submitted_by == 'A'"><i class="material-icons">android</i></button>
+                    <button mat-icon-button *ngIf="element.submitted_by == 'I'"><i class="fa fa-apple"></i></button>
+                    <button mat-icon-button *ngIf="element.submitted_by == 'W'"><i class="material-icons">web</i></button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="id">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.CUST_FIRSTNAME}} {{element.CUST_LASTNAME}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="acc_id">
+                <mat-header-cell *matHeaderCellDef> Payment Method </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.CARD_TYPE}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="bypass">
+                <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.CUST_ID}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="us">
+                <mat-header-cell *matHeaderCellDef> Card No/Account No </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.CARD_NO}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Response Desc </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.ProcStatus}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="paydate">
+                <mat-header-cell *matHeaderCellDef> Payment Date </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.payment_date | date: 'shortTime'}}<br>{{element.payment_date | date: 'fullDate'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="datetime">
+                <mat-header-cell *matHeaderCellDef> Pay Amount </mat-header-cell>
+                <mat-cell *matCellDef="let element"> ${{element.SCHED_PAY_AMOUNT}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

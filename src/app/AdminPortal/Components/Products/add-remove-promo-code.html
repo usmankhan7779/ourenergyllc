@@ -1,0 +1,11 @@
+<h3 class="text-center">Add/Remove Promotion Code</h3>
+<div mat-dialog-content>
+    <div *ngFor="let x of data.message">
+        <mat-slide-toggle style="margin: 10px;" color="primary" [(ngModel)]="x.status" [disabled]="isDisabled[x.promo_code]" (change)="changeTdsp(x)">{{x.promo_code}}</mat-slide-toggle>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <div class="text-center">
+        <button mat-button [mat-dialog-close]>Close</button>
+    </div>
+</div>

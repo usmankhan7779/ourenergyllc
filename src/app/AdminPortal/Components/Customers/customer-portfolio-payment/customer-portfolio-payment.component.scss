@@ -1,0 +1,26 @@
+mat-table {
+    width: 100%;
+}
+
+.payment {
+    max-width: 1800px;
+    min-width: 1800px;
+}
+
+.searchBar {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+}
+
+::ng-deep .contains {
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        height: 0px !important;
+    }
+    .mat-form-field-type-mat-native-select.mat-form-field-disabled .mat-form-field-infix::after,
+    .mat-input-element:disabled {
+        color: #333
+    }
+    .mat-card {
+        padding: 16px 16px 0px 16px !important;
+    }
+}

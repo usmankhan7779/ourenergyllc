@@ -1,0 +1,32 @@
+.EditBillContainer {
+    .fields {
+        display: flex;
+        flex-direction: column;
+    }
+    mat-card-title {
+        font-size: 25px !important;
+        font-weight: bold;
+        text-align: center;
+    }
+    mat-form-field {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        button {
+            color: #fff;
+            background-color: #000;
+            font-weight: bold;
+            padding: 5px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+        }
+        .btn1 {
+            background-color: #e4e4e4;
+            color: #000;
+        }
+    }
+}

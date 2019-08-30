@@ -1,0 +1,98 @@
+.Drawer {
+    width: 255px;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 80px;
+    z-index: 0;
+    top: 50px;
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    mat-list {
+        padding: 0 0 60px 0;
+        a {
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+            mat-list-item {
+                height: 42px !important;
+                font-weight: bold;
+                font-size: 16px;
+                span {
+                    margin-left: 11px;
+                    font-size: 16px;
+                    color: #222
+                }
+                i {
+                    font-size: 24px;
+                    margin-top: -3px;
+                    width: 25px;
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+img {
+    width: 25px;
+}
+
+@media only screen and (max-width: 950px) {
+    .Drawer {
+        display: none;
+    }
+}
+
+.Icon {
+    padding: 3px 4px 0 0;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: unset;
+}
+
+.mat-expansion-panel-header:not([aria-disabled=true]) {
+    cursor: pointer;
+    height: 42px !important;
+    background-color: #f0f0f0;
+}
+
+.TreeStructure {
+    margin: 20px 10px;
+    .header {
+        i {
+            padding: 2px 5px 2px 0px;
+        }
+    }
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+    box-shadow: unset;
+}
+
+.mat-expansion-panel-header:not([aria-disabled=true]) {
+    cursor: pointer;
+    height: 42px !important;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 10px;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 1px 10px 0px 15px !important;
+}
+
+.active {
+    background-color: #a9a9a9;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}
+
+.drawerOption {
+    display: inline
+}
+
+.drawerOption:focus {
+    outline: none !important;
+}

@@ -1,0 +1,80 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" style="margin-top: -8px;">
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Portal Queries </label>
+        </ng-template>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+                    <input matInput placeholder="Search..." #portalSearchBar [(ngModel)]="portalSearchParameter">
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="header-paginator">
+            <div class="topPaginator">
+                <mat-paginator #portalPaginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+                </mat-paginator>
+            </div>
+        </div>
+        <div class="my">
+            <div class="y">
+                <mat-table #table [dataSource]="portalDataSource" class="abc  mat-elevation-z5">
+                    <ng-container matColumnDef="cid">
+                        <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.cust_id}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="r">
+                        <mat-header-cell *matHeaderCellDef> Resolved </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button [disabled]="isStatusDisabled[element.id]" matTooltip="Click Unresolve" (click)="resolve(element)" mat-icon-button *ngIf="element.status == true">
+                                <i class="successIcon material-icons">check</i>
+                            </button>
+                            <button [disabled]="isStatusDisabled[element.id]" matTooltip="Click Resolve" (click)="resolve(element)" mat-icon-button *ngIf="element.status == false">
+                                    <i class="failureIcon material-icons">close</i>
+                                </button>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="sts">
+                        <mat-header-cell *matHeaderCellDef> Submitted to Sigma </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <button mat-icon-button *ngIf="element.send_to_sigma == true">
+                                <i class="successIcon material-icons">check</i>
+                            </button>
+                            <button [disabled]="isSubmittedDisabled[element.id]" matTooltip="Submit to Sigma" (click)="sendToSigma(element)" mat-icon-button *ngIf="element.send_to_sigma == false">
+                                <i class="failureIcon material-icons">close</i>
+                            </button>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="n">
+                        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="topic">
+                        <mat-header-cell *matHeaderCellDef> Topic </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.select_a_topic}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="message">
+                        <mat-header-cell *matHeaderCellDef> Query </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.question}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="date_created">
+                        <mat-header-cell *matHeaderCellDef> Query Date </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.date_created | date}} </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="portalDisplayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: portalDisplayedColumns"></mat-row>
+                </mat-table>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" style="margin-top: -8px;">
+            <label for="Customers" style="color: #000; font-size: 16px; cursor:pointer; margin-top: 12px;"> Site Queries </label>
+        </ng-template>
+        <br>
+        <contactuss></contactuss>
+    </mat-tab>
+</mat-tab-group>

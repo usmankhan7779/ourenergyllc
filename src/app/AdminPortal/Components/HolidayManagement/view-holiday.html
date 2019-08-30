@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." (keyup)="applyFilter($event.target.value)">
+            <button (click)="openAddHolidayDialog()" matSuffix mat-icon-button>
+                <mat-icon style="font-size: 30px;" matTooltip="Add Holiday">add_box</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abc">
+            <ng-container matColumnDef="e">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button (click)="openEditHolidayDialog(element)">
+                        <i matTooltip="Edit Holiday" class="normalIcon material-icons">edit</i>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="hd">
+                <mat-header-cell *matHeaderCellDef> Holiday Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.holiday_date | date}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="hy">
+                <mat-header-cell *matHeaderCellDef> Holiday Year </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.holiday_year}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="hdesc">
+                <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.holiday_desc}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cd">
+                <mat-header-cell *matHeaderCellDef> Created Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.created_date | date}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+    </div>
+</div>

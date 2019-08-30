@@ -1,0 +1,16 @@
+<div class="Drawer">
+    <mat-list>
+        <a *ngFor="let v of routes">
+            <mat-list-item class="drawerOption" routerLink="/adminportal/{{v.route}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <img src="../../../../assets/img/Icons/{{v.icon}}.png">
+                <span>{{v.name}}</span>
+            </mat-list-item>
+        </a>
+        <a>
+            <mat-list-item class="drawerOption" (click)="signOut()">
+                <img src="../../../../assets/img/Icons/Logout.png">
+                <span>Sign Out</span>
+            </mat-list-item>
+        </a>
+    </mat-list>
+</div>

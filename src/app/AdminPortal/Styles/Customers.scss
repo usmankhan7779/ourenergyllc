@@ -1,0 +1,88 @@
+body {
+    overflow: hidden;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 10px 10px 0;
+    display: flex;
+    flex: 50;
+}
+
+.mat-column-signup {
+    flex: 0 0 220px !important;
+}
+
+.abc {
+    max-width: 3000px;
+    min-width: 1920px;
+}
+
+.mat-column-login {
+    flex: 0 0 270px;
+}
+
+.mat-column-date {
+    flex: 0 0 250px;
+}
+
+.abcc {
+    max-width: 6000px;
+    min-width: 4000px;
+}
+
+.abccc {
+    width: 100%
+}
+
+.accounts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .one-account {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid #cdcdcd;
+        padding: 0 20px;
+        align-items: center;
+        .account-id {
+            flex: 1;
+        }
+    }
+}
+
+.mat-form-field {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}
+
+.refreshIcons {
+    margin-right: 25px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    font-size: 30px;
+}
+
+// .y {
+//     max-height: calc(100vh -70vh) !important
+// }
+::ng-deep .mat-input-placeholder {
+    color: #706f6f;
+    font-size: 16px;
+}
+
+.mat-select-value {
+    font-size: 16px;
+}

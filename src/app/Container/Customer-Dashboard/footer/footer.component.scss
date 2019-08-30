@@ -1,0 +1,49 @@
+.footer {
+    background-color: #e2e2e2;
+    position: relative;
+    padding: 2px 10px;
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #494949;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    span {
+        width: 700px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer-content {
+        margin-top: 12px;
+    }
+    .footerLinks {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-direction: row;
+        a {
+            color: #494949;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 0px 3px;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}
+
+.wattgenie-logo {
+    width: 120px;
+}
+
+@media (max-width: 460px) {
+    .footer-content {
+        margin-top: 0px !important;
+    }
+}

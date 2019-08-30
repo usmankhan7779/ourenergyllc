@@ -1,0 +1,113 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../assets/img/Icons/Payments.png" alt="offers" style="margin-top: -8px;">
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Payments </label>
+        </ng-template>
+        <div class="spacer mat-elevation-z6">
+            <div class="fix">
+                <div class="one">
+                    <mat-form-field>
+                        <input matInput placeholder="Search here" (keyup)="applyFilter($event.target.value)">
+                        <span matPrefix>
+                        <img src="../assets/img/Icons/Payments.png" class="images"> </span>
+                    </mat-form-field>
+                </div>
+                <div class="two">
+                    <mat-paginator #paginator [pageSize]="20" [pageSizeOptions]="[10,20]" [showFirstLastButtons]="true">
+                    </mat-paginator>
+                </div>
+            </div>
+            <div class="pay-bill-Table">
+                <mat-table #table [dataSource]="paymentSource">
+                    <ng-container matColumnDef="pay_date">
+                        <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.pay_date }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="pay_amount">
+                        <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{ element.pay_amount | currency:"CAD":"symbol-narrow" }} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="pay_mode_desc">
+                        <mat-header-cell *matHeaderCellDef> Mode </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.pay_mode_desc}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="cp_bill_proc_date">
+                        <mat-header-cell *matHeaderCellDef>Bill Date</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <span *ngIf="!element.cp_bill_proc_date">--</span>
+                            <span *ngIf="element.cp_bill_proc_date">{{element.cp_bill_proc_date}}</span>
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="paymentColumns" color="primary"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: paymentColumns;"></mat-row>
+                </mat-table>
+                <h3 *ngIf="error">{{error}}</h3>
+                <h3 *ngIf="noRecords">{{noRecords}} </h3>
+                <div class="spinner" *ngIf="showSpinner">
+                    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/Payments.png" alt="offers" style="margin-top: -8px;">
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Adjustments </label>
+        </ng-template>
+        <div class="spacer mat-elevation-z6">
+            <div class="fix">
+                <div class="one">
+                    <mat-form-field>
+                        <input matInput placeholder="Search here" (keyup)="applyFilter2($event.target.value)">
+                        <span matPrefix>
+                        <img src="../assets/img/Icons/Payments.png" class="images"> </span>
+                    </mat-form-field>
+                    <mat-radio-group (change)="changeOpt($event)">
+                        <mat-radio-button style="margin-left: 10px;" value="adj" checked="true">Adjustment Logs</mat-radio-button>
+                        <mat-radio-button style="margin-left: 10px;" value="all">Payments and Adjustment Logs</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div class="two">
+                    <mat-paginator #paginator [pageSize]="20" [pageSizeOptions]="[10,20]" [showFirstLastButtons]="true">
+                    </mat-paginator>
+                </div>
+            </div>
+            <div class="adj-bill-Table">
+                <mat-table #table [dataSource]="adjustmentSource">
+                    <ng-container matColumnDef="cp_pay_date">
+                        <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.cp_pay_date}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="cp_pay_amount">
+                        <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.cp_pay_amount | currency:"CAD":"symbol-narrow"}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="cp_bill_proc_date">
+                        <mat-header-cell *matHeaderCellDef> Bill Date </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.cp_bill_proc_date}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="cp_pay_type_desc">
+                        <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.cp_pay_type_desc}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="pay_mode_desc">
+                        <mat-header-cell *matHeaderCellDef> Pay Mode </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.pay_mode_desc}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="chg_or_tax_desc">
+                        <mat-header-cell *matHeaderCellDef> Tax/Charge Description </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.chg_or_tax_desc}} </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="adjustmentColumns" color="primary"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: adjustmentColumns;"></mat-row>
+                </mat-table>
+                <h3 *ngIf="error2">{{error2}}</h3>
+                <h3 *ngIf="noRecords2">{{noRecords2}} </h3>
+                <div class="spinner" *ngIf="showSpinner2">
+                    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

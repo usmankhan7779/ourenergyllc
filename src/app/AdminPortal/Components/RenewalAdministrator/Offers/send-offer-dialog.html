@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div style="max-height: 400px">
+        <mat-table #table [dataSource]="dataSource" class="abc">
+            <ng-container matColumnDef="select">
+                <mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()" color="primary">
+                    </mat-checkbox>
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)" color="primary">
+                    </mat-checkbox>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="customerID">
+                <mat-header-cell *matHeaderCellDef> Cust ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.customer_id}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="contractID">
+                <mat-header-cell *matHeaderCellDef> Contract ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.contract_id}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="start_date">
+                <mat-header-cell *matHeaderCellDef> Start Date</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.start_date}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="end_date">
+                <mat-header-cell *matHeaderCellDef> End Date</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.end_date}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>
+<div class="text-center">
+    <br>
+    <button [disabled]="isBtnDisabled" mat-raised-button (click)="sendOfferwithCustomer()">Send Offer</button>
+    <button [disabled]="isBtnDisabled" mat-button [mat-dialog-close]>Cancel</button>
+</div>

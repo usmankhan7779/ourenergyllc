@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." (keyup)="applyFilter($event.target.value)">
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abc">
+            <ng-container matColumnDef="n">
+                <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="dc">
+                <mat-header-cell *matHeaderCellDef> Changed Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.date_changed | date: 'shortTime'}}<br>{{element.date_changed | date: 'fullDate'}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="es">
+                <mat-header-cell *matHeaderCellDef> Execution Schedule </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <div style="display: inline" *ngIf="element.crontab">
+                        {{element.crontab?.hour}}:{{element.crontab?.minute}}, {{element.crontab?.day_of_month}}/{{element.crontab?.month_of_year}}
+                        <div *ngIf="element.crontab?.day_of_week == 0">Sunday</div>
+                        <div *ngIf="element.crontab?.day_of_week == 1">Monday</div>
+                        <div *ngIf="element.crontab?.day_of_week == 2">Tuesday</div>
+                        <div *ngIf="element.crontab?.day_of_week == 3">Wednesday</div>
+                        <div *ngIf="element.crontab?.day_of_week == 4">Thursday</div>
+                        <div *ngIf="element.crontab?.day_of_week == 5">Friday</div>
+                        <div *ngIf="element.crontab?.day_of_week == 6">Saturday</div>
+                    </div>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cs">
+                <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button (click)="openChangeScheduleDialog(element)">
+                <i matTooltip="Change Schedule" class="normalIcon material-icons">edit</i>
+            </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="s">
+                <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button *ngIf="element.enabled == true" (click)="ChangeStatus(element)">
+                <i matTooltip="Click to Deactivate" class="successIcon material-icons">check</i>
+            </button>
+                    <button mat-icon-button *ngIf="element.enabled == false" (click)="ChangeStatus(element)">
+                <i matTooltip="Click to Activate" class="failureIcon material-icons">close</i>
+            </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

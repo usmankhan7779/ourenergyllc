@@ -1,0 +1,192 @@
+<div class="container-fluid con-cumunity">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1>Community</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
+            <h1>OUR COMMUNITY OUTREACH PROGRAM</h1>
+            <p class="energy-tips-detail">
+                We are proud to be an active member of the beautiful Texas community. In the midst of budget shortfalls, increased expectations, and limited resources, non-profits and communities in Texas regularly struggle to balance the budget.
+            </p>
+            <p class="energy-tips-detail">
+                Recognizing these every day battles, we have developed the OUR Community program specifically to meet the needs of Texas non-profit organizations. This innovative program combines the power of cost savings with fund raising and development tools to give
+                back to the community.
+            </p>
+            <iframe src="//www.facebook.com/plugins/like.php?href=http://ourenergyllc.com/texas-community-outreach/&amp;layout=standard&amp;show_faces=false&amp;action=like&amp;colorscheme=light" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xm-12">
+            <img width="100%" src="https://storage.wattcrm.com/wattcrm-images/pics/community/OurComunitty1.jpg" alt="Our Energy">
+        </div>
+        <div class="col-lg-12">
+            <div class="title">
+                <h2 class="special-text">MAKE A DIFFERENCE IN THREE EASY STEPS!
+                </h2>
+                <h3 class="special-text" style="color: #cd0000;text-align: left">It’s so easy to participate in OUR Community!</h3>
+                <p class="margin">By choosing OUR Energy LLC as the Texas power company of your choice, you can help the Texas community.&nbsp; Let’s keep Texas as the best place to live in the USA!</p>
+                <p class="margin">OUR Community outreach program is an investment, by all parties, in the continued growth and future of your non-profit and the greater community.
+                    <a routerLink="/plan">Sign up</a> with OUR Energy Today!</p>
+            </div>
+            <div class="features_sec39">
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <ul data-wow-delay="0ms" data-wow-iteration="1">
+                        <li class="icon width-full">
+                            <i class="fa fa-check"></i>
+                        </li>
+                        <li class="text">
+                            <h3 class="nocaps">1. SELECT AN OUR ENERGY PLAN.</h3>
+                            <p>Simply select the
+                                <a routerLink="/plan">OUR Energy Plan</a> associated with the cause of your choice.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <ul data-wow-delay="0ms" data-wow-iteration="1">
+                        <li class="icon width-full">
+                            <i class="fa fa-check"></i>
+                        </li>
+                        <li class="text">
+                            <h3 class="nocaps">2. SAVE MONEY</h3>
+                            <p>Save money on quality Residential or Corporate electricity services. You’ve just upgraded to a better service for a better price and gave back to the community!</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                    <ul data-wow-delay="0ms" data-wow-iteration="1">
+                        <li class="icon width-full">
+                            <i class="fa fa-check"></i>
+                        </li>
+                        <li class="text">
+                            <h3 class="nocaps">3. THANK YOU FOR GIVING BACK TO THE COMMUNITY!</h3>
+                            <p>You’ve just helped make a positive impact! Proceeds will go to the support the worthy cause that you chose.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="container">
+    <h2 class="text-center">CONTACT OUR COMMUNITY OUTREACH</h2>
+    <h3 class="text-center">BECOME AN OUR ENERGY BROKER TODAY!</h3>
+    <hr />
+    <div class="cm-detail">
+        <p>Check out the Community section in the OUR Life Blog for the late news on past, current and future projects</p>
+        <p>Please feel free to use the form below to submit your non profit cause to the OUR Community Outreach program</p>
+    </div>
+    <div class="brokersforms">
+        <mat-card class="brokersUpdate">
+            <mat-card-header>
+                <div mat-card-avatar>
+                    <i class="material-icons">edit_mode</i>
+                </div>
+                <mat-card-title>TOGETHER WE CAN MAKE A DIFFERENCE!</mat-card-title>
+            </mat-card-header>
+            <div class="brokersalign">
+                <form [formGroup]="myForm" class="brokersdate" (ngSubmit)="submit()" #form>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter Your Name" formControlName=name>
+                        <mat-error *ngIf="f.name.errors?.required">You must enter a value</mat-error>
+                        <mat-error *ngIf="f.name.errors?.pattern">Invalid pattern</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter Your Email" formControlName=email>
+                        <mat-error *ngIf="f.email.errors?.required"> You must enter a value</mat-error>
+                        <mat-error *ngIf="f.email.errors?.pattern">Invalid pattern</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Enter Your Phone" formControlName=phone>
+                        <mat-error *ngIf="f.phone.errors?.required"> You must enter a value</mat-error>
+                        <mat-error *ngIf="f.phone.errors?.pattern">Invalid pattern</mat-error>
+                    </mat-form-field>
+                    <p>Please describe the Texas community cause that you are interested in having Our Energy sponsor or donate to. You may also list any questions that you may have regarding the OUR Community Outreach Program. We promise to review your
+                        request get back to you as soon as possible.</p>
+                    <mat-form-field>
+                        <textarea matInput placeholder="Enter Your Message" formControlName=message></textarea>
+                        <mat-error *ngIf="f.message.errors?.required"> You must enter a value</mat-error>
+                    </mat-form-field>
+                    <div class="recaptcha">
+                        <div>
+                            <app-recapcha></app-recapcha>
+                        </div>
+                        <div>
+                            <p class="error"> {{cap_result}}</p>
+                        </div>
+                        <div>
+                            <button mat-raised-button>Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
+                <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+            </div>
+        -->
+        </mat-card>
+    </div>
+</section>
+<section class="container community">
+    <h3>CHECK OUT OUR LATEST TEXAS COMMUNITY OUTREACH PROGRAMS</h3>
+    <mat-tab-group>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a class="tools-heading">All</a>
+            </ng-template>
+            <div class="community-tab col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <img width="100%" src="https://storage.wattcrm.com/wattcrm-images/pics/community/newhopehousing-1024x536.jpg" alt="newhopehousing">
+                <div class="" style="padding: 20px;">
+                    <h4 style="text-align: left">First Texas Electricity Outreach Project</h4>
+                    <p style="text-align: left" class="margin">FIRST TEXAS ELECTRICITY OUTREACH PROJECT: NEW HOPE HOUSING OUR Energy is proud to announce their very first community outreach project:&nbsp; New Hope Housing! Thank you New Hope Housing for giving us the opportunity to give back to
+                        the beautiful Texas community! ‪#‎powertochangelives‬ If you know of a project that you would like for us to [...]</p>
+                    <a routerLink="/blog/first-texas-electricity-outreach-project" class="comunity-read-more" title="Read more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a class="tools-heading">Our Community</a>
+            </ng-template>
+            <div class="community-tab col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <img width="100%" src="https://storage.wattcrm.com/wattcrm-images/pics/community/newhopehousing-1024x536.jpg" alt="newhopehousing">
+                <div class="" style="padding: 20px;">
+                    <h4 style="text-align: left">First Texas Electricity Outreach Project</h4>
+                    <p style="text-align: left" class="margin">FIRST TEXAS ELECTRICITY OUTREACH PROJECT: NEW HOPE HOUSING OUR Energy is proud to announce their very first community outreach project:&nbsp; New Hope Housing! Thank you New Hope Housing for giving us the opportunity to give back to
+                        the beautiful Texas community! ‪#‎powertochangelives‬ If you know of a project that you would like for us to [...]</p>
+                    <a routerLink="/blog/first-texas-electricity-outreach-project" class="comunity-read-more" title="Read more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <a class="tools-heading">Our Energy Buzz</a>
+            </ng-template>
+            <div class="community-tab col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <img width="100%" src="https://storage.wattcrm.com/wattcrm-images/pics/community/newhopehousing-1024x536.jpg" alt="newhopehousing">
+                <div class="" style="padding: 20px;">
+                    <h4 style="text-align: left">First Texas Electricity Outreach Project</h4>
+                    <p style="text-align: left" class="margin">FIRST TEXAS ELECTRICITY OUTREACH PROJECT: NEW HOPE HOUSING OUR Energy is proud to announce their very first community outreach project:&nbsp; New Hope Housing! Thank you New Hope Housing for giving us the opportunity to give back to
+                        the beautiful Texas community! ‪#‎powertochangelives‬ If you know of a project that you would like for us to [...]</p>
+                    <a routerLink="/blog/first-texas-electricity-outreach-project" class="comunity-read-more" title="Read more" target="_blank">Read more</a>
+                </div>
+            </div>
+        </mat-tab>
+
+    </mat-tab-group>
+</section>
+<div class="member-special">
+    <div class="container">
+        <h3 class="title">COMPARE TEXAS ENERGY RATES!</h3>
+        <p>Our Energy is much better than mere cheap electricity,
+            <br/> We make High Quality Texas Energy Affordable to You!</p>
+        <button class="btn btn-warning btn-lg" routerLink="/special">VIEW PLANS !
+        </button>
+    </div>
+</div>

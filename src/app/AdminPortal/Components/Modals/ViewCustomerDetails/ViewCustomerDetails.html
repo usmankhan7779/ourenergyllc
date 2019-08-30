@@ -1,0 +1,14 @@
+<form class="ValidationForm" autocomplete="off">
+    <h3 style="margin-bottom:10px;" class="text-center">{{dialogHeading}}</h3>
+    <mat-form-field>
+        <input matInput placeholder="Password" [formControl]="password" type="password" required [type]="hide ? 'password' : 'text'">
+        <mat-icon style="cursor:pointer" matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <div class="text-center">
+        <button [disabled]="submitBtnStatus" mat-raised-button color="primary" (click)="StatusChange()">{{dialogbtn}}</button>
+        <button [disabled]="submitBtnStatus" mat-button color="primary" [mat-dialog-close]>Close</button>
+    </div>
+</form>

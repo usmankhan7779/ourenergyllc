@@ -1,0 +1,354 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <mat-card>
+                <div class="analytics">
+                    <p class="headingg">
+                        Signed Up using Sigma Credentials
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.sigma_credential}}
+                    </p>
+                </div>
+                <div class="analytics">
+                    <p class="headingg">
+                        Signed Up using WattGenie
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.wattgenie_credential}}
+                    </p>
+                </div>
+                <div class="analytics">
+                    <p class="headingg">
+                        Total Customers Logged In Today
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.today_total_login}}
+                    </p>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="bot-card hidden-lg"></div>
+            <mat-card style="padding: 44px 24px 46px 23px !important;">
+                <div class="analytics">
+                    <p class="headingg">
+                        Total Sigma Active Users
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.total_sigma_active_users}}
+                    </p>
+                </div>
+                <div class="analytics">
+                    <p class="headingg">
+                        Total Sigma Active Sign Ups
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.total_sign_up}}
+                    </p>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <div class="bot-card hidden-lg"></div>
+            <mat-card style="padding: 44px 24px 46px 23px !important;">
+                <div class="analytics">
+                    <p class="headingg">
+                        OurEnergy Unsigned Customers
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.total_ourenergy_unsigned_customer}}
+                    </p>
+                </div>
+                <div class="analytics">
+                    <p class="headingg">
+                        OurEnergy Unsigned Customers in WattGenie
+                    </p>
+                    <p class="valuuuee">
+                        {{analytics?.total_ourenergy_unsigned_signup}}
+                    </p>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="bot-card"></div>
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>Enrollment Email Configuration</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="PricingMatrix-Table">
+                                <h4 style="margin-bottom: 15px;" class="text-center">Change Enrollment Email Setting Below</h4>
+                                <div style="display: flex; flex-wrap: wrap; justify-content: center">
+                                    <button style="margin-right:15px" (click)="viewImage()" mat-raised-button color="primary">View Image</button>
+                                    <button style="margin-right:15px" (click)="changeImage()" mat-raised-button color="primary">Change Image</button>
+                                    <button (click)="testEmail()" mat-raised-button color="primary">Test Email</button>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="row">
+                    <div class="bot-card"></div>
+                    <mat-card class="mat-elevation-z3">
+                        <makepayment></makepayment>
+                    </mat-card>
+                </div>
+                <div class="row">
+                    <div class="bot-card"></div>
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>Web/Mobile Tab Settings</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="PricingMatrix-Table col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <mat-table #table [dataSource]="tabDataSource">
+                                    <ng-container matColumnDef="name">
+                                        <mat-header-cell *matHeaderCellDef> Web Tabs </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="status">
+                                        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                                        <mat-cell *matCellDef="let element; let ind = index;">
+                                            <mat-slide-toggle (change)="changeTabStatus(element, ind)" [disabled]="disabledTab[element.id]" checked="{{element.status}}"></mat-slide-toggle>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <mat-header-row *matHeaderRowDef="tabDisplayedColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: tabDisplayedColumns;"></mat-row>
+                                </mat-table>
+                            </div>
+                            <div class="PricingMatrix-Table col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                                <mat-table #table [dataSource]="mobTabDataSource">
+                                    <ng-container matColumnDef="name">
+                                        <mat-header-cell *matHeaderCellDef> Mobile Tabs </mat-header-cell>
+                                        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                                    </ng-container>
+                                    <ng-container matColumnDef="status">
+                                        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                                        <mat-cell *matCellDef="let element; let ind = index;">
+                                            <mat-slide-toggle (change)="changeMobTabStatus(element, ind)" [disabled]="disabledMobTab[element.id]" checked="{{element.status}}"></mat-slide-toggle>
+                                        </mat-cell>
+                                    </ng-container>
+                                    <mat-header-row *matHeaderRowDef="mobTabDisplayedColumns"></mat-header-row>
+                                    <mat-row *matRowDef="let row; columns: mobTabDisplayedColumns;"></mat-row>
+                                </mat-table>
+                            </div>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="row">
+                    <div class="bot-card"></div>
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>TDSP Rates</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PricingMatrix-Table my">
+                            <mat-table #table [dataSource]="tdspRatesDataSource">
+                                <ng-container matColumnDef="tdsp-name">
+                                    <mat-header-cell *matHeaderCellDef> TDSP </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.utility_id__nick_name}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="pm">
+                                    <mat-header-cell *matHeaderCellDef> Charges per Month </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.per_month ? '$' + element.per_month : ''}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="pk">
+                                    <mat-header-cell *matHeaderCellDef> Charges per kWh </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.per_kwh ? element.per_kwh + '¢' : ''}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="actions">
+                                    <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let ind = index" style="background-color:#fff; text-align: right;">
+                                        <button mat-icon-button (click)="editTdspRate(element)" class="mat-icon-button "><i class="material-icons normalIcon">edit</i></button>
+                                    </mat-cell>
+                                </ng-container>
+                                <mat-header-row *matHeaderRowDef="tdspColumns" color="primary"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: tdspColumns;"></mat-row>
+                            </mat-table>
+                        </div>
+                    </mat-card>
+                    <div class="bot-card"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="bot-card"></div>
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>Integration Settings</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PricingMatrix-Table my">
+                            <mat-table #table [dataSource]="dataSource" class="abc">
+                                <ng-container matColumnDef="id">
+                                    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="bypass">
+                                    <mat-header-cell *matHeaderCellDef> By Pass </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let ind = index;">
+                                        <mat-slide-toggle (change)="bypassValue(element, ind)" [disabled]="disabledBypass[element.id]" checked="{{element.bypass}}"></mat-slide-toggle>
+                                    </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="us">
+                                    <mat-header-cell *matHeaderCellDef> UA </mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let ind = index;">
+                                        <mat-slide-toggle (change)="uaValue(element, ind)" [disabled]="disabledUA[element.id]" checked="{{element.ua}}"></mat-slide-toggle>
+                                    </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="date">
+                                    <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.date_created | date}} </mat-cell>
+                                </ng-container>
+                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                            </mat-table>
+                        </div>
+                    </mat-card>
+                </div>
+                <div class="row">
+                    <div class="bot-card"></div>
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>Enrollment Session Expiry</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PricingMatrix-Table">
+                            <h4 class="text-center">Change the session expiry time of customer enrollment</h4>
+                            <div style="display: flex; flex-wrap: wrap; justify-content: center">
+                                <h4 style="margin-bottom: 15px; font-size: 30px; font-weight: bold" class="text-center">{{hh}} : {{mm}}</h4>
+                                <button style="margin-top: 5px; margin-left: 10px;" mat-icon-button (click)="changeSessionExpiry()">
+                                    <i matTooltip="Change Expiry Duration" class="normalIcon material-icons">edit</i>
+                                </button>
+                            </div>
+                        </div>
+                    </mat-card>
+                    <div class="bot-card"></div>
+                </div>
+                <div class="row">
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>Advantage Prime Settings</h3>
+                                </div>
+                                <button mat-icon-button (click)="addAdv()"><i style="margin: 0px !important; font-size: 35px;" class="material-icons">add_circle_outline</i></button>
+                            </div>
+                        </div>
+                        <div class="PricingMatrix-Table my">
+                            <mat-table #table [dataSource]="advPriceDataSource" style="width: 1400px">
+                                <ng-container matColumnDef="year">
+                                    <mat-header-cell *matHeaderCellDef>Month/Year</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.month}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="centerpoint">
+                                    <mat-header-cell *matHeaderCellDef>Centerpoint</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.centerpoint}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="oncor">
+                                    <mat-header-cell *matHeaderCellDef> Oncor </mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.oncor}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="aep_central">
+                                    <mat-header-cell *matHeaderCellDef>AEP Central</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.aep_central}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="aep_north">
+                                    <mat-header-cell *matHeaderCellDef>AEP North</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.aep_north}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="tnmp">
+                                    <mat-header-cell *matHeaderCellDef style="margin-right: 190px;">TNMP</mat-header-cell>
+                                    <mat-cell *matCellDef="let element" style="margin-right: 190px;"> {{element.tnmp}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="actions">
+                                    <mat-header-cell *matHeaderCellDef style="width: 222px; background-color:#fff; text-align: right; position: absolute; right: 0;"><span style="color: #fff">Actions</span></mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let ind = index" style="background-color:#fff; text-align: right; position: absolute; right: 0;">
+                                        <button [disabled]="move2BtnStatus[element.id]" *ngIf="ind != 0" mat-icon-button (click)="moveAdv(element, ind, (ind - 1))"><i class="material-icons normalIcon">keyboard_arrow_up</i></button>
+                                        <button *ngIf="ind == 0" mat-icon-button><i class="material-icons nullIcon"></i></button>
+                                        <button [disabled]="move2BtnStatus[element.id]" *ngIf="(ind + 1) != advPriceDataSource.data.length" mat-icon-button (click)="moveAdv(element, ind, (ind + 1))"><i class="material-icons normalIcon">keyboard_arrow_down</i></button>
+                                        <button *ngIf="(ind + 1) == advPriceDataSource.data.length" mat-icon-button><i class="material-icons nullIcon"></i></button>
+                                        <button mat-icon-button (click)="editAdv(element)"><i class="material-icons normalIcon">edit</i></button>
+                                        <button mat-icon-button (click)="removeAdv(element)" style="margin-right: 48px;"><i class="material-icons failureIcon">delete</i></button>
+                                    </mat-cell>
+                                </ng-container>
+                                <mat-header-row *matHeaderRowDef="advPriceColumns" color="primary"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: advPriceColumns;"></mat-row>
+                            </mat-table>
+                        </div>
+                    </mat-card>
+                    <div class="bot-card"></div>
+                </div>
+                <div class="row">
+                    <mat-card class="mat-elevation-z3">
+                        <div class="DashboardAdminPortal">
+                            <div class="Heading">
+                                <div>
+                                    <i style="font-size: 2.1em" class="fa fa-cogs"></i>
+                                    <h3>M2M Pricing Settings</h3>
+                                </div>
+                                <button mat-icon-button (click)="addM2mPlan()"><i style="margin: 0px !important; font-size: 35px;" class="material-icons">add_circle_outline</i></button>
+                            </div>
+                        </div>
+                        <!-- style="margin: 0px !important; font-size: 35px;" -->
+                        <div class="PricingMatrix-Table my">
+                            <mat-table #table [dataSource]="m2mDataSource">
+                                <ng-container matColumnDef="month">
+                                    <mat-header-cell *matHeaderCellDef>Month/Year</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.month}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="price">
+                                    <mat-header-cell *matHeaderCellDef>Price</mat-header-cell>
+                                    <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
+                                </ng-container>
+                                <ng-container matColumnDef="actions">
+                                    <mat-header-cell *matHeaderCellDef style="width: 222px; background-color:#fff; text-align: right; position: absolute; right: 0;"></mat-header-cell>
+                                    <mat-cell *matCellDef="let element; let ind = index" style="background-color:#fff; text-align: right; position: absolute; right: 0;">
+                                        <button [disabled]="moveBtnStatus[element.id]" *ngIf="ind != 0" mat-icon-button (click)="moveM2m(element, ind, (ind - 1))"><i class="material-icons normalIcon">keyboard_arrow_up</i></button>
+                                        <button [disabled]="moveBtnStatus[element.id]" *ngIf="(ind + 1) != m2mDataSource.data.length" mat-icon-button (click)="moveM2m(element, ind, (ind + 1))"><i class="material-icons normalIcon">keyboard_arrow_down</i></button>
+                                        <button *ngIf="(ind + 1) == m2mDataSource.data.length" mat-icon-button><i class="material-icons nullIcon"></i></button>
+                                        <button mat-icon-button (click)="editM2mPlan(element)" class="mat-icon-button "><i class="material-icons normalIcon">edit</i></button>
+                                        <button mat-icon-button (click)="removeM2mPlan(element)" style="margin-right: 48px;"><i class="material-icons failureIcon">delete</i></button>
+                                    </mat-cell>
+                                </ng-container>
+                                <mat-header-row *matHeaderRowDef="m2mColumns" color="primary"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: m2mColumns;"></mat-row>
+                            </mat-table>
+                        </div>
+                    </mat-card>
+                    <div class="bot-card"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

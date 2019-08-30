@@ -1,0 +1,96 @@
+<div class="container">
+    <h1 class="text-center">Deposit Submission</h1>
+    <br>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="row contains">
+                <h3>Product Details</h3>
+                <div style="font-size: 20px; margin: 15px 0px 0px 15px;">
+                    {{response?.product_name}}
+                </div>
+                <div style="font-size: 16px; margin: 10px 10px 15px 15px;">
+                    {{response?.display_info}}
+                </div>
+                <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Rate" [value]="response?.rate ? (response?.rate + '¢ per kWh') : ''" disabled>
+                </mat-form-field>
+                <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Contract Term" [value]="response?.term" disabled>
+                </mat-form-field>
+                <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Early Termination Fee" [value]="response?.display_termination_fee ? ('$' + response?.display_termination_fee) : ''" disabled>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="row contains">
+                <h3>Customer Details</h3>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Name" [value]="response?.cust_firstname ? (response?.cust_firstname + ' ' + response?.cust_lastname) : ''" disabled>
+                </mat-form-field>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Account No." [value]="response?.use_cust_id" disabled>
+                </mat-form-field>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Email" [value]="response?.email_address" disabled>
+                </mat-form-field>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Phone No." [value]="response?.phone1" disabled>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <br>
+    <h4>You are required to submit a deposit of $300.00</h4>
+    <br>
+    <form [formGroup]="sendingData" (ngSubmit)="submit()">
+        <div mat-dialog-content>
+            <div class="row">
+                <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Card Holder Name" formControlName="cust_name" maxlength="50">
+                </mat-form-field>
+                <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <mat-select placeholder="Credit Card Type" formControlName="de_card_type" required>
+                        <mat-option [value]="">--</mat-option>
+                        <mat-option [value]="cardtype" *ngFor="let cardtype of cards">{{cardtype}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="sendingData.controls.de_card_type.hasError('required')">Card Type is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Card No." formControlName="de_cc_no" maxlength="19" required credit-card>
+                    <mat-error *ngIf="sendingData.controls.de_cc_no.hasError('required')">Card No. is required</mat-error>
+                    <mat-error *ngIf="sendingData.controls.de_cc_no.hasError('pattern')">Invalid Format</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="row">
+                <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <input matInput placeholder="CCV" formControlName="de_security_code" maxlength="3" required>
+                    <mat-error *ngIf="sendingData.controls.de_security_code.hasError('required')">CCV is required</mat-error>
+                    <mat-error *ngIf="sendingData.controls.de_security_code.hasError('pattern')">Invalid Format</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <mat-select placeholder="Expiry Month" formControlName="de_expiry_MM" required>
+                        <mat-option [value]="">--</mat-option>
+                        <mat-option [value]="x.value" *ngFor="let x of months">{{x.viewValue}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="sendingData.controls.de_expiry_MM.hasError('required')">Expiry Month is required</mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                    <mat-select placeholder="Expiry Year" formControlName="de_expiry_YYYY" required>
+                        <mat-option [value]="">--</mat-option>
+                        <mat-option [value]="y" *ngFor="let y of years">{{y}}</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="sendingData.controls.de_expiry_YYYY.hasError('required')">Expiry Year is required</mat-error>
+                </mat-form-field>
+                <mat-slide-toggle style="margin-top: 20px;" class="col-lg-3 col-md-3 col-sm-12 col-xs-12" formControlName="de_autopay" color="primary"><b>Auto Pay</b></mat-slide-toggle>
+            </div>
+        </div>
+        <div class="text-center">
+            <br>
+            <button mat-raised-button [disabled]="btnDisabled" type="submit">Pay Now</button>
+            <button mat-raised-button [disabled]="btnDisabled" type="button" (click)="cancel()">Cancel</button>
+        </div>
+        <br>
+        <br>
+    </form>
+</div>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <button mat-icon-button matTooltip="Refresh" matSuffix style="font-size: 27px;" (click)="refresh()">
+                <mat-icon>refresh</mat-icon>
+            </button>
+            <input placeholder="Search" matInput [formControl]="searchControl">
+            <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+            <mat-icon>close</mat-icon>
+        </button>
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="20" [pageSizeOptions]="[10,20]" [showFirstLastButtons]="true"> </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abccc">
+            <ng-container matColumnDef="bn">
+                <mat-header-cell *matHeaderCellDef> Batch No </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.batch_no}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="e">
+                <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="r">
+                <mat-header-cell *matHeaderCellDef> Response </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.response}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>`

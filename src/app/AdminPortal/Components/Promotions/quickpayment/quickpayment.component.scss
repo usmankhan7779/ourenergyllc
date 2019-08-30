@@ -1,0 +1,95 @@
+body {
+    overflow: hidden;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 10px 10px 0;
+    display: flex;
+    flex: 50;
+}
+
+.mat-column-1 {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 15% !important;
+}
+
+.mat-form-field {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mat-column-sb {
+    flex: 0 0 50px;
+}
+
+.abc {
+    max-width: 4000px;
+    min-width: 800px;
+}
+
+.accounts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .one-account {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid #cdcdcd;
+        padding: 0 20px;
+        align-items: center;
+        .account-id {
+            flex: 1;
+        }
+    }
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}
+
+.tab-group {
+    font-size: 16px;
+}
+
+.tab-content {
+    padding: 18px;
+}
+
+.tab-group .mat-tab-label {
+    height: 90px;
+}
+
+.header {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: black
+}
+
+.mat-form-field {
+    width: 100%;
+    padding: 10px 10px 0px 10px;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+}
+
+.refreshIcons {
+    font-size: 30px;
+}
+
+::ng-deep .mat-input-placeholder {
+    color: #706f6f;
+    font-size: 16px;
+}

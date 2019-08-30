@@ -1,0 +1,449 @@
+.CustomerInfo {
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.mat-list .mat-list-item {
+    height: 35px;
+}
+
+.AddAccount {
+    .AddForm {
+        display: flex;
+        flex-direction: column;
+        mat-form-field {
+            width: 100%;
+        }
+        .AddAccountButton {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            button {
+                background-color: #000;
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+        mat-form-field {
+            mat-icon {
+                position: relative;
+                top: -10px;
+            }
+        }
+    }
+    .spinner {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding: 40px 10px 15px;
+    }
+}
+
+.edit-btn {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #191919;
+    font-size: 18px;
+    border-radius: 25px;
+    padding: 5px 30px;
+}
+
+.right-side-menu {
+    color: #000;
+    background-color: #fff;
+    text-align: center;
+    padding: 0 0 24px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    label {
+        background-color: #fff;
+    }
+}
+
+.right-side-menu .bgImag {
+    width: 100%;
+}
+
+.right-side-menu .bgImag img {
+    vertical-align: middle;
+    height: 130px;
+}
+
+.right-side-menu .profilepic {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.right-side-menu .profilepic img {
+    width: 180px;
+    height: 180px;
+    background-color: #fff;
+    border-radius: 100px;
+    border: 2px solid #3d1e1e;
+    margin-top: -70px;
+}
+
+.right-side-menu .content {
+    padding: 0 20px 20px 20px;
+}
+
+.right-side-menu .content h3 {
+    text-transform: capitalize;
+}
+
+.image-upload {
+    margin-top: -20px;
+    border-radius: 25px;
+    i {
+        border-radius: 25px;
+        font-size: 35px;
+        cursor: pointer;
+        color: #3d1e1e
+    }
+    label {
+        border-radius: 30px;
+        padding: 0px;
+    }
+}
+
+.image-upload>input {
+    display: none;
+}
+
+.personalInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+.personalInfo mat-list:nth-child(1) {
+    font-weight: bold;
+    mat-list-item {
+        font-size: 14px;
+    }
+}
+
+.personalInfo mat-list:nth-child(2) {
+    margin-left: 20px;
+    font-weight: 600;
+    mat-list-item {
+        font-size: 14px;
+        color: rgb(87, 87, 87);
+    }
+}
+
+::ng-deep .mat-ink-bar {
+    border-top: 3px solid #cd0000;
+}
+
+@media only screen and (max-width: 770px) {
+    .right-side-menu .bgImag {
+        margin-top: 25px;
+    }
+    .personalInfo mat-list:nth-child(2) {
+        margin-left: 0;
+    }
+}
+
+.row mat-card {
+    padding: 20px 10px;
+}
+
+main {
+    margin: 0 auto;
+    padding: 0px;
+    background: #fff;
+}
+
+section {
+    display: none;
+    padding: 20px 0 0;
+    border-top: 1px solid #ddd;
+}
+
+input {
+    display: none;
+}
+
+#tab1:checked~#content1,
+#tab2:checked~#content2,
+#tab3:checked~#content3,
+#tab4:checked~#content4 {
+    display: block;
+}
+
+p {
+    color: #000000;
+    font-weight: bold;
+}
+
+h2 {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 650px) {
+    label {
+        font-size: 0;
+    }
+    label:before {
+        margin: 0;
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    label {
+        padding: 15px;
+    }
+}
+
+.heading {
+    border-bottom: 4px ridge #bebec2;
+    margin-bottom: 20px;
+    border-radius: 7px;
+}
+
+i {
+    font-size: 40px;
+    color: #757575;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 65px;
+    margin-left: 5px;
+}
+
+.editPersonalInfo {
+    display: flex;
+    flex-direction: column;
+    h3 {
+        color: #191919;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .innerparent {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    mat-label {
+        font-weight: bold;
+        font-size: 15px;
+        color: #585858;
+    }
+    .edit-icon {
+        font-size: 22px;
+        cursor: pointer;
+        color: #b80606;
+        border-radius: 50%;
+        padding: 4px;
+    }
+}
+
+.example-header-image {
+    background-image: url('/assets/img/Icons/customer.png');
+    background-size: cover;
+}
+
+.example-header-image2 {
+    background-image: url('/assets/img/Icons/contact.png');
+    background-size: cover;
+}
+
+.example-header-image3 {
+    background-image: url('/assets/img/Icons/email.png');
+    background-size: cover;
+}
+
+.example-header-image4 {
+    background-image: url('/assets/img/Icons/utility.png');
+    background-size: cover;
+}
+
+.example-header-image5 {
+    background-image: url('/assets/img/Icons/faq.png');
+    background-size: cover;
+}
+
+.example-card {
+    flex-grow: 1;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    mat-card-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 0px !important;
+    }
+    .mat-card-content {
+        margin-bottom: 0px !important;
+    }
+    button {
+        background-color: #000;
+        border-radius: 25px;
+        font-size: 18px;
+        padding: 0px 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+    mat-form-field {
+        font-size: 16px;
+        font-weight: bold;
+    }
+    mat-list-item {
+        font-weight: bold;
+    }
+    a {
+        cursor: pointer;
+    }
+    a mat-list-item:hover {
+        color: #cd0000;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    img {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        padding: 20px;
+        margin: 10px;
+    }
+}
+
+.mat-dialog-title {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px;
+}
+
+mat-panel-title {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.Understandbill {
+    display: flex;
+    flex-direction: column;
+    img {
+        width: 100%;
+    }
+    .image-border {
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+@media (max-width: 425px) {
+    .email-list {
+        mat-list mat-list-item {
+            font-size: 11px;
+        }
+    }
+}
+
+.LinkedAccounts {
+    margin-top: 20px;
+    .noaccountlinked {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .table {
+            mat-cell {
+                font-weight: normal;
+            }
+        }
+        font-size: 22px;
+    }
+    .spinner {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.thumbnailImage {
+    height: 100%;
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.col-container {
+    margin: 10px -10px;
+    display: flex;
+    flex-direction: row;
+    .col {
+        background-color: #fff;
+        flex: 1;
+        margin: 10px;
+        flex-direction: row;
+        padding: 10px;
+        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        .infoBox {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
+            .dashboardInfo {
+                padding: 10px;
+                width: 100%;
+                mat-card {
+                    width: 100%;
+                }
+                mat-card-header {
+                    mat-card-title {
+                        font-size: 20px;
+                        font-weight: 600;
+                    }
+                }
+                .accInfo {
+                    display: flex;
+                    flex-direction: row;
+                    font-weight: bold;
+                    font-size: 14px;
+                    margin-bottom: 0px;
+                    mat-list {
+                        mat-list-item {
+                            height: 32px;
+                        }
+                    }
+                }
+                .payment {
+                    font-weight: bold;
+                    font-size: 20px;
+                    a {
+                        cursor: pointer;
+                        color: #000;
+                        text-decoration: underline;
+                    }
+                    a:hover {
+                        color: #cd0000;
+                        text-decoration: none;
+                    }
+                    .Address {
+                        height: -10px;
+                        margin-left: 20px;
+                        mat-list-item {
+                            height: 30px;
+                        }
+                    }
+                    span {
+                        margin-right: 5px;
+                    }
+                    i {
+                        margin-left: 15px;
+                        font-style: italic;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

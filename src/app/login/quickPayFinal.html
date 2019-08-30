@@ -1,0 +1,83 @@
+<form [formGroup]=quickForm #quick>
+    <h3 class="title"> Quick Pay My Bill </h3>
+    <p class="cust-info">{{data.cust_firstname}} {{data.cust_lastname}}, Account No. {{data.cust_id}} has a current balance of {{(data.due_amount_unposted.toString())[0] == '-' ? '-$' + data.due_amount_unposted.toString().slice(1) : '$' + data.due_amount_unposted}} due on
+        {{data.due_date | date : 'MM/dd/yyyy'}}.</p>
+    <p *ngIf="data.last_paid_amount" class="cust-info">A payment of ${{data.last_paid_amount}} was recieved on {{data.last_pay_date | date: 'MM/dd/yyyy'}}.</p>
+    <br>
+    <div class="row">
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <span matPrefix>$&nbsp;</span>
+            <input matInput placeholder="Payment Amount" formControlName="sched_pay_amount">
+            <mat-error *ngIf="quickForm.controls.sched_pay_amount.errors?.required"> Payment Amount is required</mat-error>
+            <mat-error *ngIf="quickForm.controls.sched_pay_amount.hasError('pattern')"> Invalid Format </mat-error>
+            <mat-error *ngIf="!quickForm.controls.sched_pay_amount.hasError('pattern') && quickForm.controls.sched_pay_amount.hasError('min')"> Invalid Amount </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <mat-select placeholder="Card Type" formControlName="card_type">
+                <mat-option [value]="null">--</mat-option>
+                <mat-option value="VISA">Visa</mat-option>
+                <mat-option value="MASTER">Master</mat-option>
+                <mat-option value="DISCOVER">Discover</mat-option>
+            </mat-select>
+            <mat-error *ngIf="quickForm.controls.card_type.hasError('required')"> Card Type is required </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <input matInput placeholder="Card No." formControlName="card_no" maxlength="19" credit-card>
+            <mat-error *ngIf="quickForm.controls.card_no.hasError('required')"> Card No. is required </mat-error>
+            <mat-error *ngIf="quickForm.controls.card_no.hasError('pattern')"> Invalid Format </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-1 col-md-1 col-sm-6 col-xs-12">
+            <input matInput placeholder="CCV" formControlName="acct_no_code" maxlength="3">
+            <mat-error *ngIf="quickForm.controls.acct_no_code.hasError('required')"> CCV is required </mat-error>
+            <mat-error *ngIf="quickForm.controls.acct_no_code.hasError('pattern')"> Invalid Format </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <mat-select placeholder="Expiry Month" formControlName="exp_mm">
+                <mat-option *ngFor="let m of months" [value]="m.value">
+                    {{ m.viewValue }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="quickForm.controls.exp_mm.hasError('required')"> Expiry Month is required </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-2 col-md-2 col-sm-6 col-xs-12">
+            <mat-select placeholder="Expiry Year" formControlName="exp_yyyy">
+                <mat-option *ngFor="let y of years" [value]="y">
+                    {{ y }}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="quickForm.controls.exp_yyyy.hasError('required')"> Expiry Year is required </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="row" style="padding-top: 15px; padding-bottom: 15px;">
+        <mat-checkbox style="margin-left: 20px" (change)="changeAddress($event)">Use Current Mailing Address</mat-checkbox>
+    </div>
+    <div class="row">
+        <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <input matInput placeholder="Name" formControlName="cust_name" maxlength="50">
+            <mat-error *ngIf="quickForm.controls.cust_name.hasError('required')"> Name is required </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <input matInput placeholder="Address" formControlName="address_2" maxlength="50">
+            <mat-error *ngIf="quickForm.controls.address_2.hasError('required')"> Address is required </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <input matInput placeholder="City" formControlName="city" maxlength="20">
+            <mat-error *ngIf="quickForm.controls.city.hasError('required')"> City is required </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <input matInput placeholder="State" formControlName="state" maxlength="20">
+            <mat-error *ngIf="quickForm.controls.state.hasError('required')"> State is required </mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <input matInput placeholder="Zip Code" formControlName="zip" maxlength="5">
+            <mat-error *ngIf="quickForm.controls.zip.hasError('required')"> Zip Code is required </mat-error>
+            <mat-error *ngIf="quickForm.controls.zip.hasError('pattern') || quickForm.controls.zip.hasError('min')"> Invalid Format </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="text-center">
+        <button mat-button (click)="submit()" [disabled]="sbmtBtn" class="btn1">Pay Now</button>
+        <button mat-button (click)="cancel()" class="btn2">Cancel</button>
+    </div>
+</form>

@@ -1,0 +1,57 @@
+<mat-card class="fix">
+    <div>
+        <mat-form-field>
+            <input matInput placeholder="Search here" (keyup)="applyFilter($event.target.value)">
+            <span matPrefix><img src="../assets/img/Icons/Notices-icon.png" class="images"> </span>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-paginator #noticePaginator [pageSize]="10" [pageSizeOptions]="[10,20]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</mat-card>
+<mat-card class="pay-bill-Table">
+    <mat-table #table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="pdf">
+            <mat-header-cell *matHeaderCellDef>Download Notice</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <i class="material-icons" matTooltip="Download Notice" (click)="downloadNotice(element)">picture_as_pdf</i>
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="a">
+            <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+            <mat-cell *matCellDef="let element"> ${{element?.disconnect_notice.amount}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="bn">
+            <mat-header-cell *matHeaderCellDef>Bill No.</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element?.disconnect_notice.bill_no}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="bd">
+            <mat-header-cell *matHeaderCellDef>Bill Due</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element?.disconnect_notice.bill_due | date:'dd-MMM-y'}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="ed">
+            <mat-header-cell *matHeaderCellDef>Extension Date</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element?.disconnect_notice.extension_date | date:'dd-MMM-y'}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nd">
+            <mat-header-cell *matHeaderCellDef>Notice Date</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element?.notice_date | date:'dd-MMM-y'}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nn">
+            <mat-header-cell *matHeaderCellDef>Notice No.</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element?.notice_no}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nt">
+            <mat-header-cell *matHeaderCellDef>Notice Type</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element?.notice_type}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <!-- <h2>{{error}}</h2> -->
+    <h2>{{noRecords}}</h2>
+    <div class="spinner" *ngIf="showSpinner">
+        <img src="../../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+    </div>
+</mat-card>

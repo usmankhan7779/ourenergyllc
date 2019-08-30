@@ -1,0 +1,19 @@
+<div class="PromoCodes">
+    <h3>Products</h3>
+    <div *ngFor="let value of products" class="products">
+        <div class="productIcon">
+            <div class="Icon">
+                <i class="fa fa-star"></i>
+            </div>
+            <div class="product">
+                <span><strong>No:</strong> {{value.num}} </span>
+                <span><strong>Promo ID: </strong> {{value.promo_id}} </span>
+                <span><strong>Promo Code: </strong> {{value.promo_code}} </span>
+                <span><strong>Start Date: </strong> {{value.promo_start_date}} </span>
+            </div>
+        </div>
+        <div class="button">
+            <button mat-raised-button color="primary">Renew</button>
+        </div>
+    </div>
+</div>

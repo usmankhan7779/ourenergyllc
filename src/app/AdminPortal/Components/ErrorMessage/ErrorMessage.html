@@ -1,0 +1,44 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." #searchBar [(ngModel)]="searchParameter" />
+            <button (click)="addErrorMessageDialog()" matSuffix mat-icon-button>
+                <mat-icon style="font-size: 30px;" matTooltip="Add Error Message">add_box</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="table">
+            <ng-container matColumnDef="a">
+                <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button (click)="editErrorMessage(element)">
+                        <i matTooltip="Edit Error Message" class="normalIcon material-icons">edit</i>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Functionality </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.functionality}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="customerID">
+                <mat-header-cell *matHeaderCellDef> Message</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.msg}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="contact">
+                <mat-header-cell *matHeaderCellDef> Created By</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

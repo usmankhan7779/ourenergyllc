@@ -1,0 +1,13 @@
+<h3 class="headingg">
+    Change Bill Delivery
+</h3>
+<br>
+<mat-radio-group class="delivery-radio-group" [(ngModel)]="data.deliveryOption">
+    <mat-radio-button class="delivery-radio-button" *ngFor="let mode of modes" [value]="mode.value">
+        {{mode.viewValue}}
+    </mat-radio-button>
+</mat-radio-group>
+<div class="contactbutton-row">
+    <button mat-button [disabled]="sbmtBtnStatus" class="btn1" (click)="submit()">Submit</button>
+    <button mat-button [disabled]="sbmtBtnStatus" class="btn2" mat-dialog-close>Cancel</button>
+</div>

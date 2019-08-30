@@ -1,0 +1,46 @@
+.mat-form-field {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mat-input-element:disabled {
+    color: #000;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn {
+    border: 2px solid #555;
+    color: #555;
+    background-color: white;
+    padding: 5px 17px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}
+
+.mat-dialog-actions {
+    justify-content: center;
+}
+
+h3 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-weight: bold
+}

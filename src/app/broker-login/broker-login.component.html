@@ -1,0 +1,44 @@
+<div class="background">
+    <mat-card class="mainCard">
+        <mat-card>
+            <h3>Sign In to Your Account</h3>
+        </mat-card>
+        <form>
+            <div class="inputFields">
+                <mat-form-field>
+                    <input matInput [(ngModel)]="email" [formControl]="validate_email" required>
+                    <mat-error *ngIf="validate_email.invalid">{{getErrorMessageEmail()}}</mat-error>
+                    <mat-placeholder>Enter Email </mat-placeholder>
+                </mat-form-field>
+                <mat-form-field hintLabel="Max 12 Min 8 characters">
+                    <input matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" required [formControl]="validate_password" #input maxlength="12">
+                    <mat-error *ngIf="validate_password.invalid">{{getErrorMessagePassword()}}</mat-error>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    <mat-placeholder>Enter Password </mat-placeholder>
+                </mat-form-field>
+            </div>
+            <!-- <div class="recaptcha">
+                <div>
+                    <blackgeeks-recaptcha></blackgeeks-recaptcha>
+                </div>
+                <div>
+                    <p class="error"> {{cap_result}}</p>
+                </div>
+            </div>
+            <div class="spinner" *ngIf="showSpinner">
+                <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+            </div> -->
+            <button mat-button class="button">Sign In</button>
+        </form>
+        <div class="footer">
+            <div>
+                <mat-checkbox color="warn">
+                    <span class="mat-checkbox">Stay Signed In</span>
+                </mat-checkbox>
+                <a class="space">
+                    <span> Forgot Password?</span>
+                </a>
+            </div>
+        </div>
+    </mat-card>
+</div>

@@ -1,0 +1,24 @@
+<form [formGroup]="tosForm">
+    <h3 class="text-center">Edit Terms of Service</h3>
+    <div class="row">
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <input matInput placeholder="File Name" formControlName=file_name>
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <input matInput placeholder="Version" formControlName=version>
+        </mat-form-field>
+        <div style="margin-top: 10px;" class="upload-btn-wrapper col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <button mat-raised-button color="primary" type="button">Upload TOS</button>
+            <input type="file" placeholder="Upload TOS" (change)="onTosFileSelected($event)">
+            <div style="display: inline; padding-left: 15px; font-size: 16px;"> {{tos}} </div>
+        </div>
+        <mat-slide-toggle color="primary" formControlName=status class="spacing col-lg-3 col-md-3 col-sm-12 col-xs-12"><b>Status</b></mat-slide-toggle>
+        <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <textarea matInput placeholder="Description" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5" formControlName=descriptions></textarea>
+        </mat-form-field>
+    </div>
+</form>
+<div class="text-center">
+    <button [disabled]="isBtnDisabled" mat-raised-button (click)="submit()">Save</button>
+    <button [disabled]="isBtnDisabled" mat-button [mat-dialog-close]>Cancel</button>
+</div>

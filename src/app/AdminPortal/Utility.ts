@@ -1,0 +1,15 @@
+export const AdminRoutes = [
+    { icon: 'Home', name: 'Dashboard', route: '', id: '1234567', },
+    { icon: 'Customers', name: 'Customers', route: 'customers', id: '1234567', },
+    { icon: 'Payments', name: 'Payments', route: 'promotions', id: '1234567', },
+    { icon: 'Reneval-administration', name: 'Renewal Adminstration', route: 'renewaladministrtion/offers', id: '1234567', },
+    // { icon: 'user-md', name: 'Cron Jobs', route: 'crontasks', id: '1234567', },
+    { icon: 'Product', name: 'Products', route: 'viewproducts', id: '1234567', },
+    { icon: 'Contact', name: 'Contact Us', route: 'contactus', id: '1234567', },
+    { icon: 'Authorization', name: 'Authorization', route: 'authorize', id: '1234567', },
+    { icon: 'Managetos', name: 'Manage TOS', route: 'tos', id: '1234567', },
+    { icon: 'Manage-Qr-codes', name: 'Manage Promo Codes', route: 'promo', id: '1234567', },
+    { icon: 'Session-2', name: 'Sessions', route: 'sessions', id: '1234567', },
+    { icon: 'Holidays', name: 'Holidays', route: 'holidays', id: '1234567', },
+    { icon: 'Error-Messages', name: 'Error Messages', route: 'errormessages', id: '1234567', },
+];

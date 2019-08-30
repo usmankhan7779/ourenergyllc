@@ -1,0 +1,18 @@
+<div class="row">
+    <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <input matInput placeholder="Customer" disabled [(ngModel)]="data.cust_id">
+    </mat-form-field>
+    <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <input matInput placeholder="Reason" [(ngModel)]="data.reason">
+    </mat-form-field>
+    <div class="text-center">
+        <mat-slide-toggle color="primary" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" [(ngModel)]="data.linked">Linked</mat-slide-toggle>
+        <mat-slide-toggle color="primary" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" [(ngModel)]="data.register">Register</mat-slide-toggle>
+        <mat-slide-toggle color="primary" class="col-lg-4 col-md-4 col-sm-12 col-xs-12" [(ngModel)]="data.status">Status</mat-slide-toggle>
+    </div>
+</div>
+<br>
+<div class="text-center">
+    <button mat-button [disabled]="btnStatus" (click)="editUser()">Save</button>
+    <button mat-button [mat-dialog-close]>Cancel</button>
+</div>

@@ -1,0 +1,93 @@
+@for $i from 600 through 899 {
+    @media screen and (max-height: #{$i + 300}px) {
+        .y {
+            // max-height: $i - 100px;
+            max-height: calc(100vh - 220px);
+        }
+    }
+    @media screen and (max-height: #{$i}px) {
+        .y {
+            // max-height: $i - 241px;
+            max-height: calc(100vh - 220px);
+        }
+    }
+}
+
+.my {
+    overflow: auto;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.my {
+    overflow: auto;
+}
+
+.mat-header-row {
+    background-color: #000 !important;
+    top: 0;
+    position: sticky;
+    position: -webkit-sticky;
+    z-index: 1;
+}
+
+.mat-header-cell {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.mat-cell {
+    color: #23282e;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.mat-header-cell.mat-sort-header-sorted {
+    color: black;
+}
+
+.mat-table {
+    background-color: #fff;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.table mat-header-cell {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.table mat-table button {
+    text-align: center;
+}
+
+.content mat-header-cell {
+    font-size: 16px;
+}
+
+.mat-row mat-cell {
+    font-size: 15px !important;
+}
+
+.mat-header-row {
+    min-height: 45px;
+}
+
+i {
+    font-size: 24px;
+}
+
+mat-icon {
+    font-size: 24px;
+}
+
+.mat-icon-button {
+    padding: 0;
+    min-width: 0;
+    width: 26px;
+    height: 40px;
+    flex-shrink: 0;
+    line-height: 40px;
+    border-radius: 50%;
+}

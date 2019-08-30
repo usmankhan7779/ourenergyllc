@@ -1,0 +1,50 @@
+.App {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    top: 50px;
+    .children {
+        position: relative;
+        width: calc(100% - 278px);
+        left: 267px;
+        top: 15px;
+        // padding-bottom: 65px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .App {
+        top: 0px !important;
+        .children {
+            position: relative;
+            left: 10px;
+            top: 10px;
+            width: calc(100% - 20px);
+        }
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .App {
+        top: 0px !important;
+        .children {
+            position: relative;
+            left: 10px;
+            top: 10px;
+            width: calc(100% - 20px);
+            // margin-bottom: 105px;
+        }
+    }
+}
+
+.mat-form-field {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}

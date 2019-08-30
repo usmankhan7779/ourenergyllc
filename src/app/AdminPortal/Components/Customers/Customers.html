@@ -1,0 +1,187 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" class="topIcon">
+            <label for="Offers" class="tabLabel"> Enrolled Customers
+      </label>
+        </ng-template>
+        <br>
+        <div class="container-fluid">
+            <div class="row">
+                <mat-form-field class="col-lg-4 col-md-4 col-sm-6 col-sm-12">
+                    <input placeholder="Search" matInput [formControl]="searchControl">
+                    <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                    <button mat-icon-button matTooltip="Refresh" matSuffix style="font-size: 22px" (click)="refresh()">
+                        <mat-icon>refresh</mat-icon>
+                    </button>
+                </mat-form-field>
+                <mat-form-field class="col-lg-4 col-md-4 col-sm-6 col-sm-12">
+                    <mat-select placeholder="SORT BY" [(value)]="customersorting" required (change)="sortCust()">
+                        <mat-option *ngFor="let v of customersortarray" [value]="v.value" style="font-size: 16px;">{{v.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="customersorting == 'latest'" class="col-lg-4 col-md-4 col-sm-6 col-sm-12">
+                    <mat-select placeholder="SORT BY" [(value)]="customersorting2" required (change)="sortCust()">
+                        <mat-option *ngFor="let v of customersortarray2" [value]="v.value" style="font-size: 16px;">{{v.name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </div>
+
+
+        <!-- <div class="header-paginator">
+            <div class="topPaginator">
+                <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+                </mat-paginator>
+            </div>
+        </div> -->
+
+        <mat-toolbar>
+            <mat-toolbar-row style="background-color:white">
+                <div style="flex: 1 0 0">
+                    <span *ngIf="web">
+                    <!-- Users Count for -->
+                    <button mat-fab matTooltip="Android Users {{and}}" color="primary"><i class="material-icons">android</i> <b>{{and}}</b></button>
+                    <button mat-fab matTooltip="iOS Users {{ios}}" color="primary"><i class="fa fa-apple"></i> <b>{{ios}}</b></button>
+                    <button mat-fab matTooltip="Web Users {{web}}" color="primary"><i class="material-icons">web</i> <b>{{web}}</b></button>
+                </span>
+                </div>
+                <!-- <span class="example-spacer"></span> -->
+                <div style="flex: 2 0 0">
+                    <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+                    </mat-paginator>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="my">
+            <div class="y">
+                <mat-table #table [dataSource]="dataSource" class="abc">
+                    <ng-container matColumnDef="actions">
+                        <mat-header-cell *matHeaderCellDef style="flex: 0 0 220px;"> Actions </mat-header-cell>
+                        <mat-cell *matCellDef="let element" style="flex: 0 0 220px;">
+                            <button mat-icon-button (click)="openPortfolio(element)" style="font-size: 16px;">
+                <i [matTooltip]="'View Details of ' + element.cust_id" class="normalIcon material-icons">person</i>
+              </button>
+                            <button mat-icon-button (click)="RefreshAccount(element)" style="font-size: 16px;">
+                <i [matTooltip]="'Refresh ' + element.cust_id" class="normalIcon material-icons">refresh</i>
+              </button>
+                            <button mat-icon-button (click)="ResnedEmail(element)" style="font-size: 16px;">
+                <i [matTooltip]="'Resend Verification Email to ' + element.cust_id" class="normalIcon material-icons">send</i>
+              </button>
+                            <button mat-icon-button (click)="DeleteAccount(element)" style="font-size: 16px;">
+                <i [matTooltip]="'Delete ' + element.cust_id" class="failureIcon material-icons">delete</i>
+              </button>
+                            <button mat-icon-button (click)="LinkAccount(element)" style="font-size: 16px;">
+                <i [matTooltip]="'Link account to ' + element.cust_id" class="normalIcon material-icons">link</i>
+              </button>
+                            <button mat-icon-button (click)="changePassword(element)" style="font-size: 16px;">
+                <i [matTooltip]="'Change password for ' + element.cust_id" class="normalIcon material-icons">vpn_key</i>
+              </button>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="name">
+                        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.firstname}} {{element.lastname}}</mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="u_name">
+                        <mat-header-cell *matHeaderCellDef> Username </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="customerID">
+                        <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="contact">
+                        <mat-header-cell *matHeaderCellDef style="flex: 0 0 100px;"> Verified </mat-header-cell>
+                        <mat-cell *matCellDef="let element" style="flex: 0 0 100px;">
+                            <button mat-icon-button *ngIf="element.is_verified" (click)="ChangeStatus(element)">
+                <i [matTooltip]="'Click to Unverify ' + element.cust_id" class="successIcon material-icons">check</i>
+              </button>
+                            <button mat-icon-button *ngIf="!element.is_verified" (click)="ChangeStatus(element)">
+                <i [matTooltip]="'Click to Verify ' + element.cust_id" class="failureIcon material-icons">close</i>
+              </button>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="active">
+                        <mat-header-cell *matHeaderCellDef style="flex: 0 0 100px;"> Status </mat-header-cell>
+                        <mat-cell class="text-center" *matCellDef="let element" style="flex: 0 0 100px;">
+                            <button mat-icon-button *ngIf="element.is_active">
+                <i [matTooltip]="'Click to Deactivate ' + element.cust_id" class="successIcon material-icons" (click)="ChangeActiveStatus(element)">check</i>
+              </button>
+                            <button mat-icon-button *ngIf="!element.is_active">
+                <i [matTooltip]="'Click to Activate ' + element.cust_id" class="failureIcon material-icons" (click)="ChangeActiveStatus(element)">close</i>
+              </button>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="signup">
+                        <mat-header-cell *matHeaderCellDef> SignUp from</mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <div style="display: flex; align-items: center;">
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.register_client == 'Andriod'"><i class="material-icons">android</i></button>
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.register_client == 'IOS'"><i class="fa fa-apple"></i></button>
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.register_client == 'Web'"><i class="material-icons">web</i></button>
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.register_client == 'Unknown'"><i class="nullIcon material-icons">fiber_manual_record</i></button>
+                                <div style="margin-left: 10px;">{{element.signup_from}}</div>
+                            </div>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="login">
+                        <mat-header-cell *matHeaderCellDef> Last Login </mat-header-cell>
+                        <mat-cell *matCellDef="let element">
+                            <div style="display: flex; align-items: center;">
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.last_login_from == 'Andriod'"><i class="material-icons">android</i></button>
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.last_login_from == 'IOS'"><i class="fa fa-apple"></i></button>
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.last_login_from == 'Web'"><i class="material-icons">web</i></button>
+                                <button style="margin-left: 20px;" mat-icon-button *ngIf="element.last_login_from == 'Unknown'"><i class="nullIcon material-icons">fiber_manual_record</i></button>
+                                <div style="margin: 2px 10px 2px 10px; flex: 1">{{element.last_login | date: 'shortTime'}}<br>{{element.last_login | date: 'fullDate'}}</div>
+                            </div>
+                        </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="date">
+                        <mat-header-cell *matHeaderCellDef> Enroll Date </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.date_created | date: 'shortTime'}}<br>{{element.date_created | date: 'fullDate'}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="accounts">
+                        <mat-header-cell *matHeaderCellDef> Related Accounts </mat-header-cell>
+                        <mat-cell *matCellDef="let element" class="accounts">
+                            <div class="accounts">
+                                <div *ngFor="let value of element.accounts" class="one-account">
+                                    <span class="account-id">{{value.cust_id}}</span>
+                                    <button mat-icon-button *ngIf="value.cust_id != element.cust_id && value.status"><i [matTooltip]="'View Details of ' + value.cust_id"
+                      (click)="openPortfolio(value)" class="successIcon material-icons">fiber_manual_record</i></button>
+                                    <button mat-icon-button *ngIf="value.cust_id != element.cust_id && !value.status"><i [matTooltip]="'View Details of ' + value.cust_id"
+                      (click)="openPortfolio(value)" class="failureIcon material-icons">fiber_manual_record</i></button>
+                                    <button mat-icon-button *ngIf="value.cust_id == element.cust_id"><i class="nullIcon material-icons">fiber_manual_record</i></button>
+                                    <button mat-icon-button *ngIf="value.cust_id != element.cust_id" (click)="UnlinkAccount(value.cust_id, element.id, value.status)"><i
+                      [matTooltip]="'Unlink ' + value.cust_id" class="material-icons">remove_circle</i></button>
+                                    <button mat-icon-button *ngIf="value.cust_id == element.cust_id"><i class="mainIcon material-icons">star</i></button>
+                                </div>
+                            </div>
+                        </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+                </mat-table>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" class="topIcon">
+            <label for="Offers" class="tabLabel"> Un-Enrolled Customers </label>
+        </ng-template>
+        <br>
+        <unenrolled-customers></unenrolled-customers>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" class="topIcon">
+            <label for="Offers" class="tabLabel"> Sign In Logs </label>
+        </ng-template>
+        <br>
+        <sign-in-logs></sign-in-logs>
+    </mat-tab>
+</mat-tab-group>

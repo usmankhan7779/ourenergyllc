@@ -1,0 +1,141 @@
+<h3 class="text-center">Add Product</h3>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+        <div class="row">
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <mat-select (selectionChange)="changeId()" placeholder="Product ID" formControlName=product_id>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let x of products" [value]="x.ProductId">
+                        {{ x.ProductId }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="productForm.controls.product_id.errors?.required"> Product ID is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Product Name" formControlName=product_name>
+                <mat-error *ngIf="productForm.controls.product_name.errors?.required"> Product Name is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <mat-select placeholder="Product Type" formControlName=product_type>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let Product of Products" [value]="Product">
+                        {{ Product }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="productForm.controls.product_type.errors?.required"> Product Type is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput [max]="productForm.controls.end_date.value" [matDatepicker]="picker2" placeholder="Start Date" formControlName=start_date>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+                <mat-error *ngIf="productForm.controls.start_date.hasError('required')"> Start Date is required </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput [min]="productForm.controls.start_date.value" [matDatepicker]="picker1" placeholder="End Date" formControlName=end_date>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+                <mat-error *ngIf="productForm.controls.end_date.hasError('required')"> End Date is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Display Rate" formControlName=rate>
+                <mat-error *ngIf="productForm.controls.rate.hasError('required')"> Display Rate is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Display Termination Fee" formControlName=display_termination_fee>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <mat-select placeholder="Plan Group" formControlName=plan_group>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let groupplan of groupplans" [value]="groupplan.value">
+                        {{ groupplan.viewValue }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="productForm.controls.plan_group.hasError('required')"> Plan Group is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <mat-select placeholder="Product Sub Type" formControlName=product_subtype>
+                    <!-- <mat-option [value]="">--</mat-option> -->
+                    <mat-option *ngFor="let productsubtype of productsubtypes" [value]="productsubtype.viewValue">
+                        {{productsubtype.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <mat-select placeholder="Product Visibilty" formControlName=product_visibility>
+                    <!-- <mat-option [value]="">--</mat-option> -->
+                    <mat-option *ngFor="let productsvisibilitys of productsvisibility" [value]="productsvisibilitys.viewValue">
+                        {{ productsvisibilitys.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+        <div class="row">
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <textarea matInput placeholder="Product Info" formControlName=product_info></textarea>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <textarea matInput placeholder="Display Info" formControlName=display_info></textarea>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Display Term" formControlName=term>
+                <mat-error *ngIf="productForm.controls.term.hasError('required')"> Display Term is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Batch Rate" formControlName=batch_rate>
+                <mat-error *ngIf="productForm.controls.batch_rate.hasError('required')"> Batch Rate is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Base Charge" formControlName=base_charge>
+                <mat-error *ngIf="productForm.controls.base_charge.hasError('required')"> Base Charge is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Energy Charge" formControlName=energy_charge>
+                <mat-error *ngIf="productForm.controls.energy_charge.hasError('required')"> Energy Charge is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Renewals Content" formControlName=renewals_content>
+                <span matSuffix>%</span>
+                <mat-error *ngIf="productForm.controls.renewals_content.hasError('required')"> Renewals Content is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <input matInput placeholder="Average Renewals Content" formControlName=average_renewals_content>
+                <span matSuffix>%</span>
+                <mat-error *ngIf="productForm.controls.average_renewals_content.hasError('required')"> Average Renewals Content is required </mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <mat-select placeholder="Select TOS" formControlName=tos>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let x of tosList" [value]="x.path">
+                        {{ x.file_name }} | version: {{ x.version }}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="productForm.controls.tos.errors?.required"> TOS is required </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-slide-toggle class="col-lg-3 col-md-3 col-sm-6 col-xs-12" formControlName=PassthruStatus>Passthru</mat-slide-toggle>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <textarea matInput placeholder="Electricity Price Text" formControlName=electricity_price_text></textarea>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <textarea matInput placeholder="Other Key Term & Question Text" formControlName=other_key_term_and_ques_text></textarea>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <textarea matInput placeholder="Fees May Be Charged Text" formControlName=fees_may_be_charged_text></textarea>
+            </mat-form-field>
+        </div>
+        <br>
+    </div>
+    <div mat-dialog-actions>
+        <div class="text-center">
+            <button [disabled]="isDisabled" mat-raised-button type="submit">Save</button>
+            <button mat-button [mat-dialog-close]>Cancel</button>
+        </div>
+    </div>
+</form>

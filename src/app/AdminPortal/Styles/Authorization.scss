@@ -1,0 +1,47 @@
+body {
+    overflow: hidden;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+}
+
+.example-header {
+    min-height: 64px;
+    padding: 10px 10px 0;
+    display: flex;
+    flex: 50;
+}
+
+.abc {
+    max-width: 4000px;
+    min-width: 800px;
+}
+
+.accounts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .one-account {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid #cdcdcd;
+        padding: 0 20px;
+        align-items: center;
+        .account-id {
+            flex: 1;
+        }
+    }
+}
+
+.mat-form-field {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}

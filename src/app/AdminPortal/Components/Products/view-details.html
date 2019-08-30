@@ -1,0 +1,111 @@
+<div *ngIf="status == false">
+    <h2> {{productDetails}} </h2>
+</div>
+<div *ngIf="status == true">
+    <div style="display: flex; flex-direction: row">
+        <h2 class="text-left" style="flex:1; margin-top: 0px; margin-bottom: 20px; color: #cd0000"> {{productDetails?.product_id}} </h2>
+        <div>
+            <button mat-icon-button *ngIf="editMode == false" (click)="enterEditMode()">
+                <i class="normalIcon material-icons">edit</i>
+            </button>
+            <button mat-icon-button *ngIf="editMode == true" (click)="exitEditMode()">
+                <i class="normalIcon material-icons">close</i>
+            </button>
+        </div>
+    </div>
+    <form [formGroup]="productForm">
+        <div class="row">
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Challenge A" formControlName="challenge_a">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Challenge Q" formControlName="challenge_q">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Comment 1" formControlName="comment1">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Comment 2" formControlName="comment2">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <mat-select placeholder="Deposit Indicator" formControlName=deposit_indicator>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let DepositIndicator of DepositIndicators" [value]="DepositIndicator.value">
+                        {{ DepositIndicator.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Display Index Name" formControlName="display_index_name">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Misc 1" formControlName="display_misc1">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Misc 2" formControlName="display_misc2">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Misc 3" formControlName="display_misc3">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Display Rate Per" formControlName="display_rate_per">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Display Sub Type" formControlName="display_sub_type">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Display Termination Fee" formControlName="display_termination_fee">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Display Type" formControlName="display_type">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Display UOM" formControlName="display_uom">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <mat-select placeholder="Edi Bill Presenter" formControlName=edi_bill_presenter>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let EdiBillPresenter of EdiBillPresenters" [value]="EdiBillPresenter.value">
+                        {{ EdiBillPresenter.viewValue }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <mat-select placeholder="Edi Bill Calculator" formControlName=edi_bill_calculator>
+                    <mat-option [value]="">--</mat-option>
+                    <mat-option *ngFor="let EdiBillCalculator of EdiBillCalculators" [value]="EdiBillCalculator">
+                        {{ EdiBillCalculator }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Product Code" formControlName="product_mode">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Ref 1" formControlName="ref1">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Ref 2" formControlName="ref2">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Ref 3" formControlName="ref3">
+            </mat-form-field>
+            <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-sm-12">
+                <input matInput placeholder="Ref 4" formControlName="ref4">
+            </mat-form-field>
+        </div>
+    </form>
+    <div *ngIf="editMode == true">
+        <br>
+        <div class="text-center">
+            <button [disabled]="isBtnDisabled" mat-raised-button (click)="submit()">Save</button>
+            <button [disabled]="isBtnDisabled" mat-button (click)="exitEditMode()">Cancel</button>
+        </div>
+    </div>
+    <div *ngIf="editMode == false">
+        <br>
+        <div class="text-center">
+            <button mat-raised-button (click)="onNoClick()">Close</button>
+        </div>
+    </div>
+</div>

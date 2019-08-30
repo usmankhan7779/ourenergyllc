@@ -1,0 +1,199 @@
+<div class="headerr mat-elevation-z2">
+    <div>
+        <a routerLink="/">
+            <img width="160" height="40" src="./assets/img/log_OurEnergy.png" alt="logo">
+            <!-- <img width="160" height="25px" src="./assets/img/WTG-Energy-Logo.png" alt="logo"> -->
+            <!-- <h1 style="font-size:32px;font-weight:800;">/
+                <span style="color:#d00000">W</span>
+                <span style="color:#2e2566;margin-left:-4px;">TG</span>
+                <span style="color:#2e2566"> ENERGY</span>
+            </h1> -->
+        </a>
+    </div>
+    <div class="centerContent" id="center">
+        <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <img width="23" height="23" src="../assets/img/Icons/Home.png" class="images">
+        </a>
+        <a *ngIf="tabs?.profile" routerLink="customerInfo" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Profile.png" class="images">
+        </a>
+        <a *ngIf="tabs?.contactus" routerLink="contact" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Contact.png" class="images">
+        </a>
+        <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Plan.png" class="images">
+        </a>
+        <a *ngIf="tabs?.offers" routerLink="offers" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/offer-icon-black.png" class="images">
+        </a>
+        <a *ngIf="tabs?.paynow" routerLink="paynow" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Pay-Now.png" class="images">
+        </a>
+        <a *ngIf="tabs?.bills" routerLink="billInfo" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Bills.png" class="images">
+        </a>
+        <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Payments.png" class="images">
+        </a>
+        <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Usage.png" class="images">
+        </a>
+        <a *ngIf="tabs?.notices" routerLink="notices" routerLinkActive="active">
+            <img width="23" height="23" src="../assets/img/Icons/Notices-icon.png" class="images">
+        </a>
+    </div>
+    <div class="rightSide">
+        <div class="apple">
+            <mat-menu overlapTrigger="false" #menu2="matMenu" class="mat-elevation-z10">
+                <div id="title">
+                    <span>Switch Account</span>
+                </div>
+                <div id="switchContainer">
+                    <span class="noAccLink" *ngIf="showNoLinkAcc">No Account Linked</span>
+                    <div *ngFor="let i of LinkedAccounts; let ind = index;" (click)="SwitchAccount(ind)">
+                        <div id="notiTrue">
+                            <div class="switchAccount">
+                                <div class="notify">
+                                    <i class="fa fa-user-circle-o"></i> <span class="date">{{created_date }}</span>
+                                </div>
+                                <div *ngIf="!companyname">
+                                    <span>{{i.firstname}} {{i.lastname}}</span>
+                                </div>
+                                <div *ngIf="!firstname">
+                                    <span>{{i.companyname}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SpinnerSwitchAccount" *ngIf="SwitchAccountSpinner">
+                        <div class="lds-ripple">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </mat-menu>
+            <i class="fa fa-user-circle" matTooltip="Switch Account" [matMenuTriggerFor]="menu2"></i>
+        </div>
+        <div class="apple">
+            <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
+                <i class="fa fa-apple" matTooltip="IOS App"></i>
+            </a>
+        </div>
+        <div class="apple">
+            <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer" target="_blank">
+                <i class="fa fa-android" matTooltip="Android App"></i>
+                <!-- <img src="https://png.icons8.com/ios/50/000000/google-play-filled.png" matTooltip="Android App"> -->
+            </a>
+        </div>
+        <div class="icon">
+            <mat-menu overlapTrigger="false" #menu="matMenu" class="mat-elevation-z10">
+                <div id="title">
+                    <span>Notifications</span>
+                </div>
+                <div id="notiContainer">
+                    <div *ngFor="let i of notifications; let abc = index;">
+                        <div id="notiTrue">
+                            <div class="notification">
+                                <div [ngStyle]="{'background-color': i.read==false ? 'rgba(121, 121, 121,0.2)' : 'transparent'}" class="row">
+                                    <span (click)="ReadNoti(i)" style="text-align:center;padding-bottom:60px" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+                                        <img *ngIf="i.type=='Payment'" src="../../../../assets/img/Icons/Payments.png">
+                                        <img *ngIf="i.type=='Bill'" src="../../../../assets/img/Icons/Bills.png">
+                                    </span>
+                                    <span (click)="ReadNoti(i)" class="col-lg-7 col-md-7 col-sm-7 col-xs-7">{{i.text}}</span>
+                                    <span (click)="DeleteNoti(i)" (click)="$event.stopPropagation()" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                        <mat-icon matTooltip="Delete" >close</mat-icon>
+                                    </span>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 " style="color:red">
+                                    {{i.date}}
+                                </div>
+                                <span style="border:1px solid rgb(211, 211, 211); width: 100%;margin: auto;margin-top: 5%;margin-bottom: 5%;"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-menu>
+            <button mat-icon-button [matMenuTriggerFor]="menu"><i class="fa fa-bell iconsss" [matMenuTriggerFor]="menu" (click)="disableOnClick()" matTooltip="Notifications"></i></button>
+            <div *ngIf="unread_count!=0" class="notifications">
+                <span (click)="disableOnClick()">{{unread_count}}</span>
+            </div>
+        </div>
+        <div class="profile-btn">
+            <span [matMenuTriggerFor]="menus">{{username}} ({{custId}})</span>
+            <i class="fa fa-angle-down" [matMenuTriggerFor]="menus"></i>
+        </div>
+        <mat-menu overlapTrigger="false" #menus="matMenu" class="menu-items">
+            <button mat-menu-item routerLink="customerInfo"><img src="../assets/img/Icons/Profile.png" class="images"> My Profile </button>
+            <button mat-menu-item routerLink="contact"><img src="../assets/img/Icons/Contact.png" class="images"> Contact Us </button>
+            <button mat-menu-item (click)="logOut()"><img src="../assets/img/Icons/Logout.png" class="images"> Sign Out </button>
+        </mat-menu>
+        <div class="Toggle">
+            <mat-icon (click)="myFunction()">format_align_right</mat-icon>
+        </div>
+    </div>
+</div>
+<div class="tempHeader">
+</div>
+<div class="topnav" id="myTopnav">
+    <mat-list>
+        <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Home.png" class="images">Home
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.profile">
+            <mat-list-item routerLink="customerInfo" routerLinkActive="active">
+                <img src="../assets/img/Icons/Profile.png" class="images">My Profile
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Plan.png" class="images">Plan
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.offers" routerLink="offers" routerLinkActive="active" class="plan">
+            <mat-list-item style="width: 100%;">
+                <img src="../assets/img/Icons/offer-icon-black.png" class="images">Offers
+            </mat-list-item>
+            <span>
+                {{offerLength}}
+            </span>
+        </a>
+        <a *ngIf="tabs?.paynow" routerLink="paynow" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Pay-Now.png" class="images">Pay Now
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.bills" routerLink="billInfo" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Bills.png" class="images">Bills
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Payments.png" class="images"> Payments
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Usage.png" class="images">Usage
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.contactus">
+            <mat-list-item routerLink="contact" routerLinkActive="active">
+                <img src="../assets/img/Icons/Contact.png" class="images">Contact Us
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.notices">
+            <mat-list-item routerLink="notices" routerLinkActive="active">
+                <img src="../assets/img/Icons/Notices-icon.png" class="images">Notices
+            </mat-list-item>
+        </a>
+        <a>
+            <mat-list-item routerLink="." (click)="logOut()">
+                <img src="../assets/img/Icons/Logout.png" class="images"> Sign Out
+            </mat-list-item>
+        </a>
+    </mat-list>
+</div>

@@ -1,0 +1,525 @@
+<div class="enroll-container">
+    <h1>Tell us about yourself!</h1>
+    <h3 style="margin-top: 0px;">Provide your personal information and let us know if you are switching or moving in.</h3>
+    <div class="inner">
+        <div class="cart">
+            <img (click)="showSummary()" style="margin-bottom: 10px; cursor: pointer;" src="../../assets/img/cart.png" width="35" height="35" matTooltip="Show Summary" />
+        </div>
+        <mat-card class="note">
+            <div>
+                <i class="material-icons">info</i>
+            </div>
+            <div>
+                <p>Any Enrollment Request including move-in or a switch can only be made by the service applicant or the applicant's authorized agent If you are not an authorized individual, please do not submit your request using this portal.</p>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <form [ngClass]="{'col-lg-9 col-lg-9 col-sm-12 col-xs-12' : summary}" [ngClass]="{'col-lg-12 col-lg-12 col-sm-12 col-xs-12' : !summary}">
+            <div class="bodyy">
+                <mat-horizontal-stepper (selectionChange)="stepSession()" #stepper linear="true">
+                    <!-- <mat-horizontal-stepper (selectionChange)="stepSession()" #stepper> -->
+                    <mat-step [stepControl]="startFormGroup" (click)="reset()">
+                        <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Locate Yourself</b></ng-template>
+                        <div class="enrollProcess">
+                            <enroll-process></enroll-process>
+                        </div>
+
+                    </mat-step>
+                    <!-- <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
+                        <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+                    </div> -->
+
+                    <mat-step [stepControl]="firstFormGroup" (click)="reset()">
+                        <form [formGroup]="firstFormGroup">
+                            <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Service</b></ng-template>
+                            <mat-card>
+                                <mat-card-title class="mat-elevation-z4">Are you moving or switching providers at the selected service location?
+                                </mat-card-title>
+                                <mat-card class="form1 mat-elevation-z4">
+                                    <div class="leftSider">
+                                        <div>
+                                            <label>Service Type<span>*</span></label>
+                                        </div>
+                                        <div>
+                                            <mat-radio-group class="radio-group" (change)="radioChange($event)" formControlName="enrol_type">
+                                                <mat-radio-button class="radio-button" *ngFor="let service of services" [value]=service>
+                                                    {{service}}
+                                                </mat-radio-button>
+                                            </mat-radio-group>
+                                        </div>
+                                        <mat-form-field style="margin: 15px 0px 0px 15px; width: 500px;">
+                                            <input [matDatepickerFilter]="myFilter" matInput [min]="first_available_date" [max]="end_date" [matDatepicker]="picker" placeholder="Requested Date" formControlName="request_date">
+                                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                            <mat-datepicker #picker></mat-datepicker>
+                                            <mat-error *ngIf="firstFormGroup.controls.request_date.hasError('required')">Requested Date is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </mat-card>
+                                <mat-card class="main-note mat-elevation-z4">
+                                    <div class="note">
+                                        <div>
+                                            <i class="material-icons">info</i>
+                                        </div>
+                                        <div>
+                                            <p style="margin:0px 0px 0px 10px">A standard switch will be completed in 0-5 business days. Move-in and self-selected switch fees may be applicable and passed through to you from your TDSP. Please refer to your TOS for full list of TDSP fees.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="note">
+                                        <div>
+                                            <i class="material-icons">info</i>
+                                        </div>
+                                        <div>
+                                            <p style="margin:0px 0px 0px 10px">In the case of a switch request, you have the right to review and rescind the Terms of Service within three federal business days, after receiving the Terms Of Service, without penalty.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="note">
+                                        <div>
+                                            <i class="material-icons">info</i>
+                                        </div>
+                                        <div>
+                                            <p style="margin:0px 0px 0px 10px">If you take an action that cancels or terminates your service with us, prior to the end of the initial term specified in your contract, you may be responsible to pay an early termination fee (ETF) specified
+                                                in your TOS/EFL.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </mat-card>
+                            </mat-card>
+                        </form>
+                        <div class="stepperbutton">
+                            <button mat-button matStepperPrevious (click)="goToTop()">Back</button>
+                            <button mat-button matStepperNext id="next1" (click)="goToTop()">Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="secondFormGroup" (click)="reset()">
+                        <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Personal Information</b></ng-template>
+                            <mat-card class="form mat-elevation-z4">
+                                <mat-card-title class="mat-elevation-z4">About You</mat-card-title>
+                                <div class="row">
+                                    <div style="padding: 10px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <p style="margin-bottom: 0px !important;">This will appear as the name on your bill</p>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="First Name" required formControlName="cust_firstname" maxlength="50">
+                                            <mat-error *ngIf="secondFormGroup.controls.cust_firstname.hasError('required')">First Name is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Middle Initial" formControlName="cust_mi" maxlength="4">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Last Name" required formControlName="cust_lastname" maxlength="50">
+                                            <mat-error *ngIf="secondFormGroup.controls.cust_lastname.hasError('required')">Last Name is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput [max]="birthDate" [matDatepicker]="birthdt" placeholder="Birth Date" required formControlName="cust_dob">
+                                            <mat-datepicker-toggle matSuffix [for]="birthdt"></mat-datepicker-toggle>
+                                            <mat-datepicker startView="year" [startAt]="birthDate" #birthdt></mat-datepicker>
+                                            <mat-error *ngIf="secondFormGroup.controls.cust_dob.hasError('required')">Birth Date is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div style="margin-bottom:15px" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Authorized Representative" formControlName="contact1" maxlength="50">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-card-title class="mat-elevation-z4">Your Identity</mat-card-title>
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="SSN" formControlName="ssn" maxlength="11" required ssn>
+                                            <mat-error *ngIf="secondFormGroup.controls.ssn.hasError('required')">SSN is required</mat-error>
+                                            <mat-error *ngIf="secondFormGroup.controls.ssn.hasError('pattern') && !secondFormGroup.controls.ssn.hasError('required')">Invalid SSN
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Driving License No." formControlName="cust_drl_nbr" maxlength="15">
+                                            <mat-error *ngIf="secondFormGroup.controls.cust_drl_nbr.hasError('pattern')">Invalid Format</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="License State" formControlName="cust_drl_state">
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="state.value" *ngFor="let state of states">{{state.viewValue}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput [min]="currentdate" [matDatepicker]="expdt" placeholder="Expiration Date" formControlName="cust_drl_expire">
+                                            <mat-datepicker-toggle matSuffix [for]="expdt"></mat-datepicker-toggle>
+                                            <mat-datepicker #expdt></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Security Question" formControlName="personal_pin">
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="question" *ngFor="let question of questions">{{question}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Security Answer" formControlName="personal_ref_code" maxlength="20">
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-card-title class="mat-elevation-z4">Communication</mat-card-title>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Language Preference" formControlName="cust_bill_type">
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="language.value" *ngFor="let language of languages">{{language.viewValue}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Phone No." required formControlName="phone1" maxlength="12" phone-no>
+                                            <mat-error *ngIf="secondFormGroup.controls.phone1.hasError('required')">Primary Phone is required</mat-error>
+                                            <mat-error *ngIf="secondFormGroup.controls.phone1.hasError('pattern') && !secondFormGroup.controls.phone1.hasError('required')">Invalid Residential Phone No.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Mobile Provider" formControlName="cust_sms_provider">
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="provider" *ngFor="let provider of providers">{{provider}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Mobile Phone No." formControlName="phone2" maxlength="12" phone-no>
+                                            <mat-error *ngIf="secondFormGroup.controls.phone2.hasError('required')">Mobile Phone is required</mat-error>
+                                            <mat-error *ngIf="secondFormGroup.controls.phone2.hasError('pattern') && !secondFormGroup.controls.phone2.hasError('required')">Invalid Mobile Phone No.</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Personal Email Address" required formControlName="email_address" maxlength="100">
+                                            <mat-error *ngIf="secondFormGroup.controls.email_address.hasError('required')">Email is required</mat-error>
+                                            <mat-error *ngIf="secondFormGroup.controls.email_address.hasError('email') && !secondFormGroup.controls.email_address.hasError('required')">Invalid Format
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="How did you hear about us" formControlName="referred_by">
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="about.value" *ngFor="let about of aboutUs">{{about.name}}</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div style="padding: 10px;" class="col-lg-12 col-md-12 col-sm-12 col-xs-12"></div>
+                                </div>
+                            </mat-card>
+                        </form>
+                        <div class="stepperbutton">
+                            <button mat-button matStepperPrevious (click)="goToTop()">Back</button>
+                            <button mat-button matStepperNext id="next2" (click)="goToTop()">Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step [stepControl]="thirdFormGroup" (click)="reset()">
+                        <form [formGroup]="thirdFormGroup">
+                            <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Billing Information</b></ng-template>
+                            <mat-card class="form mat-elevation-z4">
+                                <mat-card-title class="mat-elevation-z4">Billing Address</mat-card-title>
+                                <mat-checkbox (change)="SameAsServiceAddress()" [(ngModel)]="serviceAddresscheck" [ngModelOptions]="{standalone: true}">Same as Service Address</mat-checkbox>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Apartment Name" maxlength="50" formControlName="cm_address1">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Street Address" required formControlName="cm_address2" maxlength="50">
+                                            <mat-error *ngIf="thirdFormGroup.controls.cm_address2.hasError('required')">Street Address is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="City" required formControlName="cm_city" maxlength="50">
+                                            <mat-error *ngIf="thirdFormGroup.controls.cm_city.hasError('required')">City is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="State" required formControlName="cm_state">
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="state.value" *ngFor="let state of states">{{state.viewValue}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="thirdFormGroup.controls.cm_state.hasError('required')">State is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Zip Code" maxlength="5" required formControlName="cm_zip" maxlength="9">
+                                            <mat-error *ngIf="thirdFormGroup.controls.cm_zip.hasError('required')">Zip is required</mat-error>
+                                            <mat-error *ngIf="thirdFormGroup.controls.cm_zip.hasError('pattern') && !thirdFormGroup.controls.cm_zip.hasError('required')">Invalid Format
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="stepperbutton text-center">
+                                    <button mat-button (click)="findBillingAddress()" [disabled]="findBtn">Find</button>
+                                </div>
+                            </mat-card>
+                            <div *ngIf="billingAddresses.length == 0">
+                                <div *ngIf="alertcondition == true">
+                                    <h1 class="alertCondition">
+                                        {{alert}} </h1>
+                                    <h1 class="text-center" #premises>OR</h1>
+                                    <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr">Click here</a> to select what you entered.</h4>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div *ngIf="billingAddresses.length > 0">
+                            <br>
+                            <h1 class="text-center" style="font-weight: bold !important;" *ngIf="billingAddresses.length > 0" #premises>Select Your Mailing Address</h1>
+                            <h4 class="text-center">Multiple mailing addresses were found. Please select from the below list or refine what you entered above.</h4>
+                            <br>
+                            <div class="premise" *ngFor="let value of billingAddresses; let ind = index">
+                                <div class="inner-premise">
+                                    <div class="premise-details">
+                                        <h4>{{value.Address2}}</h4>
+                                        <h4 style="margin:0px">{{value.City}} {{value.State}} {{value.Zip5}}-{{value.Zip4}}</h4>
+                                    </div>
+                                    <div class="premise-details">
+                                        <button mat-raised-button (click)="SelectBillingPrem(value)" type="button"><h4 style="font-weight: bold !important;">Select</h4></button>
+                                    </div>
+                                </div>
+                                <div class="inner-premise">
+                                    <div *ngIf="(ind + 1) < billingAddresses.length" style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
+                                </div>
+                            </div>
+                            <br>
+                            <h1 class="text-center" *ngIf="billingAddresses.length > 0" #premises>OR</h1>
+                            <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr">Click here</a> to select what you entered.</h4>
+                        </div>
+
+                    </mat-step>
+                    <mat-step [stepControl]="fourFormGroup" (click)="reset()">
+                        <form [formGroup]="fourFormGroup">
+                            <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Requests and Verification</b></ng-template>
+                            <mat-card class="form mat-elevation-z4">
+                                <mat-card-title class="mat-elevation-z4"> Automatic Bill Pay </mat-card-title>
+                                <mat-checkbox (change)="changeAutoBillPay($event)"> Sign-up for Auto Bill Pay </mat-checkbox>
+                                <div *ngIf="setAutoPay" class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Credit Card Type" formControlName="deposit_card_type" required>
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="cardtype" *ngFor="let cardtype of cards">{{cardtype}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_card_type.hasError('required')">Card Type is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Card No." maxlength="19" formControlName="deposit_cc_no" required credit-card>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_cc_no.hasError('required')">Card No. is required</mat-error>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_cc_no.hasError('pattern')">Invalid Format</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div *ngIf="setAutoPay" class="row">
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <mat-form-field>
+                                            <input matInput placeholder="CCV" maxlength="3" formControlName="deposit_security_code" required>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_security_code.hasError('required')">CCV is required</mat-error>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_security_code.hasError('pattern')">Invalid Format</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Expiry Month" formControlName="deposit_expiry_MM" required>
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="x.value" *ngFor="let x of months">{{x.viewValue}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_expiry_MM.hasError('required')">Expiry Month is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div style="margin-bottom:15px" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                        <mat-form-field>
+                                            <mat-select placeholder="Expiry Year" formControlName="deposit_expiry_YYYY" required>
+                                                <mat-option [value]="">--</mat-option>
+                                                <mat-option [value]="y" *ngFor="let y of years">{{y}}</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="fourFormGroup.controls.deposit_expiry_YYYY.hasError('required')">Expiry Year is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <mat-card-title class="mat-elevation-z4"> Special Request </mat-card-title>
+                                <mat-checkbox formControlName="life_support"> Life Support </mat-checkbox>
+                                <p> (Choose if a resident at the selected service address requires Life Support) </p>
+                                <mat-card-title class="mat-elevation-z4"> Credit Verification </mat-card-title>
+                                <mat-radio-group class="radio-group" [(ngModel)]="credit_verification" (change)="radioChangeCreditVerification($event)" [ngModelOptions]="{standalone: true}">
+                                    <mat-radio-button [checked]="verify.val.status" class="radio-button" *ngFor="let verify of creditCards" [value]="verify.val.value">
+                                        {{verify.val.value}}
+                                    </mat-radio-button>
+                                </mat-radio-group>
+                                <div class="form hintMsg">
+                                    <p *ngIf="credit_verification=='Check My Credit'"> Credit Verification </p>
+                                    <p *ngIf="credit_verification=='Dont Check Credit'">I would like to pay the maximum deposit of $300.00 and not run the credit check.</p>
+                                    <div *ngIf="credit_verification=='Waive Deposit'">
+                                        <mat-radio-group class="radio-group" (change)="radioChangeCreditVerificationsub($event)">
+                                            <mat-radio-button class="radio-button" *ngFor="let waived of waivedeposit" [value]="waived">
+                                                {{waived}}
+                                            </mat-radio-button>
+                                        </mat-radio-group>
+                                        <p>You can download the Waiver Form
+                                            <a class="anchor" href="http://www.puc.texas.gov/industry/electric/forms/violence/DepWaivFrm.pdf" matTooltip="Waiver Form"> here</a>. Please fax your waiver documents to us at 1-281.715.5767 or email us at CustomerService@OUREnergyLLC.com.</p>
+                                    </div>
+                                </div>
+                            </mat-card>
+                        </form>
+                        <div class="stepperbutton">
+                            <button mat-button matStepperPrevious (click)="goToTop()">Back</button>
+                            <button mat-button matStepperNext id="next4" (click)="goToTop()">Next</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Authorization</b></ng-template>
+                        <mat-card>
+                            <mat-card-title class="mat-elevation-z4">Please read carefully and provide authorization</mat-card-title>
+                            <mat-card class="form mat-elevation-z4">
+                                <mat-checkbox [(ngModel)]="check1" [ngModelOptions]="{standalone: true}">I am choosing Our Energy LLC | TX PUCT # 10170 to provide energy services for the selected location.
+                                </mat-checkbox>
+                                <mat-checkbox [(ngModel)]="check2" [ngModelOptions]="{standalone: true}">I am an authorized person to request service for the selected location.</mat-checkbox>
+                                <div>
+                                    <p style="margin-left: 30px;">
+                                        Any Enrollment request including move-in or a switch can only be made by the service applicant or the applicant's authorized agent.If you are not an authorized individual, please do not submit your request using this portal.
+                                    </p>
+                                </div>
+                                <mat-checkbox disabled [checked]="status" *ngIf="showCheckbox == true"> I authorize OUR ENERGY to obtain information from a consumer credit reporting agency to process this application for electric service. I understand that this application is not a commitment from OUR ENERGY to provide service.</mat-checkbox>
+                                <mat-checkbox [(ngModel)]="check3" [ngModelOptions]="{standalone: true}"> I have read and understand all the authorization disclosures and terms of service for the product I have chosen. You can view, print or save your Terms of Service document
+                                    <a class="anchor" href="http://www.ourenergyllc.com/prodox/tos/TOS-08302017R-1.pdf" target="_blank" matTooltip="Term of Services"> here</a>.</mat-checkbox>
+                            </mat-card>
+                            <mat-card class="main-note mat-elevation-z4">
+                                <div class="note">
+                                    <div>
+                                        <i class="material-icons">info</i>
+                                    </div>
+                                    <div>
+                                        <p style="margin:0px 0px 0px 10px">In the case of a switch request, you have the right to review and rescind the Terms of Service within three federal business days, after receiving the Terms Of Service, without penalty.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="note">
+                                    <div>
+                                        <i class="material-icons">info</i>
+                                    </div>
+                                    <div>
+                                        <p style="margin:0px 0px 0px 10px">If you have chosen a prepaid service, you will not receive a bill and may request a summary of usage and payment if needed.
+                                        </p>
+                                    </div>
+                                </div>
+                            </mat-card>
+
+                            <mat-progress-bar *ngIf="loader==true" mode="indeterminate"></mat-progress-bar>
+                        </mat-card>
+                        <div class="stepperbutton">
+                            <button mat-button matStepperPrevious (click)="goToTop()" (click)="reset()">Back</button>
+
+                            <button mat-raised-button [disabled]="!check1 || !check2 || !check3 || submitBtn" (click)="enroll()">Submit</button>
+                        </div>
+
+                    </mat-step>
+                </mat-horizontal-stepper>
+            </div>
+        </form>
+        <div *ngIf="summary" class="col-lg-3 col-lg-3 col-sm-12 col-xs-12">
+            <div class="enroll-plan" *ngFor="let value of products;index as i;">
+                <div class="pro">
+                    <h3 style="font-weight: bold;">Enrollment Summary</h3>
+                </div>
+                <div class="rateSheet">
+                    <div>
+                        <div *ngIf="premiseInfo != null || premiseInfo != undefined">
+                            <br>
+                            <div class="headingDiv">State</div>
+                            <div class="dataDiv">{{premiseInfo?.city}}, {{premiseInfo?.state}}</div>
+                            <div class="headingDiv">Zip Code</div>
+                            <div class="dataDiv">{{premiseInfo?.zip}}</div>
+                            <div class="headingDiv">Street Address</div>
+                            <div class="dataDiv">{{premiseInfo?.address1}}</div>
+                        </div>
+                        <h2>{{value?.product_name}}</h2>
+                        <mat-card>
+                            <p>
+                                {{value?.product_info}}
+                            </p>
+                        </mat-card>
+                        <div style="margin-top: 10px" class="headingDiv">Contract Term</div>
+                        <div class="dataDiv">{{value?.display_term}} Months</div>
+                        <div class="headingDiv">Utility Provider</div>
+                        <div class="dataDiv">{{value?.vendor_company}}</div>
+                        <div class="headingDiv">Average Rate at 2000 kWhs</div>
+                        <div class="dataDiv">${{value?.tariff_2000}}¢ per kWh</div>
+                        <h2>Price Details</h2>
+                        <table id="pricing">
+                            <tr>
+                                <th class="subRow">Avg Monthly Use</th>
+                                <th class="subRow dataRow">500 kWh</th>
+                                <th class="subRow dataRow">1000 kWh</th>
+                                <th class="subRow dataRow">2000 kWh</th>
+                            </tr>
+                            <tr>
+                                <th class="subRow">Avg Rate (cent per kWh from EFL)</th>
+                                <th class="subRow dataRow">{{value.tariff_500}}¢</th>
+                                <th class="subRow dataRow">{{value.tariff_1000}}¢</th>
+                                <th class="subRow dataRow">{{value.tariff_2000}}¢</th>
+                            </tr>
+                            <tr>
+                                <th class="subRow">Estimated Monthly Bill*</th>
+                                <th class="subRow dataRow">${{value.tariff_500 * 500 / 100}}</th>
+                                <th class="subRow dataRow">${{value.tariff_1000 * 1000 / 100}}</th>
+                                <th class="subRow dataRow">${{value.tariff_2000 * 2000 / 100}}</th>
+                            </tr>
+                        </table>
+                        <h2>Documents</h2>
+                        <a class="anchor" [href]=value?.product_tos_url target="_blank">
+                            <h3 class="anchor-text"> Terms of Service </h3>
+                        </a>
+                        <a class="anchor" [href]=value?.product_efl_url target="_blank">
+                            <h3 class="anchor-text"> Electricity Facts Label </h3>
+                        </a>
+                        <a class="anchor" href="http://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank">
+                            <h3 class="anchor-text"> Your Rights as a Customer </h3>
+                        </a>
+                        <div style="margin-top: 10px" class="headingDiv">Early Termination Fee</div>
+                        <div class="dataDiv">${{value?.display_termination_fee}}</div>
+                    </div>
+                </div>
+                <div class="lable">
+                    <label>*Disclaimer - The total bill calculation is based on the monthly usage values shown. Your total bill
+          usage will vary based on actual usage. Please refer to Electricity Facts Label for details and more
+          information.</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

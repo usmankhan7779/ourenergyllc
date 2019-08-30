@@ -1,0 +1,125 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" style="margin-top: -8px;">
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Available Offers </label>
+        </ng-template>
+        <br>
+        <div class="productsnoffer">
+            <div class="newOffer">
+                <div class="spinner" *ngIf="showSpinner1">
+                    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+                </div>
+                <span *ngIf="showMessageResponse == false" class="noOffermessage">You currently don't have any special offers.</span>
+                <h4 *ngIf="showMessageResponse == false" class="text-center">To request for an offer please call us on this number <b>1-888-545-4687</b></h4>
+                <div *ngFor="let value of newOffer;index as i;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <br>
+                        <div class="search-plan">
+                            <h2 class="productName">{{value.product_name}}</h2>
+                            <p style="font-weight: bold; text-align: center; margin-top: 20px;font-size: 18px;">
+                                {{value.product_info}}
+                            </p>
+                            <div class="main">
+                                <div class="text-center inner">
+                                    <img src="../../../assets/img/Product-image-4.png" width="120px" height="120px">
+                                </div>
+                                <div class="bar"></div>
+                                <div class="inner">
+                                    <div class="rateSheet">
+                                        <div style="padding-left: 15px; padding-right: 15px;">
+                                            <span style="font-size: 18px !important">Terms: {{value.display_term}} months</span><br>
+                                            <span style="font-size: 18px !important">Termination fee: ${{value.display_termination_fee}}</span><br>
+                                            <span style="font-size: 18px !important"><b>Utility: {{value.vendor_company}}</b></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bar"></div>
+                                <div class="text-center inner">
+                                    <div>
+                                        <b style="font-size: 18px;">1000 kWh</b>
+                                        <h3 style="color:#cd0000; font-weight: bold;">{{value.tariff_1000}}¢</h3>
+                                    </div>
+                                    <div style="display: flex; flex-direction: row;">
+                                        <div style="flex: 1">
+                                            <b style="font-size: 18px;">500 kWh</b>
+                                            <h3 style="color:#cd0000; font-weight: bold;">{{value.tariff_500}}¢</h3>
+                                        </div>
+                                        <div style="flex: 1">
+                                            <b style="font-size: 18px;">2000 kWh</b>
+                                            <h3 style="color:#cd0000; font-weight: bold;">{{value.tariff_2000}}¢</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bar"></div>
+                                <div class="text-center inner">
+                                    <a mat-fab color="primary" matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
+                                    <a mat-fab color="primary" matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
+                                    <a mat-fab color="primary" matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
+                                    <br>
+                                    <br>
+                                    <button style="width: 200px;" mat-button (click)="RenewNow(value)">Renew Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" style="margin-top: -8px;">
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Offer History <span class="badge">{{offerHistoryarrayLength}}</span> </label>
+        </ng-template>
+        <div class="spacer mat-elevation-z6">
+            <div class="fix">
+                <div class="one">
+                    <mat-form-field>
+                        <input matInput placeholder="Search here" (keyup)="applyFilter($event.target.value)">
+                        <span matPrefix>
+                            <img src="../assets/img/Icons/offer-icon-black.png" class="images"> </span>
+                    </mat-form-field>
+                </div>
+                <div class="two">
+                    <mat-paginator #paginator [pageSize]="10" [pageSizeOptions]="[10,20]" [showFirstLastButtons]="true">
+                    </mat-paginator>
+                </div>
+            </div>
+            <div class="pay-bill-Table">
+                <mat-table #table [dataSource]="dataSource">
+                    <ng-container matColumnDef="pn">
+                        <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.product_name}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="ad">
+                        <mat-header-cell *matHeaderCellDef> Accepted Date </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.date_modified | date}} </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="t1">
+                        <mat-header-cell *matHeaderCellDef> Rate at 500 kWh </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.tariff_500}}¢ </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="t2">
+                        <mat-header-cell *matHeaderCellDef> Rate at 1000 kWh </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.tariff_1000}}¢ </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="t3">
+                        <mat-header-cell *matHeaderCellDef> Rate at 2000 kWh </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> {{element.tariff_2000}}¢ </mat-cell>
+                    </ng-container>
+                    <ng-container matColumnDef="tf">
+                        <mat-header-cell *matHeaderCellDef> Termination Fee </mat-header-cell>
+                        <mat-cell *matCellDef="let element"> ${{element.display_termination_fee}} </mat-cell>
+                    </ng-container>
+                    <mat-header-row *matHeaderRowDef="paymentColumns" color="primary"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: paymentColumns;"></mat-row>
+                </mat-table>
+                <h3 style="margin: 20px;" *ngIf="error">{{error}}</h3>
+                <div class="spinner" *ngIf="showSpinner">
+                    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

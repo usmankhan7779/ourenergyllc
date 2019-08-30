@@ -1,0 +1,165 @@
+.productsnoffer {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    .sub-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .inner-container {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        .child {
+            font-size: 16px;
+            font-weight: 500;
+            padding-left: 10px;
+        }
+    }
+}
+
+.ErrormEssage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    span {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.side-container {
+    display: flex;
+    justify-content: center;
+}
+
+.example-header-image2 {
+    background-image: url('/assets/img/Icons/plans.png');
+    background-size: cover;
+}
+
+mat-card-header mat-card-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+.image-labels {
+    background-color: #ce0b0b;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 12px 40px;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+.spinner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 0 20px;
+}
+
+h2 {
+    font-weight: bold;
+    margin-top: 70px;
+}
+
+h3 {
+    font-size: 30px!important;
+    margin: 0 0 20px!important;
+}
+
+.selectBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px;
+    button {
+        background-color: #000;
+        color: #fff;
+        padding: 5px 25px;
+        font-size: 22px;
+        border-radius: 25px;
+    }
+}
+
+.newOffer {
+    .NewOffer {
+        display: flex;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 25px;
+    }
+    .search-plan {
+        margin: 0 0 16px;
+        padding: 16px 24px;
+        box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
+        span {
+            font-size: 16px;
+        }
+        h3 {
+            span {
+                font-size: 16px;
+            }
+        }
+        .productName {
+            margin-top: -30px;
+            margin-bottom: 10px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
+        }
+        .main {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            .inner {
+                flex: 1;
+                .rateSheet {
+                    padding: 5px;
+                    div {
+                        display: inherit;
+                    }
+                    span {
+                        font-size: 20px;
+                        font-weight: bold;
+                    }
+                }
+                button {
+                    margin-top: 10px;
+                    padding: 4px;
+                    font-size: 22px;
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 25px;
+                    font-family: 'Open Sans' !important;
+                }
+            }
+            .bar {
+                border-left: 1px solid #ccc;
+            }
+        }
+    }
+}

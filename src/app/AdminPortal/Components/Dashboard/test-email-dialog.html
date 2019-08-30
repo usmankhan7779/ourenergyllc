@@ -1,0 +1,17 @@
+<form [formGroup]="emailForm" (ngSubmit)="submit()">
+    <h3 class="text-center">Email Test</h3>
+    <h4 class="text-center">Enter email below to get a mock Enrollment Email</h4>
+    <div class="row">
+        <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <input matInput placeholder="Email Address" formControlName="email_address" />
+            <mat-error *ngIf="emailForm.controls.email_address.hasError('required')">Email Address is required</mat-error>
+            <mat-error *ngIf="!emailForm.controls.email_address.hasError('required') && emailForm.controls.email_address.hasError('email')">Invalid Format</mat-error>
+        </mat-form-field>
+    </div>
+    <h4 style="color:#cd0000;" class="text-center">{{error}}</h4>
+    <div class="text-center">
+        <br>
+        <button [disabled]="isBtnDisabled" type="submit" mat-raised-button>Send</button>
+        <button [disabled]="isBtnDisabled" type="button" mat-button [mat-dialog-close]>Cancel</button>
+    </div>
+</form>

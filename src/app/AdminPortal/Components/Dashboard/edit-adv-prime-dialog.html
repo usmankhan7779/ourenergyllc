@@ -1,0 +1,28 @@
+<form [formGroup]="advFormGroup" (ngSubmit)="submit()">
+    <h3 class="text-center">Edit Advantage Prime Plan</h3>
+    <div class="row">
+        <mat-form-field class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+            <input matInput placeholder="Month/Year" formControlName="month" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <input matInput placeholder="Centerpoint" formControlName="centerpoint" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <input matInput placeholder="Oncor" formControlName="oncor" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <input matInput placeholder="AEP Central" formControlName="aep_central" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <input matInput placeholder="AEP North" formControlName="aep_north" />
+        </mat-form-field>
+        <mat-form-field class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <input matInput placeholder="TNMP" formControlName="tnmp" />
+        </mat-form-field>
+    </div>
+    <div class="text-center">
+        <br>
+        <button color="primary" [disabled]="isBtnDisabled" type="submit" mat-raised-button>Save</button>
+        <button color="primary" [disabled]="isBtnDisabled" type="button" mat-button [mat-dialog-close]>Cancel</button>
+    </div>
+</form>

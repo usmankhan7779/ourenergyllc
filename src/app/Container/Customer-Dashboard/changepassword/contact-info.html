@@ -1,0 +1,82 @@
+<div class="contactUpdate">
+    <form [formGroup]="custInfoForm" (ngSubmit)="submit()" class="contactInfo">
+        <div class="contactalign">
+            <div class="contactdate">
+                <mat-card>
+                    <mat-card-title>Personal Information</mat-card-title>
+                    <mat-form-field>
+                        <input matInput placeholder="First Name" [value]="username" disabled>
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="MI" disabled>
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Last Name" [value]="lastName" disabled>
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Company Name" [value]="company_name" disabled>
+                        <mat-icon matSuffix>lock</mat-icon>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+            <div class="contactdate">
+                <mat-card>
+                    <mat-card-title>Contact Information</mat-card-title>
+                    <mat-form-field>
+                        <input matInput placeholder="Email" formControlName="cust_emailid">
+                        <mat-error *ngIf="custInfoForm.controls.cust_emailid.hasError('required')">Email is required</mat-error>
+                        <mat-error *ngIf="!custInfoForm.controls.cust_emailid.hasError('required') && custInfoForm.controls.cust_emailid.hasError('email')">Invalid Email</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Telephone" maxlength="12" formControlName="cust_phone1" phone-no>
+                        <mat-error *ngIf="custInfoForm.controls.cust_phone1.hasError('required')">Telephone is required</mat-error>
+                        <mat-error *ngIf="custInfoForm.controls.cust_phone1.hasError('pattern')">Invalid Telephone</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Mobile No." maxlength="12" formControlName="cust_phone2" phone-no>
+                        <mat-error *ngIf="custInfoForm.controls.cust_phone2.hasError('pattern')">Invalid Mobile No.</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="SMS Provider" formControlName="cust_sms_provider">
+                            <mat-option value=""> -- </mat-option>
+                            <mat-option [value]="provider" *ngFor="let provider of mobileProvider">{{provider}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+            <div class="contactdate">
+                <mat-card>
+                    <mat-card-title>Mailing Information</mat-card-title>
+                    <!-- <mat-form-field>
+                        <input matInput placeholder="C/O Address" [(ngModel)]='cust_address1'>
+                    </mat-form-field> -->
+                    <mat-form-field>
+                        <input matInput placeholder="Address" formControlName='cust_address2'>
+                        <mat-error *ngIf="custInfoForm.controls.cust_address2.hasError('required')">Address is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="City" formControlName='cust_city'>
+                        <mat-error *ngIf="custInfoForm.controls.cust_city.hasError('required')">City is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-select placeholder="State" formControlName="cust_state">
+                            <mat-option [value]='state.value' *ngFor="let state of states">{{state.viewValue}}</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="custInfoForm.controls.cust_state.hasError('required')">State is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Zip Code" formControlName='cust_zip'>
+                        <mat-error *ngIf="custInfoForm.controls.cust_zip.hasError('required')">Zip Code is required</mat-error>
+                    </mat-form-field>
+                </mat-card>
+            </div>
+        </div>
+        <div class="contactbutton-row" style="margin-top: 15px;">
+            <button mat-raised-button [disabled]="sbmtBtnStatus" class="btn1" type="submit">Submit</button>
+            <button mat-raised-button [disabled]="sbmtBtnStatus" class="btn2" type="button" mat-dialog-close>Cancel</button>
+        </div>
+    </form>
+</div>

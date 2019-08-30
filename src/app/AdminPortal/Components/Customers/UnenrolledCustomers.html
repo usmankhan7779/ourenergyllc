@@ -1,0 +1,94 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <button mat-icon-button matTooltip="Refresh" matSuffix style="font-size: 27px;" (click)="refresh()">
+                <mat-icon>refresh</mat-icon>
+            </button>
+            <input placeholder="Search" matInput [formControl]="searchControl">
+            <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+            <mat-icon>close</mat-icon>
+        </button>
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="20" [pageSizeOptions]="[10,20]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abcc">
+            <ng-container matColumnDef="actions">
+                <mat-header-cell *matHeaderCellDef style="flex: 0 0 220px;"> Actions </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="flex: 0 0 220px;">
+                    <button mat-icon-button (click)="openPortfolio(element)">
+                <i [matTooltip]="'View Details of ' + element.cust_id" class="normalIcon material-icons">person</i>
+            </button>
+                    <button mat-icon-button (click)="RefreshAccount(element)">
+                <i [matTooltip]="'Refresh ' + element.cust_id" class="normalIcon material-icons">refresh</i>
+              </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_id">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Customer ID </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_id}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_firstname}} {{element.cust_lastname}} {{element.company_name ? '/ ' + element.company_name : ''}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_emailid">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_emailid}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="premise_id">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Premise ID </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.premise_id}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_status_desc">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_status_desc}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_phone">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Phone </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_phone}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_zip">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Zip Code </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_zip}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="due_amount_unposted">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Unposted Due Amount </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.due_amount_unposted}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="last_paid_amount">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Last Paid Amount </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.last_paid_amount}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="last_bill_no">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> last Bill No </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.last_bill_no}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="utility_name">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Utility Name </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.utility_name}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_address2">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_address2}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_city">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> City </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_city}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="cust_state">
+                <mat-header-cell *matHeaderCellDef style="width: 100px;"> State </mat-header-cell>
+                <mat-cell *matCellDef="let element" style="width: 100px;"> {{element.cust_state}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </div>
+</div>

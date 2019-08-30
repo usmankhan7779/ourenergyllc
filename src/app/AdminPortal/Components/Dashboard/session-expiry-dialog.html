@@ -1,0 +1,20 @@
+<form [formGroup]="session" (ngSubmit)="submit()">
+    <h3 class="text-center">Change Session Expiry Time</h3>
+    <div style="display: flex; flex-direction: row; justify-content: center;">
+        <mat-form-field style="width: 80px;">
+            <input matInput formControlName="hh" maxlength="2" />
+            <mat-error *ngIf="session.controls.hh.hasError('pattern')">Invalid Input</mat-error>
+        </mat-form-field>
+        <h5> : </h5>
+        <mat-form-field style="width: 80px;">
+            <input matInput formControlName="mm" maxlength="2" />
+            <mat-error *ngIf="session.controls.mm.hasError('pattern')">Invalid Input</mat-error>
+        </mat-form-field>
+    </div>
+    <h4 style="color:#cd0000;" class="text-center">{{error}}</h4>
+    <div class="text-center">
+        <br>
+        <button [disabled]="isBtnDisabled" type="submit" mat-raised-button>Save</button>
+        <button [disabled]="isBtnDisabled" type="button" mat-button [mat-dialog-close]>Cancel</button>
+    </div>
+</form>

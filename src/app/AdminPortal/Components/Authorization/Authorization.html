@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
+            <input matInput placeholder="Search..." (keyup)="applyFilter($event.target.value)">
+            <button (click)="openAddCustomerDialog()" matSuffix mat-icon-button>
+                <mat-icon style="font-size: 30px;" matTooltip="Add Customer">add_box</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>
+<div class="header-paginator">
+    <div class="topPaginator">
+        <mat-paginator #paginator [pageSize]="25" [pageSizeOptions]="[25,50]" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+<div class="my">
+    <div class="y">
+        <mat-table #table [dataSource]="dataSource" class="abc">
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef> Customer ID </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cust_id}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="customerID">
+                <mat-header-cell *matHeaderCellDef> Reason</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.reason}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="contact">
+                <mat-header-cell *matHeaderCellDef> Linked</mat-header-cell>
+                <mat-cell *matCellDef="let element; let ind = index">
+                    <button mat-icon-button [disabled]="disabledLinked[element.id]" *ngIf="element.linked" (click)="changeLinked(element)">
+                    <i [matTooltip]="'Click to Unlink ' + element.cust_id" class="successIcon material-icons">check</i>
+                </button>
+                    <button mat-icon-button [disabled]="disabledLinked[element.id]" *ngIf="!element.linked" (click)="changeLinked(element)">
+                    <i [matTooltip]="'Click to Link ' + element.cust_id" class="failureIcon material-icons">close</i>
+                </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="active">
+                <mat-header-cell *matHeaderCellDef> Status</mat-header-cell>
+                <mat-cell *matCellDef="let element; let ind = index">
+                    <button mat-icon-button [disabled]="disabledStatus[element.id]" *ngIf="element.status" (click)="changeStatus(element)">
+                    <i [matTooltip]="'Click to Deactivate ' + element.cust_id" class="successIcon material-icons">check</i>
+                </button>
+                    <button mat-icon-button [disabled]="disabledStatus[element.id]" *ngIf="!element.status" (click)="changeStatus(element)">
+                    <i [matTooltip]="'Click to Activate ' + element.cust_id" class="failureIcon material-icons">close</i>
+                </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Register </mat-header-cell>
+                <mat-cell *matCellDef="let element; let ind = index">
+                    <button mat-icon-button [disabled]="disabledRegister[element.id]" *ngIf="element.register" (click)="changeRegister(element)">
+                    <i [matTooltip]="'Click to Unregister ' + element.cust_id" class="successIcon material-icons">check</i>
+                </button>
+                    <button mat-icon-button [disabled]="disabledRegister[element.id]" *ngIf="!element.register" (click)="changeRegister(element)">
+                    <i [matTooltip]="'Click to Register ' + element.cust_id" class="failureIcon material-icons">close</i>
+                </button>
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="edit">
+                <mat-header-cell *matHeaderCellDef> Edit </mat-header-cell>
+                <mat-cell *matCellDef="let element; let ind = index">
+                    <button mat-icon-button (click)="openEditCustomerDialog(element)">
+                    <i [matTooltip]="'Edit ' + element.cust_id" class="normalIcon material-icons">edit</i>
+                </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        </mat-table>
+    </div>
+</div>

@@ -1,0 +1,164 @@
+:host ::ng-deep .agentHeader {
+    .mat-form-field-infix {
+        /* display: block; */
+        position: relative;
+        flex: auto;
+        min-width: 0;
+        width: 180px;
+        margin-top: -10px;
+    }
+}
+
+.example-container {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    margin-top: 10px;
+    .header-paginator {
+        display: flex;
+        margin-top: 10px;
+        flex-direction: column;
+        z-index: 10;
+        background-color: #fff;
+        width: 100%;
+    }
+    .agentHeader {
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        display: flex;
+        flex-direction: row;
+        height: 55px;
+        justify-content: space-between;
+        padding: 16px 20px 10px 10px;
+        .IconName {
+            display: flex;
+            flex-direction: row;
+        }
+        span {
+            color: #616161;
+            font-size: 16px;
+            display: flex;
+            align-items: flex-end;
+            margin-left: 4px;
+            font-weight: bold;
+        }
+    }
+    .topPaginator {
+        display: flex;
+        flex-direction: row;
+        background-color: #fff;
+        height: 55px;
+        justify-content: space-between;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        .example-header {
+            padding: 8px 24px 0;
+            textarea {
+                resize: none;
+            }
+        }
+    }
+    .table {
+        text-align: center;
+        margin-bottom: 0px;
+        overflow: hidden;
+        font-size: 14px;
+        font-weight: bold;
+        button {
+            font-weight: bold;
+        }
+        .mat-header-row {
+            box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+            min-height: 40px;
+            background-color: black;
+            z-index: 10;
+            width: 100%;
+        }
+        mat-cell {
+            color: #545454;
+        }
+        mat-header-cell {
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            button {
+                background-color: #eee;
+                color: #616161;
+                font-weight: bold;
+            }
+            button:hover {
+                color: #cd0000;
+            }
+        }
+        mat-table button {
+            text-align: center;
+        }
+    }
+}
+
+.fab {
+    position: fixed;
+    z-index: 100;
+    bottom: 30px;
+    right: 30px;
+    color: #cd0000;
+    cursor: pointer;
+    i {
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        font-size: 50px;
+        border-radius: 25px;
+        background-color: #cd0000;
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    .example-container {
+        margin-top: 0px;
+        .header-paginator {
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            background-color: #fff;
+            width: 100%;
+        }
+        .table {
+            .mat-header-row {
+                box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+                min-height: 40px;
+                background-color: black;
+                z-index: 10;
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .example-container {
+        margin-top: 0px;
+        .header-paginator {
+            width: calc(100% - 0px);
+            left: 0px;
+            position: relative;
+            top: 0px;
+            z-index: 2;
+            margin-top: 0px;
+        }
+        .table {
+            margin-top: 0px;
+            .mat-header-row {
+                width: calc(100% - 0px);
+                left: 0px;
+                position: relative;
+                top: 0px;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+.mat-form-field {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.mat-tooltip {
+    font-size: 12px !important;
+}

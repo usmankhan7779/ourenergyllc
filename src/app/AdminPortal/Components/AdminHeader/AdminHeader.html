@@ -1,0 +1,44 @@
+<div class="Header mat-elevation-z3">
+    <div style="cursor: pointer;">
+        <img routerLink="/" src="../../../../assets/img/log_OurEnergy.png" alt="logo" width='145'>
+        <!-- <img routerLink="/" src="../../../../assets/img/WTG-Energy-Logo.png" alt="logo" width='145'> -->
+        <!-- <a routerLink="/" style="text-decoration: none;">
+            <h1 style="font-size:32px;font-weight:800;">
+                <span style="color:#d00000">W</span>
+                <span style="color:#2e2566;margin-left:-4px;">TG</span>
+                <span style="color:#2e2566"> ENERGY</span>
+            </h1>
+        </a> -->
+    </div>
+    <div class="toggle-button">
+        <i class="fa fa-palette" [matMenuTriggerFor]="menu"></i>
+        <mat-menu #menu="matMenu">
+            <div class="Themes">
+                <span class="{{v}}" *ngFor="let v of theme; let ind = index" (click)="Palette(ind)"></span>
+            </div>
+        </mat-menu>
+        <div class="Toggle">
+            <mat-icon (click)="myFunction()" style="font-size: 26px">format_align_right</mat-icon>
+        </div>
+    </div>
+</div>
+<div class="topnav" id="myTopnav">
+    <mat-list>
+        <a *ngFor="let v of routes">
+            <mat-list-item routerLink="/adminportal/{{v.route}}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <span>
+                    <i class="fa fa-{{v.icon}}"></i>
+                </span>
+                <span>{{v.name}}</span>
+            </mat-list-item>
+        </a>
+        <a>
+            <mat-list-item (click)="signOut()">
+                <span>
+                        <i class="fa fa-sign-out"></i>
+                    </span>
+                <span>SignOut</span>
+            </mat-list-item>
+        </a>
+    </mat-list>
+</div>

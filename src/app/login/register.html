@@ -1,0 +1,100 @@
+<mat-card class="container">
+    <form (ngSubmit)="submit()" #form [formGroup]="myForm" autocomplete="off">
+        <mat-card class="header-title">
+            <h3>New User Registration</h3>
+        </mat-card>
+        <div class="sub-titles">Your Account With Us</div>
+        <div class="rows">
+            <mat-form-field>
+                <mat-label>Account Number</mat-label>
+                <input matInput formControlName=cust_id #input0 maxlength="10" required>
+                <mat-icon matSuffix>account_circle </mat-icon>
+                <mat-error *ngIf="controls.cust_id.errors?.required">Account Number is required</mat-error>
+                <mat-error *ngIf="controls.cust_id.errors?.pattern">Invalid pattern</mat-error>
+                <mat-hint align="end">{{input0.value?.length || 0}}/10</mat-hint>
+                <mat-hint>Account number as it appears on your payment coupon</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Billing Zip Code</mat-label>
+                <input matInput #input1 maxlength="5" formControlName=zip required>
+                <mat-icon matSuffix>place</mat-icon>
+                <mat-error *ngIf="controls.zip.errors?.required">Billing Zip Code is required</mat-error>
+                <mat-error *ngIf="controls.zip.errors?.pattern">Invalid pattern</mat-error>
+                <mat-error *ngIf="controls.zip.errors?.minlength">Minimum of 5 characters required</mat-error>
+                <mat-hint align="end">{{input1.value?.length || 0}}/5</mat-hint>
+            </mat-form-field>
+        </div>
+        <div class="sub-titles">Signup Information</div>
+        <div class="rows">
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Login id</mat-label>
+                <input matInput formControlName=login_id required>
+                <mat-icon matSuffix>picture_in_picture_alt</mat-icon>
+                <mat-error *ngIf="controls.login_id.errors?.required">login id is required</mat-error>
+                <mat-error *ngIf="controls.login_id.errors?.minlength">Minimum of 6 characters required</mat-error>
+            </mat-form-field>
+            <!-- <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName=firstname>
+                <mat-error *ngIf="controls.firstname.errors?.pattern">Invalid pattern</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName=lastname>
+                <mat-error *ngIf="controls.lastname.errors?.pattern">Invalid pattern</mat-error>
+            </mat-form-field> -->
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName=email (keyup)="checkEmail($event.target.value)" required>
+                <mat-icon matSuffix style="color:red" *ngIf="showEmailSpinnerstatus">error</mat-icon>
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="controls.email.errors?.required">Email is required</mat-error>
+                <mat-error *ngIf="controls.email.errors?.pattern">Invalid pattern</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName=password [type]="hide ? 'password' : 'text'" #inpu0 maxlength="24" required>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="controls.password.errors?.required">Password is required</mat-error>
+                <mat-error *ngIf="controls.password.errors?.minlength">Password must be 6 to 24 characters long.</mat-error>
+                <mat-hint align="end">{{inpu0.value?.length || 0}}/24</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput formControlName=confirm_password [type]="hides ? 'password' : 'text'" (input)="ComparePassword($event)" required>
+                <mat-icon matSuffix (click)="hides = !hides">{{hides ? 'visibility' : 'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="controls.confirm_password.errors?.required">Confirm Password is required</mat-error>
+                <mat-hint>
+                    <mat-error *ngIf="passError">{{passwordError}}</mat-error>
+                </mat-hint>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Secret Question</mat-label>
+                <input matInput formControlName=secret_question>
+                <mat-error>required</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <mat-label>Secret Answer</mat-label>
+                <input matInput formControlName=secret_answer>
+                <mat-error>required</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="footer-row">
+            <div class="tos">
+                <mat-checkbox [(ngModel)]="agree" [ngModelOptions]="{standalone: true}">I understand and agree to the <a target="_blank" routerLink="/term-and-conditions">Terms of Use</a> and <a target="_blank" routerLink="/privacy-policy">Privacy Policy</a> </mat-checkbox>
+            </div>
+            <div class="recaptcha-container">
+                <app-recapcha></app-recapcha>
+            </div>
+            <div>
+                <p class="error"> {{cap_result}} </p>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" [disabled]="registerSbmtBtn || !agree" mat-raised-button>Submit</button>
+        </div>
+    </form>
+    <div class="spinner" *ngIf="showSpinner">
+        <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+    </div>
+</mat-card>

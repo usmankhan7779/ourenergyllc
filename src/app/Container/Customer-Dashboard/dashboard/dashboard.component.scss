@@ -1,0 +1,108 @@
+.App {
+    width: inherit;
+    height: inherit;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.App .children {
+    position: relative;
+    width: calc(100% - 250px);
+    left: 235px;
+    right: 0;
+    top: 210px;
+    margin-bottom: 50px;
+}
+
+.App .footer {
+    position: fixed;
+    width: calc(100% - 220px);
+    left: 220px;
+    right: 0;
+    bottom: 0;
+}
+
+.App .staticContent {
+    width: calc(100% - 230px);
+    position: fixed;
+    left: 225px;
+    background: #fff;
+    top: 50px;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 1188px) {
+    .App .children {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        width: calc(100% - 20px);
+    }
+    .App .footer {
+        position: fixed;
+        width: calc(100% - 0px);
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .App .staticContent {
+        width: calc(100% - 0px);
+        left: 0px;
+        position: relative;
+        top: 0px;
+    }
+}
+
+@media only screen and (max-width: 1640px) {
+    .App .children {
+        position: relative;
+        width: calc(100% - 250px);
+        left: 235px;
+        right: 250px;
+        top: 210px;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 1137px) {
+    .App .children {
+        position: relative;
+        width: calc(100% - 250px);
+        left: 235px;
+        right: 250px;
+        top: 210px;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 986px) and (min-width: 1188px) {
+    .App .children {
+        position: relative;
+        width: calc(100% - 250px);
+        left: 235px;
+        right: 250px;
+        top: 300px;
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 1188px) {
+    .App .children {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        width: calc(100% - 20px);
+        margin-bottom: 105px;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    .App .children {
+        position: relative;
+        left: 10px;
+        top: 10px;
+        width: calc(100% - 20px);
+        margin-bottom: 105px;
+    }
+}

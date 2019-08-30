@@ -1,0 +1,67 @@
+<div class="nav-side-menu">
+    <mat-list>
+        <a style="margin-top: 15px; height: 50px; margin-bottom: 4px;" routerLink="customerInfo">
+            <mat-list-item (click)="nestedList()" class="mat" matTooltip="{{username}}" matTooltipPosition="after">
+                <img class="photo" [src]=photo onerror="this.src='../../assets/img/Avatar-image-2.png'">{{custId}}
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Home.png" class="images">Home
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.profile" routerLink="customerInfo" routerLinkActive="active">
+            <mat-list-item routerLinkActive="active">
+                <img src="../assets/img/Icons/Profile.png" class="icons">Profile
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.contactus" routerLink="contact" routerLinkActive="active">
+            <mat-list-item routerLinkActive="active">
+                <img src="../assets/img/Icons/Contact.png" class="icons">Contact Us
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active">
+            <mat-list-item style="width: 100%;">
+                <img src="../assets/img/Icons/Plan.png" class="images">Plan
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.offers" routerLink="offers" routerLinkActive="active" class="plan">
+            <mat-list-item style="width: 100%;">
+                <img src="../assets/img/Icons/offer-icon-black.png" class="images">Offers
+            </mat-list-item>
+            <span *ngIf="showOfferNotification">
+                {{offerLength}}
+            </span>
+        </a>
+        <a *ngIf="tabs?.paynow" routerLink="paynow" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Pay-Now.png" class="images">Pay Now
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.bills" routerLink="billInfo" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Bills.png" class="images">Bills
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Payments.png" class="images"> Payments
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Usage.png" class="images">Usage
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.notices" routerLink="notices" routerLinkActive="active">
+            <mat-list-item>
+                <img src="../assets/img/Icons/Notices-icon.png" class="images">Notices
+            </mat-list-item>
+        </a>
+        <a>
+            <mat-list-item routerLink="." (click)="logOut()">
+                <img src="../assets/img/Icons/Logout.png" class="images"> Sign Out
+            </mat-list-item>
+        </a>
+    </mat-list>
+</div>

@@ -1,0 +1,253 @@
+<mat-card class="mat-elevation-z5" *ngFor="let info of custInfo">
+    <div class="dashboardInfo">
+        <div class="messageProduct">
+            <div>
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image1"> </div>
+                    <mat-card-title>Message Center</mat-card-title>
+                </mat-card-header>
+                <span *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" style="font-size: 14px; font-weight: bold;"> Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</span>
+                <br *ngIf="showOfferMessage">
+                <a style="text-decoration: none !important;" routerLink="/dashboard/offers">
+                    <h4 *ngIf="showOfferMessage" style="margin-bottom: 0px; cursor: pointer; font-size: 16px; font-weight: bold; color: #cd0000"> You recieved a new offer! </h4>
+                </a>
+            </div>
+            <div class="Product_code" *ngIf="ShowPromoCode">
+                <button mat-button (click)="PromoDialogOpen()">Promo Code</button>
+            </div>
+        </div>
+    </div>
+</mat-card>
+<h2 class="spinner" *ngIf="!request">{{error}}</h2>
+
+<div class="spinner" *ngIf="showSpinner">
+    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+</div>
+<div *ngIf="homeInfo">
+    <div class="col-container">
+        <div class="col mat-elevation-z5">
+            <div class="infoBox">
+                <div class="dashboardInfo">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image2"> </div>
+                        <mat-card-title>Account Information</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="accInfo">
+                        <mat-list>
+                            <mat-list-item>
+                                Name:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Premise ID:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Account:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Amount Due:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Due Date:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Service Period:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Address:
+                            </mat-list-item>
+                        </mat-list>
+                        <mat-list *ngFor="let info of custInfo">
+                            <mat-list-item *ngIf="info.company_name == ''">
+                                {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}}
+                            </mat-list-item>
+                            <mat-list-item *ngIf="info.cust_firstname == ''">
+                                {{info.company_name}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.premise_id}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.cust_id}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{(info.due_amount.toString())[0] == '-' ? '-$' + info.due_amount.toString().slice(1) : '$' + info.due_amount}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.due_date}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.last_service_start}} - {{info.last_service_end}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.premise_address2}} {{info.premise_city}}, {{info.premise_state }} {{info.premise_zip}}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </div>
+            </div>
+        </div>
+        <div class="col mat-elevation-z5">
+            <div class="infoBox-1">
+                <div class="dashboardInfo">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image3">
+                        </div>
+                        <mat-card-title>Your Utility</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="utility">
+                        <mat-list *ngFor="let info of custInfo">
+                            <mat-list-item>
+                                {{info.utility_name}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.utility_caption1}} {{info.utility_name}} {{info.utility_caption3}}
+                            </mat-list-item>
+                        </mat-list>
+                        <div>
+                            <span style="background-color: #ddd; color: #555; padding: 5px 10px 5px 10px; border-radius: 100px; font-size: 15px; margin: 5px 0px 0px 5px;"> For any outages or emergencies, please contact {{custInfo[0]?.utility_name}} directly. </span>
+                        </div>
+                    </mat-card-content>
+                </div>
+                <div class="dashboardInfo">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image9">
+                        </div>
+                        <mat-card-title>Your Meter</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="utility" *ngFor="let meters of meter">
+                        <mat-list>
+                            {{smartMeter}}
+                            <mat-list-item>
+                                Meter Number: {{meters.meter_pu_unit_id}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                Multiplier: {{meters.meter_multiplier}}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-container">
+        <div class="col mat-elevation-z5">
+            <div class="infoBox">
+                <div class="dashboardInfo">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image4">
+                        </div>
+                        <mat-card-title>Payment Options</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="payment">
+                        <mat-list *ngFor="let info of custInfo">
+                            <div class="manage-accountSetup">
+                                <mat-list-item>
+                                    <span class="points">1 </span>
+                                    <a routerLink="/dashboard/paynow">Pay Online</a>
+                                </mat-list-item>
+                                <!-- <mat-list-item>
+                                    <button mat-raised-button class="manage-button" routerLink="/dashboard/manage-payment">Manage Payment Account Setup</button>
+                                </mat-list-item> -->
+                            </div>
+                            <mat-list-item>
+                                <span class="points">2 </span> Mail Your Payments To Our Energy, LLC
+                            </mat-list-item>
+                            <div class="Address">
+                                <mat-list-item>{{info.pmc_address1}}</mat-list-item>
+                                <mat-list-item>{{info.pmc_address2}}</mat-list-item>
+                                <mat-list-item>{{info.pmc_city}} {{info.pmc_state}} {{info.pmc_zip}}</mat-list-item>
+                            </div>
+                            <i>* Make Check Payable To: Our Energy, LLC</i>
+                            <mat-list-item>
+                                <span class="points">3 </span>Call Customer Care At {{info.pmc_phone1}}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </div>
+            </div>
+        </div>
+        <div class="col mat-elevation-z5">
+            <div class="infoBox-1">
+                <div class="dashboardInfo">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image5">
+                        </div>
+                        <mat-card-title>Service Address</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="servAdd">
+                        <mat-list>
+                            <mat-list-item>
+                                Address:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Premise ID:
+                            </mat-list-item>
+                        </mat-list>
+                        <mat-list *ngFor="let info of custInfo">
+                            <mat-list-item>
+                                {{info.premise_address2}} {{info.premise_city}}, {{info.premise_state }} {{info.premise_zip}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{info.premise_id}}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </div>
+                <br>
+                <div class="dashboardInfo">
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image6">
+                        </div>
+                        <mat-card-title>Service Terms</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="servAdd">
+                        <mat-list>
+                            <mat-list-item>
+                                Current:
+                            </mat-list-item>
+                            <mat-list-item>
+                                Effective Dates:
+                            </mat-list-item>
+                        </mat-list>
+                        <mat-list *ngFor="let value of PlanInformation">
+                            <mat-list-item>
+                                {{value.contract_type_desc}}
+                            </mat-list-item>
+                            <mat-list-item>
+                                {{value.start_date}} - {{value.end_date}}
+                            </mat-list-item>
+                        </mat-list>
+                    </mat-card-content>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="graphs mat-elevation-z5">
+                <div class="dashboardInfo" style="padding: 20px;">
+                    <mat-card-header style="margin-bottom: 20px;">
+                        <div mat-card-avatar class="example-header-image7">
+                        </div>
+                        <mat-card-title>Payment History Graph</mat-card-title>
+                    </mat-card-header>
+                    <h3 style="margin-top: 20px; color: #cd0000; text-align: center;" *ngIf="errMsg1 != null">{{errMsg1}}</h3>
+                    <canvas *ngIf="errMsg1 == null" id="chartAmount" #chartAmount height="200"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <div class="graphs mat-elevation-z5">
+                <div class="dashboardInfo" style="padding: 20px;">
+                    <mat-card-header style="margin-bottom: 20px;">
+                        <div mat-card-avatar class="example-header-image8">
+                        </div>
+                        <mat-card-title>Usage History Graph</mat-card-title>
+                    </mat-card-header>
+                    <h3 style="margin-top: 20px; color: #cd0000; text-align: center;" *ngIf="errMsg2 != null">{{errMsg2}}</h3>
+                    <canvas *ngIf="errMsg2 == null" id="chartUsage" #chartUsage height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

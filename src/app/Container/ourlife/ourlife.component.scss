@@ -1,0 +1,1203 @@
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #e16666;
+}
+
+a {
+    text-decoration: none !important;
+    color: #f80000;
+}
+
+ul li {
+    list-style: none;
+}
+
+.margin-up {
+    margin-top: 10px;
+}
+
+.margin {
+    margin: 25px 0px !important;
+}
+
+.energy-heading {
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sub-heading {
+    font-size: 22px;
+    color: #000000;
+}
+
+.energy-tips-detail {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.tools-heading {
+    font-size: 20px;
+    color: #cd0000;
+    transition: 1s;
+    font-weight: bold;
+}
+
+.tools-heading:hover {
+    color: #cd0000;
+    text-decoration: none;
+}
+
+.tools-heading:focus {
+    text-decoration: none;
+}
+
+.our-energy h2 {
+    font-weight: bold;
+    margin-bottom: -10px;
+    font-style: normal;
+    color: #f80000;
+    text-align: center;
+}
+
+.heading2 {
+    margin-bottom: 45px;
+    font-size: 22px;
+}
+
+.see-whats i {
+    float: left;
+    color: #f80000;
+    font-size: 20px;
+}
+
+.see-whats h3 {
+    color: #f80000;
+    font-size: 20px;
+}
+
+.divider.left {
+    background-position: left bottom;
+}
+
+.divider.lessmar2 {
+    margin-bottom: 37px;
+}
+
+.divider {
+    height: 5px;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.lessmar2 {
+    margin-bottom: 20px;
+}
+
+.divider_colored_line_2 span:first-child {
+    display: block;
+    border-bottom: 2px solid #fc4242;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.divider_colored_line_2 span {
+    display: block;
+    border-bottom: 1px solid #D2D2D2;
+    width: 370px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+.vc_grid-filter.vc_grid-filter-center {
+    text-align: center;
+}
+
+.vc_grid-filter {
+    margin-left: 0;
+    margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.vc_grid-filter.vc_grid-filter-size-md .vc_grid-filter-item {
+    font-size: 100%;
+    padding: 2px 10px;
+}
+
+.item-outer {
+    margin-top: 30px;
+    float: left;
+    padding: 10px;
+}
+
+.item-box {
+    overflow: hidden;
+    padding: 0px;
+}
+
+.item-box img {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.item-box:hover img {
+    transform: scale(1.5) rotate(10deg);
+}
+
+.item-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0px;
+    background-color: hsla(0, 2%, 45%, 0.588);
+    display: none;
+}
+
+.item-hover a p {
+    text-align: center;
+    margin-top: 23%;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    display: none;
+}
+
+.item-hover a {
+    text-decoration: none;
+}
+
+.item-box:hover .item-hover {
+    display: block;
+}
+
+.item-box:hover .item-hover p {
+    display: block;
+}
+
+.miss-out {
+    margin-top: 30px;
+}
+
+.miss-out-box {
+    overflow: hidden;
+    position: relative;
+    height: 537px;
+}
+
+.miss-out-box img {
+    width: 293%;
+    margin-left: -369px;
+    transition: 1s;
+}
+
+.miss-out-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 537px;
+    left: 0px;
+    background-color: hsla(0, 2%, 45%, 0.588);
+    text-align: center;
+    padding: 10px;
+    visibility: hidden;
+    transition: 1s;
+}
+
+.miss-out-hover a {
+    text-decoration: none;
+    color: #ffffff !important;
+    text-align: left;
+}
+
+.miss-out-hover a h1 {
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.miss-out-hover p {
+    font-size: 16px;
+    text-align: justify;
+    color: #ffffff;
+}
+
+.miss-out-box:hover .miss-out-hover {
+    top: 200px;
+    visibility: visible;
+}
+
+.load-more-btn {
+    text-align: center;
+    margin-top: 29px;
+    font-size: 23px;
+}
+
+.load-more-btn button {
+    color: #ffffff;
+    font-weight: 600;
+    background: #000;
+    border-radius: 25px;
+    border: none;
+    padding: 5px 30px;
+    outline: none;
+}
+
+.con-ourlifedetail {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/OurEnergy-Post-Mothers-day-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ourlifedetail-banner {
+    padding: 30px 0px;
+}
+
+.ourlifedetail-banner h1 {
+    margin: 0px;
+    font-weight: 200;
+    color: #fff;
+    font-size: 50px;
+    line-height: 40px;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.banner-link {
+    color: #e3e3e3;
+}
+
+.banner-link i {
+    color: #727272;
+}
+
+.banner-link span a {
+    color: #727272;
+    text-decoration: none;
+}
+
+.banner-link span a:hover {
+    color: #e3e3e3;
+}
+
+.image_frame {
+    float: left;
+    width: 98%;
+    border: 7px solid #fff;
+    margin-bottom: 25px;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.image_frame img {
+    float: left;
+    width: 99.7%;
+    border: 1px solid #fff;
+}
+
+.date-bar a.date {
+    padding: 10px 5px 0px 0px;
+    text-decoration: none;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background: #f9f9f9;
+    display: block;
+    margin-right: 20px;
+    float: left;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.date {
+    margin-bottom: 30px;
+}
+
+.date-bar a.date strong {
+    color: #fc4242;
+    font-size: 27px;
+    font-weight: normal;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.date-bar a.date strong:hover {
+    color: #383634;
+}
+
+.date-bar a.date i {
+    color: #fff;
+    font-size: 14px;
+    font-style: normal;
+    padding: 0px 10px;
+    display: block;
+    border-top: 1px solid #f3f3f3;
+    width: 56px;
+    background-color: #fc4242;
+    font-weight: 300;
+}
+
+.date-bar h3 {
+    float: left;
+    text-align: left;
+    color: #333;
+    width: 85%;
+    line-height: 35px;
+}
+
+.date-bar h3 a {
+    color: #fc4242;
+    text-decoration: none;
+    float: left;
+    margin-top: -9px;
+    text-transform: none;
+    font-weight: 300;
+    font-size: 34px;
+}
+
+.date-bar h3 a:hover {
+    color: #383634;
+}
+
+ul.post_meta_links {
+    float: left;
+    padding: 0px;
+}
+
+.post_meta_links .post_by {
+    display: none;
+}
+
+.post_meta_links li {
+    float: left;
+    margin: 0px;
+    padding: 0px 0px 0px 4px;
+    list-style-type: none;
+    color: #999;
+}
+
+.post_meta_links li a {
+    color: #a1a1a1;
+    padding: 0px 18px 0px 0px;
+    text-decoration: none;
+    font-size: 11px;
+}
+
+.post_meta_links li a:hover {
+    color: #383634;
+}
+
+.post_info_content {
+    padding: 0px;
+    margin: 10px 0 0 10%;
+    width: 90%;
+    float: left;
+    h5 {
+        font-size: 16px;
+        color: #ff0000;
+        font-weight: bold;
+        margin-bottom: 5px;
+        span {
+            color: #000;
+            font-size: 16px;
+            font-weight: 100;
+        }
+    }
+}
+
+.text-class h1 {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+    font-style: normal;
+    font-weight: normal;
+    color: #272727;
+    text-transform: uppercase;
+}
+
+.text-class h4 {
+    font-size: 20px;
+    line-height: 25px;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: normal;
+    color: #272727;
+    text-transform: uppercase;
+}
+
+.text-class h3 {
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.text-class h2 {
+    font-size: 27px;
+    line-height: 35px;
+    margin-bottom: 40px;
+    font-style: normal;
+    font-weight: normal;
+    color: #272727;
+    text-transform: uppercase;
+}
+
+.heart-ul {
+    padding-left: 0px;
+}
+
+.heart-ul li h3 {
+    margin-top: 0px;
+    font-size: 22px;
+}
+
+.item {
+    float: left;
+}
+
+.item img {
+    width: 100%;
+    float: left;
+}
+
+.right-btn {
+    position: absolute;
+    top: 40%;
+    right: 23px;
+    z-index: 11111;
+    font-size: 44px;
+    color: #080000;
+    cursor: pointer;
+}
+
+.left-btn {
+    position: absolute;
+    top: 40%;
+    left: 23px;
+    z-index: 11111;
+    font-size: 44px;
+    color: #080000;
+    cursor: pointer;
+}
+
+#searchform {
+    margin: 0;
+    padding: 0;
+}
+
+#searchform {
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+#searchform #s {
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+    width: 80%;
+    height: 41px;
+    padding: 5px 10px 5px 10px;
+    color: #999;
+    float: left;
+    font-size: 13px;
+}
+
+#searchform #searchsubmit {
+    float: left;
+    width: 50px;
+    height: 41px;
+    cursor: pointer;
+    text-indent: -5555em;
+    line-height: 100;
+    overflow: hidden;
+    // background-color: #fc4242;
+    border: 0;
+    background: #cd0000 url("/assets/img/search.png") no-repeat center;
+}
+
+.sidebar_widget {
+    float: left;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 40px;
+}
+
+.sidebar_widget h3,
+.clientsays_widget h3 {
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.sidebar_widget ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.sidebar_widget ul li {
+    list-style: circle;
+    line-height: 30px;
+    margin-left: 15px;
+}
+
+.sidebar_widget ul li a {
+    color: #fc4242;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.sidebar_widget ul li a:hover {
+    color: #3f3e3e;
+}
+
+.con-background {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Technology-Calltoaction.jpeg);
+    padding: 60px 0px;
+}
+
+.call-to-action2 {
+    text-align: center;
+}
+
+.call-to-action2 h2 {
+    font-size: 58px;
+    line-height: 58px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.call-to-action2 h3 {
+    color: #fff;
+    font-weight: 300;
+    margin-bottom: 35px;
+}
+
+.enter-today {
+    color: #ffffff;
+    font-size: 22px;
+    background: #ffffff42;
+    padding: 10px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.enter-today:hover {
+    color: #000000;
+}
+
+.special-text {
+    color: #dd3333;
+    font-weight: bold;
+    text-align: left;
+    font-size: 30px;
+    line-height: 24px;
+    margin-bottom: 25px;
+    font-style: normal;
+}
+
+.text-class1 h4 {
+    font-size: 22px;
+}
+
+.rate-btn {
+    color: #fff;
+    background: #f80000;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.rate-btn1 {
+    color: #fff;
+    background: #5472D2;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.vc_custom_heading {
+    font-size: 45px;
+    color: #d65c99;
+    text-align: left;
+    font-weight: 400;
+    font-style: italic;
+    font-family: Pacifico;
+}
+
+.text-class h6 {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    font-style: normal;
+    font-weight: normal;
+    color: #272727;
+    text-transform: uppercase;
+}
+
+.list-items {
+    padding-left: 0px;
+}
+
+.list-items li {
+    font-size: 16px;
+    margin-bottom: 3px;
+}
+
+.punchline_text_box {
+    float: left;
+    width: 94%;
+    padding: 25px 30px;
+    margin: 0px;
+    border: 1px solid #eee;
+    border-left: 5px solid #fc4242;
+    color: #999;
+}
+
+.punchline_text_box .left {
+    float: left;
+    width: 80%;
+}
+
+.punchline_text_box strong {
+    font-weight: normal;
+    font-size: 22px;
+    color: #272727;
+}
+
+.punchline_text_box .right {
+    float: left;
+    width: 20%;
+}
+
+a.knowmore_but {
+    float: right;
+    padding: 13px 20px 13px 20px;
+    margin: 0px 0px 0px 50px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+    background-color: #fc4242;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border-bottom: 1px solid #999;
+}
+
+.divider_dashed9 {
+    width: 100%;
+    margin: 190px 0px 48px 0px;
+    border-top: 1px dotted #d7d7d7;
+}
+
+.sharepost {
+    float: left;
+    margin-bottom: 40px;
+}
+
+.sharepost ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.sharepost li {
+    margin: 0px 7px 5px 0px;
+    padding: 2px 5px;
+    float: left;
+    border-radius: 2px;
+    list-style-type: none;
+    background-color: #fc4242;
+}
+
+.sharepost li i {
+    color: #fff;
+}
+
+.sharepost li:hover {
+    background: #3f3e3e;
+}
+
+ul.recent_posts_list {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    float: left;
+}
+
+.recent_posts_list li {
+    padding: 0px 0px 13px 0px;
+    margin: 0px 0px 16px 0px;
+    list-style-type: none;
+    border-bottom: 1px solid #f5f6f6;
+    float: left;
+    width: 100%;
+}
+
+.recent_posts_list li span {
+    float: left;
+    margin-right: 15px;
+}
+
+.recent_posts_list li a {
+    text-decoration: none;
+    line-height: 17px;
+    display: block;
+    color: #999;
+}
+
+.recent_posts_list li a:hover {
+    color: #f80000;
+}
+
+.recent_posts_list li i {
+    padding: 1px 0px 0px 0px;
+    margin: 0px;
+    display: block;
+    font-size: 10px;
+    font-style: normal;
+    color: #c9c9c9;
+}
+
+.comment_form {
+    float: left;
+    margin-top: 30px;
+}
+
+.comment_textarea_bg {
+    float: left;
+    width: 90%;
+    height: 235px;
+    padding: 7px 10px 0px 10px;
+    margin-bottom: 20px;
+    border-top: 2px solid #e3e3e3;
+    border-left: 2px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.comment_input_bg {
+    float: left;
+    height: 35px;
+    padding: 7px 10px 0px 10px;
+    border-top: 2px solid #e3e3e3;
+    border-left: 2px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.comment_form label {
+    float: left;
+    width: 90px;
+    height: 15px;
+    padding: 7px 10px;
+    margin-bottom: 30px;
+}
+
+.comment_submit,
+#comment_submit {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 9px 13px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.con-ourlifedetail1 {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/NewYears-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.wpb_single_image img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.divider_dashed9 {
+    width: 100%;
+    margin: 40px 0px 48px 0px;
+    border-top: 1px dotted #d7d7d7;
+}
+
+.con-greenElectricty {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/GreenEnergy-Banner.jpg);
+    color: #dd3333;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-ourlifedetail2 {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Chutney-OurEnergy-Post-ThanksGiving-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-red {
+    background: #f80000;
+    transform: skew(0deg, 5deg);
+    -ms-transform: skew(0deg, 10deg);
+    -webkit-transform: skew(0deg, 5deg);
+    margin-top: 65px;
+}
+
+.con-green {
+    background: #4abe63;
+    transform: skew(0deg, 5deg);
+    -ms-transform: skew(0deg, 10deg);
+    -webkit-transform: skew(0deg, 5deg);
+    margin-top: 65px;
+}
+
+a.knowmore_but:hover {
+    background-color: #3f3e3e;
+}
+
+.left h1 {
+    font-size: 36px;
+    font-weight: 300;
+    color: #fff;
+    margin: 27px 0px 0px 0px;
+    transform: skew(0deg, -5deg);
+    -ms-transform: skew(0deg, -10deg);
+    -webkit-transform: skew(0deg, -5deg);
+}
+
+.left h1 p {
+    font-size: 18px;
+    color: #fff;
+    font-style: normal;
+    display: block;
+    line-height: 30px;
+}
+
+.compare-btn a {
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #2c322d;
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 18px 30px;
+    margin: 43px 0px 0px 50px;
+    transform: skew(0deg, -5deg);
+    -ms-transform: skew(0deg, -10deg);
+    -webkit-transform: skew(0deg, -5deg);
+}
+
+.compare-btn a:hover {
+    color: #f80000;
+}
+
+.con-weatherproofing {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Gif-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-fivemoney {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/GirlBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-ourComunity {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/NewHopeHousingBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-texastips {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/15cooltips-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-energysavingrecipe {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/EnergySavingTips-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-odetexasfather {
+    background: #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-texasthunder {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/thunder-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-best-texas-recipe {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/TeaxaCaviar-Header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-firstTexas {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/NewHopeHousingBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-nflsweepstakes {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/PROMOTIONNFLBANNER_Banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.left-button {
+    text-align: center;
+}
+
+.left-button a {
+    padding: 18px 41px;
+    color: #666;
+    border-color: #EBEBEB;
+    background-color: #EBEBEB;
+    border-radius: 5px;
+}
+
+.right-button {
+    text-align: center;
+}
+
+.right-button a {
+    padding: 18px 41px;
+    color: #f7f7f7;
+    border-color: #f80000;
+    background-color: #f80000;
+    border-radius: 5px;
+}
+
+.con-enjoyAyear {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/CowBoyBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #dd3333;
+}
+
+.con-findLowEnergy {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/GirlBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #dd3333;
+}
+
+.con-puttingTexasEnergy {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/5000mark_Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-ourEnergyLaunches {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/NewSiteBlog_Banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-topFive {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/LED_Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-greenEnergy {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/OrLife_Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-summerenergy {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Cool_Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #f80000;
+}
+
+.con-seasonalSelfie {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/C-_Users_Piero-Poveda_Desktop_PromoHolidaysBanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-nolimit {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/ReferaFriend_banner2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000000;
+}
+
+.wpcf7-submit {
+    border: none;
+    background-color: #D52027;
+    color: white;
+    line-height: 30px;
+    width: 140px;
+    padding: 0;
+    margin: 18px auto;
+    z-index: 2000;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.con-marchMadness {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/MMP-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-frbruaryShare {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/ValantinesDiner-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-nflTickets {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/NewFootballpromo_BAnner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.findOut-btn {
+    text-align: center;
+    border-color: #08c;
+    background-color: #08c;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.findOut-btn a {
+    color: #FFF;
+    font-size: 14px;
+}
+
+.allOfour-btn {
+    text-align: center;
+    border-color: #f80000;
+    background-color: #f80000;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.allOfour-btn a {
+    color: #FFF;
+    font-size: 14px;
+}
+
+.con-decNflTicket {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/201b6b17e5897de9bc5680b2e7b58823_NewFootballPromo_FeaturedImageforBlogPost-814-363-c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img.emoji {
+    display: inline !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 .07em !important;
+    vertical-align: -0.1em !important;
+    background: none !important;
+    padding: 0 !important;
+}
+
+.checkOut-btn {
+    background: #f80000;
+    padding: 10px 11px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.checkOut-btn a {
+    color: #ffffff;
+}
+
+.con-firstDouble {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/201b6b17e5897de9bc5680b2e7b58823_NewFootballPromo_FeaturedImageforBlogPost-814-363-c.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-firstNflSweep {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Banner_WinnersNFL.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-texasNoBake {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/PeacanDay-Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #000000;
+}
+
+.con-moreThan {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Forth-Worth_Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-moreThanEnergy {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Houston-Skylinebanner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.con-cheapTexas {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/Ralph_Banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #dd3333;
+}
+
+.con-movingT0texas {
+    background-image: url(https://storage.wattcrm.com/wattcrm-images/pics/ourlife/texas_flag_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+mat-list .mat-list-item-content {
+    padding: 0 12px !important;
+}
+
+@media only screen and (max-width: 1315px) {
+    mat-list .mat-list-item-content {
+        padding: 0 10px !important;
+        font-size: 14px;
+    }
+}
+
+@media only screen and (max-width: 1209px) {
+    mat-list .mat-list-item-content {
+        padding: 0 9px !important;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 1135px) {
+    .logo {
+        width: 15%;
+    }
+    .logo img {
+        width: 100%;
+    }
+}
