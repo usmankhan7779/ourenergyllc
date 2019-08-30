@@ -82,7 +82,9 @@
 .mat-selection-list .mat-list-option .mat-list-item-content {
     padding: 5px 8px;
 }
-
+.mat-list .mat-list-item{
+  height: auto;
+}
 .header {
     display: flex;
     flex-direction: row;
@@ -96,7 +98,6 @@
     width: 100%;
     z-index: 10;
     top: 0;
-    min-height: 70px;
     .main-listt {
         font-size: 15px;
         padding: 25px 8px;
