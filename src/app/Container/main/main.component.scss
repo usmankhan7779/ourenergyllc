@@ -5,6 +5,7 @@ img {
 .myCard {
     box-shadow: 5px 0 5px -5px #333;
 }
+
 ::ng-deep .tdsp-rates {
     .mat-form-field-underline {
         height: 0px
@@ -209,12 +210,11 @@ h3 {
 }
 
 .form-home {
-    // position: absolute;
-    // left: 80px;
-    // top: 250px !important;
-    // right: 80px;
-    // bottom: auto;
-    max-width: 500px;
+    position: absolute;
+    left: 80px;
+    top: 250px !important;
+    right: 80px;
+    bottom: auto;
     .mat-form-field {
         width: 100% !important;
     }
@@ -408,15 +408,14 @@ h3 {
     background-color: #000;
     color: #FFFFFF;
 }
+
 .btn.btn-ros {
-    background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) !important;
+    background: linear-gradient(60deg, #bb0f0f, #c40202);
     color: #FFFFFF;
     font-weight: bold;
-    box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(24, 7, 13, 0.4);
 }
-.btn.btn-ros:hover{
-  box-shadow:none;
-}
+
 .btn-refer {
     background: rgb(36, 35, 35);
     color: #fff;
@@ -1585,7 +1584,7 @@ h5 {
 
 
 h3 {
-    font-size: 23px ;
+    font-size: 23px !important;
 }
 
 .mat-step-label {
@@ -2733,12 +2732,6 @@ h3 {
     .header .Toggle {
         display: block !important;
     }
-     .heading_s {
-      font-size: 26px !important;
-    }
-    .faqs_home #accordion .panel-default .panel-heading .panel-title{
-      font-size: 16px;
-    }
 }
 
 @media (max-width: 425px) {
@@ -2751,9 +2744,9 @@ h3 {
 }
 
 @media (max-width: 770px) {
-    // .form-home {
-    //     top: 300px !important;
-    // }
+    .form-home {
+        top: 300px !important;
+    }
     .search-bg__title {
         font-size: 35px;
     }
@@ -3055,11 +3048,10 @@ h3 {
 }
 
 #main-bg-slider .download-here {
-    // position: absolute;
-    // right: 40px;
-    // top: 10px;
-    // z-index: 9;
-
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    z-index: 9;
 }
 
 .why-our {
@@ -3667,12 +3659,8 @@ h3 {
 
 
 .main_banner{
+  padding: 20px;
   position: relative;
-  min-height: 100vh;
-  background-image: url(../../../assets/img/home-background.png);
-  background-position: 700px 0;
-  background-repeat: no-repeat;
-  background-size: contain;
   .download-here {
     position: absolute;
     right: 40px;
