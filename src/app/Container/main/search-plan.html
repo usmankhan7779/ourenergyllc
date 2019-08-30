@@ -40,92 +40,8 @@
             <h4 style="color:#555" class="text-center">Based on your Zip Code, here are the plans we offer.</h4>
         </div>
     </div>
-
-    <!-- Start filter bar -->
-    <div class="container-fluid filter-bar">
-        <div class="row">
-            <div class="col-lg-3 estimated text-center">
-                <label class="heading">
-                    Estimated Usage
-                </label>
-                <mat-radio-group [(ngModel)]="estimatedUsage" class="text-center col-lg-12 col-md-12 col-sm-12 col-sm-12">
-                    <mat-radio-button color="primary" value="500">
-                        <p class="radioText">500 kWh</p>
-                    </mat-radio-button>
-                    <mat-radio-button color="primary" value="1000" checked="true">
-                        <p class="radioText">1000 kWh</p>
-                    </mat-radio-button>
-                    <mat-radio-button color="primary" value="2000">
-                        <p class="radioText">2000 kWh</p>
-                    </mat-radio-button>
-                </mat-radio-group>
-            </div>
-            <div class="col-lg-6 contract-list text-center">
-                <label class="heading">
-                    Contract Terms
-                </label>
-                <section class="row">
-                    <mat-slide-toggle color="primary" [(ngModel)]="term1" class="">
-                        <p>36 Months</p>
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary" [(ngModel)]="term2" class="">
-                        <p>24 Months</p>
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary" [(ngModel)]="term3" class="">
-                        <p>18 Months</p>
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary" [(ngModel)]="term4" class="">
-                        <p>14 Months</p>
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary" [(ngModel)]="term5" class="">
-                        <p>12 Months</p>
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary" [(ngModel)]="term6" class="">
-                        <p>6 Months</p>
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary" [(ngModel)]="term7" class="">
-                        <p>5 Months</p>
-                    </mat-slide-toggle>
-                </section>
-            </div>
-            <div class="col-lg-3 range-select text-center">
-                <label class="heading">
-                        Price Range
-                </label>
-                <mat-form-field class="">
-                    <input matInput maxlength="5" placeholder="From" [formControl]="price_from" [(ngModel)]="priceFrom">
-                    <span matSuffix>¢</span>
-                    <mat-error *ngIf="price_from.hasError('pattern')">
-                        Invalid Input
-                    </mat-error>
-                    <mat-error *ngIf="price_from.hasError('min')">
-                        Price is atleast 1¢
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field class="">
-                    <input matInput maxlength="5" placeholder="To" [formControl]="price_to" [(ngModel)]="priceTo">
-                    <span matSuffix>¢</span>
-                    <mat-error *ngIf="price_to.hasError('pattern')">
-                        Invalid Input
-                    </mat-error>
-                    <mat-error *ngIf="price_to.hasError('max')">
-                        Price should be less than 100¢
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div class="col-lg-12 text-center">
-                    <button mat-raised-button (click)="showZip()">Change Zip Code</button>
-                    <button mat-raised-button [disabled]="submitBtnDisabled2" (click)="filterProduct()">Apply Filters</button>
-            </div>
-        </div>
-    </div>
-    <!-- End filter bar -->
-
-
-
-
     <div style="padding: 0px 60px 0px 60px !important;" class="plan-main">
-        <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 myCard">
+        <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 myCard">
             <br>
             <button mat-raised-button (click)="showZip()">Change Zip Code</button>
             <br>
@@ -194,9 +110,9 @@
             <button style="margin-top:20px" mat-raised-button [disabled]="submitBtnDisabled2" (click)="filterProduct()">Apply Filters</button>
             <br>
             <br>
-        </div> -->
-        
-        <div class="col-md-12 col-sm-12 col-sm-12">
+        </div>
+        <br>
+        <div class="col-lg-9 col-md-9 col-sm-12 col-sm-12">
             <div class="showError" *ngIf="showError2">
                 <mat-error style="margin-bottom: 25px"><b><h4>{{error}}</h4></b></mat-error>
             </div>
@@ -205,102 +121,102 @@
             </div>
             <div *ngIf="showFilteredProducts == true" class="row">
                 <div *ngFor="let value of products;index as i;">
-                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <br>
                         <div class="search-plan">
                             <h3 class="productName">{{value.product_name}}</h3>
-                            <p class="tag-line">
+                            <p style="font-weight: bold; text-align: center; margin: 0px !important;">
                                 {{value.product_info}}
                             </p>
                             <div class="main">
-                                <!-- <div class="text-center inner">
+                                <div class="text-center inner">
                                     <img src="../../../assets/img/Product-image-4.png" width="100px" height="100px">
-                                </div> -->
-                                <div [ngSwitch]="estimatedUsage">
-                                        <div class="text-center inner price-box" *ngSwitchCase="500">
-                                            <div>
-                                                <b style="font-size: 22px;">500 kWh</b>
-                                                <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                            </div>
-                                            <div style="display: flex; flex-direction: row;">
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">1000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_1000}}¢</h3>
-                                                </div>
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">2000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_2000}}¢</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center inner price-box" *ngSwitchCase="1000">
-                                            <div>
-                                                <b style="font-size: 22px;">1000 kWh</b>
-                                                <h3 class="rs">{{value.tariff_1000}}¢</h3>
-                                            </div>
-                                            <div style="display: flex; flex-direction: row;">
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">500 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                                </div>
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">2000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_2000}}¢</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center inner price-box" *ngSwitchCase="2000">
-                                            <div>
-                                                <b style="font-size: 22px;">2000 kWh</b>
-                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_2000}}¢</h3>
-                                            </div>
-                                            <div style="display: flex; flex-direction: row;">
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">500 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                                </div>
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">1000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_1000}}¢</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-center inner price-box" *ngSwitchDefault>
-                                            <div>
-                                                <b style="font-size: 15px;">1000 kWh</b>
-                                                <h3 class="rs">{{value.tariff_1000}}¢</h3>
-                                            </div>
-                                            <div style="display: flex; flex-direction: row;">
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">500 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                                </div>
-                                                <div style="flex: 1; width: 130px;">
-                                                    <b style="font-size: 15px;">2000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_2000}}¢</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                </div>
                                 <div class="bar"></div>
                                 <div class="inner">
                                     <div class="rateSheet">
-                                        <div >
-                                            <span >Contract Term: {{value.display_term}} months</span><br>
-                                            <span >Termination Fee: ${{value.display_termination_fee}}</span><br>
-                                            <span >Utility: {{value.vendor_company}}</span>
+                                        <div style="padding-left: 15px; padding-right: 15px;">
+                                            <span style="font-size: 14px !important">Contract Term: {{value.display_term}} months</span><br>
+                                            <span style="font-size: 14px !important">Termination Fee: ${{value.display_termination_fee}}</span><br>
+                                            <span style="font-size: 14px !important"><b>Utility: {{value.vendor_company}}</b></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="bar"></div>
-                                
+                                <div [ngSwitch]="estimatedUsage">
+                                    <div class="text-center inner" *ngSwitchCase="500">
+                                        <div>
+                                            <b style="font-size: 22px;">500 kWh</b>
+                                            <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_500}}¢</h3>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">1000 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_1000}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">2000 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_2000}}¢</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center inner" *ngSwitchCase="1000">
+                                        <div>
+                                            <b style="font-size: 22px;">1000 kWh</b>
+                                            <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_1000}}¢</h3>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">500 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_500}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">2000 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_2000}}¢</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center inner" *ngSwitchCase="2000">
+                                        <div>
+                                            <b style="font-size: 22px;">2000 kWh</b>
+                                            <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_2000}}¢</h3>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">500 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_500}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">1000 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_1000}}¢</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center inner" *ngSwitchDefault>
+                                        <div>
+                                            <b style="font-size: 15px;">1000 kWh</b>
+                                            <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_1000}}¢</h3>
+                                        </div>
+                                        <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">500 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_500}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">2000 kWh</b>
+                                                <h3 style="margin: 0px !important; color:#cd0000; font-size: 22px !important">{{value.tariff_2000}}¢</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="bar"></div>
-                                <div class="text-center inner links-list">
-                                    <a  matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
-                                    <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-                                    <a  matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
-                            
-                                    <button mat-button [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Select</button>
+                                <div class="text-center inner">
+                                    <a mat-fab color="primary" matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
+                                    <a mat-fab color="primary" matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
+                                    <a mat-fab color="primary" matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
+                                    <br>
+                                    <br>
+                                    <button style="width: 200px;" mat-button [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Select</button>
                                 </div>
                             </div>
                         </div>
