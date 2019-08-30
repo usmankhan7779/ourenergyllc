@@ -2721,29 +2721,6 @@ h3 {
     }
 }
 
-@media (max-width: 767px) {
-    .logo-width a {
-        margin-top: 0px;
-    }
-    .header .Toggle {
-        display: block !important;
-    }
-     .heading_s {
-      font-size: 26px !important;
-    }
-    .faqs_home #accordion .panel-default .panel-heading .panel-title{
-      font-size: 16px;
-    }
-    .download-here img{
-      max-width: 100px;
-    }
-    .main_banner{
-      min-height: auto;
-    }
-    .heading_s{
-      padding: 20px 0;
-    }
-}
 
 @media (max-width: 425px) {
     .mainheader {
@@ -2841,38 +2818,6 @@ h3 {
     }
 }
 
-@media (max-width: 991px) {
-    .timeline>li>.timeline-panel {
-        float: right;
-        width: 86%;
-    }
-      .main_banner{
-    min-height: auto;
-  }
-  .main_banner .promo_img_div .main_img {
-   display: none;
-  }
-  .main_banner .download-here {
-    position: static;
-    text-align: right;
-  }
-  .main_banner img{
-    max-width: 100px;
-  }
-  .main_banner .promo_img_div .zip_promo {
-    min-width: auto;
-  }
-  .promo_img_div{
-    padding: 0 30px;
-  }
-  .main_banner .promo_img_div .zip_promo h3{
-  font-size: 30px !important;
-  padding-bottom: 20px;
- }
- .form-zip {
-  max-width: 440px;
-}
-}
 
 @media only screen and (max-width: 770px) {
     .tosPrivacyCont {
@@ -3910,4 +3855,63 @@ color: #c00 !important;
 .links-list a{
     margin: 0 10px;
     font-size: 18px;
+}
+@media (max-width: 991px) {
+  .timeline>li>.timeline-panel {
+      float: right;
+      width: 86%;
+  }
+    .main_banner{
+  min-height: auto;
+}
+.main_banner .promo_img_div .main_img {
+ display: none;
+}
+.main_banner .download-here {
+  position: static;
+  text-align: right;
+}
+.main_banner img{
+  max-width: 100px;
+}
+.main_banner .promo_img_div .zip_promo {
+  min-width: auto;
+}
+.promo_img_div{
+  padding: 0 30px;
+}
+.main_banner .promo_img_div .zip_promo h3{
+font-size: 30px !important;
+padding-bottom: 20px;
+}
+.form-zip {
+max-width: 440px;
+}
+  .heading_s{
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo-width a {
+      margin-top: 0px;
+  }
+  .header .Toggle {
+      display: block !important;
+  }
+   .heading_s {
+    font-size: 26px !important;
+  }
+  .faqs_home #accordion .panel-default .panel-heading .panel-title{
+    font-size: 16px;
+  }
+  .download-here img{
+    max-width: 100px;
+  }
+  .main_banner{
+    min-height: auto !important;
+  }
+  .heading_s{
+    padding: 20px 0;
+  }
 }
