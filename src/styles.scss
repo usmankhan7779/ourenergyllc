@@ -167,3 +167,52 @@ mark {
     cursor: pointer;
     margin-top: 13px;
 }
+////////
+.estimated .radioText {
+    font-size: 13px;
+    padding-right: 4px;
+    margin: 0px;
+    font-weight: 100;
+}
+.estimated .mat-radio-label-content{
+    padding-left: 8px;
+}
+.filter-bar button{
+    background:linear-gradient(90deg,#042863 0%,#0a97d2 100%);
+    ;
+    color: #fff;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 18px;
+}
+.contract-list{
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    padding: 0;
+    min-height: 80px;
+}
+.contract-list .mat-slide-toggle-bar{
+    width: 30px !important;
+    margin: 0;
+}
+.contract-list .mat-slide-toggle-thumb-container{
+    width: 16px !important;
+    height: 16px !important;
+    top: -1px !important;
+}
+.contract-list .mat-slide-toggle-thumb {
+    height: 16px !important;
+    width: 16px !important;
+}
+.contract-list p {
+    font-size: 13px !important;
+    margin: 0;
+}
+
+.filter-bar .heading{
+    display: block;
+    margin: 0 0 10px !important;
+}
+.range-select .mat-form-field{
+    width: 46%;
+}
