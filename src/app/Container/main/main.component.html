@@ -1,4 +1,4 @@
-<!-- <div id="main-bg-slider" class="carousel slide carousel-fade slider-main" data-ride="carousel" data-interval="4000" style="margin-top: 0px">
+ <!-- <div id="main-bg-slider" class="carousel slide carousel-fade slider-main" data-ride="carousel" data-interval="4000" style="margin-top: 0px">
     <div class="download-here">
         <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer" target="_blank">
             <img src="../../assets/img/Adroid-Badge.png">
@@ -75,7 +75,7 @@
             </form>
         </div>
     </div>
-</div> -->
+</div>  -->
 <!-- <section class="choose-criteria">
     <div class="container">
         <ul>
@@ -402,4 +402,92 @@
             <img src="../../assets/img/IOS-Badge.png">
         </a>
     </div>
+      <!-- Playstore Apple-store images End-->
+    <div class="promo_img_div">
+        <div class="zip_promo">
+            <h3>Saving on Energy <br>Made Easy </h3>
+            <div class="form-home">
+                    <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate>
+                        <div class="card">
+                            <div class="clearfix mt-5">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip name="zipCode" maxlength="5" />
+                                            <mat-error *ngIf="zip_code.hasError('pattern')">
+                                                Invalid Zip Code
+                                            </mat-error>
+                                            <mat-error *ngIf="zip_code.hasError('required')">
+                                                Zip Code is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="form-group">
+                                        <mat-form-field>
+                                            <input matInput placeholder="Promo Code" name=promo [(ngModel)]="promoCode" />
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-ros">Lets find a plan to fit your needs</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+            </div>
+          </div>
+          <div class="main_img">
+            <img src="../../../assets/img/home-bg-04.png" class="img-responsive" alt="">
+          </div>
+    </div>
+</section>
+<section class="four_Steps">
+  <h3 class="heading_s"> Sign-up for energy in 4 easy steps</h3>
+</section>
+<section class="faqs_home">
+  <h3 class="heading_s">Frequently Asked Questions</h3>
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+            <h4 class="panel-title">
+              <a >
+                What is included in the rate?</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+            <h4 class="panel-title">
+              <a >When will the service start?</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading"  data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+             
+            <h4 class="panel-title">
+                 <a >  How do I sign-up? </a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+          </div>
+        </div>
+      </div> 
 </section>

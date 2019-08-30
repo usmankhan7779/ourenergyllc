@@ -5,7 +5,6 @@ img {
 .myCard {
     box-shadow: 5px 0 5px -5px #333;
 }
-
 ::ng-deep .tdsp-rates {
     .mat-form-field-underline {
         height: 0px
@@ -228,11 +227,12 @@ h3 {
 }
 
 .form-home {
-    position: absolute;
-    left: 80px;
-    top: 250px !important;
-    right: 80px;
-    bottom: auto;
+    // position: absolute;
+    // left: 80px;
+    // top: 250px !important;
+    // right: 80px;
+    // bottom: auto;
+    max-width: 500px;
     .mat-form-field {
         width: 100% !important;
     }
@@ -426,14 +426,15 @@ h3 {
     background-color: #000;
     color: #FFFFFF;
 }
-
 .btn.btn-ros {
-    background: linear-gradient(60deg, #bb0f0f, #c40202);
+    background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) !important;
     color: #FFFFFF;
     font-weight: bold;
-    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(24, 7, 13, 0.4);
+    box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
 }
-
+.btn.btn-ros:hover{
+  box-shadow:none;
+}
 .btn-refer {
     background: rgb(36, 35, 35);
     color: #fff;
@@ -1606,7 +1607,7 @@ h5 {
 }
 
 h3 {
-    font-size: 23px !important;
+    font-size: 23px ;
 }
 
 .mat-step-label {
@@ -2754,6 +2755,12 @@ h3 {
     .header .Toggle {
         display: block !important;
     }
+     .heading_s {
+      font-size: 26px !important;
+    }
+    .faqs_home #accordion .panel-default .panel-heading .panel-title{
+      font-size: 16px;
+    }
 }
 
 @media (max-width: 425px) {
@@ -2766,9 +2773,9 @@ h3 {
 }
 
 @media (max-width: 770px) {
-    .form-home {
-        top: 300px !important;
-    }
+    // .form-home {
+    //     top: 300px !important;
+    // }
     .search-bg__title {
         font-size: 35px;
     }
@@ -3064,10 +3071,11 @@ h3 {
 }
 
 #main-bg-slider .download-here {
-    position: absolute;
-    right: 40px;
-    top: 10px;
-    z-index: 9;
+    // position: absolute;
+    // right: 40px;
+    // top: 10px;
+    // z-index: 9;
+
 }
 
 .why-our {
@@ -3678,13 +3686,369 @@ h3 {
     padding-right: 10px;
     margin: 0px;
 }
+// shahid updates
+
 .main_banner{
-  padding: 20px;
   position: relative;
+  min-height: 100vh;
+  background-image: url(../../../assets/img/home-background.png);
+  background-position: 700px 0;
+  background-repeat: no-repeat;
+  background-size: contain;
   .download-here {
     position: absolute;
     right: 40px;
     top: 10px;
     z-index: 9;
 }
+  .promo_img_div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1270px;
+    margin: 0 auto;
+  .zip_promo{
+    min-width: 400px;
+    h3{
+      font-size: 50px !important;
+      color: #273c61;
+      line-height: 1.2;
+    }
+  }
+  .main_img{
+    max-width: 500px;
+  }
+}
+}
+.faqs_home{
+  width: 100%;
+  padding: 0 20px 20px;
+  #accordion{
+    max-width: 1050px;
+    margin: 0 auto;
+    .panel-default{
+      border: none;
+      box-shadow: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+        .panel-heading{
+          background: #fff;
+          padding: 30px;
+          cursor: pointer;
+          .panel-title{
+            color:#0a97d2;
+            font-size: 20px;
+          }
+      }
+    }
+  }
+}
+.four_Steps{
+  width: 100%;
+  min-height: 200px;
+  padding: 0 20px;
+}
+.heading_s{
+  font-size: 40px ;
+  color: #273c61;
+  text-align: center;
+  line-height: 1.2;
+  padding: 50px 0;
+}
+.panel-group .panel-heading+.panel-collapse>.panel-body{
+  border-top: none;
+}
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.88em;
+  color: #959fac;
+}
+.panel-heading:hover .panel-title{
+  color: #c00 !important;
+}
+// -----------------------------------Quries
+@media (max-width: 1380px) {
+  .plan-main {
+      zoom: 90%
+  }
+}
+
+@media (max-width: 565px) {
+  .plan-main mat-form-field {
+      min-width: 100%;
+  }
+  .myCard {
+      box-shadow: 0px 0 0px 0px;
+  }
+}
+
+@media (max-width: 570px) {
+  .myCard {
+      box-shadow: 0px 0 0px 0px;
+  }
+  .enrol {
+      display: flex;
+      flex-direction: column;
+      .enroll-or {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+          margin: auto;
+          label {
+              font-weight: bold;
+              font-size: 20px;
+              color: #fff;
+              text-align: center;
+              padding: 15px;
+              background-color: #cd0000;
+              border-radius: 50%;
+              max-width: 70px;
+          }
+      }
+  }
+}
+
+@media (max-width: 790px) {
+  .myCard {
+      box-shadow: 0px 0 0px 0px;
+  }
+  .our-leverage {
+      display: flex;
+      flex-direction: column;
+  }
+  .main {
+      display: flex;
+      flex-direction: column;
+  }
+  .bar {
+      border-left: 0px solid #ccc;
+      height: 0px;
+  }
+}
+
+@media (max-width: 990px) {
+  .myCard {
+      box-shadow: 0px 0 0px 0px;
+  }
+  .card {
+      margin-top: -20px;
+  }
+}
+
+@media (max-width: 790px) {
+  .myCard {
+      box-shadow: 0px 0 0px 0px;
+  }
+  .commercialalign {
+      display: flex;
+      flex-direction: column;
+  }
+  .commercialbutton-row {
+      flex-direction: column;
+      display: flex;
+  }
+  .commercialbtn2 {
+      width: 100%;
+  }
+}
+
+@media (max-width: 1198px) {
+  .logo-width a {
+      margin-top: -118px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header .Toggle {
+      display: none !important;
+  }
+}
+
+@media (max-width: 962px) {
+  .logo-width a {
+      margin-top: -189px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-width a {
+      margin-top: -118px;
+  }
+  .Toggle {
+      margin-right: 10px;
+      margin-bottom: 10px;
+  }
+  .right-bar ul {
+      margin: 0 0 8px 0;
+  }
+  .margin-right {
+      margin-right: 0px !important;
+  }
+  .main-menu ul li a {
+      padding: 10px 5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .logo-width a {
+      margin-top: 0px;
+  }
+  .header .Toggle {
+      display: block !important;
+  }
+}
+
+@media (max-width: 425px) {
+  .mainheader {
+      display: none !important;
+  }
+  .logo-width a {
+      margin-top: 0 !important;
+  }
+}
+
+@media (max-width: 770px) {
+  // .form-home {
+  //     top: 300px !important;
+  // }
+  .search-bg__title {
+      font-size: 35px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1170px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card .card-header.card-header-text {
+      display: block;
+  }
+ 
+}
+
+@media (max-width: 991px) {
+  .fourcolumns>li {
+      width: 50% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+      max-width: 100%;
+      width: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .choose-criteria ul li {
+      padding: 0 10px;
+      text-align: center;
+  }
+}
+
+@media (max-width: 490px) {
+  .choose-criteria ul li {
+      width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .choose-criteria ul li h4 {
+      font-size: 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .choose-criteria ul li i {
+      margin: 0;
+      font-size: 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .choose-criteria ul li p {
+      font-size: 16px;
+      font-weight: 500;
+  }
+}
+
+@media (max-width: 640px) {
+  .choose-criteria ul li p {
+      display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .choose-criteria ul li i {
+      line-height: 50px;
+      position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .fourcolumns>li,
+  .fourcolumns>div {
+      width: 100% !important;
+  }
+}
+
+@media (max-width: 991px) {
+  .timeline>li>.timeline-panel {
+      float: right;
+      width: 86%;
+  }
+  .main_banner{
+    min-height: auto;
+  }
+  .main_banner .promo_img_div .main_img {
+   display: none;
+  }
+  .main_banner .download-here {
+    position: static;
+    text-align: right;
+  }
+  .main_banner img{
+    max-width: 100px;
+  }
+  .main_banner .promo_img_div .zip_promo {
+    min-width: auto;
+  }
+  .promo_img_div{
+    padding: 0 30px;
+  }
+  .main_banner .promo_img_div .zip_promo h3{
+  font-size: 30px !important;
+  padding-bottom: 20px;
+ }
+ .form-zip {
+  max-width: 440px;
+}
+}
+
+@media only screen and (max-width: 770px) {
+  .tosPrivacyCont {
+      background-color: #fff;
+      padding: 3px;
+      display: flex;
+      justify-content: center;
+      align-self: center;
+      padding-top: 30px;
+  }
+  .tosPrivacyCont .content {
+      width: 90%;
+      text-align: justify;
+      padding: 10px 20px;
+      box-shadow: 0px 1px 10px 2px #e0dada;
+  }
+  .tosPrivacyCont .content h2 {
+      font-size: 32px;
+  }
+  img {
+      vertical-align: top;
+  }
 }
