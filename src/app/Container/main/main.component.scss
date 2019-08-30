@@ -3678,3 +3678,13 @@ h3 {
     padding-right: 10px;
     margin: 0px;
 }
+.main_banner{
+  padding: 20px;
+  position: relative;
+  .download-here {
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    z-index: 9;
+}
+}
