@@ -1933,12 +1933,7 @@ h3 {
 .residential-main {
     display: flex;
     flex-direction: column;
-    .heading {
-        text-align: center;
-        margin-bottom: 15px;
-        border-bottom: 5px ridge #cd0000;
-        font-weight: bold;
-    }
+    
     .cart {
         display: flex;
         flex-direction: row;
@@ -2882,7 +2877,7 @@ h3 {
 .search-plan {
     padding: 16px 24px;
     // box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
-    border: 1px solid #ccc;
+    border: 1px solid #e6e5e5;
     transition: all 0.3s ease-out;
     cursor: pointer;
     span {
@@ -3793,9 +3788,31 @@ color: #c00 !important;
 
 
 /////////// Start Haseeb css
+.residential-main .heading {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 5px ridge #0a97d2;
+    font-weight: bold;
+}
+.search-result{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+.result-box{
+    width: 31%;
+    float: left;
+    margin: 15px;
+    max-width: 450px;
+}
 
 
 
+
+
+// ////////////////////
 .main {
     // display: flex;
     // flex-direction: row;

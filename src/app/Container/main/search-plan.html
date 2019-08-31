@@ -203,10 +203,10 @@
                 <div class="spinner" *ngIf="showSpinner2" style="margin-top: 30px;">
                     <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
                 </div>
-                <div *ngIf="showFilteredProducts == true" class="row">
-                    <div *ngFor="let value of products;index as i;">
-                        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                            <br>
+                <div *ngIf="showFilteredProducts == true" class="search-result">
+                    <div class="result-box" *ngFor="let value of products;index as i;">
+                        <div >
+                            
                             <div class="search-plan">
                                 <h3 class="productName">{{value.product_name}}</h3>
                                 <p class="tag-line">
