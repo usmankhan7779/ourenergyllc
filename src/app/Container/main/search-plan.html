@@ -52,10 +52,10 @@
                         <mat-radio-button color="primary" value="500">
                             <p class="radioText">500 kWh</p>
                         </mat-radio-button>
-                        <mat-radio-button color="primary" value="1000" checked="true">
+                        <mat-radio-button color="primary" value="1000" >
                             <p class="radioText">1000 kWh</p>
                         </mat-radio-button>
-                        <mat-radio-button color="primary" value="2000">
+                        <mat-radio-button color="primary" value="2000" checked="true">
                             <p class="radioText">2000 kWh</p>
                         </mat-radio-button>
                     </mat-radio-group>
@@ -222,7 +222,8 @@
                                                     <b style="font-size: 22px;">500 kWh</b>
                                                     <h3 class="rs">{{value.tariff_500}}¢</h3>
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+                                                <!-- this code is comment bu usman khan -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">1000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_1000}}¢</h3>
@@ -231,14 +232,16 @@
                                                         <b style="font-size: 15px;">2000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- end   -->
                                             </div>
                                             <div class="text-center inner price-box" *ngSwitchCase="1000">
                                                 <div>
                                                     <b style="font-size: 22px;">1000 kWh</b>
                                                     <h3 class="rs">{{value.tariff_1000}}¢</h3>
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+                                                <!-- this code is comment bu usman khan -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">500 kWh</b>
                                                         <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -247,14 +250,16 @@
                                                         <b style="font-size: 15px;">2000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- end code -->
                                             </div>
                                             <div class="text-center inner price-box" *ngSwitchCase="2000">
                                                 <div>
                                                     <b style="font-size: 22px;">2000 kWh</b>
                                                     <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_2000}}¢</h3>
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+                                                <!-- this code is comment bu usman khan -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">500 kWh</b>
                                                         <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -263,14 +268,20 @@
                                                         <b style="font-size: 15px;">1000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_1000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- end code comment -->
                                             </div>
                                             <div class="text-center inner price-box" *ngSwitchDefault>
                                                 <div>
-                                                    <b style="font-size: 15px;">1000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_1000}}¢</h3>
+                                                    <b style="font-size: 15px;">2000 kWh</b>
+         <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_2000}}¢</h3>
+
+                                                    <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+
+
+                                                <!-- this code i comment by usman khan  start -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">500 kWh</b>
                                                         <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -279,7 +290,8 @@
                                                         <b style="font-size: 15px;">2000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- this code isend  -->
                                             </div>
                                         </div>
                                     <div class="bar"></div>
