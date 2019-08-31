@@ -23,7 +23,9 @@ html {
 .mat-checkbox-layout {
     white-space: normal !important;
 }
-
+.router__outlet{
+  padding-top: 70px;
+}
 .mat-step-header .mat-step-icon {
     background-color: #131212 !important;
     color: #fff;

@@ -1,4 +1,4 @@
-<div class="container-fluid con-helpTools">
+<!-- <div class="container-fluid con-helpTools">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -6,8 +6,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="container">
+</div> -->
+<!-- <div class="container">
     <div class="padding-top-bottom help">
         <mat-tab-group [selectedIndex]="tabIndex">
             <mat-tab>
@@ -357,4 +357,133 @@
         </mat-tab-group>
     </div>
 
-</div>
+</div> -->
+
+<!-- ...............New Layout.................. -->
+<section class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <nav class="nav-sidebar">
+                <ul class="nav tabs">
+                      <li class="active"><a href="#faqs" data-toggle="tab">FAQ'S</a></li>
+                      <li class=""><a href="#TDSP" data-toggle="tab">TDSP RATES</a></li>
+                      <li class=""><a href="#HISTORICAL" data-toggle="tab">HISTORICAL PRICES</a></li>
+                      <li class=""><a href="#SOLUTIONS" data-toggle="tab">TEXAS MOVING SOLUTIONS</a></li>
+                      <li class=""><a href="#PAYMENT_SOLUTIONS" data-toggle="tab">PAYMENT SOLUTIONS</a></li>
+                      <li class=""><a href="#UNDERSTAND_BILL" data-toggle="tab">UNDERSTAND YOUR BILL</a></li>
+                      <li class=""><a href="#DOWNLOAD_FORMS" data-toggle="tab">DOWNLOAD FORMS</a></li>
+                </ul>
+              </nav>
+        </div>
+        <div class="col-sm-10">
+        <div class="tab-content">
+            <div class="tab-pane active  text-style" id="faqs">
+                <h1 style="font-size: 31px;">FAQ's</h1>
+                <p>Thank you for visiting the Our Energy Frequently Asked Questions section. We always advise that you drop by and browse the questions as we update them on a regular basis. We hope that you find the answer to your questions here. If your
+                    question is not listed, please feel free to use the Ask Our Energy form below. We will be happy to review your question and get back to you within twenty four hours.</p>
+            </div>
+            <div class="tab-pane text-style" id="TDSP">
+                <h1 style="margin-bottom: 40px;" class="col-lg-12 col-md-12 col-sm-12">TDSP DELIVERY CHARGES</h1>
+                <div style="margin-bottom: 50px;" class="row tdsp-rates">
+                    <div *ngFor="let tdsp of tdsps" class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div class="row innner">
+                            <h3 class="tdsp-heading col-lg-12 col-md-12 col-sm-12">{{tdsp.utility_id__nick_name}}</h3>
+                            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <input matInput placeholder="Charges per Month" [value]="'$'+tdsp.per_month" disabled>
+                            </mat-form-field>
+                            <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                <input matInput placeholder="Charges per kWh" [value]="tdsp.per_kwh+'¢'" disabled>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane text-style" id="HISTORICAL">
+                <h1 class="col-lg-12 col-md-12 col-sm-12">HISTORICAL PRICES</h1>
+                <p class="col-lg-12 col-md-12 col-sm-12 margin-top">The prices above reflect an average usage of 1,000 kWh per month. Each plan’s pricing represents an aggregate of pricing for that product offered to the market during the time period specified and should not be used to predict future
+                    pricing. Please see the Electricity Facts Label for each product other pricing information. Your average price for electricity service will vary according to your usage.</p>
+                <div style="display: flex; justify-content: space-evenly; margin-bottom: 20px; margin-top: -15px;" class="col-lg-12 col-md-12 col-sm-12 text-center">
+                    <div class="historical-bar">
+                        <button (click)="planTable()" mat-raised-button class="helpbutton">Our M2M Plan</button>
+                    </div>
+                    <div class="historical-bar">
+                        <button (click)="plansTable()" mat-raised-button class="helpbutton">Advantage Prime 12</button>
+                    </div>
+                </div>
+              </div>
+              <div class="tab-pane text-style" id="SOLUTIONS">
+                  <h1>TEXAS MOVING SOLUTIONS</h1>
+                  <h2 class="margin margin-top">SAME DAY MOVE INS</h2>
+                  <p>Are you planning on moving to Texas or moving your place of residence or business within Texas?&nbsp; No problem!&nbsp; There is no need to wait to sign up with any of the various excellent OUR Energy plans until after your move.&nbsp;
+                      Sign up now, move tomorrow and we’ll make it easy!</p>
+                  <p style="    margin-bottom: 45px;">Whether you’re looking for energy companies in Houston, electric companies in Dallas or&nbsp;Fort Worth electric companies we’ll make your move a breeze! We offer same day move ins as well as out of cycle switches.</p>
+                  <button routerLink="" mat-raised-button class="helpbutton" routerLink="/contact">
+          <i class="fa fa-truck icon-large"></i>
+          Questions About Switching? Contact Us!
+        </button>
+              </div>
+              <div class="tab-pane text-style" id="PAYMENT_SOLUTIONS">
+                      <h1>REVIEW, MONITOR AND PAY YOUR BILLS</h1>
+                      <p>OUR Energy online portal provides a convenient way to access your account information. Bill Payments, Usage, Historical Data and all other important information is just few clicks away.</p>
+                      <ul class="padding-zero">
+                          <li>– Using our online portal you can:</li>
+                          <li>– Pay bills online by using Visa, Master or Discover.</li>
+                          <li>– View your current and previous bills.</li>
+                          <li>– Review your previous usage history and payment history.</li>
+                          <li>– Download PDF copies of all your previous and current bills.</li>
+                          <li>– and a lot more.</li>
+                      </ul>
+                      <p>
+                          <button class="helpbutton" mat-raised-button routerLink="/login">Sign in to online portal | Register</button>
+                      </p>
+                      <div class="">
+                          <img width="90" height="72" src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" data-lazy-type="image" data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" class="lazy vc_single_image-img attachment-full lazy-loaded"
+                              alt="">
+                          <noscript>
+                <img width="90" height="72" src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" class="vc_single_image-img attachment-full"
+                  alt="" />
+              </noscript>
+                      </div>
+              </div>
+              <div class="tab-pane text-style" id="UNDERSTAND_BILL">
+                      class="modalBill" style="text-align: center">
+  
+                      <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" data-lazy-type="image" data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" width="576" height="745">
+                      <noscript>
+              <img  src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
+                width="576" height="745" />
+            </noscript>
+                      <button id="btnBill1" type="button" data-toggle="popover" title="This section contain your account details">1</button>
+                      <button id="btnBill2" type="button" data-toggle="popover" title="This section contain your utility provider and Our Energy details">2</button>
+                      <button id="btnBill3" type="button" data-toggle="popover" title="This section contain your billing and payment details">3</button>
+                      <button id="btnBill4" type="button" data-toggle="popover" title="This section contain your address details">4</button>
+              </div>
+              <div class="tab-pane text-style" id="DOWNLOAD_FORMS">
+                      <h1 class="col-lg-12 col-md-12 col-sm-12">DOWNLOAD FORMS</h1>
+                      <div class="col-lg-12 col-md-12 col-sm-12 helpForm">
+                          <h4>ACH FORM:</h4>
+                          <p>Download this form to setup Auto Payment using your bank account information.</p>
+                          <ul class="padding-zero">
+                              <li>
+                                  <button mat-raised-button class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a></button>
+                              </li>
+                          </ul>
+                          <h4>Account Closing Form:</h4>
+                          <p>Use this form to close your account with Our Energy.</p>
+                          <ul class="padding-zero">
+                              <li>
+                                  <button mat-raised-button class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">Download Form</a></button>
+                              </li>
+                          </ul>
+                          <p>All documents are in PDF format. You can download free copy of Adobe PDF Reader from following link.&nbsp;
+                              <a class="nonblock" href="https://get.adobe.com/reader/?promoid=BUIGO" target="_blank">
+                                  <span id="u862-3">Adobe Read</span>
+                              </a>
+                          </p>
+                      </div>
+              </div>
+        <!-- end tab content -->
+            </div>
+         </div>
+      </div>
+</section>

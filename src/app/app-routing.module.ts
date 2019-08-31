@@ -4,8 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent, RegisterComponent } from './login/login.component';
 import { OnlyLoggedInUsersGuard, OnlyLoggedOutUsersGuard, OnlyLoggedInUsersGuardAdmin } from './always-auth.service';
 import { ResetPasswordComponent } from './forget-password/forget-password.component';
-import { BrokerLoginComponent } from './broker-login/broker-login.component'
-import { MainComponent, AboutUsComponent, PrivacyPolicyComponent, ResidentialsComponent, CommercialComponent, PlansComponent, SpecialsComponent, TermConditionComponent, BrokersComponent, EnergySavingComponent, PlanSearchComponent, EnrollProcessComponent, OurCommunityComponent, HelpComponent, EstablishContractsComponent } from './Container/main/main.component'
+import { BrokerLoginComponent } from './broker-login/broker-login.component';
+import { MainComponent, AboutUsComponent, PrivacyPolicyComponent, ResidentialsComponent, CommercialComponent, PlansComponent, SpecialsComponent, TermConditionComponent, BrokersComponent, EnergySavingComponent, PlanSearchComponent, EnrollProcessComponent, OurCommunityComponent, HelpComponent, EstablishContractsComponent } from './Container/main/main.component';
 import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { BusinessRateComponent } from './Container/business-rate-electricity/business-rate.component';
 import { EnrollmentSuccessPageComponent } from './enrollment-success-page/enrollment-success-page.component';

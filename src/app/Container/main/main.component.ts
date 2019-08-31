@@ -28,7 +28,6 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 export class MainComponent implements OnInit {
   router: Router
-
   constructor(_router: Router) {
     this.router = _router
   }

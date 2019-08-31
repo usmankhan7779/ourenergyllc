@@ -86,21 +86,23 @@
   height: auto;
 }
 .header {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    flex-wrap: wrap;
-    justify-content: space-between;
     background-color: #ffffff;
     align-items: center;
-    padding: 0px 5px 0px;
     position: fixed;
     width: 100%;
     z-index: 10;
     top: 0;
-    .main-listt {
+    .inner_header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1270px;
+      .main-listt {
         font-size: 15px;
-        padding: 25px 8px;
+        padding: 20px 8px;
     }
     .logo {
         cursor: pointer;
@@ -118,18 +120,18 @@
     }
     mat-list-item,
     a {
-        color: #616161;
-        font-weight: bold;
-        font-size: 18px;
-        text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #3a4170;
     }
     mat-list-item:hover,
     a:hover {
-        color: #ffffff;
-        background-color: #cd0000;
+        color: #c00;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
+    }
     }
 }
 
