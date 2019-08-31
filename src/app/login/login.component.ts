@@ -339,7 +339,7 @@ export class RegisterComponent {
     login_id: new FormControl('', [Validators.required, Validators.minLength(6)]),
     cust_id: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), Validators.pattern('^[0-9]*$')]),
     password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-]).{8,}$')]),
-    confirm_password_confirm: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-]).{8,}$')]),
+    password_confirm: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-]).{8,}$')]),
     secret_question: new FormControl('', Validators.required),
     secret_answer: new FormControl('', Validators.required),
   })

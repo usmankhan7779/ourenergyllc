@@ -36,7 +36,7 @@
     <div *ngIf="showPlans">
         <div class="container residential-main">
             <div class="heading">
-                <h1 class="text-center">Select your OurEnergy electricity plan</h1>
+                <h1 class="text-center">Select your Energy Plan</h1>
                 <h4 style="color:#555" class="text-center">Based on your Zip Code, here are the plans we offer.</h4>
             </div>
         </div>
@@ -44,7 +44,7 @@
         <!-- Start filter bar -->
         <div class="container-fluid filter-bar">
             <div class="row">
-                <div class="col-lg-3 estimated text-center">
+                <div class="col-lg-3 col-md-3 estimated text-center">
                     <label class="heading">
                         Estimated Usage
                     </label>
@@ -52,19 +52,19 @@
                         <mat-radio-button color="primary" value="500">
                             <p class="radioText">500 kWh</p>
                         </mat-radio-button>
-                        <mat-radio-button color="primary" value="1000" checked="true">
+                        <mat-radio-button color="primary" value="1000" >
                             <p class="radioText">1000 kWh</p>
                         </mat-radio-button>
-                        <mat-radio-button color="primary" value="2000">
+                        <mat-radio-button color="primary" value="2000" checked="true">
                             <p class="radioText">2000 kWh</p>
                         </mat-radio-button>
                     </mat-radio-group>
                 </div>
-                <div class="col-lg-6 contract-list text-center">
+                <div class="col-lg-6 col-md-6 contract-list text-center">
                     <label class="heading">
                         Contract Terms
                     </label>
-                    <section class="row">
+                    <section class="">
                         <mat-slide-toggle color="primary" [(ngModel)]="term1" class="">
                             <p>36 Months</p>
                         </mat-slide-toggle>
@@ -88,7 +88,7 @@
                         </mat-slide-toggle>
                     </section>
                 </div>
-                <div class="col-lg-3 range-select text-center">
+                <div class="col-lg-3 col-md-3 range-select text-center">
                     <label class="heading">
                             Price Range
                     </label>
@@ -124,7 +124,7 @@
     
     
     
-        <div style="padding: 0px 60px 0px 60px !important;" class="plan-main">
+        <div class="plan-main">
             <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 myCard">
                 <br>
                 <button mat-raised-button (click)="showZip()">Change Zip Code</button>
@@ -203,10 +203,10 @@
                 <div class="spinner" *ngIf="showSpinner2" style="margin-top: 30px;">
                     <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
                 </div>
-                <div *ngIf="showFilteredProducts == true" class="row">
-                    <div *ngFor="let value of products;index as i;">
-                        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-                            <br>
+                <div *ngIf="showFilteredProducts == true" class="search-result">
+                    <div class="result-box" *ngFor="let value of products;index as i;">
+                        <div >
+                            
                             <div class="search-plan">
                                 <h3 class="productName">{{value.product_name}}</h3>
                                 <p class="tag-line">
@@ -219,10 +219,11 @@
                                     <div [ngSwitch]="estimatedUsage">
                                             <div class="text-center inner price-box" *ngSwitchCase="500">
                                                 <div>
-                                                    <b style="font-size: 22px;">500 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_500}}¢</h3>
+                                                    <b >500 kWh</b>
+                                                    <h3 >{{value.tariff_500}}¢</h3>
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+                                                <!-- this code is comment bu usman khan -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">1000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_1000}}¢</h3>
@@ -231,14 +232,16 @@
                                                         <b style="font-size: 15px;">2000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- end   -->
                                             </div>
                                             <div class="text-center inner price-box" *ngSwitchCase="1000">
                                                 <div>
-                                                    <b style="font-size: 22px;">1000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_1000}}¢</h3>
+                                                    <b >1000 kWh</b>
+                                                    <h3 >{{value.tariff_1000}}¢</h3>
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+                                                <!-- this code is comment bu usman khan -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">500 kWh</b>
                                                         <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -247,14 +250,16 @@
                                                         <b style="font-size: 15px;">2000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- end code -->
                                             </div>
                                             <div class="text-center inner price-box" *ngSwitchCase="2000">
                                                 <div>
-                                                    <b style="font-size: 22px;">2000 kWh</b>
-                                                    <h3 style="margin: 0px !important; color:#cd0000; font-size: 32px !important;">{{value.tariff_2000}}¢</h3>
+                                                    <b >2000 kWh</b>
+                                                    <h3 >{{value.tariff_2000}}¢</h3>
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+                                                <!-- this code is comment bu usman khan -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">500 kWh</b>
                                                         <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -263,14 +268,20 @@
                                                         <b style="font-size: 15px;">1000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_1000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- end code comment -->
                                             </div>
                                             <div class="text-center inner price-box" *ngSwitchDefault>
                                                 <div>
-                                                    <b style="font-size: 15px;">1000 kWh</b>
-                                                    <h3 class="rs">{{value.tariff_1000}}¢</h3>
+                                                    <b >2000 kWh</b>
+                                                        <h3 >{{value.tariff_2000}}¢</h3>
+
+                                                    <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
                                                 </div>
-                                                <div style="display: flex; flex-direction: row;">
+
+
+                                                <!-- this code i comment by usman khan  start -->
+                                                <!-- <div style="display: flex; flex-direction: row;">
                                                     <div style="flex: 1; width: 130px;">
                                                         <b style="font-size: 15px;">500 kWh</b>
                                                         <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -279,7 +290,8 @@
                                                         <b style="font-size: 15px;">2000 kWh</b>
                                                         <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                                     </div>
-                                                </div>
+                                                </div> -->
+                                                <!-- this code isend  -->
                                             </div>
                                         </div>
                                     <div class="bar"></div>
@@ -300,7 +312,7 @@
                                         <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
                                         <a  matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
                                 
-                                        <button mat-button [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Enroll Now</button>
+                                        <button class="enroll-btn" mat-button [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Enroll Now</button>
                                     </div>
                                 </div>
                             </div>
