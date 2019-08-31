@@ -61,9 +61,9 @@
             </mat-form-field>
             <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <mat-label>Confirm Password</mat-label>
-                <input matInput formControlName=confirm_password [type]="hides ? 'password' : 'text'" (input)="ComparePassword($event)" required>
+                <input matInput formControlName=password_confirm [type]="hides ? 'password' : 'text'" (input)="ComparePassword($event)" required>
                 <mat-icon matSuffix (click)="hides = !hides">{{hides ? 'visibility' : 'visibility_off'}}</mat-icon>
-                <mat-error *ngIf="controls.confirm_password.errors?.required">Confirm Password is required</mat-error>
+                <mat-error *ngIf="controls.password_confirm.errors?.required">Confirm Password is required</mat-error>
                 <mat-hint>
                     <mat-error *ngIf="passError">{{passwordError}}</mat-error>
                 </mat-hint>
