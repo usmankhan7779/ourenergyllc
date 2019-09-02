@@ -2,7 +2,7 @@
     <div class="row">
         <mat-form-field class="searchBar col-lg-4 col-md-4 col-sm-6 col-sm-12">
             <input placeholder="Search" matInput [formControl]="searchControl">
-            <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+            <button  *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
                 <mat-icon>close</mat-icon>
             </button>
         </mat-form-field>
@@ -69,6 +69,6 @@
 </div>
 <div class="text-center">
     <br>
-    <button [disabled]="isBtnDisabled" mat-raised-button (click)="AttachOfferwithCustomer()">Attach Offer</button>
-    <button [disabled]="isBtnDisabled" mat-button [mat-dialog-close]>Cancel</button>
+    <button [disabled]="isBtnDisabled"  (click)="AttachOfferwithCustomer()">Attach Offer</button>
+    <button [disabled]="isBtnDisabled"  [mat-dialog-close]>Cancel</button>
 </div>

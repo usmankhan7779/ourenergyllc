@@ -92,8 +92,8 @@
                             </mat-card>
                         </form>
                         <div class="stepperbutton">
-                            <button mat-button matStepperPrevious (click)="goToTop()">Back</button>
-                            <button mat-button matStepperNext id="next1" (click)="goToTop()">Next</button>
+                            <button  matStepperPrevious (click)="goToTop()">Back</button>
+                            <button  matStepperNext id="next1" (click)="goToTop()">Next</button>
                         </div>
                     </mat-step>
                     <mat-step [stepControl]="secondFormGroup" (click)="reset()">
@@ -235,8 +235,8 @@
                             </mat-card>
                         </form>
                         <div class="stepperbutton">
-                            <button mat-button matStepperPrevious (click)="goToTop()">Back</button>
-                            <button mat-button matStepperNext id="next2" (click)="goToTop()">Next</button>
+                            <button  matStepperPrevious (click)="goToTop()">Back</button>
+                            <button  matStepperNext id="next2" (click)="goToTop()">Next</button>
                         </div>
                     </mat-step>
                     <mat-step [stepControl]="thirdFormGroup" (click)="reset()">
@@ -283,7 +283,7 @@
                                     </div>
                                 </div>
                                 <div class="stepperbutton text-center">
-                                    <button mat-button (click)="findBillingAddress()" [disabled]="findBtn">Find</button>
+                                    <button  (click)="findBillingAddress()" [disabled]="findBtn">Find</button>
                                 </div>
                             </mat-card>
                             <div *ngIf="billingAddresses.length == 0">
@@ -308,7 +308,7 @@
                                         <h4 style="margin:0px">{{value.City}} {{value.State}} {{value.Zip5}}-{{value.Zip4}}</h4>
                                     </div>
                                     <div class="premise-details">
-                                        <button mat-raised-button (click)="SelectBillingPrem(value)" type="button"><h4 style="font-weight: bold !important;">Select</h4></button>
+                                        <button  (click)="SelectBillingPrem(value)" type="button"><h4 style="font-weight: bold !important;">Select</h4></button>
                                     </div>
                                 </div>
                                 <div class="inner-premise">
@@ -397,8 +397,8 @@
                             </mat-card>
                         </form>
                         <div class="stepperbutton">
-                            <button mat-button matStepperPrevious (click)="goToTop()">Back</button>
-                            <button mat-button matStepperNext id="next4" (click)="goToTop()">Next</button>
+                            <button  matStepperPrevious (click)="goToTop()">Back</button>
+                            <button  matStepperNext id="next4" (click)="goToTop()">Next</button>
                         </div>
                     </mat-step>
                     <mat-step>
@@ -442,9 +442,9 @@
                             <mat-progress-bar *ngIf="loader==true" mode="indeterminate"></mat-progress-bar>
                         </mat-card>
                         <div class="stepperbutton">
-                            <button mat-button matStepperPrevious (click)="goToTop()" (click)="reset()">Back</button>
+                            <button  matStepperPrevious (click)="goToTop()" (click)="reset()">Back</button>
 
-                            <button mat-raised-button [disabled]="!check1 || !check2 || !check3 || submitBtn" (click)="enroll()">Submit</button>
+                            <button  [disabled]="!check1 || !check2 || !check3 || submitBtn" (click)="enroll()">Submit</button>
                         </div>
 
                     </mat-step>

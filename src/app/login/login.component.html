@@ -49,8 +49,8 @@
             <div class="spinner" *ngIf="showSpinner">
                 <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
             </div>
-            <button mat-button class="button" *ngIf="SignInButton">Sign In</button>
-            <button mat-raised-button disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
+            <button  class="button" *ngIf="SignInButton">Sign In</button>
+            <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
         </form>
         <div style="display:flex; flex-direction: row; margin-top: 12px;
             justify-content: center; margin-bottom: 10px; align-items: center;">
@@ -97,7 +97,7 @@
                 </div>
             </div>
             <div>
-                <button [disabled]="selectBtnStatus[value.cust_id]" mat-button class="button" (click)="SelectAccount(ind)">Select Account</button>
+                <button [disabled]="selectBtnStatus[value.cust_id]"  class="button" (click)="SelectAccount(ind)">Select Account</button>
             </div>
         </div>
         <span (click)="ShowLoginForm()" class="signOutbuttonIcon">

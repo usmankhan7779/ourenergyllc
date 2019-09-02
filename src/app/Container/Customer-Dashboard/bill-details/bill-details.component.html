@@ -12,7 +12,7 @@
             </div>
             <span style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;" *ngFor="let i of bills">
                 <span style="font-size: 20px;" *ngIf="i.past_due > '0'">Past Due: <span style="color: #cd0000">{{(i.past_due.toString())[0] == '-' ? '-$' + i.past_due.toString().slice(1) : '$' + i.past_due}}</span></span>
-            <button mat-button routerLink="/dashboard/paynow">Pay Now</button>
+            <button  routerLink="/dashboard/paynow">Pay Now</button>
             </span>
         </div>
     </div>

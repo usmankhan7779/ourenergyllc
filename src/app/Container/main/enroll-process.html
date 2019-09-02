@@ -36,7 +36,7 @@
                         <mat-error *ngIf="enrollProcessForm.controls.premise_id.errors?.required">Premise/ESID is required</mat-error>
                     </mat-form-field>
                 </div>
-                <button mat-raised-button [disabled]="searchPremiseBtn" type="submit">Search</button>
+                <button  [disabled]="searchPremiseBtn" type="submit">Search</button>
                 <div style="display:flex; flex-direction:column">
                     <b style="margin-top:10px;"><i class="fa fa-warning" style="font-size:18px;color:#dcc70b;margin:5px;"></i>Note:If you are unable to locate your address or have a special request contact us at 1-888-545-4687 and we will be happy to assist you!</b>
                     <b style="margin-top:10px;text-align:center;font-weight:bold;color:red">{{errorMessagee}}</b>
@@ -92,7 +92,7 @@
                     <h4 style="margin:0px">{{value.provider_name}}</h4>
                 </div>
                 <div class="premise-details">
-                    <button mat-raised-button [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button"><h4>Select</h4></button>
+                    <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button"><h4>Select</h4></button>
                 </div>
             </div>
             <div class="inner-premise">

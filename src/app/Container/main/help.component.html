@@ -135,7 +135,7 @@
                                     <p class="error"> {{cap_result}}</p>
                                 </div>
                                 <div>
-                                    <button mat-raised-button>Submit</button>
+                                    <button >Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -177,10 +177,10 @@
                         pricing. Please see the Electricity Facts Label for each product other pricing information. Your average price for electricity service will vary according to your usage.</p>
                     <div style="display: flex; justify-content: space-evenly; margin-bottom: 20px; margin-top: -15px;" class="col-lg-12 col-md-12 col-sm-12 text-center">
                         <div class="historical-bar">
-                            <button (click)="planTable()" mat-raised-button class="helpbutton">Our M2M Plan</button>
+                            <button (click)="planTable()"  class="helpbutton">Our M2M Plan</button>
                         </div>
                         <div class="historical-bar">
-                            <button (click)="plansTable()" mat-raised-button class="helpbutton">Advantage Prime 12</button>
+                            <button (click)="plansTable()"  class="helpbutton">Advantage Prime 12</button>
                         </div>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                     <p>Are you planning on moving to Texas or moving your place of residence or business within Texas?&nbsp; No problem!&nbsp; There is no need to wait to sign up with any of the various excellent OUR Energy plans until after your move.&nbsp;
                         Sign up now, move tomorrow and we’ll make it easy!</p>
                     <p style="    margin-bottom: 45px;">Whether you’re looking for energy companies in Houston, electric companies in Dallas or&nbsp;Fort Worth electric companies we’ll make your move a breeze! We offer same day move ins as well as out of cycle switches.</p>
-                    <button routerLink="" mat-raised-button class="helpbutton" routerLink="/contact">
+                    <button routerLink=""  class="helpbutton" routerLink="/contact">
             <i class="fa fa-truck icon-large"></i>
             Questions About Switching? Contact Us!
           </button>
@@ -279,7 +279,7 @@
                         <li>– and a lot more.</li>
                     </ul>
                     <p>
-                        <button class="helpbutton" mat-raised-button routerLink="/login">Sign in to online portal | Register</button>
+                        <button class="helpbutton"  routerLink="/login">Sign in to online portal | Register</button>
                     </p>
                     <div class="">
                         <img width="90" height="72" src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" data-lazy-type="image" data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" class="lazy vc_single_image-img attachment-full lazy-loaded"
@@ -337,14 +337,14 @@
                     <p>Download this form to setup Auto Payment using your bank account information.</p>
                     <ul class="padding-zero">
                         <li>
-                            <button mat-raised-button class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a></button>
+                            <button  class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a></button>
                         </li>
                     </ul>
                     <h4>Account Closing Form:</h4>
                     <p>Use this form to close your account with Our Energy.</p>
                     <ul class="padding-zero">
                         <li>
-                            <button mat-raised-button class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">Download Form</a></button>
+                            <button  class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">Download Form</a></button>
                         </li>
                     </ul>
                     <p>All documents are in PDF format. You can download free copy of Adobe PDF Reader from following link.&nbsp;
@@ -360,11 +360,20 @@
 </div> -->
 
 <!-- ...............New Layout.................. -->
-<section class="container-fluid">
+<div class="container-fluid con-helpTools">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <h1>HELP</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="container-fluid padding-30">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-md-3 col-sm-12">
             <nav class="nav-sidebar">
-                <ul class="nav tabs">
+                <ul class="nav tabs help-sidebar">
                       <li class="active"><a href="#faqs" data-toggle="tab">FAQ'S</a></li>
                       <li class=""><a href="#TDSP" data-toggle="tab">TDSP RATES</a></li>
                       <li class=""><a href="#HISTORICAL" data-toggle="tab">HISTORICAL PRICES</a></li>
@@ -375,7 +384,7 @@
                 </ul>
               </nav>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-12 col-md-9">
         <div class="tab-content">
             <div class="tab-pane active  text-style" id="faqs">
                 <h1 style="font-size: 31px;">FAQ's</h1>
@@ -404,10 +413,10 @@
                     pricing. Please see the Electricity Facts Label for each product other pricing information. Your average price for electricity service will vary according to your usage.</p>
                 <div style="display: flex; justify-content: space-evenly; margin-bottom: 20px; margin-top: -15px;" class="col-lg-12 col-md-12 col-sm-12 text-center">
                     <div class="historical-bar">
-                        <button (click)="planTable()" mat-raised-button class="helpbutton">Our M2M Plan</button>
+                        <button (click)="planTable()"  class="helpbutton">Our M2M Plan</button>
                     </div>
                     <div class="historical-bar">
-                        <button (click)="plansTable()" mat-raised-button class="helpbutton">Advantage Prime 12</button>
+                        <button (click)="plansTable()"  class="helpbutton">Advantage Prime 12</button>
                     </div>
                 </div>
               </div>
@@ -417,7 +426,7 @@
                   <p>Are you planning on moving to Texas or moving your place of residence or business within Texas?&nbsp; No problem!&nbsp; There is no need to wait to sign up with any of the various excellent OUR Energy plans until after your move.&nbsp;
                       Sign up now, move tomorrow and we’ll make it easy!</p>
                   <p style="    margin-bottom: 45px;">Whether you’re looking for energy companies in Houston, electric companies in Dallas or&nbsp;Fort Worth electric companies we’ll make your move a breeze! We offer same day move ins as well as out of cycle switches.</p>
-                  <button routerLink="" mat-raised-button class="helpbutton" routerLink="/contact">
+                  <button routerLink=""  class="helpbutton" routerLink="/contact">
           <i class="fa fa-truck icon-large"></i>
           Questions About Switching? Contact Us!
         </button>
@@ -434,7 +443,7 @@
                           <li>– and a lot more.</li>
                       </ul>
                       <p>
-                          <button class="helpbutton" mat-raised-button routerLink="/login">Sign in to online portal | Register</button>
+                          <button class="helpbutton"  routerLink="/login">Sign in to online portal | Register</button>
                       </p>
                       <div class="">
                           <img width="90" height="72" src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" data-lazy-type="image" data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/img/secure/secure90x72.png" class="lazy vc_single_image-img attachment-full lazy-loaded"
@@ -463,16 +472,16 @@
                       <div class="col-lg-12 col-md-12 col-sm-12 helpForm">
                           <h4>ACH FORM:</h4>
                           <p>Download this form to setup Auto Payment using your bank account information.</p>
-                          <ul class="padding-zero">
+                          <ul class="padding-zero btns-list">
                               <li>
-                                  <button mat-raised-button class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a></button>
+                                  <button  class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a></button>
                               </li>
                           </ul>
                           <h4>Account Closing Form:</h4>
                           <p>Use this form to close your account with Our Energy.</p>
-                          <ul class="padding-zero">
+                          <ul class="padding-zero btns-list">
                               <li>
-                                  <button mat-raised-button class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">Download Form</a></button>
+                                  <button  class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">Download Form</a></button>
                               </li>
                           </ul>
                           <p>All documents are in PDF format. You can download free copy of Adobe PDF Reader from following link.&nbsp;

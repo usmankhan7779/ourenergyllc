@@ -98,14 +98,14 @@
     <div *ngIf="editMode == true">
         <br>
         <div class="text-center">
-            <button [disabled]="isBtnDisabled" mat-raised-button (click)="submit()">Save</button>
-            <button [disabled]="isBtnDisabled" mat-button (click)="exitEditMode()">Cancel</button>
+            <button [disabled]="isBtnDisabled"  (click)="submit()">Save</button>
+            <button [disabled]="isBtnDisabled"  (click)="exitEditMode()">Cancel</button>
         </div>
     </div>
     <div *ngIf="editMode == false">
         <br>
         <div class="text-center">
-            <button mat-raised-button (click)="onNoClick()">Close</button>
+            <button  (click)="onNoClick()">Close</button>
         </div>
     </div>
 </div>

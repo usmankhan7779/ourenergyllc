@@ -64,9 +64,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
     color: #6b6d72;
-    font-size: 16px;
+    font-size: 12px;
     text-align: center;
-    font-weight: bold;
     span {
         width: 700px;
         display: flex;
@@ -79,8 +78,7 @@
         flex-direction: row;
         a {
             color: #6b6d72;
-            font-size: 16px;
-            font-weight: bold;
+            font-size: 12px;
             padding: 0px 3px;
         }
     }

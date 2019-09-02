@@ -1,19 +1,18 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { MainService, PromoCodeService } from '../../Container/Store/Services';
-import { MatSnackBar } from '@angular/material';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
-import { MatDialog } from '@angular/material';
-import { EnrollmentService } from '../Store/Services/enroll.service';
-import { UserService } from '../../always-auth.service';
-import { EnrollmentComponent } from '../../enrollment/enrollment.component';
-import Swal from 'sweetalert2';
-import { RecapchaService } from '../../recapcha/recapcha.service';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core'
+import { ErrorStateMatcher } from '@angular/material/core'
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms'
+import { MainService, PromoCodeService } from '../../Container/Store/Services'
+import { MatSnackBar } from '@angular/material'
+import { Router, ActivatedRoute } from '@angular/router'
+import { MatTableDataSource } from '@angular/material'
+import { MatDialog } from '@angular/material'
+import { EnrollmentService } from '../Store/Services/enroll.service'
+import { UserService } from '../../always-auth.service'
+import { EnrollmentComponent } from '../../enrollment/enrollment.component'
+import Swal from 'sweetalert2'
+import { RecapchaService } from '../../recapcha/recapcha.service'
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
-import {MatInputModule} from '@angular/material/input';
 
 export class errorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {

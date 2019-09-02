@@ -36,16 +36,8 @@ img {
             flex: 1;
             flex-direction: column;
             text-align: center;
-            button {
-                background-color: #000;
-                border-radius: 100px;
-                color: #fff;
-                font-weight: bold;
-                margin-top: 10px
-            }
             button:disabled,
             button[disabled] {
-                background-color: rgba(0, 0, 0, .12);
                 color: rgba(0, 0, 0, .26);
             }
         }
@@ -68,7 +60,7 @@ img {
 }
 
 ul {
-    font-size: 17px;
+    font-size: 16px;
     line-height: 22px;
     padding: 0;
     list-style: inside;
@@ -399,15 +391,6 @@ h3 {
     }
 }
 
-.btn.btn-rose {
-    background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) !important;
-    color: #FFFFFF;
-    font-weight: bold;
-    box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
-}
-.btn.btn-rose:hover{
-  box-shadow:none;
-}
 .btn-refer {
     background: rgb(36, 35, 35);
     color: #fff;
@@ -432,28 +415,6 @@ h3 {
 
 .btn-lg {
     line-height: 1.3333333;
-}
-
-.btn {
-    display: inline-block;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    touch-action: manipulation;
-    cursor: pointer;
-    user-select: none;
-    font-size: 17px !important;
-    font-weight: 600 !important;
-    border: none;
-    position: relative;
-    padding: 12px 30px;
-    margin: 10px 1px;
-    text-transform: uppercase;
-    letter-spacing: 0;
-    will-change: box-shadow, transform;
-    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), -webkit-box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1);
-    -webkit-font-smoothing: antialiased;
 }
 
 .btn.btn-round {
@@ -1480,11 +1441,7 @@ h3 {
 .member-special p {
     font-size: 18px;
     line-height: 25px;
-}
-
-.member-special button {
     color: #fff;
-    background-color: #e5ab55;
 }
 
 .reg-text {
@@ -2026,11 +1983,7 @@ h3 {
 }
 
 .residential-tabs .btn {
-    border-radius: 25px;
     font-size: 16px;
-    font-weight: bold;
-    background-color: #000;
-    color: #fff;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -2060,12 +2013,8 @@ h3 {
 }
 
 .residential-two .residential-tabs .btn1 {
-    font-size: 17px;
-    font-weight: bold;
-    background-color: #817d7d;
-    color: #fff;
+    font-size: 16px;
     padding-top: 5px;
-    border-radius: 25px;
     padding-bottom: 5px;
 }
 
@@ -2486,7 +2435,7 @@ h3 {
     text-align: center;
     vertical-align: middle;
     line-height: 80px;
-    background-color: #272727;
+    background-color: #008000;
     border-radius: 100%;
 }
 
@@ -2591,7 +2540,12 @@ h3 {
         margin: 0px;
     }
 }
-
+.help-sidebar li{
+  font-weight: 600;
+}
+.help-sidebar li{
+  color:#0a97d2
+}
 @media (max-width: 1380px) {
     .plan-main {
         zoom: 90%
@@ -3040,13 +2994,12 @@ h3 {
     padding: 5px;
 }
 
-#main-bg-slider .download-here {
-    // position: absolute;
-    // right: 40px;
-    // top: 10px;
-    // z-index: 9;
-
-}
+// #main-bg-slider .download-here {
+//     position: absolute;
+//     right: 40px;
+//     top: 10px;
+//     z-index: 9;
+// }
 
 .why-our {
     background-color: #fff;
@@ -3318,12 +3271,6 @@ h3 {
     margin-bottom: 10px;
     align-items: center;
     button {
-        background-color: #000;
-        color: #fff;
-        font-weight: bold;
-        font-size: 24px;
-        padding: 6px 30px;
-        border-radius: 25px;
         width: 160px;
     }
     .error {
@@ -3344,11 +3291,8 @@ h3 {
     button {
         background: linear-gradient(90deg,#042863 0%,#0a97d2 100%);
         color: #fff;
-        font-weight: bold;
-        font-size: 24px;
         margin-top: 10px;
         padding: 6px 30px;
-        border-radius: 5px;
         width: 160px;
         transition: all .5s ease-in-out;
     }
@@ -3432,16 +3376,15 @@ h3 {
 
 .con-helpTools {
     background: url('../../../assets/img/houston.jpg') repeat left top;
-    color: #fff;
     font-weight: bold;
     text-align: center;
     padding: 101px;
     margin-top: 0px;
     h1 {
         font-size: 55px;
+        color: #fff;
     }
 }
-
 .historical-bar {
     margin-top: 20px;
     margin-bottom: 10px;
@@ -3475,24 +3418,23 @@ h3 {
     }
 }
 
-.helpbutton {
-    background-color: rgb(97, 97, 97);
-    font-size: 19px;
-    font-weight: bold;
-    color: #fff;
-    border-radius: 25px;
-    a {
-        color: #fff;
-        text-decoration: none;
-    }
+// .helpbutton {
+//     background-color: rgb(97, 97, 97);
+//     font-size: 19px;
+//     font-weight: bold;
+//     color: #fff;
+//     border-radius: 25px;
+//     a {
+//         color: #fff;
+//         text-decoration: none;
+//     }
+// }
+.helpbutton a{
+  color:#fff;
 }
-
-.helpForm h4 {
-    font-size: 19px;
-    font-weight: bold;
-    color: #030192;
+.btns-list li{
+  list-style: none;
 }
-
 .modalBill {
     position: relative;
 }
@@ -3532,16 +3474,15 @@ h3 {
 }
 
 #btnBill1 {
-    position: absolute;
     top: 5%;
-    border-radius: 360px !important;
     left: 30%;
+    border-radius: 50px!important;
+    position: absolute;
     line-height: 15px;
-    padding: 1%;
     background: #cd0000;
-    border: 1px solid #cd0000;
-    transition: 0.5s;
-    font-weight: bold;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 #btnBill1:hover {
@@ -3564,36 +3505,40 @@ h3 {
 }
 
 #btnBill2 {
-    border-radius: 348px !important;
     top: 19%;
+    left: 30%;
+    border-radius: 50px!important;
     position: absolute;
     line-height: 15px;
-    left: 30%;
     background: #cd0000;
-    border: 1px solid #cd0000;
-    padding: 1%;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 #btnBill3 {
-    border-radius: 360px !important;
-    line-height: 15px;
-    position: absolute;
+
     top: 38%;
     right: 34%;
-    padding: 1%;
+    border-radius: 50px!important;
+    position: absolute;
+    line-height: 15px;
     background: #cd0000;
-    border: 1px solid #cd0000;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 #btnBill4 {
-    border-radius: 360px !important;
-    line-height: 15px;
-    position: absolute;
     bottom: 3%;
     right: 45%;
-    padding: 1%;
+    border-radius: 50px!important;
+    position: absolute;
+    line-height: 15px;
     background: #cd0000;
-    border: 1px solid #cd0000;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
 }
 
 #btnBill2:hover {
@@ -3601,19 +3546,16 @@ h3 {
     background: #ffffff !important;
     border: 1px solid #cd0000 !important;
 }
-
 #btnBill3:hover {
     color: #cd0000 !important;
     background: #ffffff !important;
     border: 1px solid #cd0000 !important;
 }
-
 #btnBill4:hover {
     color: #cd0000 !important;
     background: #ffffff !important;
     border: 1px solid #cd0000 !important;
 }
-
 .spinner {
     display: flex;
     flex-direction: row;
@@ -3954,6 +3896,21 @@ max-width: 440px;
 }
   .heading_s{
     font-size: 34px;
+  }
+  .help-sidebar{
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+  }
+  .help-sidebar li{
+    font-size: 12px;
+    font-weight: 600;
+}
+  .help-sidebar li>a {
+    padding: 5px;
+  }
+  .h1, h1 {
+    font-size: 26px;
   }
 }
 

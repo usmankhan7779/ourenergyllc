@@ -221,3 +221,61 @@ mark {
     width: 46%;
 }
 
+
+.btn,button,a.btn{
+  background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) ;
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
+  border: 1px solid #c2dde8 !important;
+  text-transform: capitalize;
+  display: inline-block;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px ;
+  position: relative;
+  padding: 12px 30px;
+  margin: 10px 1px;
+  letter-spacing: 0;
+  -webkit-font-smoothing: antialiased;
+  transition: 0.3s ease-in-out all;
+
+}
+.btn:focus,button:focus,a.btn:focus{
+  outline: none;
+  color: #fff;
+}
+
+.btn:hover,button:hover,a.btn:hover{
+box-shadow:none;
+background: #fff;
+border: 1px solid #ccc !important;
+color: #B6B6B6 ;
+transition: 0.3s ease-in-out all;
+}
+.padding-30{
+  padding: 30px;
+}
+.mat-form-field-label{
+  line-height: 22px !important;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+  color: #3a4170;
+}
+p{
+  color: #959fac;
+}
+
+@media only screen and(max-width:767px){
+  .router__outlet {
+    padding-top: 50px;
+  }
+  .con-helpTools{
+    padding: 20px;
+  }
+}
