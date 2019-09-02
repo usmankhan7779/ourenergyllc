@@ -424,8 +424,7 @@
               <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip
-                      name="zipCode" maxlength="5" />
+            <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)="zipCode" #zip name="zipCode" maxlength="5" />
                     <mat-error *ngIf="zip_code.hasError('pattern')">
                       Invalid Zip Code
                     </mat-error>
@@ -445,7 +444,7 @@
             </div>
             <div class="clearfix">
               <div class="form-group text-center">
-                <button type="submit" class="btn btn-ros">Lets find a plan to fit your needs</button>
+                <button type="submit" class="btn btn-rose">Lets find a plan to fit your needs</button>
               </div>
             </div>
           </div>
@@ -507,7 +506,7 @@
                   target="_blank"><b>YRAC</b></a>
                 <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
 
-                <button class="enroll-btn" mat-button>Enroll Now</button>
+                <button class="btn btn-rose" >Enroll Now</button>
               </div>
             </div>
           </div>
@@ -558,13 +557,11 @@
                   <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
                     target="_blank"><b>YRAC</b></a>
                   <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
-  
-                  <button class="enroll-btn" mat-button>Enroll Now</button>
+                  <button class="btn btn-rose" >Enroll Now</button>
                 </div>
               </div>
             </div>
           </div>
-          
         </div>
         <div class="result-box">
             <div>
@@ -611,7 +608,7 @@
                       target="_blank"><b>YRAC</b></a>
                     <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
     
-                    <button class="enroll-btn" mat-button>Enroll Now</button>
+                    <button class="btn btn-rose">Enroll Now</button>
                   </div>
                 </div>
               </div>
@@ -666,5 +663,11 @@
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
       </div>
     </div>
+    <div class="row mg-0">
+      <div class="col-sm-12 text-right">
+        <button class="btn btn-rose">View More</button>
+      </div>
+    </div>
   </div>
+
 </section>

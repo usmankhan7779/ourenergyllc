@@ -400,16 +400,12 @@ h3 {
 }
 
 .btn.btn-rose {
-    background-color: #000;
-    color: #FFFFFF;
-}
-.btn.btn-ros {
     background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) !important;
     color: #FFFFFF;
     font-weight: bold;
     box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
 }
-.btn.btn-ros:hover{
+.btn.btn-rose:hover{
   box-shadow:none;
 }
 .btn-refer {
