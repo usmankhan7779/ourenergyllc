@@ -405,101 +405,266 @@
 </section>-->
 <!-- ............................................ -->
 <section class="main_banner">
-    <div class="download-here">
-        <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer" target="_blank">
-            <img src="../../assets/img/Adroid-Badge.png">
-        </a>
-        <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
-            <img src="../../assets/img/IOS-Badge.png">
-        </a>
-    </div>
-    <div class="promo_img_div">
-        <div class="zip_promo">
-            <h3>Saving on Energy <br>Made Easy </h3>
-            <div class="form-home">
-                    <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate>
-                        <div class="card">
-                            <div class="clearfix mt-5">
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <mat-form-field>
-                                            <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip name="zipCode" maxlength="5" />
-                                            <mat-error *ngIf="zip_code.hasError('pattern')">
-                                                Invalid Zip Code
-                                            </mat-error>
-                                            <mat-error *ngIf="zip_code.hasError('required')">
-                                                Zip Code is required
-                                            </mat-error>
-                                        </mat-form-field>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-6">
-                                    <div class="form-group">
-                                        <mat-form-field>
-                                            <input matInput placeholder="Promo Code" name=promo [(ngModel)]="promoCode" />
-                                        </mat-form-field>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clearfix">
-                                <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-ros">Lets find a plan to fit your needs</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+  <div class="download-here">
+    <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer"
+      target="_blank">
+      <img src="../../assets/img/Adroid-Badge.png">
+    </a>
+    <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
+      <img src="../../assets/img/IOS-Badge.png">
+    </a>
+  </div>
+  <div class="promo_img_div">
+    <div class="zip_promo">
+      <h3>Saving on Energy <br>Made Easy </h3>
+      <div class="form-home">
+        <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate>
+          <div class="card">
+            <div class="clearfix mt-5">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip
+                      name="zipCode" maxlength="5" />
+                    <mat-error *ngIf="zip_code.hasError('pattern')">
+                      Invalid Zip Code
+                    </mat-error>
+                    <mat-error *ngIf="zip_code.hasError('required')">
+                      Zip Code is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput placeholder="Promo Code" name=promo [(ngModel)]="promoCode" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix">
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-ros">Lets find a plan to fit your needs</button>
+              </div>
             </div>
           </div>
-          <div class="main_img">
-            <img src="../../../assets/img/home-bg-04.png" class="img-responsive" alt="">
-          </div>
+        </form>
+      </div>
     </div>
+    <div class="main_img">
+      <img src="../../../assets/img/home-bg-04.png" class="img-responsive" alt="">
+    </div>
+  </div>
 </section>
 <section class="four_Steps">
-  <h3 class="heading_s"> Sign-up for energy in 4 easy steps</h3>
+  <h3 class="heading_s"> Energy Plans</h3>
+
+    <div class="search-result">
+      <!-- <div class="result-box" *ngFor="let value of products;index as i;"> -->
+      <div class="result-box">
+        <div>
+          <div class="search-plan">
+            <h3 class="productName">Product Name</h3>
+            <p class="tag-line">
+              Tagline
+            </p>
+            <div class="main">
+              <!-- <div [ngSwitch]="estimatedUsage"> -->
+              <div>
+                <!-- <div class="text-center inner price-box" *ngSwitchCase="2000"> -->
+                <!-- <div class="text-center inner price-box" >
+          <div>
+          <b >2000 kWh</b>
+          <h3 >7.5¢</h3>
+          </div>
+          </div> -->
+                <!-- <div class="text-center inner price-box" *ngSwitchDefault> -->
+
+                <div class="text-center inner price-box">
+                  <div>
+                    <b>2000 kWh</b>
+                    <h3>{{value.tariff_2000}}¢</h3>
+                  </div>
+
+                </div>
+              </div>
+              <div class="bar"></div>
+              <div class="inner">
+                <div class="rateSheet">
+                  <div>
+                    <span>Contract Term: 6 months</span><br>
+                    <span>Termination Fee: $50</span><br>
+                    <span>Utility: OurEnergy</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bar"></div>
+              <div class="bar"></div>
+              <div class="text-center inner links-list">
+                <a matTooltip="Terms of Service" target="_blank"><b>TOS</b></a>
+                <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
+                  target="_blank"><b>YRAC</b></a>
+                <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
+
+                <button class="enroll-btn" mat-button>Enroll Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="result-box">
+          <div>
+            <div class="search-plan">
+              <h3 class="productName">Product Name</h3>
+              <p class="tag-line">
+                Tagline
+              </p>
+              <div class="main">
+                <!-- <div [ngSwitch]="estimatedUsage"> -->
+                <div>
+                  <!-- <div class="text-center inner price-box" *ngSwitchCase="2000"> -->
+                  <!-- <div class="text-center inner price-box" >
+            <div>
+            <b >2000 kWh</b>
+            <h3 >7.5¢</h3>
+            </div>
+            </div> -->
+                  <!-- <div class="text-center inner price-box" *ngSwitchDefault> -->
+  
+                  <div class="text-center inner price-box">
+                    <div>
+                      <b>2000 kWh</b>
+                      <h3>{{value.tariff_2000}}¢</h3>
+                    </div>
+  
+                  </div>
+                </div>
+                <div class="bar"></div>
+                <div class="inner">
+                  <div class="rateSheet">
+                    <div>
+                      <span>Contract Term: 6 months</span><br>
+                      <span>Termination Fee: $50</span><br>
+                      <span>Utility: OurEnergy</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="text-center inner links-list">
+                  <a matTooltip="Terms of Service" target="_blank"><b>TOS</b></a>
+                  <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
+                    target="_blank"><b>YRAC</b></a>
+                  <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
+  
+                  <button class="enroll-btn" mat-button>Enroll Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="result-box">
+            <div>
+              <div class="search-plan">
+                <h3 class="productName">Product Name</h3>
+                <p class="tag-line">
+                  Tagline
+                </p>
+                <div class="main">
+                  <!-- <div [ngSwitch]="estimatedUsage"> -->
+                  <div>
+                    <!-- <div class="text-center inner price-box" *ngSwitchCase="2000"> -->
+                    <!-- <div class="text-center inner price-box" >
+              <div>
+              <b >2000 kWh</b>
+              <h3 >7.5¢</h3>
+              </div>
+              </div> -->
+                    <!-- <div class="text-center inner price-box" *ngSwitchDefault> -->
+    
+                    <div class="text-center inner price-box">
+                      <div>
+                        <b>2000 kWh</b>
+                        <h3>{{value.tariff_2000}}¢</h3>
+                      </div>
+    
+                    </div>
+                  </div>
+                  <div class="bar"></div>
+                  <div class="inner">
+                    <div class="rateSheet">
+                      <div>
+                        <span>Contract Term: 6 months</span><br>
+                        <span>Termination Fee: $50</span><br>
+                        <span>Utility: OurEnergy</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="bar"></div>
+                  <div class="bar"></div>
+                  <div class="text-center inner links-list">
+                    <a matTooltip="Terms of Service" target="_blank"><b>TOS</b></a>
+                    <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
+                      target="_blank"><b>YRAC</b></a>
+                    <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
+    
+                    <button class="enroll-btn" mat-button>Enroll Now</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+    </div>
+
+  <!-- <div *ngIf="showFilteredProducts == true" class="search-result"> -->
+
 </section>
 <section class="faqs_home">
-<h3 class="heading_s">Frequently Asked Questions</h3>
-    <div class="panel-group" id="accordion">
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-            <h4 class="panel-title">
-                 <a >What is included in the rate?</a> 
-                  <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
-            </h4>
-          </div>
-          <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-            <h4 class="panel-title">
-              <a >When will the service start?</a>
-           
-            </h4>
-          </div>
-          <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-        </div>
-        <div class="panel panel-default">
-          <div class="panel-heading"  data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-             
-            <h4 class="panel-title">
-                 <a >  How do I sign-up? </a>
-                
-            </h4>
-          </div>
-          <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-          </div>
-        </div>
-</div> 
+  <h3 class="heading_s">Frequently Asked Questions</h3>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        <h4 class="panel-title">
+          <a>What is included in the rate?</a>
+          <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
+        </h4>
+      </div>
+      <div id="collapse1" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        <h4 class="panel-title">
+          <a>When will the service start?</a>
+
+        </h4>
+      </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+
+        <h4 class="panel-title">
+          <a> How do I sign-up? </a>
+
+        </h4>
+      </div>
+      <div id="collapse3" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+      </div>
+    </div>
+  </div>
 </section>
