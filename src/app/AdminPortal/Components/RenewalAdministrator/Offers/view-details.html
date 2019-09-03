@@ -16,7 +16,7 @@
             style="margin:10px 5px 10px 5px">
             <div class="main">
                 <h3 style="text-align:center" *ngIf="value.product_name">{{value?.product_name}} ({{value?.product_id}})</h3>
-                <button mat-raised-button [disabled]="isBtnDisabled" *ngIf="data.extra_info.flow_status == 'Sent Renewal notices'" (click)="attachOffer(value.id)">Accept Offer</button>
+                <button  [disabled]="isBtnDisabled" *ngIf="data.extra_info.flow_status == 'Sent Renewal notices'" (click)="attachOffer(value.id)">Accept Offer</button>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">

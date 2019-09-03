@@ -10,7 +10,7 @@
             <div class="row">
                 <mat-form-field class="col-lg-4 col-md-4 col-sm-6 col-sm-12">
                     <input placeholder="Search" matInput [formControl]="searchControl">
-                    <button mat-button *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
+                    <button  *ngIf="searchControl.value" matSuffix mat-icon-button aria-label="Clear" (click)="searchControl.setValue('')">
                         <mat-icon>close</mat-icon>
                     </button>
                     <button mat-icon-button matTooltip="Refresh" matSuffix style="font-size: 22px" (click)="refresh()">

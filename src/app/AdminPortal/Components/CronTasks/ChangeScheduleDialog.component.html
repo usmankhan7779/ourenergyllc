@@ -120,7 +120,7 @@
     </mat-card>
     <br/>
     <div class="text-center" *ngIf="show">
-        <button mat-raised-button color=accent>Prepare Adjustments</button>
+        <button  color=accent>Prepare Adjustments</button>
     </div>
 </form> -->
 <h1>{{data.name}}</h1>
@@ -166,6 +166,6 @@
 </mat-form-field>
 
 <div class="text-center">
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save</button>
-    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button  [mat-dialog-close]="data" cdkFocusInitial>Save</button>
+    <button  (click)="onNoClick()">Cancel</button>
 </div>

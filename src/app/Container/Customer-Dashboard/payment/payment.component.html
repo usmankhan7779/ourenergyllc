@@ -10,7 +10,7 @@
             <p><b>{{custPayInfo?.recurr_cust_message_2}}</b></p>
         </div>
         <div class="text-right">
-            <!-- <p><b>{{custPayInfo?.pay_using_message}} <button mat-raised-button class="btn1" (click)="payUsing(custPayInfo?.def_cust_acct_type)">Click Here</button> </b></p> -->
+            <!-- <p><b>{{custPayInfo?.pay_using_message}} <button  class="btn1" (click)="payUsing(custPayInfo?.def_cust_acct_type)">Click Here</button> </b></p> -->
             <p><b><mat-slide-toggle (change)="payUsing(custPayInfo?.def_cust_acct_type, $event)"><b>Click Here {{custPayInfo?.pay_using_message}}</b></mat-slide-toggle>
                 </b>
             </p>
@@ -170,8 +170,8 @@
         </div>
         <mat-slide-toggle style="margin-top: 15px;" (change)="changeAuth($event)"><span style="font-size: 16px; font-weight: bold;">Authorize Payment</span></mat-slide-toggle>
         <div>
-            <button mat-raised-button type="submit" class="btn1" [disabled]="submitButtonStatus || !authorize">Submit</button>
-            <button mat-raised-button type="button" class="btn2">Cancel</button>
+            <button  type="submit" class="btn1" [disabled]="submitButtonStatus || !authorize">Submit</button>
+            <button  type="button" class="btn2">Cancel</button>
         </div>
     </mat-card>
 </form>

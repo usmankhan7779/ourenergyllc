@@ -6,7 +6,7 @@
             <mat-error *ngIf="emailForm.controls.url.hasError('required')">Redirect Link is required</mat-error>
         </mat-form-field>
         <div style="margin-top: 10px;" class="upload-btn-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <button mat-raised-button color="primary" type="button">Upload Image</button>
+            <button  color="primary" type="button">Upload Image</button>
             <input type="file" placeholder="Upload Image" (change)="onImageSelected($event)">
             <div style="display: inline; padding-left: 15px; font-size: 16px;"> {{image}} </div>
         </div>
@@ -14,7 +14,7 @@
     <h4 style="color:#cd0000;" class="text-center">{{error}}</h4>
     <div class="text-center">
         <br>
-        <button [disabled]="isBtnDisabled" type="submit" mat-raised-button>Save</button>
-        <button [disabled]="isBtnDisabled" type="button" mat-button [mat-dialog-close]>Cancel</button>
+        <button [disabled]="isBtnDisabled" type="submit" >Save</button>
+        <button [disabled]="isBtnDisabled" type="button"  [mat-dialog-close]>Cancel</button>
     </div>
 </form>
