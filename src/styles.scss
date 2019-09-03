@@ -270,12 +270,17 @@ transition: 0.3s ease-in-out all;
 p{
   color: #959fac;
 }
-
+input.mat-input-element{
+  height: 40px;
+}
+.mat-form-field-infix {
+  padding: 0;
+}
 @media only screen and(max-width:767px){
   .router__outlet {
     padding-top: 50px;
   }
   .con-helpTools{
-    padding: 20px;
+    padding: 20px !important;
   }
 }
