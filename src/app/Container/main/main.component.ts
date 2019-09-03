@@ -29,37 +29,39 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 export class MainComponent implements OnInit {
   router: Router
-  constructor(_router: Router) {
+  constructor(_router: Router, private http: HttpClient) {
     this.router = _router
   }
   promoCode = ''
   zipCode
   matcher = new errorMatcher()
-  // setPosition(position) {
-  //   if (!localStorage.getItem('zip')) {
-  //     let headers = new Headers();
-  //     headers.append('Content-Type', 'application/json');
-  //     this.http.get(Config.api + 'https://apis.wattcrm.com/portal/zipcode-by-lat-lng//' + position.coords['latitude'] + '/' + position.coords['longitude']).subscribe(Res => {
-  //       console.log(Res);
-  //       this.zipCode = Res['postalCodes'][0]['postalCode'];
+  setPosition(position) {
+    if (!localStorage.getItem('zip')) {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      // https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->29.74/lng-->-93.47/
+      this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + '29.74' + '/lng-->' + '-94.47' +'/').subscribe(Res => {
+        console.log(Res);
+        // this.zipCode = Res['postalCodes'][0]['postalCode'];
+        alert(Res['status'])
 
-  //       // this.Conversation();
-  //       console.log(this.cord)
-  //     });
+        // this.Conversation();
+        // console.log(this.cord)
+      });
      
-  //     }
-  //     // else{
-  //     //   this.zipCode="75001";
-  //     // }
+      }
+      // else{
+      //   this.zipCode="75001";
+      // }
      
-  //   }
+    }
   ngOnInit() {
     window.scrollTo(0, 0)
     
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
-    //   // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
-    // };
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+      // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
+    };
     var myIndex = 0
     carousel()
     function carousel() {
@@ -76,6 +78,7 @@ export class MainComponent implements OnInit {
       setTimeout(carousel, 1000)
     }
   }
+  
   onSubmit() {
     if (this.zipCode != "" && this.zip_code.errors == null) {
       localStorage.setItem('promoCode', this.promoCode)
