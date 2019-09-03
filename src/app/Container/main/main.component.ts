@@ -29,7 +29,7 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 export class MainComponent implements OnInit {
   router: Router
-  constructor(_router: Router, private http: HttpClient) {
+  constructor(_router: Router, private http: HttpClient,private promos: PromoCodeService) {
     this.router = _router
   }
   promoCode = ''
@@ -40,11 +40,12 @@ export class MainComponent implements OnInit {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       // https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->29.74/lng-->-93.47/
-      this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + '29.74' + '/lng-->' + '-94.47' +'/').subscribe(Res => {
+      this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + '33.0604' + '/lng-->' + '-96.7333' +'/').subscribe(Res => {
         console.log(Res);
+        this.zipCode = Res['message']
         // this.zipCode = Res['postalCodes'][0]['postalCode'];
-        alert(Res['status'])
-
+        // alert(Res['status'])
+        this.view_result();
         // this.Conversation();
         // console.log(this.cord)
       });
@@ -62,6 +63,7 @@ export class MainComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
     };
+
     var myIndex = 0
     carousel()
     function carousel() {
@@ -74,11 +76,64 @@ export class MainComponent implements OnInit {
       if (myIndex > x.length) {
         myIndex = 1
       }
+   
       // x[myIndex - 1].style.display = "block"
       setTimeout(carousel, 1000)
     }
   }
+  products;
+  view_result(){
+    this.promos.uaCheck().subscribe(res => {
+      if (res['message']['bypass'] == true && res['message']['ua'] == false) {
+        localStorage.setItem('ua', "False")
+      }
+      else localStorage.setItem('ua', "True")
+    })
+    // if (this.promoCode == null) { this.promoCode = "" }
+    let data = {
+      zip_code: this.zipCode,
+      promo_code: "" + this.promoCode,
+      client: "WattGenie-Web"
+    }
+    this.promos.searchPlan(data).subscribe(res => {
+      console.log(res)
+      // localStorage.removeItem('duns')
+      // if (res["status"] == false) {
+      //   this.showError = true
+      //   this.error = res["Error"]
+      //   this.submitBtnDisabled = false
+      // }
+      // if (res["status"] == true) {
+      //   // this.showSpinner = false
+      //   // this.showError = false
+      //   // this.submitBtnDisabled = false
+      //   if (res["tdsp_status"] == false) {
+      //     localStorage.setItem('duns', res['message'][0]['provider_id'])
+      //     this.showFilteredProducts = true
+      //     this.showPlans = true
+          this.products = res["message"]
+      //     localStorage.setItem('promotionCode', JSON.stringify(res['promo_code']))
+      //     localStorage.removeItem('zip')
+      //     this.submitBtnDisabled = false
+      //   }
+      //   else {
+      //     this.showTdsp = true
+      //     this.tdsps = res['message']['row']
+      //     this.submitBtnDisabled = false
+      //   }
+      // }
+      // else if (res["status"] == false) {
+      //   this.showFilteredProducts = false
+      //   this.showSpinner = false
+      //   this.showError = true
+      //   this.showPlans = false
+      //   this.error = res["message"]
+      //   localStorage.removeItem('zip')
+      //   this.submitBtnDisabled = false
+      // }
+    })
   
+  }
   onSubmit() {
     if (this.zipCode != "" && this.zip_code.errors == null) {
       localStorage.setItem('promoCode', this.promoCode)

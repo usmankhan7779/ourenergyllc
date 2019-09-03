@@ -460,60 +460,59 @@
   <h3 class="heading_s"> Energy Plans</h3>
 
     <div class="search-result">
-      <!-- <div class="result-box" *ngFor="let value of products;index as i;"> -->
-        <div class="result-box">
-          <div>
+     
+        <div class="result-box" *ngFor="let value of products;index as i;">
+          <div *ngIf="i<3">
             <div class="search-plan">
-              <h3 class="productName">Product Name</h3>
+              <h3 class="productName"> 
+                {{value.product_name}}
+              </h3>
               <p class="tag-line">
                 Tagline
               </p>
               <div class="main">
-                <!-- <div [ngSwitch]="estimatedUsage"> -->
+                
                 <div>
-                  <!-- <div class="text-center inner price-box" *ngSwitchCase="2000"> -->
-                  <!-- <div class="text-center inner price-box" >
-            <div>
-            <b >2000 kWh</b>
-            <h3 >7.5¢</h3>
-            </div>
-            </div> -->
-                  <!-- <div class="text-center inner price-box" *ngSwitchDefault> -->
+                  
   
                   <div class="text-center inner price-box">
                     <div>
                       <b>2000 kWh</b>
-                      <h3>9¢</h3>
+                      <h3>{{value.tariff_2000}}¢</h3>
                     </div>
-  
+                    <p class="tag-line">
+                      {{value.product_info}}
+                  </p>
                   </div>
                 </div>
                 <div class="bar"></div>
                 <div class="inner">
                   <div class="rateSheet">
                     <div>
-                      <span>Contract Term: 6 months</span><br>
+                      <!-- <span>Contract Term: 6 months</span><br>
                       <span>Termination Fee: $50</span><br>
-                      <span>Utility: OurEnergy</span>
+                      <span>Utility: OurEnergy</span> -->
+                      <span >Contract Term: {{value.display_term}} months</span><br>
+                      <span >Termination Fee: ${{value.display_termination_fee}}</span><br>
+                      <span >Utility: {{value.vendor_company}}</span>
                     </div>
                   </div>
                 </div>
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="text-center inner links-list">
-                  <a matTooltip="Terms of Service" target="_blank"><b>TOS</b></a>
-                  <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
-                    target="_blank"><b>YRAC</b></a>
-                  <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
-  
-                  <button class="btn btn-rose" >Enroll Now</button>
+                  <a  matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
+                  <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
+                  <a  matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
+          
+                  <!-- <button class="enroll-btn"   (click)="enroll(i)">Enroll Now</button> -->
                 </div>
               </div>
             </div>
           </div>
           
         </div>
-        <div class="result-box">
+        <!-- <div class="result-box">
           <div>
             <div class="search-plan">
               <h3 class="productName">Product Name</h3>
@@ -521,17 +520,9 @@
                 Tagline
               </p>
               <div class="main">
-                <!-- <div [ngSwitch]="estimatedUsage"> -->
+                 
                 <div>
-                  <!-- <div class="text-center inner price-box" *ngSwitchCase="2000"> -->
-                  <!-- <div class="text-center inner price-box" >
-            <div>
-            <b >2000 kWh</b>
-            <h3 >7.5¢</h3>
-            </div>
-            </div> -->
-                  <!-- <div class="text-center inner price-box" *ngSwitchDefault> -->
-  
+                  
                   <div class="text-center inner price-box">
                     <div>
                       <b>2000 kWh</b>
@@ -564,8 +555,8 @@
             </div>
           </div>
           
-        </div>
-        <div class="result-box">
+        </div> -->
+        <!-- <div class="result-box">
           <div>
             <div class="search-plan">
               <h3 class="productName">Product Name</h3>
@@ -573,16 +564,9 @@
                 Tagline
               </p>
               <div class="main">
-                <!-- <div [ngSwitch]="estimatedUsage"> -->
+                
                 <div>
-                  <!-- <div class="text-center inner price-box" *ngSwitchCase="2000"> -->
-                  <!-- <div class="text-center inner price-box" >
-            <div>
-            <b >2000 kWh</b>
-            <h3 >7.5¢</h3>
-            </div>
-            </div> -->
-                  <!-- <div class="text-center inner price-box" *ngSwitchDefault> -->
+                
   
                   <div class="text-center inner price-box">
                     <div>
@@ -616,7 +600,7 @@
             </div>
           </div>
           
-        </div>
+        </div> -->
     </div>
 
   <!-- <div *ngIf="showFilteredProducts == true" class="search-result"> -->
