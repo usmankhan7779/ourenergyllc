@@ -3913,7 +3913,9 @@ max-width: 440px;
     font-size: 26px;
   }
 }
-
+.mat-accordion p{
+  font-size: 14px;
+}
 @media (max-width: 767px) {
   .logo-width a {
       margin-top: 0px;

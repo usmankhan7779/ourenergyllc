@@ -98,11 +98,10 @@
       align-items: center;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin: 0 auto;
-      max-width: 1270px;
+      padding: 0 30px;
       .main-listt {
         font-size: 15px;
-        padding: 20px 8px;
+        padding: 15px 8px;
     }
     .logo {
         cursor: pointer;
@@ -126,11 +125,17 @@
     color: #3a4170;
     }
     mat-list-item:hover,
-    a:hover {
-        color: #c00;
+    mat-list-item:active {
+      border-bottom: 2px solid #ff4270;
         font-weight: bold;
         text-decoration: none;
         cursor: pointer;
+    }
+    .Active{
+      border-bottom: 2px solid #ff4270;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
     }
     }
 }
@@ -146,7 +151,9 @@
 .topnav {
     display: none;
 }
-
+.box_shadow{
+  box-shadow: 0 0px 5px #ccc;
+}
 @media only screen and (max-width: 991px) {
     .tempHeader {
         height: 43px;

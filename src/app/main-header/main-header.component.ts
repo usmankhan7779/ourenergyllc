@@ -9,6 +9,8 @@ import { QuickPayComponent } from '../login/login.component'
 })
 export class MainHeaderComponent implements OnInit {
 
+    
+
   myFunction = function () {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -20,7 +22,21 @@ export class MainHeaderComponent implements OnInit {
 
   constructor(public dialog: MatDialog) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    window.scroll(0, 0);
+    window.onscroll = function () { myFunction() };
+    
+    var header = document.getElementById("MYHeader");
+    var sticky = header.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("box_shadow");
+      } else {
+        header.classList.remove("box_shadow");
+      }
+    }
+  }
 
   dialogResult = "";
   quickPayDialog() {
