@@ -40,12 +40,23 @@ export class MainComponent implements OnInit {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       // https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->29.74/lng-->-93.47/
-      this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + '33.0604' + '/lng-->' + '-96.7333' +'/').subscribe(Res => {
+      // + position.coords['latitude'] + '/' + position.coords['longitude']
+      //33.0604
+      //-96.7333
+      this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + position.coords['latitude']  + '/lng-->' + position.coords['longitude']  +'/').subscribe(Res => {
         console.log(Res);
+        if(Res['status'] == true){
         this.zipCode = Res['message']
         // this.zipCode = Res['postalCodes'][0]['postalCode'];
         // alert(Res['status'])
-        this.view_result();
+        this.view_result(this.zipCode);
+      }
+        else if (Res['status'] == false)
+        {
+          this.zipCode = '75023'
+          this.view_result(this.zipCode);
+        }
+
         // this.Conversation();
         // console.log(this.cord)
       });
@@ -82,7 +93,7 @@ export class MainComponent implements OnInit {
     }
   }
   products;
-  view_result(){
+  view_result(zip_codes){
     this.promos.uaCheck().subscribe(res => {
       if (res['message']['bypass'] == true && res['message']['ua'] == false) {
         localStorage.setItem('ua', "False")
@@ -91,7 +102,7 @@ export class MainComponent implements OnInit {
     })
     // if (this.promoCode == null) { this.promoCode = "" }
     let data = {
-      zip_code: this.zipCode,
+      zip_code: zip_codes,
       promo_code: "" + this.promoCode,
       client: "WattGenie-Web"
     }
