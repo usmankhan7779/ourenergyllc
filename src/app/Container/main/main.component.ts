@@ -13,6 +13,7 @@ import Swal from 'sweetalert2'
 import { RecapchaService } from '../../recapcha/recapcha.service'
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+// import { google } from '@agm/core/services/google-maps-types';
 
 export class errorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -34,9 +35,31 @@ export class MainComponent implements OnInit {
   promoCode = ''
   zipCode
   matcher = new errorMatcher()
+  // setPosition(position) {
+  //   if (!localStorage.getItem('zip')) {
+  //     let headers = new Headers();
+  //     headers.append('Content-Type', 'application/json');
+  //     this.http.get(Config.api + 'https://apis.wattcrm.com/portal/zipcode-by-lat-lng//' + position.coords['latitude'] + '/' + position.coords['longitude']).subscribe(Res => {
+  //       console.log(Res);
+  //       this.zipCode = Res['postalCodes'][0]['postalCode'];
 
+  //       // this.Conversation();
+  //       console.log(this.cord)
+  //     });
+     
+  //     }
+  //     // else{
+  //     //   this.zipCode="75001";
+  //     // }
+     
+  //   }
   ngOnInit() {
     window.scrollTo(0, 0)
+    
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+    //   // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
+    // };
     var myIndex = 0
     carousel()
     function carousel() {
@@ -400,7 +423,7 @@ export class PlanSearchComponent {
   tdsps
   error
   x
-
+ 
   ngOnInit() {
     this.products = []
     this.tdsps = []
