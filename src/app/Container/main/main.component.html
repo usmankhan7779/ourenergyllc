@@ -424,8 +424,7 @@
               <div class="col-md-6 col-sm-6">
                 <div class="form-group">
                   <mat-form-field>
-                    <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip
-                      name="zipCode" maxlength="5" />
+            <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip name="zipCode" maxlength="5" />
                     <mat-error *ngIf="zip_code.hasError('pattern')">
                       Invalid Zip Code
                     </mat-error>
