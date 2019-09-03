@@ -208,6 +208,87 @@
                         <div >
                             
                             <div class="search-plan">
+                                <div [ngSwitch]="estimatedUsage">
+                                    <div class="text-center inner price-box" *ngSwitchCase="500">
+                                        <div>
+                                           
+                                            <h3 >{{value.tariff_500}}¢</h3>
+                                            <b >500 kWh</b>
+                                        </div>
+                                        <!-- this code is comment bu usman khan -->
+                                        <!-- <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">1000 kWh</b>
+                                                <h3 class="rs">{{value.tariff_1000}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">2000 kWh</b>
+                                                <h3 class="rs">{{value.tariff_2000}}¢</h3>
+                                            </div>
+                                        </div> -->
+                                        <!-- end   -->
+                                    </div>
+                                    <div class="text-center inner price-box" *ngSwitchCase="1000">
+                                        <div>
+                                          
+                                            <h3 >{{value.tariff_1000}}¢</h3>
+                                            <b >1000 kWh</b>
+                                        </div>
+                                        <!-- this code is comment bu usman khan -->
+                                        <!-- <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">500 kWh</b>
+                                                <h3 class="rs">{{value.tariff_500}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">2000 kWh</b>
+                                                <h3 class="rs">{{value.tariff_2000}}¢</h3>
+                                            </div>
+                                        </div> -->
+                                        <!-- end code -->
+                                    </div>
+                                    <div class="text-center inner price-box" *ngSwitchCase="2000">
+                                        <div>
+                                          
+                                            <h3 >{{value.tariff_2000}}¢</h3>
+                                            <b >2000 kWh</b>
+                                        </div>
+                                        <!-- this code is comment bu usman khan -->
+                                        <!-- <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">500 kWh</b>
+                                                <h3 class="rs">{{value.tariff_500}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">1000 kWh</b>
+                                                <h3 class="rs">{{value.tariff_1000}}¢</h3>
+                                            </div>
+                                        </div> -->
+                                        <!-- end code comment -->
+                                    </div>
+                                    <div class="text-center inner price-box" *ngSwitchDefault>
+                                        <div>
+                                                <h3 >{{value.tariff_2000}}¢</h3>
+                                                <b >2000 kWh</b>
+                                            <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
+                                        </div>
+
+
+                                        <!-- this code i comment by usman khan  start -->
+                                        <!-- <div style="display: flex; flex-direction: row;">
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">500 kWh</b>
+                                                <h3 class="rs">{{value.tariff_500}}¢</h3>
+                                            </div>
+                                            <div style="flex: 1; width: 130px;">
+                                                <b style="font-size: 15px;">2000 kWh</b>
+                                                <h3 class="rs">{{value.tariff_2000}}¢</h3>
+                                            </div>
+                                        </div> -->
+                                        <!-- this code isend  -->
+                                    </div>
+                                </div>
+                              <!--  -->
                                 <h3 class="productName">{{value.product_name}}</h3>
                                 <p class="tag-line">
                                     {{value.product_info}}
@@ -216,84 +297,7 @@
                                     <!-- <div class="text-center inner">
                                         <img src="../../../assets/img/Product-image-4.png" width="100px" height="100px">
                                     </div> -->
-                                    <div [ngSwitch]="estimatedUsage">
-                                            <div class="text-center inner price-box" *ngSwitchCase="500">
-                                                <div>
-                                                    <b >500 kWh</b>
-                                                    <h3 >{{value.tariff_500}}¢</h3>
-                                                </div>
-                                                <!-- this code is comment bu usman khan -->
-                                                <!-- <div style="display: flex; flex-direction: row;">
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">1000 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_1000}}¢</h3>
-                                                    </div>
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">2000 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_2000}}¢</h3>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end   -->
-                                            </div>
-                                            <div class="text-center inner price-box" *ngSwitchCase="1000">
-                                                <div>
-                                                    <b >1000 kWh</b>
-                                                    <h3 >{{value.tariff_1000}}¢</h3>
-                                                </div>
-                                                <!-- this code is comment bu usman khan -->
-                                                <!-- <div style="display: flex; flex-direction: row;">
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">500 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                                    </div>
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">2000 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_2000}}¢</h3>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end code -->
-                                            </div>
-                                            <div class="text-center inner price-box" *ngSwitchCase="2000">
-                                                <div>
-                                                    <b >2000 kWh</b>
-                                                    <h3 >{{value.tariff_2000}}¢</h3>
-                                                </div>
-                                                <!-- this code is comment bu usman khan -->
-                                                <!-- <div style="display: flex; flex-direction: row;">
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">500 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                                    </div>
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">1000 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_1000}}¢</h3>
-                                                    </div>
-                                                </div> -->
-                                                <!-- end code comment -->
-                                            </div>
-                                            <div class="text-center inner price-box" *ngSwitchDefault>
-                                                <div>
-                                                    <b >2000 kWh</b>
-                                                        <h3 >{{value.tariff_2000}}¢</h3>
-
-                                                    <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
-                                                </div>
-
-
-                                                <!-- this code i comment by usman khan  start -->
-                                                <!-- <div style="display: flex; flex-direction: row;">
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">500 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_500}}¢</h3>
-                                                    </div>
-                                                    <div style="flex: 1; width: 130px;">
-                                                        <b style="font-size: 15px;">2000 kWh</b>
-                                                        <h3 class="rs">{{value.tariff_2000}}¢</h3>
-                                                    </div>
-                                                </div> -->
-                                                <!-- this code isend  -->
-                                            </div>
-                                        </div>
+                                   
                                     <div class="bar"></div>
                                     <div class="inner">
                                         <div class="rateSheet">
