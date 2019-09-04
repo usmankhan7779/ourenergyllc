@@ -1,16 +1,16 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
-import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { MainService, PromoCodeService } from '../../Container/Store/Services';
-import { MatSnackBar } from '@angular/material';
-import { Router, ActivatedRoute } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
-import { MatDialog } from '@angular/material';
-import { EnrollmentService } from '../Store/Services/enroll.service';
-import { UserService } from '../../always-auth.service';
-import { EnrollmentComponent } from '../../enrollment/enrollment.component';
-import Swal from 'sweetalert2';
-import { RecapchaService } from '../../recapcha/recapcha.service';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core'
+import { ErrorStateMatcher } from '@angular/material/core'
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms'
+import { MainService, PromoCodeService } from '../../Container/Store/Services'
+import { MatSnackBar } from '@angular/material'
+import { Router, ActivatedRoute } from '@angular/router'
+import { MatTableDataSource } from '@angular/material'
+import { MatDialog } from '@angular/material'
+import { EnrollmentService } from '../Store/Services/enroll.service'
+import { UserService } from '../../always-auth.service'
+import { EnrollmentComponent } from '../../enrollment/enrollment.component'
+import Swal from 'sweetalert2'
+import { RecapchaService } from '../../recapcha/recapcha.service'
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 // import { google } from '@agm/core/services/google-maps-types';
@@ -170,6 +170,17 @@ export class MainComponent implements OnInit {
   styleUrls: ['./main.component.scss']
 })
 export class AboutUsComponent implements OnInit {
+  @ViewChild('form') froms: ElementRef
+  myForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    mobile: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{3}-[0-9]{3}-[0-9]{4}$')]),
+    message: new FormControl('', [Validators.required])
+  })
+  cap_result
+  btnDisabled
+  constructor(public recapcha: RecapchaService, private changeDetectorRef: ChangeDetectorRef, public contact: MainService, public snackBar: MatSnackBar) { }
+
   ngOnInit() {
     window.scrollTo(0, 0)
     var myIndex = 0
@@ -189,7 +200,40 @@ export class AboutUsComponent implements OnInit {
       setTimeout(carousel, 1000)
     }
   }
+  submit() {
+    let status = this.recapcha.check()
+    if (status == false) {
+      this.cap_result = "Please re-enter text"
+    }
+    else {
+      this.cap_result = ""
+    }
+    if (this.myForm.valid && status == true) {
+      this.btnDisabled = true
+      this.contact.establishContact(this.myForm.value).subscribe(res => {
+        if (res['status']) {
+          Swal("" + res['message'], '', "success").then(() => {
+            this.btnDisabled = false
+            this.froms.nativeElement.reset()
+            this.changeDetectorRef.detectChanges()
+          })
+        } else {
+          this.btnDisabled = false
+          this.snackBar.open(" Something went wrong, please try again later.", 'close', {
+            duration: 1000
+          })
+        }
+      }, () => {
+        this.btnDisabled = false
+        this.snackBar.open(" Something went wrong, please try again later.", 'close', {
+          duration: 1000
+        })
+      })
+    }
+  }
+  get f() { return this.myForm.controls }
 }
+
 
 @Component({
   selector: 'app-privacy-policy',
@@ -714,6 +758,7 @@ export class PlanSearchComponent {
         this.selectProductBtnDisabled[i] = false
         localStorage.setItem('zip', this.ZipCode)
         this.router.navigate(['/enroll'])
+
         localStorage.setItem('productSummary', JSON.stringify(this.products[i]))
       }
       if (res["status"] == false && res["redirect_url"] != null && res["redirect_url"] != undefined && res["redirect_url"] != '') {
