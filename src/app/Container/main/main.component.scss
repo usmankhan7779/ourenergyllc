@@ -2454,13 +2454,6 @@ h3 {
     }
     button {
         width: 100%;
-        padding: 4px;
-        font-size: 18px;
-        background: linear-gradient(90deg,#042863 0%,#0a97d2 100%);
-        color: #fff !important;
-        border-radius: 5px;
-        font-family: 'Open Sans' !important;
-        // margin: 20px 0 30px;
     }
     button:disabled,
     button[disabled] {
@@ -2486,12 +2479,6 @@ h3 {
     button {
         width: 100%;
         margin-top: 10px;
-        padding: 4px;
-        font-size: 22px;
-        font-weight: 800 !important;
-        background-color: #000;
-        color: #fff;
-        border-radius: 25px;
     }
     button:disabled,
     button[disabled] {
@@ -3732,10 +3719,10 @@ color: #c00 !important;
     font-size: 30px !important;
 }
 .price-box{
-    border-style: solid;
-    border-width: 0 0 1px 0;
-    border-color: #dbdee3;
     padding: 20px 0;
+}
+.border_bottom{
+  border-bottom: 1px solid #ccc;
 }
 .rateSheet span{
     font-size: 18px;
@@ -3767,7 +3754,7 @@ color: #c00 !important;
     width: 30%;
     float: left;
     margin: 15px;
-    max-width: 450px;
+    max-width: 400px;
 }
 .price-box h3{
     margin: 0px !important;
@@ -3780,21 +3767,15 @@ color: #c00 !important;
 }
 .enroll-btn{
     width: 100%;
-    padding: 4px;
-    font-size: 18px;
-    background: -webkit-gradient(linear, left top, right top, from(#042863), to(#0a97d2));
-    background: linear-gradient(90deg, #042863 0%, #0a97d2 100%);
-    color: #fff !important;
-    border-radius: 5px;
-    font-family: 'Open Sans' !important;
     margin: 20px 0 30px;
-    transition: all 0.3s ease-out;
 }
-.enroll-btn:hover{
-    background: #B6B6B6 !important;
+.zip_btns{
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
-
 
 // ////////////////////
 .main {
@@ -3842,9 +3823,6 @@ color: #c00 !important;
     font-size: 30px !important;
 }
 .price-box{
-    border-style: solid;
-    border-width: 0 0 1px 0;
-    border-color: #dbdee3;
     padding: 20px 0;
 }
 .rateSheet span{
@@ -3864,6 +3842,9 @@ color: #c00 !important;
 //   justify-content: center;
 // }
 @media (max-width: 991px) {
+  .header .inner_header .main-listt {
+    padding: 15px 0px;
+}
   .timeline>li>.timeline-panel {
       float: right;
       width: 86%;

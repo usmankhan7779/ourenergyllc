@@ -1,7 +1,7 @@
 <div class="background">
-    <div class="quick-pay" *ngIf="hideLogin">
+    <!-- <div class="quick-pay" *ngIf="hideLogin">
         <mat-icon (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">featured_play_list</mat-icon>
-    </div>
+    </div> -->
     <mat-card style="padding-bottom:0px;" class="mainCard" *ngIf="hideLogin">
         <mat-card>
             <h3>Sign In to Your Account</h3>
@@ -51,21 +51,24 @@
             </div>
             <button  class="button" *ngIf="SignInButton">Sign In</button>
             <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
+            <div *ngIf="hideLogin">
+                <button class="btn-100" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">Quick Pay</button>
+            </div>
         </form>
         <div style="display:flex; flex-direction: row; margin-top: 12px;
             justify-content: center; margin-bottom: 10px; align-items: center;">
             <span style="font-size: 14px;">Don’t have an online account? </span>
             <a routerLink="/register" style="margin-left: 6px;
-                font-size:14;font-weight:600; color:#cd0000;margin-top: -1px;">
+                font-size:14;font-weight:600;margin-top: -1px;">
                 Register Now </a>
         </div>
-        <div style="display: flex; flex-direction: row; justify-content:
+        <!-- <div style="display: flex; flex-direction: row; justify-content:
             space-evenly; margin-bottom: 12px; font-size: 17px;">
             <span>
                 <a style="font-size: 14px;font-weight:bold;"
                     (click)="verificationEmail()">Resend Verification email</a>
             </span>
-        </div>
+        </div> -->
         <div style="display: flex; flex-direction: row; justify-content:
             space-evenly; margin-bottom: 12px; font-size: 17px;">
             <a style="font-size: 14px;" target="_blank" routerLink="/term-and-conditions">Terms of Use</a>

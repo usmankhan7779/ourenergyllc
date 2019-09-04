@@ -23,6 +23,7 @@ export class MainHeaderComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   ngOnInit() { 
+    // 
     window.scroll(0, 0);
     window.onscroll = function () { myFunction() };
     
@@ -36,6 +37,7 @@ export class MainHeaderComponent implements OnInit {
         header.classList.remove("box_shadow");
       }
     }
+    // 
   }
 
   dialogResult = "";

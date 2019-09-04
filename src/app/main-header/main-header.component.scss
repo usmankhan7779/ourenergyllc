@@ -233,12 +233,13 @@ p {
   }
   .topnav {
     position: fixed;
-    top: 50px;
+    top: 42px;
     right: 0;
     width: 230px;
     z-index: 9;
     box-shadow: 0 0 5px #ccc;
   }
+  
   .topnav.responsive a {
       padding-left: 10px;
   }

@@ -467,6 +467,14 @@
                             <div class="headingDiv">Street Address</div>
                             <div class="dataDiv">{{premiseInfo?.address1}}</div>
                         </div>
+                        <!--  -->
+                        <div  class="text-center price-box_en">
+                                    <h3 >${{value?.tariff_2000}}¢ </h3>
+                                    <b >Average Rate at 2000 kWhs</b>
+                        </div>
+                        <!--  -->
+                        <!-- <div class="headingDiv">Average Rate at 2000 kWhs</div>
+                        <div class="dataDiv">${{value?.tariff_2000}}¢ per kWh</div> -->
                         <h2>{{value?.product_name}}</h2>
                         <mat-card>
                             <p>
@@ -477,8 +485,7 @@
                         <div class="dataDiv">{{value?.display_term}} Months</div>
                         <div class="headingDiv">Utility Provider</div>
                         <div class="dataDiv">{{value?.vendor_company}}</div>
-                        <div class="headingDiv">Average Rate at 2000 kWhs</div>
-                        <div class="dataDiv">${{value?.tariff_2000}}¢ per kWh</div>
+                       
                         <h2>Price Details</h2>
                         <table id="pricing">
                             <tr>
@@ -500,16 +507,20 @@
                                 <th class="subRow dataRow">${{value.tariff_2000 * 2000 / 100}}</th>
                             </tr>
                         </table>
-                        <h2>Documents</h2>
-                        <a class="anchor" [href]=value?.product_tos_url target="_blank">
-                            <h3 class="anchor-text"> Terms of Service </h3>
-                        </a>
-                        <a class="anchor" [href]=value?.product_efl_url target="_blank">
-                            <h3 class="anchor-text"> Electricity Facts Label </h3>
-                        </a>
-                        <a class="anchor" href="http://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank">
-                            <h3 class="anchor-text"> Your Rights as a Customer </h3>
-                        </a>
+                       
+                            <h2>Documents</h2>
+                            <div class="TOS_EFL">
+                            <a  [href]=value?.product_tos_url target="_blank">
+                                TOS 
+                            </a>
+                            <a  [href]=value?.product_efl_url target="_blank">
+                                 EFL
+                            </a>
+                            <a  href="http://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank">
+                                 YRAC
+                            </a>
+                        </div>
+                        
                         <div style="margin-top: 10px" class="headingDiv">Early Termination Fee</div>
                         <div class="dataDiv">${{value?.display_termination_fee}}</div>
                     </div>

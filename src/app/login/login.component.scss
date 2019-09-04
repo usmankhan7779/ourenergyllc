@@ -19,7 +19,7 @@
         }
     }
     .mainCard {
-        margin: 20px 10px;
+        margin: 40px 10px;
         max-width: 600px;
         .recaptcha {
             display: flex;
@@ -98,7 +98,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #0c0c0c;
+            background: linear-gradient(90deg, #042863 0%, #0a97d2 100%);
             margin-top: -56px;
             border-radius: 4px;
             h3 {
@@ -169,7 +169,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: #0c0c0c;
+        background: linear-gradient(90deg, #042863 0%, #0a97d2 100%);
         margin-top: -40px;
         border-radius: 4px;
         width: 100%;
@@ -232,7 +232,7 @@
         color: rgba(0, 0, 0, .26);
     }
     .header-title {
-        background-color: #0c0c0c;
+      background: linear-gradient(90deg, #042863 0%, #0a97d2 100%);
         margin-top: -40px;
         border-radius: 4px;
         width: 100%;

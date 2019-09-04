@@ -27,12 +27,18 @@ html {
   padding-top: 70px;
 }
 .mat-step-header .mat-step-icon {
-    background-color: #131212 !important;
+    background-color: #ff4270 !important;
     color: #fff;
     font-weight: bold;
     font-size: 17px;
 }
-
+.mat-form-field-suffix .mat-icon{
+  color: #ff4270 !important;
+  font-size: 22px !important;
+}
+.mat-step-header .mat-step-icon-not-touched{
+  background-color: #b52b4d8f;
+}
 .mat-menu-content {
     padding-bottom: 0px !important;
 }
@@ -179,15 +185,10 @@ mark {
     font-weight: 100;
 }
 .estimated .mat-radio-label-content{
-    padding-left: 8px;
+    padding-left: 2px;
 }
 .filter-bar button{
-    background:linear-gradient(90deg,#042863 0%,#0a97d2 100%);
-    ;
-    color: #fff;
-    border-radius: 5px;
-    width: 200px;
-    font-size: 18px;
+    font-size: 14px;
 }
 .contract-list{
     border-left: 1px solid #ccc;
@@ -248,7 +249,8 @@ mark {
 }
 .btn:focus,button:focus,a.btn:focus{
   outline: none;
-  color: #fff;
+  background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) ;
+  color: #FFFFFF;
 }
 
 .btn:hover,button:hover,a.btn:hover{
@@ -276,11 +278,52 @@ input.mat-input-element{
 .mat-form-field-infix {
   padding: 0;
 }
+.material-icons{
+  color: #ff4270 !important;
+}
+.price-box_en{
+  padding: 20px 0 0;
+  flex: 1;
+  text-align: center;
+}
+.price-box_en h3{
+  margin: 0px !important;
+  color: #ff4270;
+  font-size: 55px !important;
+}
+.price-box_en b{
+  font-size: 18px;
+  color: #273c61;
+}
+.TOS_EFL{
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+}
+.TOS_EFL a{
+  font-size: 18px;
+  font-weight: 600;
+}
+.btn-100{
+  width: 100%;
+}
+button:disabled, button[disabled]{
+  background: transparent !important;
+    color: #989595 !important;
+    border: 1px solid #ccc !important;
+}
 @media only screen and(max-width:767px){
   .router__outlet {
     padding-top: 50px;
   }
   .con-helpTools{
     padding: 20px !important;
+  }
+  .header .inner_header .logo {
+    width: 130px;
+  }
+  .header .inner_header{
+    padding: 5px 10px;
   }
 }
