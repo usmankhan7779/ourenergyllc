@@ -36,19 +36,17 @@ export class MainComponent implements OnInit {
   zipCode
   matcher = new errorMatcher()
   setPosition(position) {
-    if (!localStorage.getItem('zip')) {
+    // if (!localStorage.getItem('zip')) {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      // https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->29.74/lng-->-93.47/
-      // + position.coords['latitude'] + '/' + position.coords['longitude']
+ 
       //33.0604
       //-96.7333
       this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + position.coords['latitude']  + '/lng-->' + position.coords['longitude']  +'/').subscribe(Res => {
         console.log(Res);
         if(Res['status'] == true){
         this.zipCode = Res['message']
-        // this.zipCode = Res['postalCodes'][0]['postalCode'];
-        // alert(Res['status'])
+       
         this.view_result(this.zipCode);
       }
         else if (Res['status'] == false)
@@ -57,16 +55,13 @@ export class MainComponent implements OnInit {
           this.view_result(this.zipCode);
         }
 
-        // this.Conversation();
-        // console.log(this.cord)
+        
       });
      
       }
-      // else{
-      //   this.zipCode="75001";
-      // }
+    
      
-    }
+    // }
   ngOnInit() {
     window.scrollTo(0, 0)
     
