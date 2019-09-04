@@ -352,43 +352,34 @@
                     </div>
                     <mat-card-title>CONTACT US</mat-card-title>
                 </mat-card-header>
-                <div class="brokersalign">
-                    <!-- <form [formGroup]="myForm" class="brokersdate" (ngSubmit)="submit()" #form> -->
-                        <form class="brokersdate about_inputs">
-
-                        <mat-form-field>
-                            <input matInput placeholder="Name" >
-                            <!-- <mat-error *ngIf="f.name.errors?.required">You must enter a value</mat-error>
-                            <mat-error *ngIf="f.name.errors?.pattern">Invalid pattern</mat-error> -->
+               
+                <form class="brokersalign" [formGroup]="myForm" (ngSubmit)="submit()" #form>
+                    <div class="row">
+                        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <input matInput placeholder="Names" formControlName=name>
+                            <mat-error *ngIf="f.name.errors?.required">You must enter a value</mat-error>
                         </mat-form-field>
-                        <mat-form-field>
-                            <input matInput placeholder="Email" >
-                            <!-- <mat-error *ngIf="f.email.errors?.required"> You must enter a value</mat-error>
-                            <mat-error *ngIf="f.email.errors?.pattern">Invalid pattern</mat-error> -->
+                        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <input matInput placeholder="Email Address" formControlName=email>
+                            <mat-error *ngIf="f.email.errors?.required">You must enter a value</mat-error>
+                            <mat-error *ngIf="!f.email.errors?.required && f.email.errors?.email">Invalid Email Address</mat-error>
                         </mat-form-field>
-                        <mat-form-field>
-                            <input matInput placeholder="Phone" >
-                            <!-- <mat-error *ngIf="f.phone.errors?.required"> You must enter a value</mat-error>
-                            <mat-error *ngIf="f.phone.errors?.pattern">Invalid pattern</mat-error> -->
+                        <mat-form-field class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <input matInput placeholder="Contact No." formControlName=mobile phone-no maxlength="12">
+                            <mat-error *ngIf="f.mobile.errors?.required">You must enter a value</mat-error>
+                            <mat-error *ngIf="f.mobile.errors?.pattern">Invalid Contact No.</mat-error>
                         </mat-form-field>
-                      
-                        <mat-form-field>
-                            <textarea matInput placeholder="Message" ></textarea>
-                            <!-- <mat-error *ngIf="f.message.errors?.required"> You must enter a value</mat-error> -->
+                        <mat-form-field class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <textarea matInput placeholder="Message" formControlName=message></textarea>
+                            <mat-error *ngIf="f.message.errors?.required">You must enter a value</mat-error>
                         </mat-form-field>
-                        <div class="recaptcha">
-                            <div>
-                                <app-recapcha></app-recapcha>
-                            </div>
-                            <!-- <div>
-                                <p class="error"> {{cap_result}}</p>
-                            </div> -->
-                            <div>
-                                <button class="btn">Submit</button>
-                            </div>
+                        <div class="recaptcha col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <app-recapcha></app-recapcha>
+                            <p class="text-center error"> {{cap_result}}</p>
+                            <button [disabled]="btnDisabled" >Submit</button>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                </form>
           
             </mat-card>
         </div>
