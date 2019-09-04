@@ -116,6 +116,30 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
+        a{
+          position: relative;
+          cursor: pointer;
+        }
+        a:hover::after, a:active::after{
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          height: 2px;
+          content: "";
+          background: #ff4270;
+          width: 100%;
+        }
+        .Active::after{
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          height: 3px;
+          content: "";
+          background: #ff4270;
+          width: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
     }
     mat-list {
         padding-top: 0px
@@ -128,30 +152,7 @@
     color: #3a4170;
    
     }
-    a{
-      position: relative;
-      cursor: pointer;
-    }
-    a:hover::after, a:active::after{
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      height: 2px;
-      content: "";
-      background: #ff4270;
-      width: 100%;
-    }
-    .Active::after{
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      height: 2px;
-      content: "";
-      background: #ff4270;
-      width: 100%;
-        text-decoration: none;
-        cursor: pointer;
-    }
+    
     // mat-list-item:hover,
     // mat-list-item:active {
     //   border-bottom: 2px solid #ff4270;
