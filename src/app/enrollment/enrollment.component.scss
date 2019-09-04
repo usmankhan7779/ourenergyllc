@@ -83,11 +83,6 @@
                 width: 150px;
                 margin-top: 10px;
             }
-            button:disabled,
-            button[disabled] {
-                background-color: rgba(0, 0, 0, .12);
-                color: rgba(0, 0, 0, .26);
-            }
         }
     }
 }
@@ -274,11 +269,6 @@
             border-radius: 25px;
             font-weight: bold;
             margin: 2px;
-        }
-        button:disabled,
-        button[disabled] {
-            background-color: rgba(0, 0, 0, .12);
-            color: rgba(0, 0, 0, .26);
         }
     }
 }

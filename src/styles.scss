@@ -24,7 +24,7 @@ html {
     white-space: normal !important;
 }
 .router__outlet{
-  padding-top: 70px;
+  padding-top: 65px;
 }
 .mat-step-header .mat-step-icon {
     background-color: #ff4270 !important;
@@ -308,10 +308,30 @@ input.mat-input-element{
 .btn-100{
   width: 100%;
 }
+
 button:disabled, button[disabled]{
   background: transparent !important;
     color: #989595 !important;
     border: 1px solid #ccc !important;
+}
+.tdsp-rates >div{
+  box-shadow: 0 0 5px #ccc;
+  border-radius: 5px;
+}
+.about_form{
+  .brokersforms{
+    padding: 50px;
+    .brokersUpdate {
+      display: flex;
+      flex-direction: column;
+      margin-top: 20px;
+      max-width: 1170px;
+      margin: 0 auto;
+  }
+  }
+} 
+.about_inputs textarea{
+  min-height: 100px;
 }
 @media only screen and(max-width:767px){
   .router__outlet {

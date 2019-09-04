@@ -18,7 +18,7 @@
     mat-card-header mat-card-title {
         font-size: 27px;
         font-weight: bold;
-        border-bottom: 4px ridge #cd0000;
+            border-bottom: 4px ridge #ff4270;
     }
     
     mat-radio-button {
@@ -50,9 +50,4 @@
         font-size: 16px;
         margin: 0px !important;
     }
-    
-    button:disabled,
-    button[disabled] {
-        background-color: rgba(0, 0, 0, .12);
-        color: rgba(0, 0, 0, .26);
-    }
+  

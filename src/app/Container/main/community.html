@@ -93,24 +93,24 @@
             <div class="brokersalign">
                 <form [formGroup]="myForm" class="brokersdate" (ngSubmit)="submit()" #form>
                     <mat-form-field>
-                        <input matInput placeholder="Enter Your Name" formControlName=name>
+                        <input matInput placeholder="Name" formControlName=name>
                         <mat-error *ngIf="f.name.errors?.required">You must enter a value</mat-error>
                         <mat-error *ngIf="f.name.errors?.pattern">Invalid pattern</mat-error>
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Enter Your Email" formControlName=email>
+                        <input matInput placeholder="Email" formControlName=email>
                         <mat-error *ngIf="f.email.errors?.required"> You must enter a value</mat-error>
                         <mat-error *ngIf="f.email.errors?.pattern">Invalid pattern</mat-error>
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Enter Your Phone" formControlName=phone>
+                        <input matInput placeholder="Phone" formControlName=phone>
                         <mat-error *ngIf="f.phone.errors?.required"> You must enter a value</mat-error>
                         <mat-error *ngIf="f.phone.errors?.pattern">Invalid pattern</mat-error>
                     </mat-form-field>
                     <p>Please describe the Texas community cause that you are interested in having Our Energy sponsor or donate to. You may also list any questions that you may have regarding the OUR Community Outreach Program. We promise to review your
                         request get back to you as soon as possible.</p>
                     <mat-form-field>
-                        <textarea matInput placeholder="Enter Your Message" formControlName=message></textarea>
+                        <textarea matInput placeholder="Message" formControlName=message></textarea>
                         <mat-error *ngIf="f.message.errors?.required"> You must enter a value</mat-error>
                     </mat-form-field>
                     <div class="recaptcha">

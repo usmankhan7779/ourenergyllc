@@ -36,10 +36,6 @@ img {
             flex: 1;
             flex-direction: column;
             text-align: center;
-            button:disabled,
-            button[disabled] {
-                color: rgba(0, 0, 0, .26);
-            }
         }
     }
 }
@@ -1307,7 +1303,7 @@ h3 {
     width: 75px;
     height: 75px;
     border-radius: 100%;
-    background: #FF7A29;
+    background: #ff4270;
     color: #fefefe;
     margin: 0 auto 15px;
     text-align: center;
@@ -1318,7 +1314,7 @@ h3 {
     margin: 0 0 10px;
     text-transform: uppercase;
     font-weight: 500;
-    color: #FF7A29;
+    color: #ff4270;
 }
 
 .count-on .holder:hover .overlay-holder {
@@ -2202,7 +2198,7 @@ h3 {
 .commercialforms mat-card-header mat-card-title {
     font-size: 27px;
     font-weight: bold;
-    border-bottom: 4px ridge #cd0000;
+        border-bottom: 4px ridge #ff4270;
 }
 
 .commercialUpdate .material-icons {
@@ -2276,7 +2272,7 @@ h3 {
 .brokersforms mat-card-header mat-card-title {
     font-size: 27px;
     font-weight: bold;
-    border-bottom: 4px ridge #cd0000;
+        border-bottom: 4px ridge #ff4270;
 }
 
 .brokersUpdate .material-icons {
@@ -2455,11 +2451,6 @@ h3 {
     button {
         width: 100%;
     }
-    button:disabled,
-    button[disabled] {
-        background-color: rgba(0, 0, 0, .12);
-        color: rgba(0, 0, 0, .26);
-    }
     mat-icon {
         font-size: 27px;
     }
@@ -2480,11 +2471,6 @@ h3 {
         width: 100%;
         margin-top: 10px;
     }
-    button:disabled,
-    button[disabled] {
-        background-color: rgba(0, 0, 0, .12);
-        color: rgba(0, 0, 0, .26);
-    }
     .enroll-or {
         display: flex;
         flex-direction: column;
@@ -2495,7 +2481,7 @@ h3 {
             font-size: 20px;
             color: #fff;
             padding: 15px;
-            background-color: #cd0000;
+            background-color: #ff4270;
             border-radius: 50%;
         }
     }
@@ -2533,6 +2519,11 @@ h3 {
 .help-sidebar li{
   color:#0a97d2
 }
+.help-sidebar li.active a,.help-sidebar a:hover,.help-sidebar a:focus {
+  color:#fff;
+  background-color:#ff4270;
+}
+
 @media (max-width: 1380px) {
     .plan-main {
         zoom: 90%
@@ -2566,7 +2557,7 @@ h3 {
                 color: #fff;
                 text-align: center;
                 padding: 15px;
-                background-color: #cd0000;
+                background-color: #ff4270;
                 border-radius: 50%;
                 max-width: 70px;
             }

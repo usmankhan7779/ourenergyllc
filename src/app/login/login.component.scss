@@ -131,7 +131,7 @@
     mat-card-header mat-card-title {
         font-size: 27px;
         font-weight: bold;
-        border-bottom: 4px ridge #cd0000;
+            border-bottom: 4px ridge #ff4270;
     }
     mat-radio-button {
         font-size: 20px;
@@ -152,10 +152,6 @@
         border-radius: 25px;
         padding: 3px 30px;
         font-weight: bold;
-    }
-    button:disabled,
-    button[disabled] {
-        color: rgba(0, 0, 0, .26);
     }
 }
 
@@ -226,11 +222,7 @@
             margin-bottom: 15px;
         }
     }
-    button:disabled,
-    button[disabled] {
-        background-color: rgba(0, 0, 0, .12);
-        color: rgba(0, 0, 0, .26);
-    }
+
     .header-title {
       background: linear-gradient(90deg, #042863 0%, #0a97d2 100%);
         margin-top: -40px;
@@ -285,11 +277,7 @@
             font-weight: bold;
             border-radius: 100px;
         }
-        button:disabled,
-        button[disabled] {
-            background-color: rgba(0, 0, 0, .12);
-            color: rgba(0, 0, 0, .26);
-        }
+
         .Details {
             display: flex;
             flex-direction: column;

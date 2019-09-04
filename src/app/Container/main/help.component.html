@@ -111,17 +111,17 @@
                         </mat-card-header>
                         <form class="brokersdate" [formGroup]="myForm" (ngSubmit)="Submit()" #help>
                             <mat-form-field>
-                                <input matInput placeholder="Enter Your Name" formControlName=name>
+                                <input matInput placeholder="Name" formControlName=name>
                                 <mat-error *ngIf="f.name.errors?.required">You must enter a value</mat-error>
                                 <mat-error *ngIf="f.name.errors?.pattern">Invalid pattern</mat-error>
                             </mat-form-field>
                             <mat-form-field>
-                                <input matInput placeholder="Enter Your Email" formControlName=email>
+                                <input matInput placeholder="Email" formControlName=email>
                                 <mat-error *ngIf="f.email.errors?.required">You must enter a value</mat-error>
                                 <mat-error *ngIf="f.email.errors?.pattern">Invalid pattern</mat-error>
                             </mat-form-field>
                             <mat-form-field>
-                                <input matInput placeholder="Enter Your Question" formControlName=question>
+                                <input matInput placeholder="Question" formControlName=question>
                                 <mat-error *ngIf="f.question.errors?.required">You must enter a value</mat-error>
                             </mat-form-field>
                             <mat-form-field>
@@ -536,7 +536,7 @@
                       </div>
               </div>
               <div class="tab-pane text-style" id="UNDERSTAND_BILL">
-                      class="modalBill" style="text-align: center">
+                      
   
                       <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" data-lazy-type="image" data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" width="576" height="745">
                       <noscript>
@@ -555,14 +555,17 @@
                           <p>Download this form to setup Auto Payment using your bank account information.</p>
                           <ul class="padding-zero btns-list">
                               <li>
-                                  <button  class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a></button>
+                                  <a class="btn" href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/2_2_1_ACHFORM.PDF" target="_blank">Download Form</a>
                               </li>
                           </ul>
                           <h4>Account Closing Form:</h4>
                           <p>Use this form to close your account with Our Energy.</p>
                           <ul class="padding-zero btns-list">
                               <li>
-                                  <button  class="helpbutton"><a href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">Download Form</a></button>
+                                 
+                                    <a class="btn" href="https://ourenergyllc.com/wp-content/uploads/bsk-pdf-manager/1_1_2_ACF.PDF" target="_blank">
+                                      Download Form</a>
+                                  
                               </li>
                           </ul>
                           <p>All documents are in PDF format. You can download free copy of Adobe PDF Reader from following link.&nbsp;
