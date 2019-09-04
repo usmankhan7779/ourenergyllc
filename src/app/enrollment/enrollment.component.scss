@@ -117,26 +117,15 @@
         margin-bottom: 10px;
         mat-card-title {
             font-weight: 600 !important;
-            color: #fff;
             border-bottom-right-radius: 18px;
             border-top-left-radius: 18px;
             text-align: center;
-            background-color: #282828;
             padding: 10px;
         }
         p {
             font-size: 14px;
             font-weight: 600 !important;
             color: #646464;
-        }
-        button {
-            background-color: #000;
-            color: #fff;
-            padding: 5px 30px;
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            border-radius: 25px;
         }
     }
     .main-note {
@@ -261,15 +250,7 @@
             flex-direction: row;
             justify-content: center;
         }
-        button {
-            background-color: rgb(7, 7, 7);
-            color: #fff;
-            padding: 0px 30px;
-            font-size: 16px;
-            border-radius: 25px;
-            font-weight: bold;
-            margin: 2px;
-        }
+
     }
 }
 

@@ -6,16 +6,30 @@
   padding: 5px;
   box-shadow: 0 0 5px #ccc;
   border-radius: 5px;
+  margin: 10px 0;
+  max-width: 300px;
+}
+    .main{
+      display: flex;
+      align-items: center;
+      padding: 5px;
+    }
     .mat-form-field {
         text-align: center;
         font-size: 16px;
+        max-width: 100px;
     }
     button {
         margin-left: 10px;
         background-color: black;
         border: none !important;
+        width: 30px;
+        height: 30px;
+        line-height: 12px;
         .mat-icon {
             color: #fff !important;
         }
     }
-}
+    button:focus {
+      background: #000;
+    }

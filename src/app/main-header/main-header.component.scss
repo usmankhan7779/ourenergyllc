@@ -59,14 +59,15 @@
         text-decoration: none;
         // margin-top: -4px;
     }
-    mat-list-item:hover,
-    a:hover {
-        color: #ffffff;
-        background-color: #cd0000;
-        font-weight: bold;
-        text-decoration: none;
-        cursor: pointer;
-    }
+    // mat-list-item:hover,
+    // a:hover {
+    //     color: #ffffff;
+    //     background-color: #ff4270;
+    //     font-weight: bold;
+    //     text-decoration: none;
+    //     cursor: pointer;
+    // }
+   
 }
 
 .tempHeader {
@@ -125,23 +126,48 @@
     font-size: 16px;
     text-decoration: none;
     color: #3a4170;
+   
     }
-    mat-list-item:hover,
-    mat-list-item:active {
-      border-bottom: 2px solid #ff4270;
-        font-weight: bold;
+    a{
+      position: relative;
+      cursor: pointer;
+    }
+    a:hover::after, a:active::after{
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      height: 2px;
+      content: "";
+      background: #ff4270;
+      width: 100%;
+    }
+    .Active::after{
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      height: 2px;
+      content: "";
+      background: #ff4270;
+      width: 100%;
         text-decoration: none;
         cursor: pointer;
     }
-    .Active{
-      border-bottom: 2px solid #ff4270;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
-    }
+    // mat-list-item:hover,
+    // mat-list-item:active {
+    //   border-bottom: 2px solid #ff4270;
+    //     font-weight: bold;
+    //     text-decoration: none;
+    //     cursor: pointer;
+    // }
+    // .Active{
+    //   border-bottom: 2px solid #ff4270;
+    //   font-weight: bold;
+    //   text-decoration: none;
+    //   cursor: pointer;
+    // }
+
     }
 }
-
 .mainnav a:hover {
     color: #ffffff;
     background-color: transparent;

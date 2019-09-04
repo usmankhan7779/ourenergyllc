@@ -458,8 +458,13 @@
                 </div>
                 <div class="rateSheet">
                     <div>
+                        <div  class="text-center price-box_en">
+                            <h3 >${{value?.tariff_2000}}¢ </h3>
+                            <b >Average Rate at 2000 kWhs</b>
+                        </div>
                         <div *ngIf="premiseInfo != null || premiseInfo != undefined">
                             <br>
+                            
                             <div class="headingDiv">State</div>
                             <div class="dataDiv">{{premiseInfo?.city}}, {{premiseInfo?.state}}</div>
                             <div class="headingDiv">Zip Code</div>
@@ -468,13 +473,7 @@
                             <div class="dataDiv">{{premiseInfo?.address1}}</div>
                         </div>
                         <!--  -->
-                        <div  class="text-center price-box_en">
-                                    <h3 >${{value?.tariff_2000}}¢ </h3>
-                                    <b >Average Rate at 2000 kWhs</b>
-                        </div>
-                        <!--  -->
-                        <!-- <div class="headingDiv">Average Rate at 2000 kWhs</div>
-                        <div class="dataDiv">${{value?.tariff_2000}}¢ per kWh</div> -->
+
                         <h2>{{value?.product_name}}</h2>
                         <mat-card>
                             <p>

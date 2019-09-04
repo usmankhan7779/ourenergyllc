@@ -189,6 +189,7 @@ mark {
 }
 .filter-bar button{
     font-size: 14px;
+    padding: 5px 10px;
 }
 .contract-list{
     border-left: 1px solid #ccc;
@@ -272,10 +273,11 @@ transition: 0.3s ease-in-out all;
 p{
   color: #959fac;
 }
-input.mat-input-element{
+.input_fix .mat-input-element{
   height: 40px;
 }
-.mat-form-field-infix {
+
+.input_fix .mat-form-field-infix {
   padding: 0;
 }
 .material-icons{
@@ -292,7 +294,7 @@ input.mat-input-element{
   font-size: 55px !important;
 }
 .price-box_en b{
-  font-size: 18px;
+  font-size: 14px;
   color: #273c61;
 }
 .TOS_EFL{
@@ -313,6 +315,7 @@ button:disabled, button[disabled]{
   background: transparent !important;
     color: #989595 !important;
     border: 1px solid #ccc !important;
+    cursor:not-allowed;
 }
 .tdsp-rates >div{
   box-shadow: 0 0 5px #ccc;
@@ -332,6 +335,28 @@ button:disabled, button[disabled]{
 } 
 .about_inputs textarea{
   min-height: 100px;
+}
+mat-card-title{
+  background: linear-gradient(90deg,#042863 0%,#0a97d2 100%) ;
+  color: #FFFFFF;
+}
+.mat-step-icon .mat-icon {
+  color: #fff !important;
+}
+.mat-form-field-prefix .mat-icon-button, .mat-form-field-suffix .mat-icon-button {
+  box-shadow: none !important;
+  border: none !important;
+}
+.holder .material-icons{
+  color: #fff !important;
+}
+.about_form mat-card-title{
+  background: transparent !important;
+  color: #3a4170 !important;
+}
+.center__recap{
+  display: flex;
+  justify-content: center;
 }
 @media only screen and(max-width:767px){
   .router__outlet {

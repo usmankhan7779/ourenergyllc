@@ -8,7 +8,7 @@
         </mat-card>
         <form (ngSubmit)=onSubmit() #login [formGroup]=loginForm>
             <div class="inputFields">
-                <mat-form-field>
+                <mat-form-field class="input_fix">
                     <input matInput formControlName=email [ngModel]='Email'>
                     <mat-placeholder>Login ID</mat-placeholder>
                     <mat-error *ngIf="f.email.errors?.required"> Login ID is required </mat-error>
@@ -22,7 +22,7 @@
                     </mat-error>
                 </mat-form-field>
             </div>
-            <div style="display: flex; flex-direction: row;">
+            <div >
                 <div class="rememberforget">
                     <div class="checkbox pull-left" style="margin-left: -20px;
                         padding-right: 20px;">

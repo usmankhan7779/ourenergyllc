@@ -1421,23 +1421,17 @@ h3 {
     min-height: 100px;
     text-align: center;
     font-weight: 400;
-    color: #cac4c4;
-    // margin: 40px 0 0;
-    background: -moz-linear-gradient(-45deg, #880705 0, #7e0404 100%);
-    background: -ms-linear-gradient(-45deg, #880705 0, #7e0404 100%);
-    background: -o-linear-gradient(-45deg, #880705 0, #7e0404 100%);
-    background: linear-gradient(-45deg, #880705 0, #7e0404 100%);
+    background-color: #fff;
+
 }
 
 .member-special .title {
     margin: 0 0 10px !important;
-    color: #ffffff;
 }
 
 .member-special p {
     font-size: 18px;
     line-height: 25px;
-    color: #fff;
 }
 
 .reg-text {
@@ -1961,8 +1955,8 @@ h3 {
 
 .residential-tabs mat-card-title {
     font-size: 26px;
-    font-weight: 400;
-    color: rgb(30, 31, 32);
+    background: transparent !important;
+    color: #3a4170 !important;
 }
 
 .residential-tabs .pics {
@@ -2180,6 +2174,7 @@ h3 {
 [disabled].mat-button {
     background-color: #c3c1c1b8;
     color: #050505;
+    cursor: not-allowed;
 }
 
 .commercialalign {
@@ -2227,7 +2222,6 @@ h3 {
     background-color: #cd0000;
     color: #fff;
     padding: 7px;
-    font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
 }
@@ -3731,7 +3725,7 @@ color: #c00 !important;
 .residential-main .heading {
     text-align: center;
     margin-bottom: 15px;
-    border-bottom: 5px ridge #0a97d2;
+    border-bottom: 4px ridge #ff4270;
     font-weight: bold;
 }
 .search-result{
@@ -3887,6 +3881,9 @@ max-width: 440px;
 }
 .mat-accordion p{
   font-size: 14px;
+}
+.tab-content h1{
+  text-decoration: underline;
 }
 @media (max-width: 767px) {
   .logo-width a {

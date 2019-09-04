@@ -54,7 +54,7 @@
                                         <mat-error *ngIf="f.Name.errors?.pattern">Invalid Input</mat-error>
                                     </mat-form-field>
                                     <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input matInput placeholder="Enter Business Name" maxlength="50" formControlName=BusinessName required>
+                                        <input matInput placeholder=" Business Name" maxlength="50" formControlName=BusinessName required>
                                         <mat-error *ngIf="f.BusinessName.errors?.required">Business Name is required</mat-error>
                                         <mat-error *ngIf="f.BusinessName.errors?.pattern">Invalid Input</mat-error>
                                     </mat-form-field>
@@ -73,7 +73,7 @@
                                         <mat-error *ngIf="f.Telephone.errors?.pattern">Invalid Input</mat-error>
                                     </mat-form-field>
                                     <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                        <input matInput placeholder="Enter Mobile No." maxlength="12" formControlName=Mobile phone-no>
+                                        <input matInput placeholder=" Mobile No." maxlength="12" formControlName=Mobile phone-no>
                                         <mat-error *ngIf="f.Mobile.errors?.pattern">Invalid Input</mat-error>
                                     </mat-form-field>
                                     <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -85,7 +85,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="text-center">
-                                    <div>
+                                    <div class="center__recap">
                                         <app-recapcha></app-recapcha>
                                     </div>
                                     <div>

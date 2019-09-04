@@ -90,7 +90,7 @@
                         <mat-error *ngIf="paymentForm.controls.card_type.hasError('required')">Card Type is required</mat-error>
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Enter Credit Card No." formControlName="card_no" maxlength="19" credit-card>
+                        <input matInput placeholder=" Credit Card No." formControlName="card_no" maxlength="19" credit-card>
                         <mat-icon matSuffix><i class="fa fa-cc-{{creditCardString}}"></i></mat-icon>
                         <mat-icon matSuffix *ngIf="creditCardString == 'Discover/Diners Club'"><i class="fa fa-cc-discover"></i></mat-icon>
                         <mat-icon matSuffix *ngIf="creditCardString == 'American Express/Diners Club'"><i class="fa fa-cc-visa"></i></mat-icon>
