@@ -29,37 +29,52 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 export class MainComponent implements OnInit {
   router: Router
-  constructor(_router: Router) {
+  constructor(_router: Router, private http: HttpClient,private promos: PromoCodeService) {
     this.router = _router
   }
   promoCode = ''
   zipCode
   matcher = new errorMatcher()
-  // setPosition(position) {
-  //   if (!localStorage.getItem('zip')) {
-  //     let headers = new Headers();
-  //     headers.append('Content-Type', 'application/json');
-  //     this.http.get(Config.api + 'https://apis.wattcrm.com/portal/zipcode-by-lat-lng//' + position.coords['latitude'] + '/' + position.coords['longitude']).subscribe(Res => {
-  //       console.log(Res);
-  //       this.zipCode = Res['postalCodes'][0]['postalCode'];
+  setPosition(position) {
+    if (!localStorage.getItem('zip')) {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      // https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->29.74/lng-->-93.47/
+      // + position.coords['latitude'] + '/' + position.coords['longitude']
+      //33.0604
+      //-96.7333
+      this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + position.coords['latitude']  + '/lng-->' + position.coords['longitude']  +'/').subscribe(Res => {
+        console.log(Res);
+        if(Res['status'] == true){
+        this.zipCode = Res['message']
+        // this.zipCode = Res['postalCodes'][0]['postalCode'];
+        // alert(Res['status'])
+        this.view_result(this.zipCode);
+      }
+        else if (Res['status'] == false)
+        {
+          this.zipCode = '75023'
+          this.view_result(this.zipCode);
+        }
 
-  //       // this.Conversation();
-  //       console.log(this.cord)
-  //     });
+        // this.Conversation();
+        // console.log(this.cord)
+      });
      
-  //     }
-  //     // else{
-  //     //   this.zipCode="75001";
-  //     // }
+      }
+      // else{
+      //   this.zipCode="75001";
+      // }
      
-  //   }
+    }
   ngOnInit() {
     window.scrollTo(0, 0)
     
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
-    //   // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
-    // };
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
+      // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
+    };
+
     var myIndex = 0
     carousel()
     function carousel() {
@@ -72,9 +87,63 @@ export class MainComponent implements OnInit {
       if (myIndex > x.length) {
         myIndex = 1
       }
+   
       // x[myIndex - 1].style.display = "block"
       setTimeout(carousel, 1000)
     }
+  }
+  products;
+  view_result(zip_codes){
+    this.promos.uaCheck().subscribe(res => {
+      if (res['message']['bypass'] == true && res['message']['ua'] == false) {
+        localStorage.setItem('ua', "False")
+      }
+      else localStorage.setItem('ua', "True")
+    })
+    // if (this.promoCode == null) { this.promoCode = "" }
+    let data = {
+      zip_code: zip_codes,
+      promo_code: "" + this.promoCode,
+      client: "WattGenie-Web"
+    }
+    this.promos.searchPlan(data).subscribe(res => {
+      console.log(res)
+      // localStorage.removeItem('duns')
+      // if (res["status"] == false) {
+      //   this.showError = true
+      //   this.error = res["Error"]
+      //   this.submitBtnDisabled = false
+      // }
+      // if (res["status"] == true) {
+      //   // this.showSpinner = false
+      //   // this.showError = false
+      //   // this.submitBtnDisabled = false
+      //   if (res["tdsp_status"] == false) {
+      //     localStorage.setItem('duns', res['message'][0]['provider_id'])
+      //     this.showFilteredProducts = true
+      //     this.showPlans = true
+          this.products = res["message"]
+      //     localStorage.setItem('promotionCode', JSON.stringify(res['promo_code']))
+      //     localStorage.removeItem('zip')
+      //     this.submitBtnDisabled = false
+      //   }
+      //   else {
+      //     this.showTdsp = true
+      //     this.tdsps = res['message']['row']
+      //     this.submitBtnDisabled = false
+      //   }
+      // }
+      // else if (res["status"] == false) {
+      //   this.showFilteredProducts = false
+      //   this.showSpinner = false
+      //   this.showError = true
+      //   this.showPlans = false
+      //   this.error = res["message"]
+      //   localStorage.removeItem('zip')
+      //   this.submitBtnDisabled = false
+      // }
+    })
+  
   }
   onSubmit() {
     if (this.zipCode != "" && this.zip_code.errors == null) {
