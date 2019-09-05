@@ -29,11 +29,12 @@ export class errorMatcher implements ErrorStateMatcher {
 })
 export class MainComponent implements OnInit {
   router: Router
-  constructor(_router: Router, private http: HttpClient,private promos: PromoCodeService) {
+  constructor(_router: Router, private http: HttpClient,private promos: PromoCodeService,private enrollment: EnrollmentService) {
     this.router = _router
   }
   promoCode = ''
   zipCode
+  ZipCode = localStorage.getItem('zip')
   matcher = new errorMatcher()
   setPosition(position) {
     // if (!localStorage.getItem('zip')) {
@@ -64,6 +65,7 @@ export class MainComponent implements OnInit {
     // }
   ngOnInit() {
     window.scrollTo(0, 0)
+    
     
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
@@ -139,6 +141,37 @@ export class MainComponent implements OnInit {
       // }
     })
   
+  }
+  selectProductBtnDisabled: boolean[] = []
+  enroll(i) {
+    this.selectProductBtnDisabled[i] = true
+    let data = {
+      product_pk: this.products[i].id,
+      enroll_product: this.products[i].product_id,
+      rate: this.products[i].rate,
+      batch_rate: this.products[i].batch_rate,
+      contract_term: this.products[i].term,
+    }
+    this.enrollment.sendProductDataForSession(data).subscribe(res => {
+      if (res['status'] == true) {
+        this.selectProductBtnDisabled[i] = false
+        localStorage.setItem('zip', this.ZipCode)
+        this.router.navigate(['/enroll'])
+
+        localStorage.setItem('productSummary', JSON.stringify(this.products[i]))
+      }
+      if (res["status"] == false && res["redirect_url"] != null && res["redirect_url"] != undefined && res["redirect_url"] != '') {
+        Swal('Your session has expired. Please refresh the page and try again', '', 'error').then(() => {
+          this.selectProductBtnDisabled[i] = false
+          this.ngOnInit()
+        })
+      }
+      else {
+        this.selectProductBtnDisabled[i] = false
+      }
+    }, () => {
+      this.selectProductBtnDisabled[i] = false
+    })
   }
   onSubmit() {
     if (this.zipCode != "" && this.zip_code.errors == null) {
