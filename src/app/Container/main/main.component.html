@@ -467,18 +467,12 @@
               <h3 class="productName"> 
                 {{value.product_name}}
               </h3>
-              <!-- <p class="tag-line">
-                Tagline
-              </p> -->
               <div class="main">
-                
                 <div>
-                  
-  
                   <div class="text-center inner price-box">
                     <div>
-                      <b>2000 kWh</b>
                       <h3>{{value.tariff_2000}}¢</h3>
+                      <b>per kWh</b>
                     </div>
                     <p class="tag-line">
                       {{value.product_info}}
@@ -495,17 +489,17 @@
                       <span >Contract Term: {{value.display_term}} months</span><br>
                       <span >Termination Fee: ${{value.display_termination_fee}}</span><br>
                       <span >Utility: {{value.vendor_company}}</span>
+                      <span>Average Rate at 2000 kWhs</span>
                     </div>
                   </div>
                 </div>
-                <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="text-center inner links-list">
                   <a  matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
                   <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
                   <a  matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
           
-                  <button class="enroll-btn"   (click)="enroll(i)">Enroll Now</button>
+                  <button class="pink_btn enroll-btn"   (click)="enroll(i)">Enroll Now</button>
                 </div>
               </div>
             </div>
