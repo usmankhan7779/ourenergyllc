@@ -2230,7 +2230,7 @@ h3 {
 .commercialforms mat-card-header mat-card-title {
     font-size: 27px;
     font-weight: bold;
-        border-bottom: 4px ridge #ff4270;
+        border-bottom: 4px solid #ff4270;
 }
 
 .commercialUpdate .material-icons {
@@ -2303,7 +2303,7 @@ h3 {
 .brokersforms mat-card-header mat-card-title {
     font-size: 27px;
     font-weight: bold;
-        border-bottom: 4px ridge #ff4270;
+        border-bottom: 4px solid #ff4270;
 }
 
 .brokersUpdate .material-icons {
@@ -2324,7 +2324,7 @@ h3 {
 }
 
 .Our-lev-heading hr {
-    border: 2px ridge #cd0000;
+    border: 2px solid #cd0000;
 }
 
 .our-leverage {
@@ -2845,9 +2845,7 @@ h3 {
 }
 
 .search-plan {
-    padding: 16px 24px;
-    // box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
-    border: 1px solid #e6e5e5;
+    padding: 55px 35px 60px 35px;
     transition: all 0.3s ease-out;
     cursor: pointer;
     span {
@@ -2863,11 +2861,12 @@ h3 {
     transform: scale(1.05);
     border-top: 10px solid #ff4270;
 }
-.result-box:first-child{
+.result-box:nth-child(2){
     transform: scale(1.05);
     border-top: 10px solid #ff4270;
+    box-shadow: 0 0 30px #ccc;
 }
-.result-box:first-child .search-plan:hover{
+.result-box:nth-child(2) .search-plan:hover{
     transform: none;
     border-top: none;
 }
@@ -2879,7 +2878,7 @@ h3 {
     box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
     .pro {
         text-align: center;
-        border-bottom: 5px ridge #000;
+        border-bottom: 5px solid #000;
         font-weight: bold;
     }
     p {
@@ -3628,9 +3627,10 @@ h3 {
 .zip_promo{
   min-width: 400px;
   h3{
-    font-size: 50px ;
+    font-size: 48px;
     color: #273c61;
     line-height: 1.2;
+    font-weight: 400 !important;
   }
   }
 .main_img{
@@ -3638,7 +3638,14 @@ h3 {
 }
 }
 }
-
+.heading_s{
+  font-size: 48px;
+  color: #273c61;
+  line-height: 1.2;
+  font-weight: 500 !important;
+  padding: 50px 0;
+  text-align: center;
+}
 .faqs_home{
 width: 100%;
 padding: 0 20px 20px;
@@ -3672,13 +3679,7 @@ padding: 0 20px;
 max-width: 1270px;
 margin: 0 auto;
 }
-.heading_s{
-font-size: 40px ;
-color: #273c61;
-text-align: center;
-line-height: 1.2;
-padding: 50px 0;
-}
+
 .panel-group .panel-heading+.panel-collapse>.panel-body{
 border-top: none;
 }
@@ -3755,6 +3756,8 @@ color: #c00 !important;
 .links-list a{
     margin: 0 10px;
     font-size: 18px;
+    color: #959fac;
+    text-decoration: underline;
 }
 
 
@@ -3762,7 +3765,7 @@ color: #c00 !important;
 .residential-main .heading {
     text-align: center;
     margin-bottom: 15px;
-    border-bottom: 4px ridge #ff4270;
+    border-bottom: 4px solid #ff4270;
     font-weight: bold;
 }
 .search-result{
@@ -3773,10 +3776,10 @@ color: #c00 !important;
     margin-top: 10px;
 }
 .result-box{
-    width: 30%;
-    float: left;
-    margin: 15px;
-    max-width: 400px;
+  width: 425px;
+  float: left;
+  margin: 0px;
+  max-width: 400px;
 }
 .price-box h3{
     margin: 0px !important;
@@ -3893,6 +3896,7 @@ color: #c00 !important;
 .main_banner .promo_img_div .zip_promo h3{
 font-size: 30px !important;
 padding-bottom: 20px;
+font-weight: 500 !important;
 }
 .form-zip {
 max-width: 440px;

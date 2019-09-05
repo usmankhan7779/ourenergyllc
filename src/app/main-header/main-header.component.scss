@@ -99,9 +99,12 @@
       flex-direction: row;
       align-items: center;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       padding: 0 30px;
       min-height: 65px;
+      .logo_wrapp{
+        width: 30%;
+      }
       .main-listt {
         font-size: 15px;
         padding: 15px 8px;
@@ -112,7 +115,8 @@
     .Toggle {
         display: none;
     }
-    .nav {
+    .nav_right{
+      .nav {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -140,6 +144,7 @@
             text-decoration: none;
             cursor: pointer;
         }
+    }
     }
     mat-list {
         padding-top: 0px
@@ -182,6 +187,24 @@
 }
 .box_shadow{
   box-shadow: 0 0px 5px #ccc;
+}
+.divide_login{
+  margin-left: 50px;
+}
+.sMyAccount .btn{
+  background: linear-gradient(90deg,#a91f73 0%,#ff4270 100%) !important;
+  padding: 5px !important;
+  border-radius: 6px;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none;
+  margin: 0;
+  border: none;
+}
+.sMyAccount{
+  padding: 0;
+  background: none;
+  border: none !important;
 }
 @media only screen and (max-width: 991px) {
     .tempHeader {
@@ -262,7 +285,7 @@ p {
   }
   .topnav {
     position: fixed;
-    top: 42px;
+    top: 66px;
     right: 0;
     width: 230px;
     z-index: 9;
@@ -272,5 +295,10 @@ p {
   .topnav.responsive a {
       padding-left: 10px;
   }
-
+  .nav_right{
+    display: none;
+  }
+  .header .inner_header{
+    justify-content: space-between;
+  }
 }
