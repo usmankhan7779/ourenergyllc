@@ -14,7 +14,7 @@ import { RecapchaService } from '../../recapcha/recapcha.service'
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 // import { google } from '@agm/core/services/google-maps-types';
-
+declare var $:any;
 export class errorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted

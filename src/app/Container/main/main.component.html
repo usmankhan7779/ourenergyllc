@@ -474,9 +474,9 @@
                       <h3>{{value.tariff_2000}}¢</h3>
                       <b>per kWh</b>
                     </div>
-                    <p class="tag-line">
+                    <!-- <p class="tag-line">
                       {{value.product_info}}
-                  </p>
+                  </p> -->
                   </div>
                 </div>
                 <div class="bar"></div>
@@ -486,14 +486,14 @@
                       <!-- <span>Contract Term: 6 months</span><br>
                       <span>Termination Fee: $50</span><br>
                       <span>Utility: OurEnergy</span> -->
-                      <span >Contract Term: {{value.display_term}} months</span><br>
-                      <span >Termination Fee: ${{value.display_termination_fee}}</span><br>
+                      <span >Contract Term: {{value.display_term}} months</span>
+                      <span >Termination Fee: ${{value.display_termination_fee}}</span>
                       <span >Utility: {{value.vendor_company}}</span>
                       <span>Average Rate at 2000 kWhs</span>
                     </div>
                   </div>
                 </div>
-                <div class="bar"></div>
+               
                 <div class="text-center inner links-list">
                   <a  matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
                   <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
@@ -597,58 +597,67 @@
         </div> -->
     </div>
 
-  <!-- <div *ngIf="showFilteredProducts == true" class="search-result"> -->
-
-</section>
-<section class="faqs_home">
-  <h3 class="heading_s">Frequently Asked Questions</h3>
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-        <h4 class="panel-title">
-          <a>What is included in the rate?</a>
-          <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
-        </h4>
+    <div class="faqs_home">
+        <h3 class="heading_s">Frequently Asked Questions</h3>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                  <h4 class="panel-title">
+                      <i class=" fa fa-plus-square" ></i>
+                    <a> Who is Our Energy?</a>
+                    <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
+                  </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>OUR Energy is a Retail Electric Provider (REP) which is Licensed to operate in Texas in the
+                      Retail Energy Market, we are in process of expanding our operations in Retail Electricity and Gas
+                      Markets in New York and Illinois.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                    <h4 class="panel-title">
+                        <i class=" fa fa-plus-square" ></i>
+                      <a> Is OUR Energy certified as a Retail Electricity Provider? </a>
+  
+                    </h4>
+                  </div>
+                  <div id="collapse3" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p>Yes, the Public Utility Commission for the State of Texas puts every REP through a rigid and
+                        strict process of certification. OUR Energy has met the requirements for financial, managerial and
+                        technical abilities for the privilege
+                        of selling energy in Texas (PUC Certificate Number 10170).</p>
+  
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                    <h4 class="panel-title">
+                        <i class=" fa fa-plus-square" ></i>
+                      <a>Why would I choose OUR Energy? </a>
+  
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <p>Honesty, Integrity and Loyalty. As a Retail Electric provider we will make sure that you THE
+                        Customer is treated as a part of OUR Energy Family, we will make sure your issues or concerns are
+                        addressed and as much as it is possible
+                        it should always be a one call resolution.</p>
+                    </div>
+                  </div>
+                </div>
+          <div class="row mg-0">
+            <div class="col-sm-12 text-right">
+              <button class="btn btn-rose" routerLink="/help">
+                View More
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        <h4 class="panel-title">
-          <a>When will the service start?</a>
-
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-
-        <h4 class="panel-title">
-          <a> How do I sign-up? </a>
-
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
-    </div>
-    <div class="row mg-0">
-      <div class="col-sm-12 text-right">
-        <button class="btn btn-rose" routerLink="/help">
-          View More
-        </button>
-      </div>
-    </div>
-  </div>
 </section>

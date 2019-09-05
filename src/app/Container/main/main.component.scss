@@ -2823,6 +2823,7 @@ h3 {
 .search-plan:hover{
     transform: scale(1.05);
     border-top: 10px solid #ff4270;
+    box-shadow: 9.8px 6.9px 40px 0 rgba(0,0,0,.11);
 }
 .result-box:nth-child(2){
     transform: scale(1.05);
@@ -2841,7 +2842,7 @@ h3 {
     box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
     .pro {
         text-align: center;
-        border-bottom: 5px solid #000;
+        border-bottom: 5px solid #ff4270;
         font-weight: bold;
     }
     p {
@@ -3611,36 +3612,64 @@ h3 {
 }
 .faqs_home{
 width: 100%;
-padding: 0 20px 20px;
+padding: 50px 20px 20px;
 #accordion{
   max-width: 1050px;
   margin: 0 auto;
   .panel-default{
     border: none;
     box-shadow: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #e8e8f6;
     border-radius: 0;
       .panel-heading{
         background: #fff;
         padding: 30px;
         cursor: pointer;
         .panel-title{
-          color:#0a97d2;
-          font-size: 20px;
+        color: #273c61;
+        font-size: 18px;
+        a{
+          font-weight: 300;
+          padding-left: 30px;
+        }
+        i{
+          font-size: 18px;
+          font-weight: 300;
+        }
         }
     }
+    .panel-collapse{
+    .panel-body{
+      padding-left: 80px;
+      p{
+      font-size: 13px;
+      line-height: 24px;
+      color: #959fac;
+      }
+    }
+  }
   }
 }
 }
-
+.panel-group .panel+.panel{
+  margin-top: 0px;
+}
+.fa-minus-square{
+  color: #ff4280;
+}
 // errors
 
 .four_Steps{
-width: 100%;
-min-height: 200px;
-padding: 0 20px;
-max-width: 1270px;
-margin: 0 auto;
+  width: 100%;
+  min-height: 200px;
+  margin: 0 auto;
+  background-image: url(../../../assets/img/home-bg-four.png);
+  background-position: -200px 0;
+  background-repeat: no-repeat;
+  background-size: 2700px auto;
+  margin-top: -750px;
+  margin-bottom: 0;
+  padding: 800px 0px 0px 0px;
 }
 
 .panel-group .panel-heading+.panel-collapse>.panel-body{
@@ -3668,9 +3697,8 @@ color: #c00 !important;
 }
 
 .bar {
-    // border-left: 1px solid #ccc;
-    // height: 100px;
-    height: 10px;
+  height: 1px;
+  background: #dbdee3;
 }
 
 .inner {
@@ -3711,10 +3739,11 @@ color: #c00 !important;
   border-bottom: 1px solid #ccc;
 }
 .rateSheet span{
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 2.2em;
-    color: #959fac;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2em;
+  color: #959fac;
+  display: block;
 }
 .links-list a{
     margin: 0 10px;
@@ -3739,10 +3768,11 @@ color: #c00 !important;
     margin-top: 10px;
 }
 .result-box{
-  width: 425px;
+  width: 350px;
   float: left;
   margin: 0px;
   max-width: 400px;
+  background: #fff;
 }
 .price-box h3{
     margin: 0px !important;
@@ -3755,7 +3785,7 @@ color: #c00 !important;
 }
 .enroll-btn{
     width: 100%;
-    margin: 20px 0 30px;
+    margin: 20px 0 0px;
 }
 .zip_btns{
   min-height: 80px;
@@ -3771,12 +3801,6 @@ color: #c00 !important;
     // flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.bar {
-    // border-left: 1px solid #ccc;
-    // height: 100px;
-    height: 10px;
 }
 
 .inner {
@@ -3813,12 +3837,7 @@ color: #c00 !important;
 .price-box{
     padding: 20px 0;
 }
-.rateSheet span{
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 2.2em;
-    color: #959fac;
-}
+
 .links-list a{
     margin: 0 10px;
     font-size: 18px;
@@ -3889,6 +3908,7 @@ max-width: 440px;
 .tab-content h1{
   text-decoration: underline;
 }
+
 @media (max-width: 767px) {
   .logo-width a {
       margin-top: 0px;

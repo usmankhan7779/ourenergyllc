@@ -42,9 +42,9 @@
         </div>
     
         <!-- Start filter bar -->
-        <div class="container-fluid filter-bar">
+        <div class="container filter-bar">
             <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-5 estimated text-center">
+                <div class="col-lg-4 col-md-5 col-sm-5 estimated text-center">
                     <label class="heading">
                         Estimated Usage
                     </label>
@@ -60,7 +60,7 @@
                         </mat-radio-button>
                     </mat-radio-group>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-7 contract-list text-center">
+                <div class="col-lg-8 col-md-7 col-sm-7 contract-list text-center">
                     <label class="heading">
                         Contract Terms
                     </label>
@@ -88,7 +88,7 @@
                         </mat-slide-toggle>
                     </section>
                 </div>
-                <div class="col-md-3 col-lg-3 col-sm-12 zip_btns">
+                <div class="col-md-12 text-center">
                     <button  (click)="showZip()">Change Zip Code</button>
                     <button  [disabled]="submitBtnDisabled2" (click)="filterProduct()">Apply Filters</button>
                 </div>
@@ -124,10 +124,6 @@
             </div>
         </div>
         <!-- End filter bar -->
-    
-    
-    
-    
         <div class="plan-main">
             <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 myCard">
                 <br>
@@ -212,6 +208,7 @@
                         <div >
                             
                             <div class="search-plan">
+                                <h3 class="productName">{{value.product_name}}</h3>
                                 <div [ngSwitch]="estimatedUsage" class="border_bottom">
                                     <div class="text-center inner price-box" *ngSwitchCase="500">
                                         <div>
@@ -236,7 +233,7 @@
                                         <div>
                                           
                                             <h3 >{{value.tariff_1000}}¢</h3>
-                                            <b >1000 kWh</b>
+                                            <b >per kWh</b>
                                         </div>
                                         <!-- this code is comment bu usman khan -->
                                         <!-- <div style="display: flex; flex-direction: row;">
@@ -255,7 +252,7 @@
                                         <div>
                                           
                                             <h3 >{{value.tariff_2000}}¢</h3>
-                                            <b >2000 kWh</b>
+                                            <b >per kWh</b>
                                         </div>
                                         <!-- this code is comment bu usman khan -->
                                         <!-- <div style="display: flex; flex-direction: row;">
@@ -273,7 +270,7 @@
                                     <div class="text-center inner price-box" *ngSwitchDefault>
                                         <div>
                                                 <h3 >{{value.tariff_2000}}¢</h3>
-                                                <b >2000 kWh</b>
+                                                <b >per kWh</b>
                                             <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
                                         </div>
 
@@ -292,10 +289,10 @@
                                         <!-- this code isend  -->
                                     </div>
                                     <!--  -->
-                                    <h3 class="productName">{{value.product_name}}</h3>
-                                <p class="tag-line">
+                                  
+                                <!-- <p class="tag-line">
                                     {{value.product_info}}
-                                </p>
+                                </p> -->
                                 </div>
                               <!--  -->
                                 
@@ -308,15 +305,14 @@
                                     <div class="inner">
                                         <div class="rateSheet">
                                             <div >
-                                                <span >Contract Term: {{value.display_term}} months</span><br>
-                                                <span >Termination Fee: ${{value.display_termination_fee}}</span><br>
+                                                <span >Contract Term: {{value.display_term}} months</span>
+                                                <span >Termination Fee: ${{value.display_termination_fee}}</span>
                                                 <span >Utility: {{value.vendor_company}}</span>
+                                                <span>Average Rate at 2000 kWhs</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="bar"></div>
-                                    
-                                    <div class="bar"></div>
+                              
                                     <div class="text-center inner links-list">
                                         <a  matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
                                         <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
