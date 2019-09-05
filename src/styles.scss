@@ -241,6 +241,7 @@ mark {
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
   transition: 0.3s ease-in-out all;
+  border-radius: 5px;
 }
 .btn:focus,button:focus,a.btn:focus{
   outline: none;
