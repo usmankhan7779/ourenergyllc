@@ -3591,9 +3591,10 @@ h3 {
 .zip_promo{
   min-width: 400px;
   h3{
-    font-size: 50px ;
+    font-size: 48px;
     color: #273c61;
     line-height: 1.2;
+    font-weight: 400 !important;
   }
   }
 .main_img{
@@ -3601,7 +3602,14 @@ h3 {
 }
 }
 }
-
+.heading_s{
+  font-size: 48px;
+  color: #273c61;
+  line-height: 1.2;
+  font-weight: 500 !important;
+  padding: 50px 0;
+  text-align: center;
+}
 .faqs_home{
 width: 100%;
 padding: 0 20px 20px;
@@ -3635,13 +3643,7 @@ padding: 0 20px;
 max-width: 1270px;
 margin: 0 auto;
 }
-.heading_s{
-font-size: 40px ;
-color: #273c61;
-text-align: center;
-line-height: 1.2;
-padding: 50px 0;
-}
+
 .panel-group .panel-heading+.panel-collapse>.panel-body{
 border-top: none;
 }
@@ -3856,6 +3858,7 @@ color: #c00 !important;
 .main_banner .promo_img_div .zip_promo h3{
 font-size: 30px !important;
 padding-bottom: 20px;
+font-weight: 500 !important;
 }
 .form-zip {
 max-width: 440px;

@@ -49,92 +49,89 @@
 
 <div class="header " id="MYHeader">
   <div class="inner_header">
-      <div class="logo">
-          <a [routerLink]="['/']">
-          <img src="../assets/img/log_OurEnergy.png" alt="logo"  routerLink="" matTooltip="Home">
-          </a>
-          <!-- <img src="../assets/img/WTG-Energy-Logo.png" alt="logo" style="height: 40px" routerLink="" matTooltip="Home"> -->
-          <!-- <a routerLink="" style="text-decoration: none;">
-              <h1 style="font-size:32px;font-weight:800;margin-left:10px">
-                  <span style="color:#d00000">W</span>
-                  <span style="color:#2e2566;margin-left: -4px;">TG</span>
-                  <span style="color:#2e2566;"> ENERGY</span>
-              </h1>
-          </a>-->
-      </div>
+    <div class="logo_wrapp">
 
+      <a class="logo" [routerLink]="['/']">
+        <img src="../assets/img/log_OurEnergy.png" alt="logo" routerLink="">
+      </a>
+      <!-- <img src="../assets/img/WTG-Energy-Logo.png" alt="logo" style="height: 40px" routerLink="" matTooltip="Home"> -->
+      <!-- <a routerLink="" style="text-decoration: none;">
+                <h1 style="font-size:32px;font-weight:800;margin-left:10px">
+                    <span style="color:#d00000">W</span>
+                    <span style="color:#2e2566;margin-left: -4px;">TG</span>
+                    <span style="color:#2e2566;"> ENERGY</span>
+                </h1>
+            </a>-->
+
+    </div>
+    <div class="nav_right">
       <mat-list role="list" class="nav">
-          <!-- <a routerLink="/plan">
-              <mat-list-item class="main-listt" role="listitem">
-                  Plans
-              </mat-list-item>
-          </a> -->
-          <!-- <a routerLink="/residential">
-              <mat-list-item class="main-listt" role="listitem">
-                  Residential
-              </mat-list-item>
-          </a> -->
-          <!-- <a routerLink="/commercial">
-              <mat-list-item class="main-listt" role="listitem">
-                  Commercial
-              </mat-list-item>
-          </a> -->
-          <!-- <a routerLink="/energy-saving">
-              <mat-list-item class="main-listt" role="listitem">
-                  Saving Tips
-              </mat-list-item>
-          </a> -->
-          <!-- <a routerLink="/ourlife">
-              <mat-list-item class="main-listt" role="listitem">
-                  Our Life
-              </mat-list-item>
-          </a> -->
-          <!-- <a routerLink="/special">
-              <mat-list-item class="main-listt" role="listitem">
-                  Specials
-              </mat-list-item>
-          </a> -->
-          <a routerLink="/about" routerLinkActive="Active">
-              <mat-list-item class="main-listt" role="listitem">
-                  About Us
-              </mat-list-item>
-          </a>
-          <a routerLink="/residential" routerLinkActive="Active">
-            <mat-list-item class="main-listt" role="listitem">
-                For the Home
-                
-            </mat-list-item>
+        <!-- <a routerLink="/plan">
+                <mat-list-item class="main-listt" role="listitem">
+                    Plans
+                </mat-list-item>
+            </a> -->
+        <!-- <a routerLink="/residential">
+                <mat-list-item class="main-listt" role="listitem">
+                    Residential
+                </mat-list-item>
+            </a> -->
+        <!-- <a routerLink="/commercial">
+                <mat-list-item class="main-listt" role="listitem">
+                    Commercial
+                </mat-list-item>
+            </a> -->
+        <!-- <a routerLink="/energy-saving">
+                <mat-list-item class="main-listt" role="listitem">
+                    Saving Tips
+                </mat-list-item>
+            </a> -->
+        <!-- <a routerLink="/ourlife">
+                <mat-list-item class="main-listt" role="listitem">
+                    Our Life
+                </mat-list-item>
+            </a> -->
+        <!-- <a routerLink="/special">
+                <mat-list-item class="main-listt" role="listitem">
+                    Specials
+                </mat-list-item>
+            </a> -->
+        <a routerLink="/about" routerLinkActive="Active">
+          <mat-list-item class="main-listt" role="listitem">
+            About Us
+          </mat-list-item>
+        </a>
+        <a routerLink="/residential" routerLinkActive="Active">
+          <mat-list-item class="main-listt" role="listitem">
+            For the Home
+
+          </mat-list-item>
         </a>
         <a routerLink="/commercial" routerLinkActive="Active">
           <mat-list-item class="main-listt" role="listitem">
-            For the Business 
+            For the Business
           </mat-list-item>
-      </a>
-      <a routerLink="/login" routerLinkActive="Active">
-        <mat-list-item class="main-listt" role="listitem">
-          Sign In
-        </mat-list-item>
-    </a>
-          <!-- <a routerLink="/community">
-              <mat-list-item class="main-listt" role="listitem">
-                  Community
-              </mat-list-item>
-          </a> -->
-          
-          <a routerLink="/register" routerLinkActive="Active">
-              <mat-list-item class="main-listt" role="listitem">
-                  Sign Up
-              </mat-list-item>
-          </a>
+        </a>
+        <a class="divide_login" routerLink="/register" routerLinkActive="Active">
+          <mat-list-item class="main-listt" role="listitem">
+            Sign Up
+          </mat-list-item>
+        </a>
+        <button class="sMyAccount" type="button" routerLink="/login">
+          <mat-list-item class="main-listt  btn" role="listitem">
+            My Account
+          </mat-list-item>
+        </button>
       </mat-list>
-      <div class="Toggle">
-          <mat-icon (click)="myFunction()">format_align_right</mat-icon>
-      </div>
+    </div>
+    <div class="Toggle">
+      <mat-icon (click)="myFunction()">format_align_right</mat-icon>
+    </div>
   </div>
 
 </div>
 <div class="topnav" id="myTopnav">
-  <mat-list >
+  <mat-list>
     <!-- <a routerLink="/plan">
         <mat-list-item class="main-listt" role="listitem">
             Plans
@@ -166,35 +163,29 @@
         </mat-list-item>
     </a> -->
     <a routerLink="/about" routerLinkActive="Active">
-        <mat-list-item class="main-listt" role="listitem">
-            About Us
-        </mat-list-item>
+      <mat-list-item class="main-listt" role="listitem">
+        About Us
+      </mat-list-item>
     </a>
     <a routerLink="/commercial" routerLinkActive="Active">
       <mat-list-item class="main-listt" role="listitem">
-          For the Home
+        For the Home
       </mat-list-item>
-  </a>
-  <a routerLink="/" routerLinkActive="Active">
-    <mat-list-item class="main-listt" role="listitem">
-      For the Business 
-    </mat-list-item>
-</a>
-<a routerLink="/login" routerLinkActive="Active">
-  <mat-list-item class="main-listt" role="listitem">
-    Sign In
-  </mat-list-item>
-</a>
-    <!-- <a routerLink="/community">
-        <mat-list-item class="main-listt" role="listitem">
-            Community
-        </mat-list-item>
-    </a> -->
-    
-    <a routerLink="/register" routerLinkActive="Active">
-        <mat-list-item class="main-listt" role="listitem">
-            Sign Up
-        </mat-list-item>
     </a>
-</mat-list>
+    <a routerLink="/" routerLinkActive="Active">
+      <mat-list-item class="main-listt" role="listitem">
+        For the Business
+      </mat-list-item>
+    </a>
+    <button class="sMyAccount" type="button" routerLink="/login">
+      <mat-list-item class="main-listt  btn" role="listitem">
+        My Account
+      </mat-list-item>
+    </button>
+    <a routerLink="/register" routerLinkActive="Active">
+      <mat-list-item class="main-listt" role="listitem">
+        Sign Up
+      </mat-list-item>
+    </a>
+  </mat-list>
 </div>
