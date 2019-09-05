@@ -21,5 +21,11 @@
 </body>
 <script type="text/javascript" src="./assets/Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="./assets/Scripts/bootstrap.min.js"></script>
-
+<script>
+  $('.collapse').on('shown.bs.collapse', function(){
+$(this).parent().find(".fa-plus-square").removeClass("fa-plus-square").addClass("fa-minus-square");
+}).on('hidden.bs.collapse', function(){
+$(this).parent().find(".fa-minus-square").removeClass("fa-minus-square").addClass("fa-plus-square");
+});
+</script>
 </html>
