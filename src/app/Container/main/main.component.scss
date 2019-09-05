@@ -1266,8 +1266,9 @@ h3 {
 
 .count-on {
     background: #ffffff;
-    padding: 50px 9999px 40px;
-    margin: 0 -9999px;
+    // padding: 50px 9999px 40px;
+    // margin: 0 -9999px;
+    margin-top: 20px;
 }
 
 .count-on .title {
@@ -1922,6 +1923,42 @@ h3 {
         font-weight: 500;
     }
 }
+.three-blog{
+    margin: 20px auto;
+    .blog{
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0px 0px 9px 2px #e8e8e8;
+        border-radius: 10px;
+        .img{
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        
+        h4{
+            margin: 10px 0 !important;
+            font-size: 18px;
+            font-weight: 400 !important;
+            line-height: 26px;
+            color: #959fac;
+        }
+        button{
+            padding: 5px 20px;
+        }
+    }
+
+}
+
+
+
 
 @media (max-width: 840px) {
     .myCard {

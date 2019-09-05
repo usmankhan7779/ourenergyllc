@@ -1,11 +1,18 @@
 .background {
-    background: url("/assets/img/Background.png") no-repeat;
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background: url("/assets/img/Background.png") no-repeat;
+    // background-repeat: no-repeat;
+    // background-size: cover;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 900px;
+    .back-image{
+        width: 100%;
+        margin: 0 auto;
+        background: url("/assets/img/sign-in.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
     .quick-pay {
         display: flex;
         flex-direction: row-reverse;
@@ -19,14 +26,13 @@
         }
     }
     .mainCard {
-        margin: 40px 10px;
+        margin: 40px auto;
         max-width: 400px;
         .recaptcha {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             justify-content: space-between;
-            margin-bottom: 10px;
             align-items: center;
         }
         .inputFields {
@@ -36,7 +42,8 @@
         }
         .button {
             width: 100%;
-            font-size: 24px;
+            font-size: 16px;
+            margin-top: 0;
         }
         .footer {
             display: flex;
@@ -102,7 +109,7 @@
             margin-top: -56px;
             border-radius: 4px;
             h3 {
-                font-size: 28px;
+                font-size: 22px;
                 color: #ffffff;
                 font-weight: bold;
                 text-align: center;
@@ -311,4 +318,9 @@ mat-form-field-label-wrapper mat-form-field-placeholder-wrapper {
     margin-top: -23px;
     padding-bottom: 15px;
     font-size: 16px;
+}
+
+.links{
+    text-align: center;
+    padding: 5px 0;
 }
