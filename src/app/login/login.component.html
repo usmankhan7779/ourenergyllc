@@ -2,79 +2,79 @@
     <!-- <div class="quick-pay" *ngIf="hideLogin">
         <mat-icon (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">featured_play_list</mat-icon>
     </div> -->
-    <mat-card style="padding-bottom:0px;" class="mainCard" *ngIf="hideLogin">
-        <mat-card>
-            <h3>Sign In to Your Account</h3>
+    <div class="back-image">
+        <mat-card style="padding-bottom:0px;" class="mainCard" *ngIf="hideLogin">
+            <mat-card>
+                <h3>Sign In to Your Account</h3>
+            </mat-card>
+            <form (ngSubmit)=onSubmit() #login [formGroup]=loginForm>
+                <div class="inputFields">
+                    <mat-form-field class="input_fix">
+                        <input matInput formControlName=email [ngModel]='Email'>
+                        <mat-placeholder>Login ID</mat-placeholder>
+                        <mat-error *ngIf="f.email.errors?.required"> Login ID is required </mat-error>
+                        <mat-error *ngIf="f.email.errors?.pattern">Invalid pattern</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput formControlName=password [ngModel]='Password' [type]="hide ? 'password' : 'text'" #input maxlength="130">
+                        <mat-placeholder>Password </mat-placeholder>
+                        <mat-icon matSuffix (click)="hide= !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        <mat-error *ngIf="f.password.errors?.required">Password is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div >
+                    <div class="rememberforget">
+                        <div class="checkbox pull-left" style="margin-left: -20px;
+                            padding-right: 20px;">
+                            <mat-slide-toggle color="primary" (click)="remeberMe()" [(ngModel)]="checked" [ngModelOptions]="{standalone:
+                                true}">
+                                <span class="mat-checkbox">Stay Signed in</span>
+                            </mat-slide-toggle>
+                        </div>
+                        <div class="forgotPassword">
+                            <a class="space" (click)="openDialog()">
+                                <span> Forgot Password?</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="recaptcha">
+                        <div class="text-center">
+                            <app-recapcha></app-recapcha>
+                        </div>
+                        <div>
+                            <p class="error"> {{cap_result}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="spinner" *ngIf="showSpinner">
+                    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+                </div>
+                <button  class="button" *ngIf="SignInButton">Sign In</button>
+                <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
+                <div *ngIf="hideLogin">
+                    <button class="btn-100" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">Quick Pay</button>
+                </div>
+            </form>
+            <div class="links">
+                <span style="font-size: 14px;">Don’t have an online account? </span>
+                <a routerLink="/register" style="margin-left: 6px;
+                    font-size:14;font-weight:600;margin-top: -1px;">
+                    Register Now </a>
+            </div>
+            <!-- <div style="display: flex; flex-direction: row; justify-content:
+                space-evenly; margin-bottom: 12px; font-size: 17px;">
+                <span>
+                    <a style="font-size: 14px;font-weight:bold;"
+                        (click)="verificationEmail()">Resend Verification email</a>
+                </span>
+            </div> -->
+            <div class="links">
+                <a style="font-size: 14px;" target="_blank" routerLink="/term-and-conditions">Terms of Use</a>
+                <a style="font-size: 14px;" target="_blank" routerLink="/privacy-policy">Privacy Policy</a>
+            </div>
         </mat-card>
-        <form (ngSubmit)=onSubmit() #login [formGroup]=loginForm>
-            <div class="inputFields">
-                <mat-form-field class="input_fix">
-                    <input matInput formControlName=email [ngModel]='Email'>
-                    <mat-placeholder>Login ID</mat-placeholder>
-                    <mat-error *ngIf="f.email.errors?.required"> Login ID is required </mat-error>
-                    <mat-error *ngIf="f.email.errors?.pattern">Invalid pattern</mat-error>
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput formControlName=password [ngModel]='Password' [type]="hide ? 'password' : 'text'" #input maxlength="130">
-                    <mat-placeholder>Password </mat-placeholder>
-                    <mat-icon matSuffix (click)="hide= !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
-                    <mat-error *ngIf="f.password.errors?.required">Password is required
-                    </mat-error>
-                </mat-form-field>
-            </div>
-            <div >
-                <div class="rememberforget">
-                    <div class="checkbox pull-left" style="margin-left: -20px;
-                        padding-right: 20px;">
-                        <mat-slide-toggle color="primary" (click)="remeberMe()" [(ngModel)]="checked" [ngModelOptions]="{standalone:
-                            true}">
-                            <span class="mat-checkbox">Stay Signed in</span>
-                        </mat-slide-toggle>
-                    </div>
-                    <div class="forgotPassword">
-                        <a class="space" (click)="openDialog()">
-                            <span> Forgot Password?</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="recaptcha">
-                    <div class="text-center">
-                        <app-recapcha></app-recapcha>
-                    </div>
-                    <div>
-                        <p class="error"> {{cap_result}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="spinner" *ngIf="showSpinner">
-                <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
-            </div>
-            <button  class="button" *ngIf="SignInButton">Sign In</button>
-            <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
-            <div *ngIf="hideLogin">
-                <button class="btn-100" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">Quick Pay</button>
-            </div>
-        </form>
-        <div style="display:flex; flex-direction: row; margin-top: 12px;
-            justify-content: center; margin-bottom: 10px; align-items: center;">
-            <span style="font-size: 14px;">Don’t have an online account? </span>
-            <a routerLink="/register" style="margin-left: 6px;
-                font-size:14;font-weight:600;margin-top: -1px;">
-                Register Now </a>
-        </div>
-        <!-- <div style="display: flex; flex-direction: row; justify-content:
-            space-evenly; margin-bottom: 12px; font-size: 17px;">
-            <span>
-                <a style="font-size: 14px;font-weight:bold;"
-                    (click)="verificationEmail()">Resend Verification email</a>
-            </span>
-        </div> -->
-        <div style="display: flex; flex-direction: row; justify-content:
-            space-evenly; margin-bottom: 12px; font-size: 17px;">
-            <a style="font-size: 14px;" target="_blank" routerLink="/term-and-conditions">Terms of Use</a>
-            <a style="font-size: 14px;" target="_blank" routerLink="/privacy-policy">Privacy Policy</a>
-        </div>
-    </mat-card>
+    </div>
 </div>
 <div class="multipleAccounts">
     <div *ngIf="check==true" class="SetStyling">

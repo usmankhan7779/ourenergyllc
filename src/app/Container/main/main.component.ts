@@ -14,7 +14,7 @@ import { RecapchaService } from '../../recapcha/recapcha.service'
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 // import { google } from '@agm/core/services/google-maps-types';
-
+declare var $: any;
 export class errorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted
@@ -89,6 +89,9 @@ export class MainComponent implements OnInit {
       setTimeout(carousel, 1000)
     }
   }
+
+
+
   products;
   view_result(zip_codes){
     this.promos.uaCheck().subscribe(res => {
@@ -281,7 +284,11 @@ export class CommercialComponent implements OnInit {
   @ViewChild('form') froms: ElementRef
   ngOnInit() {
     window.scrollTo(0, 0)
+   
   }
+  
+  
+
   btnDisabled
   constructor(public recapcha: RecapchaService, private getQoute: MainService, public snackBar: MatSnackBar, private changeDetectorRef: ChangeDetectorRef) { }
   cap_result
