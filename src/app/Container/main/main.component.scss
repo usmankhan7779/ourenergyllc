@@ -3654,9 +3654,7 @@ h3 {
 .zip_promo{
   min-width: 400px;
   h3{
-    font-size: 48px ;
-    color: #273c61;
-    line-height: 1.2;
+    text-align: left;
   }
   }
 .main_img{
@@ -3729,7 +3727,7 @@ padding: 50px 20px 20px;
 }
 
 .heading_s{
-font-size: 48px ;
+font-size: 40px ;
 color: #273c61;
 text-align: center;
 line-height: 1.2;
@@ -3750,9 +3748,7 @@ color: #959fac;
 .panel-heading:hover .panel-title{
 color: #c00 !important;
 }
-h1, h2, h3, h4, h5{
-  font-weight: 400 !important;
-}
+
 
 // ////////////////
 
