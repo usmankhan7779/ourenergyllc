@@ -403,6 +403,9 @@ p strong,p b{
 router-outlet + * >div:first-child,router-outlet + * >section:first-child,router-outlet + * > mat-card:first-child{
   padding-top: 85px !important;
 }
+.recaptcha_div .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
