@@ -28,6 +28,9 @@ export class errorMatcher implements ErrorStateMatcher {
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  hide = true;
+  hide1 = true;
+  hide2 = true;
   router: Router
   constructor(_router: Router, private http: HttpClient,private promos: PromoCodeService,private enrollment: EnrollmentService) {
     this.router = _router
@@ -1066,7 +1069,14 @@ export class EstablishContractsComponent implements OnInit {
   styleUrls: ['./main.component.scss']
 })
 export class HelpComponent implements OnInit {
-
+  hide = true;
+  hide1 = true;
+  hide2 = true;
+  hide3 = true;
+  hide4 = true;
+  hide5 = true;
+  hide6 = true;
+  hide7 = true;
   @ViewChild('help') froms: ElementRef
 
   tabIndex = 0

@@ -14,9 +14,67 @@
                     <p>
                         Our Energy LLC specializes in helping Texas businesses reduce their energy rates over the long term.  The reality is that very few businesses have the time, knowledge or resources to obtain the best energy savings that are so badly needed.  This is where Our Energy commercial power services really make a difference!
                     </p>
-                    <div class="text-center">
-                        <button class="btn">Request your free quote today</button>
+                    <div class="text-center commercialforms">
+                        <button type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" class="toggle-form">Request your free quote today</button>
+                        <div class="collapse" id="collapseExample2">
+                                <mat-card class="commercialUpdate">
+                                    <form [formGroup]="commercialForm" (ngSubmit)="submit()" #form>
+                                        <div class="row">
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder="Name" maxlength="50" formControlName=Name required>
+                                                <mat-error *ngIf="f.Name.errors?.required">Name is required</mat-error>
+                                                <mat-error *ngIf="f.Name.errors?.pattern">Invalid Input</mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder=" Business Name" maxlength="50" formControlName=BusinessName required>
+                                                <mat-error *ngIf="f.BusinessName.errors?.required">Business Name is required</mat-error>
+                                                <mat-error *ngIf="f.BusinessName.errors?.pattern">Invalid Input</mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <mat-select placeholder="Business Type" formControlName=BusinessType>
+                                                    <mat-option *ngFor="let type of businessType" [value]="type.value">{{type.businesstype}}</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder="Email" maxlength="50" formControlName=Email required>
+                                                <mat-error *ngIf="f.Email.errors?.required">Email is required</mat-error>
+                                                <mat-error *ngIf="f.Email.errors?.email && !f.Email.errors?.required">Invalid Email Address</mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder="Telephone" maxlength="12" formControlName=Telephone phone-no>
+                                                <mat-error *ngIf="f.Telephone.errors?.pattern">Invalid Input</mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder=" Mobile No." maxlength="12" formControlName=Mobile phone-no>
+                                                <mat-error *ngIf="f.Mobile.errors?.pattern">Invalid Input</mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder="Electricity Usage (kWh)" maxlength="4" formControlName=ElectricityUsage>
+                                                <mat-error *ngIf="f.ElectricityUsage.errors?.pattern">Invalid Input</mat-error>
+                                            </mat-form-field>
+                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                <input matInput placeholder="Notes or Additional Information" maxlength="250" formControlName=Notes>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="center__recap">
+                                                <app-recapcha></app-recapcha>
+                                            </div>
+                                            <div>
+                                                <p style="color: #f44336; font-weight: bold; margin-bottom: 0px; margin-top: 10px;" class="error">
+                                                    {{cap_result}}</p>
+                                            </div>
+                                            <div class="recaptchaa">
+                                                <div>
+                                                    <button class="btn" [disabled]="btnDisabled" class="brokersbtn2">Submit</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </mat-card>
+                            </div>
                     </div>
+                    
                 </div>
     </div>
     <div class="main-content1">

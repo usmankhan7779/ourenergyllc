@@ -603,7 +603,8 @@
             <div class="panel panel-default">
                 <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
                   <h4 class="panel-title p__1">
-                      <i class="tglClass fa fa-plus-square"></i>
+                      <i  (click)="hide = !hide" class=" {{hide ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i>
+                      <!-- <i class="tglClass fa fa-plus-square"></i> -->
                     <a> Who is Our Energy?</a>
                     <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
                   </h4>
@@ -619,7 +620,7 @@
               <div class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
                     <h4 class="panel-title">
-                        <i class=" fa fa-plus-square" ></i>
+                        <i  (click)="hide1 = !hide1" class=" {{hide1 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i>
                       <a> Is OUR Energy certified as a Retail Electricity Provider? </a>
   
                     </h4>
@@ -637,7 +638,7 @@
                 <div class="panel panel-default">
                   <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
                     <h4 class="panel-title">
-                        <i class=" fa fa-plus-square" ></i>
+                        <i  (click)="hide2 = !hide2" class=" {{hide2 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i>
                       <a>Why would I choose OUR Energy? </a>
   
                     </h4>

@@ -1974,8 +1974,9 @@ h3 {
         justify-content: center;
     }
 }
-
-
+.help_img img{
+    width: 100%;
+}
 
 @media (max-width: 840px) {
     .myCard {
@@ -3707,7 +3708,7 @@ padding: 50px 20px 20px;
   margin-top: 0px;
 }
 .fa-minus-square{
-  color: #ff4280;
+  color: #ff4072 !important;
 }
 // errors
 
