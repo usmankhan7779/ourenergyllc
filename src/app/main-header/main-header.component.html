@@ -45,9 +45,15 @@
         </mat-list>
     </div>
 </div> -->
-<!-- <div class="tempHeader"></div> -->
 
 <div class="header " id="MYHeader">
+    <div class="tempHeader">
+      <marquee *ngFor="let value of data;index as i;">
+        <a href="{{value.redirect_link}}" target="_blank">
+          <h3>{{value.text_to_display}}</h3>
+          </a>
+      </marquee>
+    </div>
   <div class="inner_header">
     <div class="logo_wrapp">
 

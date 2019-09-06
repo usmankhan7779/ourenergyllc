@@ -240,6 +240,7 @@ mark {
   -webkit-font-smoothing: antialiased;
   transition: 0.3s ease-in-out all;
   border-radius: 5px;
+  font-weight: 400;
 }
 .blue-btn{
   background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important;
@@ -396,8 +397,9 @@ mat-card-title{
   padding: 0px  !important;
 }
 
-
-
+.router__outlet > div:first-child{
+  padding-top: 65px !important;
+} 
 
 @media only screen and (max-width:1500px){
   .filter-bar button{

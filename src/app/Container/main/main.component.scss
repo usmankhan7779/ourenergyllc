@@ -1511,7 +1511,7 @@ input.mat-input-element::-webkit-input-placeholder {
 
 .btn {
     font-size: 16px !important;
-    font-weight: 600 !important;
+    font-weight: 400 !important;
 }
 
 h1,
@@ -2554,6 +2554,7 @@ h3 {
 .help-sidebar li.active a,.help-sidebar a:hover,.help-sidebar a:focus {
   color:#fff;
   background-color:#ff4270;
+  border-radius: 5px;
 }
 
 @media (max-width: 1380px) {
@@ -3930,7 +3931,7 @@ max-width: 440px;
     font-size: 12px;
     font-weight: 600;
 }
-  .help-sidebar li>a {
+  .help-sidebar li a {
     padding: 5px;
   }
   .h1, h1 {
