@@ -218,7 +218,7 @@ mark {
 
 
 .btn,button,a.btn{
-  background: linear-gradient(to right, #053b76 0%,#0a97d2 100%); ;
+  background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%);
   color: #FFFFFF;
   font-weight: 600;
   box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
@@ -240,6 +240,9 @@ mark {
   -webkit-font-smoothing: antialiased;
   transition: 0.3s ease-in-out all;
   border-radius: 5px;
+}
+.blue-btn{
+  background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important;
 }
 .btn:focus,button:focus,a.btn:focus{
   outline: none;

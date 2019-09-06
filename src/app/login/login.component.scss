@@ -28,6 +28,7 @@
     .mainCard {
         margin: 40px auto;
         max-width: 400px;
+        box-shadow: 0 0 15px #ccc;
         .recaptcha {
             display: flex;
             flex-direction: column;

@@ -3,10 +3,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px 15px;
-    background: linear-gradient(90deg,#0a97d2 0%, #042863  100%);
+    background: url(/assets/img/sign-in.png) no-repeat;
+    background-size: 100% 100%;
     justify-content: center;
     .inner-footer {
-        min-width: 60%;
+        min-width: 88%;
         display: flex;
         flex-direction: row;
         padding: 25px 15px;
@@ -16,7 +17,7 @@
         }
     }
     h4 {
-        color: #fff;
+        color: #273c61;
         font-weight: bold;
         font-size: 18px !important;
         padding: 12px;
@@ -32,7 +33,7 @@
         height: 27px;
         cursor: pointer;
         a {
-            color: #fff;
+            color: #273c61;
             font-size: 14px;
         }
         a:hover {
@@ -47,7 +48,7 @@
     .contactus mat-list-item {
         display: flex;
         flex-wrap: wrap;
-        color: #ccc;
+        color: #273c61;
         font-size: 14px;
     }
 }
@@ -84,7 +85,27 @@
         text-decoration: none;
     }
 }
-
+.footer-link{
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    a{
+        color: #273c61;
+        font-size: 14px;
+    }
+    img{
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+    }
+}
+.raven-divider {
+    padding: 15px 0 15px 0;
+    padding: 0 0 15px 0;
+    border-top: 1px solid #dbdee3;
+    width: 520px;
+    margin: 0 auto;
+}
 @media (max-width: 770px) {
     .inner-footer .child-one {
         display: flex;
