@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QuickPayComponent } from '../login/login.component'
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main-header',
@@ -20,10 +21,11 @@ export class MainHeaderComponent implements OnInit {
     }
   }
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private http: HttpClient) { }
 
   ngOnInit() { 
     // 
+    this.setheader()
     window.scroll(0, 0);
     window.onscroll = function () { myFunction() };
     
@@ -49,4 +51,20 @@ export class MainHeaderComponent implements OnInit {
       this.dialogResult = result;
     })
   }
+  data :any =[]
+  setheader() {
+    // if (!localStorage.getItem('zip')) {
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+ 
+      //33.0604
+      //-96.7333
+      this.http.get('https://devbackend.wattcrm.com/portal/public-news-from-ourenergy/' ).subscribe(Res => {
+        console.log(Res['message']);
+this.data = Res['message'];
+      
+        
+      });
+     
+      }
 }
