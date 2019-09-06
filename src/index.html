@@ -19,18 +19,16 @@
 <body>
     <app-root></app-root>
 </body>
+
 <script type="text/javascript" src="./assets/Scripts/jquery.min.js"></script>
 <script type="text/javascript" src="./assets/Scripts/bootstrap.min.js"></script>
-<script>
-      $('.collapse').on('shown.bs.collapse', function(){
-    $(this).parent().find(".fa-plus-square").removeClass("fa-plus-square").addClass("fa-minus-square");
-    }).on('hidden.bs.collapse', function(){
-    $(this).parent().find(".fa-minus-square").removeClass("fa-minus-square").addClass("fa-plus-square");
-    });
-    // $(".router__outlet div:first").addClass( "s_pd" );
-    // $(".router__outlet section:first").addClass( "s_pd" );
-    // $(".router__outlet .mat-card:first").addClass( "s_pd" );
-    // $('.router__outlet').children('div').first().addClass( "s_pd" );
-    // $('.router_outlet > div:first').addClass("s_pd")
-</script>
+<!-- <script >
+    $(function(){
+      $('.panel-title').click(function()
+  {
+      $('.tglClass').toggleClass('fa-plus-square fa-minus-square') ; 
+  });
+});
+
+</script> -->
 </html>
