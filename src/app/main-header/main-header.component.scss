@@ -72,9 +72,11 @@
 
 .tempHeader {
     width: 100%;
-    height: 70px;
+    background: #f2f2f2;
 }
-
+.tempHeader h3{
+  margin: 10px 0;
+}
 :host ::ng-deep .mat-list .mat-list-item .mat-list-item-content,
 .mat-list .mat-list-option .mat-list-item-content,
 .mat-nav-list .mat-list-item .mat-list-item-content,
