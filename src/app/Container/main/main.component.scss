@@ -2577,6 +2577,8 @@ h3 {
 }
 .search_plan_main {
   background-color: #edf4ff;
+  padding: 0;
+  padding-top: 50px;
 }
 @media (max-width: 1380px) {
     .plan-main {
@@ -3827,6 +3829,8 @@ color: #c00 !important;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 10px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
 .result-box{
   width: 350px;

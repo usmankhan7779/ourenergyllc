@@ -89,17 +89,17 @@ body {
     color: #fff;
     font-weight: bold;
 }
-.mat-card,
-.mat-list-item,
-.mat-table,
-.mat-paginator,
-.mat-form-field,
-.mat-button,
-.mat-menu-item,
-.mat-checkbox,
-.mat-radio-button {
-    font-family: 'Open Sans'
-}
+// .mat-card,
+// .mat-list-item,
+// .mat-table,
+// .mat-paginator,
+// .mat-form-field,
+// .mat-button,
+// .mat-menu-item,
+// .mat-checkbox,
+// .mat-radio-button {
+//     font-family: 'Open Sans'
+// }
 
 .failureIcon {
     font-size: 30px;
@@ -405,6 +405,12 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
 }
 .recaptcha_div .mat-form-field-wrapper {
   padding-bottom: 0;
+}
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #ff4270;
+}
+.mat-radio-button.mat-primary .mat-radio-inner-circle {
+  background-color: #ff4270;
 }
 @media only screen and (max-width:1500px){
   .filter-bar button{
