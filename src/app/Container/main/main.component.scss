@@ -1956,7 +1956,24 @@ h3 {
     }
 
 }
-
+.bus-banner{
+    display: flex;
+    margin-top: 70px;
+    .text-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+    h3{
+        font-size: 50px;
+        color: #273c61;
+        line-height: 1.2;
+    }
+    }
+    .img-box{
+        width: 50%;
+    }
+}
 
 
 
