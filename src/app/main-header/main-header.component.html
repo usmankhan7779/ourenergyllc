@@ -46,7 +46,7 @@
     </div>
 </div> -->
 
-<div class="header " id="MYHeader">
+<div class="header " >
     <!-- <div class="tempHeader">
       <marquee *ngFor="let value of data;index as i;">
         <a href="{{value.redirect_link}}" target="_blank">
@@ -54,12 +54,14 @@
           </a>
       </marquee>
     </div> -->
-  <div class="inner_header">
+  <div class="inner_header" id="MYHeader">
     <div class="logo_wrapp">
-
-      <a class="logo" [routerLink]="['/']">
-        <img src="../assets/img/log_OurEnergy.png" alt="logo" routerLink="">
-      </a>
+      <div>
+          <a class="logo" [routerLink]="['/']">
+            <img src="../assets/img/log_OurEnergy.png" alt="logo" routerLink="">
+          </a>
+      </div>
+     
       <!-- <img src="../assets/img/WTG-Energy-Logo.png" alt="logo" style="height: 40px" routerLink="" matTooltip="Home"> -->
       <!-- <a routerLink="" style="text-decoration: none;">
                 <h1 style="font-size:32px;font-weight:800;margin-left:10px">
@@ -123,7 +125,7 @@
             Sign Up
           </mat-list-item>
         </a> -->
-        <button class="sMyAccount" type="button" routerLink="/login">
+        <button class="sMyAccount divide_login" type="button" routerLink="/login">
           <mat-list-item class="main-listt  btn" role="listitem">
             My Account
           </mat-list-item>
