@@ -402,10 +402,16 @@ mat-card-title{
 p strong,p b{
   color: #273c61;
 }
+router-outlet + * div:first-child{
+  padding-top: 100px !important;
+}
+
 // .router__outlet > div:first-child{
 //   padding-top: 65px !important;
 // } 
-
+// .pd-tp{
+//   padding-top: 100px;
+// }
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
