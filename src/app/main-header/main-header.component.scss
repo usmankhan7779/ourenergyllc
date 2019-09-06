@@ -89,7 +89,6 @@
   height: auto;
 }
 .header {
-    background-color: #ffffff;
     align-items: center;
     position: fixed;
     width: 100%;
@@ -193,6 +192,7 @@
 .box_shadow{
   box-shadow: 0 0px 5px #ccc !important;
   min-height: 65px !important;
+  background: #fff;
 }
 .divide_login{
   margin-left: 50px;

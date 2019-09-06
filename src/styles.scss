@@ -23,9 +23,7 @@ html {
 .mat-checkbox-layout {
     white-space: normal !important;
 }
-.router__outlet{
-  padding-top: 85px;
-}
+
 
 .mat-step-header .mat-step-icon {
     background-color: #ff4270 !important;
@@ -402,16 +400,9 @@ mat-card-title{
 p strong,p b{
   color: #273c61;
 }
-router-outlet + * div:first-child{
-  padding-top: 100px !important;
+router-outlet + * >div:first-child,router-outlet + * >section:first-child,router-outlet + * > mat-card:first-child{
+  padding-top: 85px !important;
 }
-
-// .router__outlet > div:first-child{
-//   padding-top: 65px !important;
-// } 
-// .pd-tp{
-//   padding-top: 100px;
-// }
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
@@ -419,9 +410,6 @@ router-outlet + * div:first-child{
 }
 }
 @media only screen and(max-width:767px){
-  .router__outlet {
-    padding-top: 50px;
-  }
   .con-helpTools{
     padding: 20px !important;
   }
