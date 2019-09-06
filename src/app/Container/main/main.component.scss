@@ -228,6 +228,9 @@ h3 {
 
 .heading {
     margin: 0 0 30px;
+    h1{
+      font-size: 48px;
+    }
 }
 
 .interest-area {
@@ -1422,7 +1425,7 @@ h3 {
     min-height: 100px;
     text-align: center;
     font-weight: 400;
-    // background-color: #fff;
+    background-color: #fff;
 
 }
 
@@ -1957,21 +1960,20 @@ h3 {
 
 }
 .bus-banner{
-    display: flex;
-    margin-top: 70px;
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
     .text-box{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 50%;
+        max-width: 500px;
     h3{
-        font-size: 50px;
-        color: #273c61;
-        line-height: 1.2;
+        text-align: left;
     }
     }
     .img-box{
-        width: 50%;
+        max-width: 400px;
     }
 }
 
@@ -2010,7 +2012,7 @@ h3 {
 .residential-tabs mat-card-title {
     font-size: 26px;
     background: transparent !important;
-    color: #3a4170 !important;
+    color: #273c61 !important;
 }
 
 .residential-tabs .pics {
@@ -3733,7 +3735,9 @@ text-align: center;
 line-height: 1.2;
 padding: 50px 0;
 font-weight:400 !important;
+text-transform: capitalize;
 }
+
 .panel-group .panel-heading+.panel-collapse>.panel-body{
 border-top: none;
 }
@@ -3975,7 +3979,9 @@ max-width: 440px;
 .tab-content h1{
   text-decoration: underline;
 }
-
+.pd-10{
+  padding: 10px 0;
+}
 @media (max-width: 767px) {
   .logo-width a {
       margin-top: 0px;

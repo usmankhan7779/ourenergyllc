@@ -295,7 +295,7 @@ transition: 0.3s ease-in-out all;
   line-height: 22px !important;
 }
 .h1, .h2, .h3, h1, h2, h3 {
-  color: #3a4170;
+  color: #273c61;
   font-weight: 500;
 }
 p{
@@ -384,7 +384,7 @@ mat-card-title{
 }
 .about_form mat-card-title{
   background: transparent !important;
-  color: #3a4170 !important;
+  color: #273c61 !important;
 }
 .center__recap{
   display: flex;
@@ -399,7 +399,9 @@ mat-card-title{
 .tab-content .faqs_home{
   padding: 0px  !important;
 }
-
+p strong,p b{
+  color: #273c61;
+}
 // .router__outlet > div:first-child{
 //   padding-top: 65px !important;
 // } 
