@@ -24,8 +24,9 @@ html {
     white-space: normal !important;
 }
 .router__outlet{
-  padding-top: 65px;
+  padding-top: 85px;
 }
+
 .mat-step-header .mat-step-icon {
     background-color: #ff4270 !important;
     color: #fff;
@@ -346,7 +347,9 @@ button:disabled, button[disabled]{
 .tdsp-rates >div{
   box-shadow: 0 0 5px #ccc;
   border-radius: 5px;
+  margin: 10px;
 }
+
 .about_form{
   .brokersforms{
     padding: 50px;
@@ -394,9 +397,9 @@ mat-card-title{
   padding: 0px  !important;
 }
 
-.router__outlet > div:first-child{
-  padding-top: 65px !important;
-} 
+// .router__outlet > div:first-child{
+//   padding-top: 65px !important;
+// } 
 
 @media only screen and (max-width:1500px){
   .filter-bar button{

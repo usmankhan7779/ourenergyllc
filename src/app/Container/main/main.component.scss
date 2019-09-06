@@ -2474,7 +2474,7 @@ h3 {
     flex-wrap: wrap;
     padding: 20px 60px 20px 60px;
     margin-bottom: 10px;
-    font-family: 'Open Sans';
+    
     mat-form-field {
         min-width: 45%;
         font-size: 18px;
@@ -2545,18 +2545,22 @@ h3 {
         margin: 0px;
     }
 }
+
 .help-sidebar li{
-  font-weight: 600;
+  color:#0a97d2;
+  a{
+    color: #959fac;
+    font-weight: 400;
 }
-.help-sidebar li{
-  color:#0a97d2
 }
 .help-sidebar li.active a,.help-sidebar a:hover,.help-sidebar a:focus {
-  color:#fff;
-  background-color:#ff4270;
+  color:#fff !important;
+  background:linear-gradient(90deg, #a91f73 0%, #ff4270 100%) !important;
   border-radius: 5px;
 }
-
+.search_plan_main {
+  background-color: #edf4ff;
+}
 @media (max-width: 1380px) {
     .plan-main {
         zoom: 90%
@@ -2849,7 +2853,6 @@ h3 {
 .search-plan {
     padding: 16px 24px;
     // box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
-    border: 1px solid #e6e5e5;
     transition: all 0.3s ease-out;
     cursor: pointer;
     span {
@@ -2862,15 +2865,16 @@ h3 {
     }
 }
 .search-plan:hover{
+    // transform: scale(1.05);
+    // border-top: 10px solid #ff4270;
+    // box-shadow: 9.8px 6.9px 40px 0 rgba(0,0,0,.11);
+}
+.result-box:nth-child(2){
     transform: scale(1.05);
     border-top: 10px solid #ff4270;
     box-shadow: 9.8px 6.9px 40px 0 rgba(0,0,0,.11);
 }
-.result-box:first-child{
-    transform: scale(1.05);
-    border-top: 10px solid #ff4270;
-}
-.result-box:first-child .search-plan:hover{
+.result-box:nth-child(2) .search-plan:hover{
     transform: none;
     border-top: none;
 }
@@ -3658,13 +3662,14 @@ padding: 50px 20px 20px;
         padding: 30px;
         cursor: pointer;
         .panel-title{
-        color: #273c61;
+        color: #959fac;
         font-size: 18px;
         a{
           font-weight: 300;
           padding-left: 30px;
         }
         i{
+          color: #273c61;
           font-size: 18px;
           font-weight: 300;
         }
@@ -3710,6 +3715,7 @@ color: #273c61;
 text-align: center;
 line-height: 1.2;
 padding: 50px 0;
+font-weight:400 !important;
 }
 .panel-group .panel-heading+.panel-collapse>.panel-body{
 border-top: none;
@@ -3787,9 +3793,9 @@ color: #c00 !important;
 .links-list a{
     margin: 0 10px;
     font-size: 18px;
+    color: #959fac;
+    text-decoration: underline;
 }
-
-
 /////////// Start Haseeb css
 .residential-main .heading {
     text-align: center;
@@ -3810,6 +3816,7 @@ color: #c00 !important;
   margin: 0px;
   max-width: 400px;
   background: #fff;
+  margin-bottom: 20px;
 }
 .price-box h3{
     margin: 0px !important;
@@ -3874,11 +3881,18 @@ color: #c00 !important;
 .price-box{
     padding: 20px 0;
 }
-
-.links-list a{
-    margin: 0 10px;
-    font-size: 18px;
+.s_helpBan{
+  text-align: right;
+  margin-bottom: -60px;
+  .help_img{
+    max-width: 300px;
+    float: right;
+  }
 }
+.s_help_Tab h1{
+  width: calc(100% - 300px);
+}
+
 // .plans_flex{
 //   display: flex;
 //   flex-wrap: wrap;
@@ -3931,9 +3945,7 @@ max-width: 440px;
     font-size: 12px;
     font-weight: 600;
 }
-  .help-sidebar li a {
-    padding: 5px;
-  }
+
   .h1, h1 {
     font-size: 26px;
   }

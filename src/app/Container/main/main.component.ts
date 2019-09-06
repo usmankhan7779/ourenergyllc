@@ -1,20 +1,20 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core'
-import { ErrorStateMatcher } from '@angular/material/core'
-import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms'
-import { MainService, PromoCodeService } from '../../Container/Store/Services'
-import { MatSnackBar } from '@angular/material'
-import { Router, ActivatedRoute } from '@angular/router'
-import { MatTableDataSource } from '@angular/material'
-import { MatDialog } from '@angular/material'
-import { EnrollmentService } from '../Store/Services/enroll.service'
-import { UserService } from '../../always-auth.service'
-import { EnrollmentComponent } from '../../enrollment/enrollment.component'
-import Swal from 'sweetalert2'
-import { RecapchaService } from '../../recapcha/recapcha.service'
+import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { MainService, PromoCodeService } from '../../Container/Store/Services';
+import { MatSnackBar } from '@angular/material';
+import { Router, ActivatedRoute } from '@angular/router';
+import { MatTableDataSource } from '@angular/material';
+import { MatDialog } from '@angular/material';
+import { EnrollmentService } from '../Store/Services/enroll.service';
+import { UserService } from '../../always-auth.service';
+import { EnrollmentComponent } from '../../enrollment/enrollment.component';
+import Swal from 'sweetalert2';
+import { RecapchaService } from '../../recapcha/recapcha.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 // import { google } from '@agm/core/services/google-maps-types';
-declare var $:any;
+declare var $: any;
 export class errorMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted
@@ -32,10 +32,10 @@ export class MainComponent implements OnInit {
   constructor(_router: Router, private http: HttpClient,private promos: PromoCodeService,private enrollment: EnrollmentService) {
     this.router = _router
   }
-  promoCode = ''
-  zipCode
-  ZipCode = localStorage.getItem('zip')
-  matcher = new errorMatcher()
+  promoCode = '';
+  zipCode;
+  ZipCode = localStorage.getItem('zip');
+  matcher = new errorMatcher();
   setPosition(position) {
     // if (!localStorage.getItem('zip')) {
       let headers = new Headers();
@@ -55,25 +55,18 @@ export class MainComponent implements OnInit {
           this.zipCode = '75023'
           this.view_result(this.zipCode);
         }
-
-        
       });
-     
       }
-    
-     
     // }
   ngOnInit() {
-    window.scrollTo(0, 0)
-    
-    
+
+    window.scrollTo(0, 0); 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.setPosition.bind(this));
       // navigator.geolocation.getCurrentPosition(this.getzipcode.bind(this));
-    };
-
-    var myIndex = 0
-    carousel()
+    }
+    var myIndex = 0;
+    carousel();
     function carousel() {
       var i
       var x = document.getElementsByClassName("mySlides") as HTMLCollectionOf<HTMLElement>
@@ -88,9 +81,8 @@ export class MainComponent implements OnInit {
       // x[myIndex - 1].style.display = "block"
       setTimeout(carousel, 1000)
     }
+
   }
-
-
 
   products;
   view_result(zip_codes){
