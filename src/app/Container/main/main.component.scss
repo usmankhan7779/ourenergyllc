@@ -2272,14 +2272,7 @@ h3 {
     font-size: 18px;
 }
 
-.brokersbtn2 {
-    width: 100%;
-    background-color: #cd0000;
-    color: #fff;
-    padding: 7px;
-    font-weight: bold;
-    margin-top: 10px;
-}
+
 
 .brokersUpdate {
     display: flex;
@@ -3324,22 +3317,10 @@ h3 {
     justify-content: center;
     margin-bottom: 0px;
     button {
-        background: linear-gradient(90deg,#042863 0%,#0a97d2 100%);
-        color: #fff;
         margin-top: 10px;
         padding: 6px 30px;
         width: 160px;
         transition: all .5s ease-in-out;
-    }
-    button:hover{
-        background: #B6B6B6;
-    }
-    .error {
-        color: #f44336;
-        font-weight: bold;
-        text-align: center;
-        font-size: 16px;
-        margin-left: 8px;
     }
 }
 
