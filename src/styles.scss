@@ -457,5 +457,9 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
   }
   .topnav.responsive .sMyAccount{
     display: block;
+    margin-left: 18px;
+  }
+  .result-box{
+    margin-bottom: 0;
   }
 }
