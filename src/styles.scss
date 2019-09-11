@@ -12,6 +12,25 @@ html {
     outline: none;
 }
 
+.faqs_home .panel-heading:after {
+  font-family: "FontAwesome";
+  content: "\f147";
+  position: absolute;
+  left: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  top: 50%;
+  line-height: 1;
+  margin-top: -10px;
+  padding: 4px;
+  color: #fff;
+  border-radius: 5px;
+  background-color: #273c61;
+  }
+.faqs_home .panel-heading.collapsed:after {
+  content: "\f196";
+  background-color: #ff4270 ;
+}
 .mat-radio-label {
     white-space: normal !important;
 }
@@ -412,6 +431,11 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
 .mat-radio-button.mat-primary .mat-radio-inner-circle {
   background-color: #ff4270;
 }
+.panel-heading{
+  position: relative;
+}
+
+
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
