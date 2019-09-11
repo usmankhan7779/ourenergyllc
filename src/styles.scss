@@ -14,21 +14,24 @@ html {
 
 .faqs_home .panel-heading:after {
   font-family: "FontAwesome";
-  content: "\f147";
+  content: "\f067";
   position: absolute;
   left: 20px;
   font-size: 20px;
   font-weight: 400;
   top: 50%;
-  line-height: 1;
+  line-height: 33px;
   margin-top: -10px;
-  padding: 4px;
   color: #fff;
   border-radius: 5px;
   background-color: #273c61;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
   }
 .faqs_home .panel-heading.collapsed:after {
-  content: "\f196";
+  content: "\f068";
   background-color: #ff4270 ;
 }
 .mat-radio-label {
