@@ -452,4 +452,10 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
   .header .inner_header{
     padding: 5px 10px;
   }
+  .topnav .sMyAccount{
+    display: none;
+  }
+  .topnav.responsive .sMyAccount{
+    display: block;
+  }
 }
