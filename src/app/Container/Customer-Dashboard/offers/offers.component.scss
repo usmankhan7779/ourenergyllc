@@ -1,76 +1,114 @@
-.productsnoffer {
-    display: flex;
-    flex-direction: column;
-    .newOffer {
-        .noOffermessage {
-            display: flex;
-            justify-content: center;
-            font-size: 30px;
-            font-weight: bold;
-            padding: 30px 30px 0px 30px;
-        }
-        .NewOffer {
-            display: flex;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 25px;
-        }
-        .search-plan {
-            margin: 0 0 16px;
-            padding: 16px 24px;
-            box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
-            span {
-                font-size: 16px;
-            }
-            h3 {
-                margin-top: 0px;
-                span {
-                    font-size: 16px;
-                }
-            }
-            .productName {
-                margin-top: -30px;
-                margin-bottom: 10px;
-                color: white;
-                background-color: #000;
-                text-align: center;
-                padding: 10px;
-                box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
-            }
-            .main {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: center;
-                .inner {
-                    flex: 1;
-                    .rateSheet {
-                        padding: 5px;
-                        div {
-                            display: inherit;
-                        }
-                        span {
-                            font-size: 20px;
-                            font-weight: bold;
-                        }
-                    }
-                    button {
-                        padding: 4px;
-                        font-size: 20px;
-                        background-color: #000;
-                        color: #fff;
-                        border-radius: 25px;
-                        font-family: 'Open Sans' !important;
-                    }
-                }
-                .bar {
-                    border-left: 1px solid #ccc;
-                }
-            }
-        }
-    }
+
+.price-box{
+  padding: 20px 0;
+}
+.border_bottom{
+border-bottom: 1px solid #ccc;
+min-height: 126px;
+}
+.rateSheet span{
+font-size: 14px;
+font-weight: 400;
+line-height: 2em;
+color: #959fac;
+display: block;
+}
+.links-list a{
+  margin: 0 10px;
+  font-size: 18px;
+  color: #959fac;
+  text-decoration: underline;
+}
+.search-result{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.result-box{
+  width: 350px;
+  float: left;
+  margin: 0px;
+  max-width: 350px;
+  background: #fff;
+  margin-bottom: 20px;
+
 }
 
+.price-box h3{
+  margin: 0px !important;
+  color: #ff4270;
+  font-size: 55px !important;
+
+}
+.price-box b{
+  font-size: 18px;
+  color: #273c61;
+}
+.enroll-btn{
+  width: 100%;
+  margin: 20px 0 0px;
+}
+.productName {
+    text-align: center;
+    color: #273c61;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 1.09em;
+    margin: 30px 0 10px !important;
+    min-height: 24px;
+}
+.tag-line{
+    color: #959fac;
+    font-size: 18px;
+    text-align: center;
+}
+.rs{
+    margin: 0px !important;
+    color: #ff4270;
+    font-size: 30px !important;
+}
+.price-box{
+    padding: 20px 0;
+}
+
+.rateSheet {
+  padding: 5px;
+  div {
+      display: inherit;
+  }
+}
+.search-plan {
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 50px 24px;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  min-height: 515px;
+  span {
+      font-size: 16px;
+  }
+  h3 {
+      span {
+          font-size: 16px;
+      }
+  }
+}
+.rateSheet span{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2em;
+  color: #959fac;
+  display: block;
+  text-align: center;
+}
+
+// --------------------------------
 ::ng-deep .badge {
     padding: 4px 7px;
     font-size: 15px;
