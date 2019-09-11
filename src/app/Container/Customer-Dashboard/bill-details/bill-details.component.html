@@ -6,9 +6,9 @@
             </span>
             <div class="details" *ngFor="let i of bills">
                 <span class="price">{{(i.amount_due.toString())[0] == '-' ? '-$' + i.amount_due.toString().slice(1) : '$' + i.amount_due}}</span>
-                <div>
+                <!-- <div>
                     <i class="material-icons">monetization_on</i>
-                </div>
+                </div> -->
             </div>
             <span style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;" *ngFor="let i of bills">
                 <span style="font-size: 20px;" *ngIf="i.past_due > '0'">Past Due: <span style="color: #cd0000">{{(i.past_due.toString())[0] == '-' ? '-$' + i.past_due.toString().slice(1) : '$' + i.past_due}}</span></span>
@@ -16,7 +16,7 @@
             </span>
         </div>
     </div>
-    <div class="col mat-elevation-z5" *ngFor="let i of bills">
+    <!-- <div class="col mat-elevation-z5" *ngFor="let i of bills">
         <div class="infoBox">
             <span class="heading">Last Bill Amount</span>
             <div class="details">
@@ -29,7 +29,7 @@
                 Due Date: {{i.last_bill_due_date}}
             </span>
         </div>
-    </div>
+    </div> -->
     <div class="col mat-elevation-z5" *ngFor="let i of bills ">
         <div class="infoBox">
             <span class="heading">
@@ -37,9 +37,9 @@
             </span>
             <div class="details">
                 <span class="price">{{(i.last_paid_amount.toString())[0] == '-' ? '-$' + i.last_paid_amount.toString().slice(1) : '$' + i.last_paid_amount}}</span>
-                <div>
+                <!-- <div>
                     <i class="material-icons">monetization_on</i>
-                </div>
+                </div> -->
             </div>
             <span class="date">
                 Received on: {{i.last_payment_pay_date}}

@@ -15,11 +15,7 @@
                 <img src="../assets/img/Icons/Profile.png" class="icons">Profile
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.contactus" routerLink="contact" routerLinkActive="active">
-            <mat-list-item routerLinkActive="active">
-                <img src="../assets/img/Icons/Contact.png" class="icons">Contact Us
-            </mat-list-item>
-        </a>
+        
         <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active">
             <mat-list-item style="width: 100%;">
                 <img src="../assets/img/Icons/Plan.png" class="images">Plan
@@ -61,6 +57,11 @@
         <a>
             <mat-list-item routerLink="." (click)="logOut()">
                 <img src="../assets/img/Icons/Logout.png" class="images"> Sign Out
+            </mat-list-item>
+        </a>
+        <a *ngIf="tabs?.contactus" routerLink="contact" routerLinkActive="active">
+            <mat-list-item routerLinkActive="active">
+                <img src="../assets/img/Icons/Contact.png" class="icons">Contact Us
             </mat-list-item>
         </a>
     </mat-list>
