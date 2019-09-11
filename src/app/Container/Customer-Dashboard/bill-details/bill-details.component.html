@@ -1,4 +1,70 @@
-<div class="col-container" *ngIf="billdetails">
+<div class="col mat-elevation-z5">
+    <div class="infoBox">
+        <div class="dashboardInfo">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image2"> </div>
+                <mat-card-title>Account Information</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="accInfo">
+                <mat-list>
+                    <mat-list-item>
+                        Name:
+                    </mat-list-item>
+                    <mat-list-item>
+                        Premise ID:
+                    </mat-list-item>
+                    <mat-list-item>
+                        Account:
+                    </mat-list-item>
+                    <mat-list-item>
+                        Amount Due:
+                    </mat-list-item>
+                    <mat-list-item>
+                        Due Date:
+                    </mat-list-item>
+                    <mat-list-item>
+                        Service Period:
+                    </mat-list-item>
+                    <mat-list-item>
+                        Address:
+                    </mat-list-item>
+                </mat-list>
+                <mat-list *ngFor="let info of custInfo">
+                    <mat-list-item *ngIf="info.company_name == ''">
+                        {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}}
+                    </mat-list-item>
+                    <mat-list-item *ngIf="info.cust_firstname == ''">
+                        {{info.company_name}}
+                    </mat-list-item>
+                    <mat-list-item>
+                        {{info.premise_id}}
+                    </mat-list-item>
+                    <mat-list-item>
+                        {{info.cust_id}}
+                    </mat-list-item>
+                    <mat-list-item>
+                        {{(info.due_amount.toString())[0] == '-' ? '-$' + info.due_amount.toString().slice(1) : '$' + info.due_amount}}
+                    </mat-list-item>
+                    <mat-list-item>
+                        {{info.due_date}}
+                    </mat-list-item>
+                    <mat-list-item>
+                        {{info.last_service_start}} - {{info.last_service_end}}
+                    </mat-list-item>
+                    <mat-list-item>
+                        {{info.premise_address2}} {{info.premise_city}}, {{info.premise_state }} {{info.premise_zip}}
+                    </mat-list-item>
+                </mat-list>
+            </mat-card-content>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- <div class="col-container" *ngIf="billdetails">
     <div class="col mat-elevation-z5">
         <div class="infoBox">
             <span class="heading">
@@ -6,16 +72,14 @@
             </span>
             <div class="details" *ngFor="let i of bills">
                 <span class="price">{{(i.amount_due.toString())[0] == '-' ? '-$' + i.amount_due.toString().slice(1) : '$' + i.amount_due}}</span>
-                <!-- <div>
-                    <i class="material-icons">monetization_on</i>
-                </div> -->
+                
             </div>
             <span style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;" *ngFor="let i of bills">
                 <span style="font-size: 20px;" *ngIf="i.past_due > '0'">Past Due: <span style="color: #cd0000">{{(i.past_due.toString())[0] == '-' ? '-$' + i.past_due.toString().slice(1) : '$' + i.past_due}}</span></span>
             <button  routerLink="/dashboard/paynow">Pay Now</button>
             </span>
         </div>
-    </div>
+    </div> -->
     <!-- <div class="col mat-elevation-z5" *ngFor="let i of bills">
         <div class="infoBox">
             <span class="heading">Last Bill Amount</span>
@@ -30,20 +94,20 @@
             </span>
         </div>
     </div> -->
-    <div class="col mat-elevation-z5" *ngFor="let i of bills ">
+    <!-- <div class="col mat-elevation-z5" *ngFor="let i of bills ">
         <div class="infoBox">
             <span class="heading">
                 Last Paid Amount
             </span>
             <div class="details">
                 <span class="price">{{(i.last_paid_amount.toString())[0] == '-' ? '-$' + i.last_paid_amount.toString().slice(1) : '$' + i.last_paid_amount}}</span>
-                <!-- <div>
+                 <div>
                     <i class="material-icons">monetization_on</i>
-                </div> -->
+                </div> 
             </div>
             <span class="date">
                 Received on: {{i.last_payment_pay_date}}
             </span>
         </div>
     </div>
-</div>
+</div> -->
