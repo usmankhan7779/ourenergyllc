@@ -9,10 +9,46 @@
                   </p>
                 </div>
                 <div class="text-center pd-10">
-                  <button class="btn">
+                  <button class="btn" data-toggle="collapse" data-target="#find_plan" aria-expanded="false" aria-controls="collapseExample">
                       Search for energy plans
                   </button>
-
+                  <div class="collapse" id="find_plan">
+                    <div class="form-home residential-form-home">
+                      <!-- <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate> -->
+                          <form  class="form-zip ng-untouched ng-pristine ng-valid">
+                      <div class="card">
+                      <div class="clearfix mt-5">
+                      <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                      <mat-form-field>
+                      <input matInput placeholder="Zip Code"  name="zipCode" maxlength="5" />
+                      <!-- <mat-error *ngIf="zip_code.hasError('pattern')">
+                      Invalid Zip Code
+                      </mat-error>
+                      <mat-error *ngIf="zip_code.hasError('required')">
+                      Zip Code is required
+                      </mat-error> -->
+                      </mat-form-field>
+                      </div>
+                      </div>
+                      <div class="col-md-6 col-sm-6">
+                      <div class="form-group">
+                      <mat-form-field>
+                      <input matInput placeholder="Promo Code" name=promo  />
+                      </mat-form-field>
+                      </div>
+                      </div>
+                      </div>
+                      <div class="clearfix">
+                      <div class="form-group text-center">
+                      <button type="submit" class="btn btn-rose blue-btn">Lets find a plan to fit your needs</button>
+                      </div>
+                      </div>
+                      </div>
+                      </form>
+                      </div>
+                  </div>
+               
                 </div>
             
                 <div class="col-sm-12">
