@@ -14,11 +14,16 @@
         background-size: 100% 100%;
     }
     .quick-pay {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-start;
-        width: 70%;
-        margin-bottom: 10px;
+        // display: flex;
+        // flex-direction: row-reverse;
+        // justify-content: flex-start;
+        // width: 70%;
+        // margin-bottom: 10px;
+        background: #fff;
+        padding: 10px;
+        img{
+            width: 130px;
+        }
         mat-icon {
             color: #444444;
             font-size: 40px;

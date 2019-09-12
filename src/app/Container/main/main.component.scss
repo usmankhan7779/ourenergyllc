@@ -88,6 +88,7 @@ p {
 
 h3 {
     margin: 0 0 20px !important;
+    font-weight: 300 !important;
 }
 
 .card {
@@ -1265,7 +1266,7 @@ h3 {
 }
 
 .count-on {
-    background: #ffffff;
+    // background: #ffffff;
     // padding: 50px 9999px 40px;
     // margin: 0 -9999px;
     margin-top: 20px;
@@ -1972,6 +1973,7 @@ h3 {
     align-items: center;
     max-width: 1270px;
     margin: 0 auto;
+    padding-top: 50px;
     .text-box{
         min-width: 400px;
     h3{
@@ -1998,6 +2000,33 @@ h3 {
   box-shadow: 0 0 10px #ccc;
   border-radius: 8px;
 }
+
+.for-home {
+    padding: 50px 0 10px;
+    .card{
+        text-align: center;
+        padding: 10px 20px;
+        box-shadow: none;
+        background: none;
+        .img{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            img{
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        h3{
+            margin: 17px 0px 10px !important;
+            font-weight: 300 !important;
+        }
+    }
+}
+
+
 @media (max-width: 840px) {
     .myCard {
         box-shadow: 0px 0 0px 0px;
@@ -3317,11 +3346,11 @@ h3 {
 
 .recaptcha {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     flex-wrap: wrap;
-    // justify-content: center;
     margin-bottom: 10px;
     align-items: center;
+    justify-content: center;
     button {
         width: 160px;
     }
@@ -3886,8 +3915,9 @@ display: block;
 .s_helpBan{
   text-align: right;
   margin-bottom: -60px;
+  padding: 0;
   .help_img{
-    max-width: 300px;
+    // max-width: 300px;
     float: right;
   }
 }
