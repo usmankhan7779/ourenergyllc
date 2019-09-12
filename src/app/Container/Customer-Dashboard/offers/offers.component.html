@@ -57,9 +57,10 @@
                                 </div>
                           
                                 <div class="text-center inner links-list">
-                                    <a  matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
+                                        <!-- [href]="value.product_efl_url" -->
+                                    <a  matTooltip="Terms of Service" href="value.product_tos_url" target="_blank"><b>TOS</b></a>
                                     <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-                                    <a  matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
+                                    <a  matTooltip="Electric Facts Label" href="value.product_efl_url" target="_blank"><b>EFL</b></a>
                             
                                     <button class="pink_btn enroll-btn"  [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Enroll Now</button>
                                 </div>
