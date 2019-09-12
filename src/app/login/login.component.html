@@ -53,7 +53,10 @@
                 <button  class="button" *ngIf="SignInButton">Sign In</button>
                 <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
                 <div *ngIf="hideLogin">
-                    <button class="btn-100" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">Quick Pay</button>
+                    <button class="btn-100 quick-pay" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">
+                        <img src="../../assets/img/QuickPay/qickpay11@50x.png">
+                    </button>
+                    
                 </div>
             </form>
             <div class="links">
