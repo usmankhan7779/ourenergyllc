@@ -1991,8 +1991,12 @@ h3 {
     float: left;
 }
 .tab-img{
-    width: 70%;
-    float: right;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px;
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 8px;
 }
 @media (max-width: 840px) {
     .myCard {
@@ -3510,8 +3514,8 @@ h3 {
 }
 
 #btnBill1 {
-    top: 5%;
-    left: 46%;
+  top: 60px;
+    left: 300px;
     border-radius: 50px!important;
     position: absolute;
     line-height: 15px;
@@ -3519,6 +3523,7 @@ h3 {
     padding: 5px;
     width: 30px;
     height: 30px;
+    box-shadow: none;
 }
 
 #btnBill1:hover {
@@ -3541,8 +3546,8 @@ h3 {
 }
 
 #btnBill2 {
-    top: 19%;
-    left: 46%;
+  top: 140px;
+  left: 160px;
     border-radius: 50px!important;
     position: absolute;
     line-height: 15px;
@@ -3550,12 +3555,13 @@ h3 {
     padding: 5px;
     width: 30px;
     height: 30px;
+    box-shadow: none;
 }
 
 #btnBill3 {
 
-    top: 38%;
-    right: 18%;
+  top: 260px;
+  right: 100px;
     border-radius: 50px!important;
     position: absolute;
     line-height: 15px;
@@ -3563,11 +3569,12 @@ h3 {
     padding: 5px;
     width: 30px;
     height: 30px;
+    box-shadow: none;
 }
 
 #btnBill4 {
-    bottom: 3%;
-    right: 31%;
+  bottom: 44px;
+  right: 291px;
     border-radius: 50px!important;
     position: absolute;
     line-height: 15px;
@@ -3575,6 +3582,7 @@ h3 {
     padding: 5px;
     width: 30px;
     height: 30px;
+    box-shadow: none;
 }
 
 #btnBill2:hover {
@@ -3948,6 +3956,15 @@ max-width: 440px;
 }
 .pd-10{
   padding: 10px 0;
+}
+.tab-img .modal-dialog{
+  width: auto;
+  max-width: 900px;
+}
+.tab-img .modal-title{
+  font-weight: 300 !important;
+    padding: 5px 30px;
+    font-size: 28px;
 }
 @media (max-width: 767px) {
   .logo-width a {
