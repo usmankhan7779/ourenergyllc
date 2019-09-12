@@ -363,11 +363,11 @@
 
 <section class="container-fluid padding-30">
   <div class="row">
-    <div class="col-sm-12 s_helpBan">
+    <!-- <div class="col-sm-12 s_helpBan">
         <div class="help_img">
             <img src="../../../assets/img/help_pic.jpg" alt="img">
           </div>
-    </div>
+    </div> -->
     <div class="col-md-3 col-sm-12">
       <nav class="nav-sidebar">
         <ul class="nav tabs help-sidebar">
@@ -631,6 +631,30 @@
                       </div> -->
         </div>
         <div class="tab-pane text-style text-center" id="UNDERSTAND_BILL">
+          <div class="panel-group" id="accordion">
+          <div class="tab-detail">
+              <div id="collapse20"  class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>This section contain your account details.</p>
+                  </div>
+                </div>
+                <div id="collapse21"  class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>This section contain your utility provider and Our Energy details.</p>
+                  </div>
+                </div>
+                <div id="collapse22"  class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>This section contain your billing and payment details.</p>
+                  </div>
+                </div>
+                <div id="collapse23"  class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <p>This section contain your address details.</p>
+                  </div>
+                </div>
+          </div>
+          <div class="tab-img">
           <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
             data-lazy-type="image"
             data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
@@ -639,14 +663,16 @@
             <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" width="576"
               height="745" />
           </noscript>
-          <button id="btnBill1" type="button" data-toggle="popover"
-            title="This section contain your account details">1</button>
-          <button id="btnBill2" type="button" data-toggle="popover"
-            title="This section contain your utility provider and Our Energy details">2</button>
-          <button id="btnBill3" type="button" data-toggle="popover"
-            title="This section contain your billing and payment details">3</button>
-          <button id="btnBill4" type="button" data-toggle="popover"
-            title="This section contain your address details">4</button>
+          <button id="btnBill1" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapse20"
+            >1</button>
+          <button id="btnBill2" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapse21"
+            >2</button>
+          <button id="btnBill3" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapse22"
+            >3</button>
+          <button id="btnBill4" type="button" data-toggle="collapse" data-parent="#accordion" href="#collapse23"
+            >4</button>
+          </div>
+        </div>
         </div>
         <div class="tab-pane text-style" id="DOWNLOAD_FORMS">
           <h1 class="col-lg-12 col-md-12 col-sm-12">DOWNLOAD FORMS</h1>

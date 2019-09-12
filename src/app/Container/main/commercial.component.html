@@ -1,84 +1,86 @@
 <div class="">
-    <div class="bus-banner container">
+    <div class="bus-banner">
         <div class="text-box">
-                <h3 class="heading_s">Delivering custom <br> Tailored plan for <br> your Business?</h3>
+                <h3 class="heading_s">Delivering<br>custom Tailored plan<br>for your Business?</h3>
         </div>
         <div class="img-box">
             <img src="../../../assets/img/bus-img.jpg">
         </div>
     </div>
-    <div class="container padding-top-bottom">
-            <h3 class="text-center">Reduce Your Business Costs!</h3>
-            <h3 class="text-center">Better Planning | Better Business |</h3>
-            <div class="cm-detail">
-                    <p>
-                        Our Energy LLC specializes in helping Texas businesses reduce their energy rates over the long term.  The reality is that very few businesses have the time, knowledge or resources to obtain the best energy savings that are so badly needed.  This is where Our Energy commercial power services really make a difference!
-                    </p>
-                    <div class="text-center commercialforms">
-                        <button type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" class="toggle-form">Request your free quote today</button>
-                        <div class="collapse" id="collapseExample2">
-                                <mat-card class="commercialUpdate">
-                                    <form [formGroup]="commercialForm" (ngSubmit)="submit()" #form>
-                                        <div class="row">
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder="Name" maxlength="50" formControlName=Name required>
-                                                <mat-error *ngIf="f.Name.errors?.required">Name is required</mat-error>
-                                                <mat-error *ngIf="f.Name.errors?.pattern">Invalid Input</mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder=" Business Name" maxlength="50" formControlName=BusinessName required>
-                                                <mat-error *ngIf="f.BusinessName.errors?.required">Business Name is required</mat-error>
-                                                <mat-error *ngIf="f.BusinessName.errors?.pattern">Invalid Input</mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <mat-select placeholder="Business Type" formControlName=BusinessType>
-                                                    <mat-option *ngFor="let type of businessType" [value]="type.value">{{type.businesstype}}</mat-option>
-                                                </mat-select>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder="Email" maxlength="50" formControlName=Email required>
-                                                <mat-error *ngIf="f.Email.errors?.required">Email is required</mat-error>
-                                                <mat-error *ngIf="f.Email.errors?.email && !f.Email.errors?.required">Invalid Email Address</mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder="Telephone" maxlength="12" formControlName=Telephone phone-no>
-                                                <mat-error *ngIf="f.Telephone.errors?.pattern">Invalid Input</mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder=" Mobile No." maxlength="12" formControlName=Mobile phone-no>
-                                                <mat-error *ngIf="f.Mobile.errors?.pattern">Invalid Input</mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder="Electricity Usage (kWh)" maxlength="4" formControlName=ElectricityUsage>
-                                                <mat-error *ngIf="f.ElectricityUsage.errors?.pattern">Invalid Input</mat-error>
-                                            </mat-form-field>
-                                            <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                                <input matInput placeholder="Notes or Additional Information" maxlength="250" formControlName=Notes>
-                                            </mat-form-field>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="center__recap">
-                                                <app-recapcha></app-recapcha>
-                                            </div>
-                                            <div>
-                                                <p style="color: #f44336; font-weight: bold; margin-bottom: 0px; margin-top: 10px;" class="error">
-                                                    {{cap_result}}</p>
-                                            </div>
-                                            <div class="recaptchaa">
-                                                <div>
-                                                    <button class="btn" [disabled]="btnDisabled" class="brokersbtn2">Submit</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </mat-card>
-                            </div>
-                    </div>
-                    
-                </div>
+    <div class="four_Steps">
+      <div class="container padding-top-bottom">
+              <h3 class="text-center">Reduce Your Business Costs!</h3>
+              <h3 class="text-center">Better Planning - Better Business</h3>
+              <div class="cm-detail">
+                      <p>
+                          Our Energy LLC specializes in helping Texas businesses reduce their energy rates over the long term.  The reality is that very few businesses have the time, knowledge or resources to obtain the best energy savings that are so badly needed.  This is where Our Energy commercial power services really make a difference!
+                      </p>
+                      <div class="text-center commercialforms">
+                          <button type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample" class="toggle-form">Request your free quote today</button>
+                          <div class="collapse" id="collapseExample2">
+                                  <mat-card class="commercialUpdate">
+                                      <form [formGroup]="commercialForm" (ngSubmit)="submit()" #form>
+                                          <div class="row">
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder="Name" maxlength="50" formControlName=Name required>
+                                                  <mat-error *ngIf="f.Name.errors?.required">Name is required</mat-error>
+                                                  <mat-error *ngIf="f.Name.errors?.pattern">Invalid Input</mat-error>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder=" Business Name" maxlength="50" formControlName=BusinessName required>
+                                                  <mat-error *ngIf="f.BusinessName.errors?.required">Business Name is required</mat-error>
+                                                  <mat-error *ngIf="f.BusinessName.errors?.pattern">Invalid Input</mat-error>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <mat-select placeholder="Business Type" formControlName=BusinessType>
+                                                      <mat-option *ngFor="let type of businessType" [value]="type.value">{{type.businesstype}}</mat-option>
+                                                  </mat-select>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder="Email" maxlength="50" formControlName=Email required>
+                                                  <mat-error *ngIf="f.Email.errors?.required">Email is required</mat-error>
+                                                  <mat-error *ngIf="f.Email.errors?.email && !f.Email.errors?.required">Invalid Email Address</mat-error>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder="Telephone" maxlength="12" formControlName=Telephone phone-no>
+                                                  <mat-error *ngIf="f.Telephone.errors?.pattern">Invalid Input</mat-error>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder=" Mobile No." maxlength="12" formControlName=Mobile phone-no>
+                                                  <mat-error *ngIf="f.Mobile.errors?.pattern">Invalid Input</mat-error>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder="Electricity Usage (kWh)" maxlength="4" formControlName=ElectricityUsage>
+                                                  <mat-error *ngIf="f.ElectricityUsage.errors?.pattern">Invalid Input</mat-error>
+                                              </mat-form-field>
+                                              <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                                  <input matInput placeholder="Notes or Additional Information" maxlength="250" formControlName=Notes>
+                                              </mat-form-field>
+                                          </div>
+                                          <div class="text-center">
+                                              <div class="center__recap">
+                                                  <app-recapcha></app-recapcha>
+                                              </div>
+                                              <div>
+                                                  <p style="color: #f44336; font-weight: bold; margin-bottom: 0px; margin-top: 10px;" class="error">
+                                                      {{cap_result}}</p>
+                                              </div>
+                                              <div class="recaptchaa">
+                                                  <div>
+                                                      <button class="btn" [disabled]="btnDisabled" class="brokersbtn2">Submit</button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </form>
+                                  </mat-card>
+                              </div>
+                      </div>
+                       
+                  </div>
+      </div>
     </div>
     <div class="main-content1">
-        <div class="container-fluid container">
+        <!-- <div class="container-fluid container">
             <section class="commercial-main">
                 <div class="">
                     <h3 class="text-center">
@@ -97,11 +99,11 @@
                     </div>
                 </div>
             </section>
-        </div>
+        </div> -->
     </div>
   </div>
-  <div class="four_Steps">
-    <div class="main-content">
+  <div class="">
+    <!-- <div class="main-content">
       <div class="container-fluid container">
         <section class="commercial-main">
           <h2 class="text-center">LOOKING FOR A CUSTOM TAILORED PLAN FOR
@@ -126,74 +128,10 @@
               Additional Info”.
               A friendly Customer Care Specialist will contact you in a timely manner.</p>
           </div>
-          <!-- <div class="commercialforms">
-            <button type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-              aria-controls="collapseExample" class="toggle-form">Click Here for Custom Quite</button>
-            <div class="collapse" id="collapseExample">
-              <mat-card class="commercialUpdate">
-                <form [formGroup]="commercialForm" (ngSubmit)="submit()" #form>
-                  <div class="row">
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder="Name" maxlength="50" formControlName=Name required>
-                      <mat-error *ngIf="f.Name.errors?.required">Name is required</mat-error>
-                      <mat-error *ngIf="f.Name.errors?.pattern">Invalid Input</mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder=" Business Name" maxlength="50" formControlName=BusinessName required>
-                      <mat-error *ngIf="f.BusinessName.errors?.required">Business Name is required</mat-error>
-                      <mat-error *ngIf="f.BusinessName.errors?.pattern">Invalid Input</mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <mat-select placeholder="Business Type" formControlName=BusinessType>
-                        <mat-option *ngFor="let type of businessType" [value]="type.value">{{type.businesstype}}
-                        </mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder="Email" maxlength="50" formControlName=Email required>
-                      <mat-error *ngIf="f.Email.errors?.required">Email is required</mat-error>
-                      <mat-error *ngIf="f.Email.errors?.email && !f.Email.errors?.required">Invalid Email Address
-                      </mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder="Telephone" maxlength="12" formControlName=Telephone phone-no>
-                      <mat-error *ngIf="f.Telephone.errors?.pattern">Invalid Input</mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder=" Mobile No." maxlength="12" formControlName=Mobile phone-no>
-                      <mat-error *ngIf="f.Mobile.errors?.pattern">Invalid Input</mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder="Electricity Usage (kWh)" maxlength="4"
-                        formControlName=ElectricityUsage>
-                      <mat-error *ngIf="f.ElectricityUsage.errors?.pattern">Invalid Input</mat-error>
-                    </mat-form-field>
-                    <mat-form-field class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                      <input matInput placeholder="Notes or Additional Information" maxlength="250"
-                        formControlName=Notes>
-                    </mat-form-field>
-                  </div>
-                  <div class="text-center">
-                    <div class="center__recap">
-                      <app-recapcha></app-recapcha>
-                    </div>
-                    <div>
-                      <p style="color: #f44336; font-weight: bold; margin-bottom: 0px; margin-top: 10px;" class="error">
-                        {{cap_result}}</p>
-                    </div>
-                    <div class="recaptchaa">
-                      <div>
-                        <button class="btn" [disabled]="btnDisabled" class="brokersbtn2">Submit</button>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </mat-card>
-            </div>
-          </div> -->
+          
         </section>
       </div>
-    </div>
+    </div> -->
     <!-- <section class="commercial-banner">
             <div class="container">
                 <h3 class="title text-center">
@@ -225,10 +163,10 @@
         </section> -->
   </div>
   <div class="member-special">
-      <div class="container">
-        <h3 class="title">Looking For an Excellent Residential Plan?</h3>
-        <p>Find one that's right for you!</p>
-        <button class="btn btn-warning btn-lg" routerLink="/search-plan">find a plan that's right for you
-        </button>
-      </div>
+    <div class="container">
+      <h3 class="title">Looking For an Excellent Residential Plan?</h3>
+      <p>Find one that's right for you!</p>
+      <button class="btn btn-warning btn-lg" routerLink="/search-plan">find a plan that's right for you
+      </button>
     </div>
+  </div>
