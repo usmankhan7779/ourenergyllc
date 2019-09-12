@@ -1,6 +1,44 @@
 <div class="col mat-elevation-z5">
     <div class="infoBox">
-        <div class="dashboardInfo">
+        <table class="table">
+            <thead>
+              <tr>
+                <th >Name</th>
+                <th >Premise ID</th>
+                <th >Account</th>
+                <th >Amount Due</th>
+                <th >Due Date</th>
+                <th >Service Period</th>
+                <th >Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let info of custInfo">
+                <td *ngIf="info.company_name == ''"> 
+                    {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}}
+               
+              </td>
+                <td *ngIf="info.cust_firstname == ''">
+                    {{info.company_name}}
+                </td>
+                <td> {{info.premise_id}}</td>
+                <td> {{info.cust_id}}</td>
+                <td> {{(info.due_amount.toString())[0] == '-' ? '-$' + info.due_amount.toString().slice(1) : '$' + info.due_amount}}
+                </td>
+                <td>
+                    {{info.due_date}}
+                </td>
+                <td>
+                    {{info.last_service_start}} - {{info.last_service_end}}
+                </td>
+                <td>
+                    {{info.premise_address2}} {{info.premise_city}}, {{info.premise_state }} {{info.premise_zip}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      <!--  -->
+       <!-- <div class="dashboardInfo">
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image2"> </div>
                 <mat-card-title>Account Information</mat-card-title>
@@ -56,7 +94,7 @@
                     </mat-list-item>
                 </mat-list>
             </mat-card-content>
-        </div>
+        </div>  -->
     </div>
 </div>
 

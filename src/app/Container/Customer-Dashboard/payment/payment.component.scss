@@ -27,10 +27,7 @@
     }
     
     button {
-        font-size: 20px;
-        font-weight: bold;
-        margin: 5px;
-        border-radius: 25px;
+        margin: 30px 5px;
     }
     
     .btn1 {
@@ -117,7 +114,7 @@
         flex-direction: column;
         margin-top: 7px;
         .title {
-            background-color: #000;
+            background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%);;
             padding: 15px;
             top: -25px;
             border-radius: 5px;
@@ -316,18 +313,7 @@
             font-weight: bold;
             margin-top: 5px;
         }
-        .btn1 {
-            background-color: #000;
-            color: #fff;
-            border-radius: 100px;
-            margin-top: 30px;
-        }
-        .btn2 {
-            background-color: rgb(216, 216, 216);
-            color: #000;
-            border-radius: 100px;
-            margin-top: 30px;
-        }
+       
         mat-label {
             font-size: 20px;
             font-weight: bold;

@@ -170,8 +170,8 @@
         </div>
         <mat-slide-toggle style="margin-top: 15px;" (change)="changeAuth($event)"><span style="font-size: 16px; font-weight: bold;">Authorize Payment</span></mat-slide-toggle>
         <div>
-            <button  type="submit" class="btn1" [disabled]="submitButtonStatus || !authorize">Submit</button>
-            <button  type="button" class="btn2">Cancel</button>
+            <button  type="submit"  [disabled]="submitButtonStatus || !authorize">Submit</button>
+            <button  type="button" >Cancel</button>
         </div>
     </mat-card>
 </form>
