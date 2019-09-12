@@ -24,15 +24,15 @@ html {
   margin-top: -10px;
   color: #fff;
   border-radius: 5px;
-  background-color: #273c61;
   width: 25px;
   height: 25px;
   text-align: center;
   vertical-align: middle;
+  background-color: #ff4270 ;
   }
 .faqs_home .panel-heading.collapsed:after {
   content: "\f067";
-  background-color: #ff4270 ;
+  background-color: #273c61;
 }
 .mat-radio-label {
     white-space: normal !important;

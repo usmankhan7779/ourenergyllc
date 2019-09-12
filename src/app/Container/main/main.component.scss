@@ -1437,7 +1437,6 @@ h3 {
 }
 
 .member-special p {
-    font-size: 18px;
     line-height: 25px;
 }
 
@@ -1883,7 +1882,7 @@ h3 {
 .residential-main {
     display: flex;
     flex-direction: column;
-    
+    padding-top: 50px;
     .cart {
         display: flex;
         flex-direction: row;
