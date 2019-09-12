@@ -6,6 +6,9 @@
 .main-container {
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+    border-radius: 8px;
     .sub-container {
         display: flex;
         flex-direction: column;

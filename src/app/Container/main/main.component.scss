@@ -2848,12 +2848,15 @@ h3 {
     div {
         display: inherit;
     }
-    span {
-        font-size: 20px;
-        font-weight: bold;
-    }
 }
 
+.rateSheet span{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2em;
+  color: #959fac;
+  display: block;
+  }
 .pdf {
     display: flex;
     flex-direction: row;
@@ -3754,53 +3757,57 @@ color: #c00 !important;
 
 // ////////////////
 
+/////////// Start Haseeb css
+.residential-main .heading {
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 4px solid#ff4270;
+    font-weight: bold;
+}
+
+.zip_btns{
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// ///////////////////
+
 
 .main {
-    // display: flex;
-    // flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .bar {
-  height: 1px;
-  background: #dbdee3;
+height: 1px;
+background: #dbdee3;
 }
 
 .inner {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
-.productName {
-    text-align: center;
-    color: #273c61;
-    font-size: 22px;
-    font-weight: 500;
-    text-transform: uppercase;
-    line-height: 1.09em;
-}
-.tag-line{
-    color: #959fac;
-    font-size: 18px;
-    text-align: center;
-}
+
 .rs{
-    margin: 0px !important;
-    color: #ff4270;
-    font-size: 30px !important;
+  margin: 0px !important;
+  color: #ff4270;
+  font-size: 30px !important;
 }
 .price-box{
-    padding: 20px 0;
+  padding: 20px 0;
 }
 .border_bottom{
-  border-bottom: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
 }
 .rateSheet span{
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 2em;
-  color: #959fac;
-  display: block;
+font-size: 14px;
+font-weight: 400;
+line-height: 2em;
+color: #959fac;
+display: block;
 }
 .links-list a{
     margin: 0 10px;
@@ -3816,13 +3823,13 @@ color: #c00 !important;
     font-weight: bold;
 }
 .search-result{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-    max-width: 1300px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 .result-box{
     width: 350px;
@@ -3834,47 +3841,19 @@ color: #c00 !important;
     box-shadow: 0px 0px 12px #ccc;
 }
 .price-box h3{
-    margin: 0px !important;
-    color: #ff4270;
-    font-size: 55px !important;
+  margin: 0px !important;
+  color: #ff4270;
+  font-size: 55px !important;
 }
 .price-box b{
-    font-size: 18px;
-    color: #273c61;
+  font-size: 18px;
+  color: #273c61;
 }
 .enroll-btn{
-    width: 100%;
-    margin: 20px 0 0px;
-}
-.zip_btns{
-  min-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-// ////////////////////
-.main {
-    // display: flex;
-    // flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-.inner {
-    flex: 1;
-    text-align: center;
+  width: 100%;
+  margin: 20px 0 0px;
 }
 .productName {
-    // margin-top: -30px;
-    // margin-bottom: 10px;
-    // color: white;
-    // background-color: #000;
-    
-    // border-radius: 10px;
-    // padding: 10px;
-    // box-shadow: 0px 5px 15px 0 rgba(0, 0, 0, 0.7);
     text-align: center;
     color: #273c61;
     font-size: 22px;
@@ -3896,6 +3875,7 @@ color: #c00 !important;
 .price-box{
     padding: 20px 0;
 }
+
 .s_helpBan{
   text-align: right;
   margin-bottom: -60px;

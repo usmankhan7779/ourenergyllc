@@ -442,7 +442,20 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
 .panel-heading{
   position: relative;
 }
-
+.mat-elevation-z5{
+  box-shadow: 0 0 10px #ccc;
+}
+// Dashboard New Layout
+.App .mat-elevation-z5{
+  border-radius: 8px;
+}
+.App .mat-card-title{
+  background: transparent !important;
+  color: #3a4170;
+}
+.App .mat-card-avatar{
+  display: none;
+}
 
 @media only screen and (max-width:1500px){
   .filter-bar button{

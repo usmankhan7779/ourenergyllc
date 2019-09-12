@@ -8,6 +8,7 @@ import { MAT_DIALOG_DATA } from '@angular/material'
 import { ProductsService } from '../../Store/Services/products.service'
 import { Subscription } from 'rxjs/Subscription';
 import { ServerSocketService } from '../header/server-socket.service';
+import { BillDetailsService } from '../../Store/Services/bill-details.service';
 
 @Component({
   selector: 'app-dashboard-home',
@@ -19,8 +20,14 @@ export class DashboardHomeComponent implements OnInit {
   @ViewChild('chartUsage') chars: ElementRef
   @ViewChild('Save') downloads: ElementRef
 
-  constructor(private socket: ServerSocketService, public dialog: MatDialog, private http: HttpClient, private usage: UsageService, private customerService: CustomerService, private productService: ProductsService) { }
+  constructor(private socket: ServerSocketService, public dialog: MatDialog, 
+private details: BillDetailsService,
+    private http: HttpClient, private usage: UsageService, private customerService: CustomerService, private productService: ProductsService) { }
   public socketSubscription: Subscription
+  bills
+  showSpinner = true
+  billdetails: boolean = false
+  // public socketSubscription: Subscription
   UsageChart
   PayChart
   usages = []
@@ -32,7 +39,7 @@ export class DashboardHomeComponent implements OnInit {
   past_due
   homeInfo: boolean = false
   ShowPromoCode: boolean = false
-  showSpinner
+  // showSpinner
   request = true
   x
   smartMeter
@@ -60,12 +67,23 @@ export class DashboardHomeComponent implements OnInit {
     this.x = setTimeout(() => {
       this.showSpinner = true
     }, 2000)
+    window.scrollTo(0, 0)
+    this.getdetails()
+
+    // const stream = this.socket.connect()
+    // this.socketSubscription = stream.subscribe(response => {
+      // if (response.Type == 'Bill' || response.Type == 'Payment') { this.getdetails() }
+    // })
     this.getOffers()
     this.getCustomerData()
     this.getMeterInfo()
     this.getProducts()
     const stream = this.socket.connect()
     this.socketSubscription = stream.subscribe(response => {
+
+      ////this is code 
+      if (response.Type == 'Bill' || response.Type == 'Payment') { this.getdetails() }
+      ////
       if (response.Type != 'image') {
         this.getOffers()
         this.getCustomerData()
@@ -74,7 +92,18 @@ export class DashboardHomeComponent implements OnInit {
       }
     })
   }
+  // ngOnDestroy(): void {
+  //   this.socketSubscription.unsubscribe();
+  // }
 
+  getdetails() {
+    this.details.getService().subscribe(res => {
+      this.showSpinner = false
+      this.billdetails = true
+      this.bills = [res["message"]]
+      localStorage.setItem("bill-details", JSON.stringify(res["message"]))
+    })
+  }
   getCustomerData() {
     this.customerService.getdata().subscribe(response => {
       let product = []

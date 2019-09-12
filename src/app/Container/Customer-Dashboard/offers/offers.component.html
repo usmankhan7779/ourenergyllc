@@ -12,7 +12,64 @@
                 </div>
                 <span *ngIf="showMessageResponse == false" class="noOffermessage">You currently don't have any special offers.</span>
                 <h4 *ngIf="showMessageResponse == false" class="text-center">To request for an offer please call us on this number <b>1-888-545-4687</b></h4>
-                <div *ngFor="let value of newOffer;index as i;">
+                <!--  -->
+                <div class="search-result">
+                <div class="result-box" *ngFor="let value of newOffer;index as i;">
+                    <div >
+                        <div class="search-plan">
+                            <h3 class="productName">{{value.product_name}}</h3>
+                            <div [ngSwitch]="estimatedUsage" class="border_bottom">
+                                <div class="text-center inner price-box" *ngSwitchCase="500">
+                                    <div>
+                                        <h3 >{{value.tariff_500}}¢</h3>
+                                        <b >500 kWh</b>
+                                    </div>
+                                </div>
+                                <div class="text-center inner price-box" *ngSwitchCase="1000">
+                                    <div>
+                                        <h3 >{{value.tariff_1000}}¢</h3>
+                                        <b >per kWh</b>
+                                    </div>
+                                </div>
+                                <div class="text-center inner price-box" *ngSwitchCase="2000">
+                                    <div>
+                                        <h3 >{{value.tariff_2000}}¢</h3>
+                                        <b >per kWh</b>
+                                    </div>
+                                </div>
+                                <div class="text-center inner price-box" *ngSwitchDefault>
+                                    <div>
+                                            <h3 >{{value.tariff_2000}}¢</h3>
+                                            <b >per kWh</b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main"> <div class="bar"></div>
+                                <div class="inner">
+                                    <div class="rateSheet">
+                                        <div >
+                                            <span >Contract Term: {{value.display_term}} months</span>
+                                            <span >Termination Fee: ${{value.display_termination_fee}}</span>
+                                            <span >Utility: {{value.vendor_company}}</span>
+                                            <span>Average Rate at 2000 kWhs</span>
+                                        </div>
+                                    </div>
+                                </div>
+                          
+                                <div class="text-center inner links-list">
+                                    <a  matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
+                                    <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
+                                    <a  matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
+                            
+                                    <button class="pink_btn enroll-btn"  [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Enroll Now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!--  -->
+                <!-- <div *ngFor="let value of newOffer;index as i;">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <br>
                         <div class="search-plan">
@@ -63,7 +120,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </mat-tab>
