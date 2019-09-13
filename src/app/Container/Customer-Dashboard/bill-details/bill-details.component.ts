@@ -24,6 +24,7 @@ export class BillDetailsComponent implements OnInit {
   error;
   request = true
   x
+  username;
 
   public socketSubscription: Subscription
 
@@ -31,7 +32,7 @@ export class BillDetailsComponent implements OnInit {
     window.scrollTo(0, 0)
     this.getdetails()
     this.getCustomerData()
-
+this.username = localStorage.getItem('username')
     const stream = this.socket.connect()
     this.socketSubscription = stream.subscribe(response => {
       if (response.Type == 'Bill' || response.Type == 'Payment') { this.getdetails() }
