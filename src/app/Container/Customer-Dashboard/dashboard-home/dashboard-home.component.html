@@ -3,10 +3,10 @@
     <div class="col-container" *ngIf="billdetails">
     <div class="col mat-elevation-z5">
         <div class="infoBox">
-            <span class="heading">
+            <span class="heading s_dash">
                 Amount Due
             </span>
-            <div class="details" *ngFor="let i of bills">
+            <div class="details s_dash" *ngFor="let i of bills">
                 <span class="price">{{(i.amount_due.toString())[0] == '-' ? '-$' + i.amount_due.toString().slice(1) : '$' + i.amount_due}}</span>
                 <!-- <div>
                     <i class="material-icons">monetization_on</i>
@@ -18,13 +18,12 @@
             </span>
         </div>
     </div>
-    
     <div class="col mat-elevation-z5" *ngFor="let i of bills ">
         <div class="infoBox">
-            <span class="heading">
+            <span class="heading s_dash">
                 Last Paid Amount
             </span>
-            <div class="details">
+            <div class="details s_dash">
                 <span class="price">{{(i.last_paid_amount.toString())[0] == '-' ? '-$' + i.last_paid_amount.toString().slice(1) : '$' + i.last_paid_amount}}</span>
                 <!-- <div>
                     <i class="material-icons">monetization_on</i>
@@ -35,33 +34,12 @@
             </span>
         </div>
     </div>
-    <mat-card class="mat-elevation-z5" *ngFor="let info of custInfo">
-        <div class="dashboardInfo">
-            <div class="messageProduct">
-                <div>
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image1"> </div>
-                        <mat-card-title>Message Center</mat-card-title>
-                    </mat-card-header>
-                    <span *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" style="font-size: 14px; font-weight: bold;"> Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</span>
-                    <br *ngIf="showOfferMessage">
-                    <a style="text-decoration: none !important;" routerLink="/dashboard/offers">
-                        <h4 *ngIf="showOfferMessage" style="margin-bottom: 0px; cursor: pointer; font-size: 16px; font-weight: bold; color: #cd0000"> You recieved a new offer! </h4>
-                    </a>
-                </div>
-                <div class="Product_code" *ngIf="ShowPromoCode">
-                    <button  (click)="PromoDialogOpen()">Promo Code</button>
-                </div>
-            </div>
-        </div>
-    </mat-card>
-
 </div>
  
 
 <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="graphs mat-elevation-z5">
+        <div class="graphs mat-elevation-z5 ">
             <div class="dashboardInfo" style="padding: 20px;">
                 <mat-card-header style="margin-bottom: 20px;">
                     <div mat-card-avatar class="example-header-image7">
@@ -173,7 +151,7 @@
                             </mat-list-item>
                         </mat-list>
                         <div>
-                            <span style="background-color: #ddd; color: #555; padding: 5px 10px 5px 10px; border-radius: 100px; font-size: 15px; margin: 5px 0px 0px 5px;"> For any outages or emergencies, please contact {{custInfo[0]?.utility_name}} directly. </span>
+                            <span style="background-color: #ddd; color: #555; padding: 5px 10px 5px 10px; border-radius: 100px; font-size: 15px; margin: 10px 0px 0px 5px;"> For any outages or emergencies, please contact {{custInfo[0]?.utility_name}} directly. </span>
                         </div>
                     </mat-card-content>
                 </div>
@@ -294,22 +272,26 @@
   
 </div>
 </div>
-<div class="col-sm-4">
-        <div class="col mat-elevation-z5" *ngFor="let i of bills ">
-                <div class="infoBox">
-                    <span class="heading">
-                      Adds 
-                    </span>
-                    <div class="details">
-                        <span class="price">{{(i.last_paid_amount.toString())[0] == '-' ? '-$' + i.last_paid_amount.toString().slice(1) : '$' + i.last_paid_amount}}</span>
-                        <!-- <div>
-                            <i class="material-icons">monetization_on</i>
-                        </div> -->
+<div class="col-sm-4 mg-10_minus">
+        <mat-card class="mat-elevation-z5  col" *ngFor="let info of custInfo">
+                <div class="dashboardInfo">
+                    <div class="messageProduct">
+                        <div>
+                            <mat-card-header>
+                                <div mat-card-avatar class="example-header-image1"> </div>
+                                <mat-card-title>Message Center</mat-card-title>
+                            </mat-card-header>
+                            <span *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" style="font-size: 14px; font-weight: bold;padding-left:10px"> Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</span>
+                            <br *ngIf="showOfferMessage">
+                            <a style="text-decoration: none !important;" routerLink="/dashboard/offers">
+                                <h4 *ngIf="showOfferMessage" style=" cursor: pointer; font-size: 14px;"> You recieved a new offer! </h4>
+                            </a>
+                        </div>
+                        <div class="Product_code" *ngIf="ShowPromoCode">
+                            <button  (click)="PromoDialogOpen()">Promo Code</button>
+                        </div>
                     </div>
-                    <span class="date">
-                        Received on: {{i.last_payment_pay_date}}
-                    </span>
                 </div>
-            </div>
+            </mat-card>  
 </div>
 </div>
