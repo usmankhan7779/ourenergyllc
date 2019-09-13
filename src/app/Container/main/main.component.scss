@@ -86,7 +86,7 @@ p {
     -webkit-tap-highlight-color: transparent;
 }
 
-h3 {
+h3{
     margin: 0 0 20px !important;
     font-weight: 300 !important;
 }
@@ -1191,7 +1191,7 @@ h3 {
 
 .about-4 {
     h3 {
-        font-weight: 400;
+        font-weight: 300;
         text-align: center;
     }
     span {
@@ -1531,6 +1531,7 @@ h5 {
 
 h3 {
     font-size: 23px ;
+    font-weight: 300 !important;
 }
 
 .mat-step-label {
@@ -1987,11 +1988,12 @@ h3 {
 .help_img img{
     width: 100%;
 }
-.tab-detail{
-    width: 30%;
-    display: block;
-    float: left;
-}
+// .tab-detail{
+//     width: 39%;
+//     float: left;
+//     max-width: 383px;
+//     display: none;
+// }
 .tab-img{
   max-width: 600px;
   margin: 0 auto;
@@ -1999,7 +2001,11 @@ h3 {
   padding: 20px;
   box-shadow: 0 0 10px #ccc;
   border-radius: 8px;
+//   float: right;
+  
 }
+
+
 
 .for-home {
     padding: 50px 0 10px;
@@ -2395,7 +2401,7 @@ h3 {
 }
 
 .our-leverage h3 {
-    font-weight: bold !important;
+    font-weight: 300 !important;
     font-size: 27px !important;
     text-align: center;
 }
@@ -2988,6 +2994,7 @@ h3 {
 
 h3 {
     margin: 0 0 20px !important;
+    font-weight: 300 !important;
 }
 
 .search-bg__title {
@@ -3416,7 +3423,7 @@ h3 {
     h3 {
         line-height: 1.1;
         color: #cd0000;
-        font-weight: bold;
+        font-weight: 300;
     }
     h4 {
         color: #cd0000;
