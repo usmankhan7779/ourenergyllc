@@ -45,9 +45,9 @@ export class UsageComponent implements OnInit {
           type: 'line',
           label: 'Usage',
           data: usages,
-          borderColor: "#a9a9a9",
-          pointBorderColor: '#a9a9a9',
-          pointBackgroundColor: '#a9a9a9',
+          borderColor: "#008ECC",
+          pointBorderColor: '#008ECC',
+          pointBackgroundColor: '#008ECC',
           fill: false,
           lineTension: 0.1,
           borderWidth: 3,
@@ -59,8 +59,11 @@ export class UsageComponent implements OnInit {
           type: 'bar',
           label: 'Amount',
           data: amount,
-          backgroundColor: "#008ECC",
-          borderColor: '#008ECC',
+          // backgroundColor: "#008ECC",
+          backgroundColor: "#ff4270 ",
+
+          // linear-gradient(90deg, #a91f73 0%, #ff4270 100%)
+          borderColor: '#ff4270 ',
           borderWidth: 2,
           yAxisID: "y-axis-gravity"
         };

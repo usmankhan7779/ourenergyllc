@@ -1,4 +1,6 @@
-<div class="col-container" *ngIf="billdetails">
+<div class="row">
+<div class="col-sm-8">
+    <div class="col-container" *ngIf="billdetails">
     <div class="col mat-elevation-z5">
         <div class="infoBox">
             <span class="heading">
@@ -33,7 +35,7 @@
             </span>
         </div>
     </div>
-    <div class="col mat-elevation-z5" >
+    <!-- <div class="col mat-elevation-z5" > -->
 <mat-card class="mat-elevation-z5" *ngFor="let info of custInfo">
     <div class="dashboardInfo">
         <div class="messageProduct">
@@ -54,7 +56,7 @@
         </div>
     </div>
 </mat-card>
-</div>
+<!-- </div> -->
 </div>
  
 
@@ -155,7 +157,7 @@
             </div>
         </div> -->
         <div class="col mat-elevation-z5">
-            <div class="infoBox-1">
+            <div class="infoBox-1 u_flex ">
                 <div class="dashboardInfo">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image3">
@@ -291,4 +293,24 @@
         </div>
     </div>
   
+</div>
+</div>
+<div class="col-sm-4">
+        <div class="col mat-elevation-z5" *ngFor="let i of bills ">
+                <div class="infoBox">
+                    <span class="heading">
+                      Adds 
+                    </span>
+                    <div class="details">
+                        <span class="price">{{(i.last_paid_amount.toString())[0] == '-' ? '-$' + i.last_paid_amount.toString().slice(1) : '$' + i.last_paid_amount}}</span>
+                        <!-- <div>
+                            <i class="material-icons">monetization_on</i>
+                        </div> -->
+                    </div>
+                    <span class="date">
+                        Received on: {{i.last_payment_pay_date}}
+                    </span>
+                </div>
+            </div>
+</div>
 </div>
