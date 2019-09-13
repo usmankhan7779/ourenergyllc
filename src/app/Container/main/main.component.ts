@@ -101,7 +101,7 @@ export class MainComponent implements OnInit {
       promo_code: "" + this.promoCode,
       client: "WattGenie-Web"
     }
-    this.promos.searchPlan(data).subscribe(res => {
+    this.promos.searchPlanhome_page(data).subscribe(res => {
       console.log(res)
       // localStorage.removeItem('duns')
       // if (res["status"] == false) {
