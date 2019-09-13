@@ -7,7 +7,7 @@
             <img src="../../../assets/img/bus-img.jpg">
         </div>
     </div>
-    <div class="four_Steps">
+    <div class="s_reduce_b_cost">
       <div class="container padding-top-bottom">
               <h3 class="text-center">Reduce Your Business Costs!</h3>
               <h3 class="text-center">Better Planning - Better Business</h3>
@@ -57,13 +57,14 @@
                                                   <input matInput placeholder="Notes or Additional Information" maxlength="250" formControlName=Notes>
                                               </mat-form-field>
                                           </div>
-                                          <div class="text-center">
+                                          <div class="text-center s_com_res">
                                               <div class="center__recap">
                                                   <app-recapcha></app-recapcha>
-                                              </div>
-                                              <div>
-                                                  <p style="color: #f44336; font-weight: bold; margin-bottom: 0px; margin-top: 10px;" class="error">
-                                                      {{cap_result}}</p>
+                                                  <div *ngIf="!cap_result">
+                                                    <p style="color: #f44336; font-weight: bold; margin-bottom: 0px; margin-top: 10px;" class="error">
+                                                        {{cap_result}}
+                                                      </p>
+                                                </div>
                                               </div>
                                               <div class="recaptchaa">
                                                   <div>
