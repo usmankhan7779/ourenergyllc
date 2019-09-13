@@ -346,6 +346,10 @@ mat-panel-title {
         }
     }
 }
+.LinkedAccounts .mat-header-row {
+    background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%);
+    // text-align: center;
+}
 
 .LinkedAccounts {
     margin-top: 20px;
