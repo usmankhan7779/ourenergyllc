@@ -427,7 +427,7 @@ mat-card-title{
 p strong,p b{
   color: #273c61;
 }
-router-outlet + * >div:first-child,router-outlet + * >section:first-child,router-outlet + * > mat-card:first-child{
+.router__outlet router-outlet + * >div:first-child,.router__outlet router-outlet + * >section:first-child,.router__outlet router-outlet + * > mat-card:first-child{
   padding-top: 85px !important;
 }
 .recaptcha_div .mat-form-field-wrapper {
@@ -456,7 +456,17 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
 .App .mat-card-avatar{
   display: none;
 }
-
+.s_en_plans{
+  position: relative;
+}
+.s_en_plans:after{
+  content: '';
+  width: 200px;
+  height: 1px;
+  left: 0;
+  bottom: -20px;
+  background: #B6B6B6
+}
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
