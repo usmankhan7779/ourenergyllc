@@ -35,28 +35,27 @@
             </span>
         </div>
     </div>
-    <!-- <div class="col mat-elevation-z5" > -->
-<mat-card class="mat-elevation-z5" *ngFor="let info of custInfo">
-    <div class="dashboardInfo">
-        <div class="messageProduct">
-            <div>
-                <mat-card-header>
-                    <div mat-card-avatar class="example-header-image1"> </div>
-                    <mat-card-title>Message Center</mat-card-title>
-                </mat-card-header>
-                <span *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" style="font-size: 14px; font-weight: bold;"> Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</span>
-                <br *ngIf="showOfferMessage">
-                <a style="text-decoration: none !important;" routerLink="/dashboard/offers">
-                    <h4 *ngIf="showOfferMessage" style="margin-bottom: 0px; cursor: pointer; font-size: 16px; font-weight: bold; color: #cd0000"> You recieved a new offer! </h4>
-                </a>
-            </div>
-            <div class="Product_code" *ngIf="ShowPromoCode">
-                <button  (click)="PromoDialogOpen()">Promo Code</button>
+    <mat-card class="mat-elevation-z5" *ngFor="let info of custInfo">
+        <div class="dashboardInfo">
+            <div class="messageProduct">
+                <div>
+                    <mat-card-header>
+                        <div mat-card-avatar class="example-header-image1"> </div>
+                        <mat-card-title>Message Center</mat-card-title>
+                    </mat-card-header>
+                    <span *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" style="font-size: 14px; font-weight: bold;"> Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</span>
+                    <br *ngIf="showOfferMessage">
+                    <a style="text-decoration: none !important;" routerLink="/dashboard/offers">
+                        <h4 *ngIf="showOfferMessage" style="margin-bottom: 0px; cursor: pointer; font-size: 16px; font-weight: bold; color: #cd0000"> You recieved a new offer! </h4>
+                    </a>
+                </div>
+                <div class="Product_code" *ngIf="ShowPromoCode">
+                    <button  (click)="PromoDialogOpen()">Promo Code</button>
+                </div>
             </div>
         </div>
-    </div>
-</mat-card>
-<!-- </div> -->
+    </mat-card>
+
 </div>
  
 
