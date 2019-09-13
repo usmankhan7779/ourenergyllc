@@ -377,7 +377,6 @@ button:disabled, button[disabled]{
   border-radius: 5px;
   margin: 10px;
 }
-
 .about_form{
   .brokersforms{
     padding: 50px;
@@ -427,7 +426,7 @@ mat-card-title{
 p strong,p b{
   color: #273c61;
 }
-router-outlet + * >div:first-child,router-outlet + * >section:first-child,router-outlet + * > mat-card:first-child{
+.router__outlet router-outlet + * >div:first-child,.router__outlet router-outlet + * >section:first-child,.router__outlet router-outlet + * > mat-card:first-child{
   padding-top: 85px !important;
 }
 .recaptcha_div .mat-form-field-wrapper {
@@ -456,7 +455,39 @@ router-outlet + * >div:first-child,router-outlet + * >section:first-child,router
 .App .mat-card-avatar{
   display: none;
 }
-
+.s_en_plans{
+  position: relative;
+}
+.s_en_plans::after{
+  content: '';
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: -20px;
+  background: #B6B6B6;
+  position: absolute;
+}
+.s_reduce_b_cost{
+  background-color: #eff3fc;
+}
+.s_com_res{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+  box-shadow: 0 0 10px #ccc;
+  border-radius: 8px;
+}
+.s_reg_btn_div{
+  min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s_pp_term a:nth-child(2){
+  margin-left:10px;
+}
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;

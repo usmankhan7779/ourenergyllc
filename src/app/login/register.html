@@ -1,4 +1,5 @@
-<mat-card class="container">
+<div class="container">
+  <mat-card class="container">
     <form (ngSubmit)="submit()" #form [formGroup]="myForm" autocomplete="off">
         <mat-card class="header-title">
             <h3>New User Registration</h3>
@@ -85,16 +86,18 @@
             </div>
             <div class="recaptcha-container">
                 <app-recapcha></app-recapcha>
+                <div *ngIf="cap_result">
+                  <p class="error"> {{cap_result}} </p>
+              </div>
             </div>
-            <div>
-                <p class="error"> {{cap_result}} </p>
-            </div>
+            <div class="s_reg_btn_div">
+              <button class="btn-100" type="submit" [disabled]="registerSbmtBtn || !agree" >Submit</button>
+          </div>
         </div>
-        <div class="text-center">
-            <button class="btn-100" type="submit" [disabled]="registerSbmtBtn || !agree" >Submit</button>
-        </div>
+    
     </form>
     <div class="spinner" *ngIf="showSpinner">
         <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
     </div>
 </mat-card>
+</div>
