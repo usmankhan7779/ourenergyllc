@@ -498,7 +498,10 @@ p strong,p b{
   margin: 0 0 0 15px !important;
   border: none !important;
 }
-
+.menu-items{
+  overflow: hidden;
+  padding: 10px;
+}
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
