@@ -22,9 +22,20 @@ export class MainHeaderComponent implements OnInit {
   }
 
   constructor(public dialog: MatDialog,private http: HttpClient) { }
-
+  show :boolean= false 
+  username 
   ngOnInit() { 
     // 
+    // this.username = localStorage.getItem('username')
+    if (localStorage.getItem('username') !=null)
+    {
+      this.show = true
+      this.username= localStorage.getItem('username')
+    }
+    else{
+      this.show=false
+      this.username= "My Account"
+    }
     this.setheader()
     window.scroll(0, 0);
     window.onscroll = function () { myFunction() };

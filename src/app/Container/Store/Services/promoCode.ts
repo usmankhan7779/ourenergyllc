@@ -9,6 +9,10 @@ export class PromoCodeService {
     searchPlan(para) {
         return this.http.post(environment.webenrollurl + 'enroll/products-with-zipcode/', para, { headers: this.myHeaders, withCredentials: true })
     }
+
+    searchPlanhome_page(para) {
+        return this.http.post(environment.webenrollurl + 'enroll/products-with-zipcode-for-home/', para, { headers: this.myHeaders, withCredentials: true })
+    }
     searchPlanByTdsp(tdsp) {
         return this.http.post(environment.webenrollurl + 'enroll/multiple-duns-on-zip/', tdsp, { headers: this.myHeaders, withCredentials: true })
     }

@@ -105,6 +105,13 @@
           margin-left: -7px;
           box-shadow: none;
           border: none !important;
+          position: relative;
+        }
+        .badge{
+          position: absolute;
+          right: 10px;
+          top: 0;
+          background: #c00;
         }
         mat-icon {
             margin: 0 10px;

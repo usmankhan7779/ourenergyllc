@@ -101,7 +101,7 @@ export class MainComponent implements OnInit {
       promo_code: "" + this.promoCode,
       client: "WattGenie-Web"
     }
-    this.promos.searchPlan(data).subscribe(res => {
+    this.promos.searchPlanhome_page(data).subscribe(res => {
       console.log(res)
       // localStorage.removeItem('duns')
       // if (res["status"] == false) {
@@ -1069,11 +1069,8 @@ export class EstablishContractsComponent implements OnInit {
   styleUrls: ['./main.component.scss']
 })
 export class HelpComponent implements OnInit {
-  @Output() open: EventEmitter<any> = new EventEmitter();
-  @Output() close: EventEmitter<any> = new EventEmitter();
   @ViewChild('help') froms: ElementRef
   featureSelected = 'firstDiv';
-  visible : boolean = true;
   tabIndex = 0
   tdsps = []
   myForm = new FormGroup({
@@ -1161,8 +1158,6 @@ export class HelpComponent implements OnInit {
       this.OurPlans = false
     }
   }
-
-  visible2 : boolean = true;
 
   toggle(selectedSection : string) {
     this.featureSelected = selectedSection;

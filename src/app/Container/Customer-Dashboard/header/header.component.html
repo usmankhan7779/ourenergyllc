@@ -114,10 +114,14 @@
                     </div>
                 </div>
             </mat-menu>
-            <button mat-icon-button [matMenuTriggerFor]="menu"><i class="fa fa-bell iconsss" [matMenuTriggerFor]="menu" (click)="disableOnClick()" matTooltip="Notifications"></i></button>
-            <div *ngIf="unread_count!=0" class="notifications">
-                <span (click)="disableOnClick()">{{unread_count}}</span>
+            <div class="pos_rel">
+                <button mat-icon-button [matMenuTriggerFor]="menu"><i class="fa fa-bell iconsss" [matMenuTriggerFor]="menu"
+                  (click)="disableOnClick()" matTooltip="Notifications"></i></button>
+              
+              <span *ngIf="unread_count!=0" (click)="disableOnClick()" class="badge ">{{unread_count}}</span>
             </div>
+    
+           
         </div>
         <div class="profile-btn">
             <span [matMenuTriggerFor]="menus">{{username}} ({{custId}})</span>

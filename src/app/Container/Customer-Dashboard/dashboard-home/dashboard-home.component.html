@@ -2,7 +2,7 @@
 <div class="col-sm-8">
     <div class="col-container" *ngIf="billdetails">
     <div class="col mat-elevation-z5">
-        <div class="infoBox">
+        <div class="infoBox" style="padding:20px">
             <span class="heading s_dash">
                 Amount Due
             </span>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="col mat-elevation-z5" *ngFor="let i of bills ">
-        <div class="infoBox">
+        <div class="infoBox" style="padding:20px">
             <span class="heading s_dash">
                 Last Paid Amount
             </span>
@@ -281,10 +281,10 @@
                                 <div mat-card-avatar class="example-header-image1"> </div>
                                 <mat-card-title>Message Center</mat-card-title>
                             </mat-card-header>
-                            <span *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" style="font-size: 14px; font-weight: bold;padding-left:10px"> Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</span>
-                            <br *ngIf="showOfferMessage">
-                            <a style="text-decoration: none !important;" routerLink="/dashboard/offers">
-                                <h4 *ngIf="showOfferMessage" style=" cursor: pointer; font-size: 14px;"> You recieved a new offer! </h4>
+                            <p *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" > Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</p>
+                            <!-- <br *ngIf="showOfferMessage"> -->
+                            <a *ngIf="showOfferMessage"  routerLink="/dashboard/offers">
+                               You recieved a new offer! 
                             </a>
                         </div>
                         <div class="Product_code" *ngIf="ShowPromoCode">
