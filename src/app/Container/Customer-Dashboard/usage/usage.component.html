@@ -18,6 +18,9 @@
         </div>
         <h2 class="spinner">{{error}}</h2>
         <h3 style="margin-top: 20px; color: #cd0000; text-align: center;" *ngIf="errMsg != null">{{errMsg}}</h3>
-        <canvas id="payChart" #payChart></canvas>
+       <div class="live-chart">
+            <canvas id="payChart" #payChart></canvas>
+       </div>
+        
     </div>
 </div>

@@ -494,6 +494,16 @@ p strong,p b{
 .pos_rel{
   position: relative;
 }
+.custom-btn{
+  overflow: visible !important;
+}
+.custom-btn .mat-sort-header-button{
+  background: none !important;
+  box-shadow: none !important;
+  margin: 0 0 0 15px !important;
+  border: none !important;
+}
+
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;

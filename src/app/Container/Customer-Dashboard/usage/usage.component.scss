@@ -17,8 +17,11 @@
 
 .Option-button {
     position: absolute;
+    top: 46%;
+    left: 15px;
     button {
         font-size: 30px;
+        line-height: 0;
     }
 }
 

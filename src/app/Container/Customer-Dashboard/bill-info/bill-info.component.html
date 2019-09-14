@@ -29,7 +29,7 @@
                 <mat-cell *matCellDef="let element" innerHTML="{{ element.bill_no | highlight : search}}"> {{element.bill_no}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="bill_date">
-                <mat-header-cell *matHeaderCellDef mat-sort-header> Bill Date </mat-header-cell>
+                <mat-header-cell class="custom-btn" *matHeaderCellDef mat-sort-header> Bill Date </mat-header-cell>
                 <mat-cell *matCellDef="let element" innerHTML="{{ element.bill_date | highlight : search}}"> {{element.bill_date}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="service_start">
@@ -41,11 +41,11 @@
                 <mat-cell *matCellDef="let element" innerHTML="{{ element.service_end | highlight : search}}"> {{element.service_end }} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="kh_qty">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Usage Qty</mat-header-cell>
+                <mat-header-cell class="custom-btn" *matHeaderCellDef mat-sort-header>Usage Qty</mat-header-cell>
                 <mat-cell *matCellDef="let element" innerHTML="{{ element.kh_qty | highlight : search}}"> {{element.kh_qty}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="curr_amount">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Current Amount</mat-header-cell>
+                <mat-header-cell class="custom-btn" *matHeaderCellDef mat-sort-header>Current Amount</mat-header-cell>
                 <mat-cell *matCellDef="let element" innerHTML="{{ element.curr_amount | highlight : search}}"> {{element.curr_amount | currency:"CAD":"symbol-narrow"}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="due_date">
