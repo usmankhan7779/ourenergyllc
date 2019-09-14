@@ -42,6 +42,7 @@ export class UsageComponent implements OnInit {
         let paychart = this.chars.nativeElement;
 
         let usageData = {
+          width: '1000px',
           type: 'line',
           label: 'Usage',
           data: usages,
