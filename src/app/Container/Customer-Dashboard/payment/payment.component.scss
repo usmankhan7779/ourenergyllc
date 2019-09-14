@@ -63,7 +63,7 @@
     
     .pay-now-heading {
         margin-bottom: 15px;
-        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        box-shadow: 0 0 10px #ccc !important;
         p {
             color: #494949;
             font-weight: bold;
@@ -80,7 +80,7 @@
     }
     
     .pay-now-main {
-        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        box-shadow: 0 0 10px #ccc !important;
         mat-card-header mat-card-title {
             font-size: 20px;
             font-weight: bold;
@@ -93,7 +93,7 @@
             flex-wrap: wrap
         }
         button {
-            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+            box-shadow: 0 0 10px #ccc !important;
         }
         i {
             font-size: 32px;

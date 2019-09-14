@@ -274,7 +274,6 @@
         font-weight: 500;
         font-size: 14px;
         color: #333;
-        text-align: justify;
     }
 }
 
@@ -282,7 +281,18 @@
     font-size: 16px;
     font-weight: bold;
 }
-
+.s_noti_Date{
+  color: #c00;
+}
+.s_noti_img{
+  width: 60px;
+}
+.s_noti_msg{
+  padding: 5px;
+}
+.s_noti_close{
+  width: 30px;
+}
 @media only screen and (max-width: 1188px) {
     .headerr {
         .icon {

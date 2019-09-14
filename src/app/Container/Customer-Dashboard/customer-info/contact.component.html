@@ -158,15 +158,11 @@
                         <!-- <mat-card-title>General Information</mat-card-title> -->
                         <mat-card-title>Help</mat-card-title>
                     </mat-card-header>
-                    <mat-card-content style="display:flex;flex-direction:row;">
-                        <mat-list>
-                            <mat-list-item>
-                                <button style="font-weight: bold; font-size: 16px;" (click)="FQADialogOpen()" >Frequently Asked Questions</button>
-                            </mat-list-item>
-                            <mat-list-item>
-                                <button style="font-weight: bold; font-size: 16px;" (click)="billDialogOpen()" > Undertand Your Bill </button>
-                            </mat-list-item>
-                        </mat-list>
+                    <mat-card-content style="display:flex;flex-direction:column;align-items:start;">
+                                <button  (click)="billDialogOpen()" > Undertand Your Bill </button>
+                                <button (click)="FQADialogOpen()" >
+                                    Frequently Asked Questions
+                                  </button>
                     </mat-card-content>
                 </div>
             </div>

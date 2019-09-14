@@ -1,5 +1,5 @@
 .CustomerInfo {
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    box-shadow: 0 0 10px #ccc !important;
 }
 
 .mat-list .mat-list-item {
@@ -53,7 +53,7 @@
     background-color: #fff;
     text-align: center;
     padding: 0 0 24px;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 10px #ccc;
     label {
         background-color: #fff;
     }
@@ -270,8 +270,9 @@ i {
 }
 
 .example-card {
+    margin-top:20px;
     flex-grow: 1;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    box-shadow: 0 0 10px #ccc !important;
     mat-card-title {
         font-weight: bold;
         font-size: 20px;
@@ -280,14 +281,14 @@ i {
     .mat-card-content {
         margin-bottom: 0px !important;
     }
-    button {
-        background-color: #000;
-        border-radius: 25px;
-        font-size: 18px;
-        padding: 0px 30px;
-        font-weight: bold;
-        color: #fff;
-    }
+    // button {
+    //     background-color: #000;
+    //     border-radius: 25px;
+    //     font-size: 18px;
+    //     padding: 0px 30px;
+    //     font-weight: bold;
+    //     color: #fff;
+    // }
     mat-form-field {
         font-size: 16px;
         font-weight: bold;
@@ -335,7 +336,7 @@ mat-panel-title {
         width: 100%;
     }
     .image-border {
-        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 0 10px #ccc;
     }
 }
 
@@ -388,7 +389,7 @@ mat-panel-title {
         margin: 10px;
         flex-direction: row;
         padding: 10px;
-        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 0 10px #ccc;
         .infoBox {
             display: flex;
             flex-direction: row;
@@ -450,4 +451,8 @@ mat-panel-title {
             }
         }
     }
+}
+.btn{
+  border: none !important;
+  box-shadow: none;
 }
