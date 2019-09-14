@@ -405,104 +405,106 @@
 </section>-->
 <!-- ............................................ -->
 <section class="main_banner">
-    <div class="download-here">
+  <div class="download-here">
     <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer"
-    target="_blank">
-    <img src="../../assets/img/Adroid-Badge.png">
+      target="_blank">
+      <img src="../../assets/img/Adroid-Badge.png">
     </a>
     <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
-    <img src="../../assets/img/IOS-Badge.png">
+      <img src="../../assets/img/IOS-Badge.png">
     </a>
-    </div>
-    <div class="promo_img_div">
+  </div>
+  <div class="promo_img_div">
     <div class="zip_promo">
-    <h3 class="heading_s">Saving <br> on Energy <br>Made Easy </h3>
-    <div class="form-home">
-    <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate>
-    <div class="card">
-    <div class="clearfix mt-5">
-    <div class="col-md-6 col-sm-6">
-    <div class="form-group">
-    <mat-form-field>
-    <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip name="zipCode" maxlength="5" />
-    <mat-error *ngIf="zip_code.hasError('pattern')">
-    Invalid Zip Code
-    </mat-error>
-    <mat-error *ngIf="zip_code.hasError('required')">
-    Zip Code is required
-    </mat-error>
-    </mat-form-field>
-    </div>
-    </div>
-    <div class="col-md-6 col-sm-6">
-    <div class="form-group">
-    <mat-form-field>
-    <input matInput placeholder="Promo Code" name=promo [(ngModel)]="promoCode" />
-    </mat-form-field>
-    </div>
-    </div>
-    </div>
-    <div class="clearfix">
-    <div class="form-group text-center">
-    <button type="submit" class="btn btn-rose blue-btn">Lets find a plan to fit your needs</button>
-    </div>
-    </div>
-    </div>
-    </form>
-    </div>
+      <h3 class="heading_s">Saving <br> on Energy <br>Made Easy </h3>
+      <div class="form-home">
+        <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate>
+          <div class="card">
+            <div class="clearfix mt-5">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip
+                      name="zipCode" maxlength="5" />
+                    <mat-error *ngIf="zip_code.hasError('pattern')">
+                      Invalid Zip Code
+                    </mat-error>
+                    <mat-error *ngIf="zip_code.hasError('required')">
+                      Zip Code is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <mat-form-field>
+                    <input matInput placeholder="Promo Code" name=promo [(ngModel)]="promoCode" />
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix">
+              <div class="form-group text-center">
+                <button type="submit" class="btn btn-rose blue-btn">Lets find a plan to fit your needs</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="main_img">
-    <img src="../../../assets/img/home-bg-04.png" class="img-responsive" alt="">
+      <img src="../../../assets/img/home-bg-04.png" class="img-responsive" alt="">
     </div>
-    </div>
-   </section>
-   <section class="four_Steps">
-    <h3 class="heading_s"> Choose the plan that’s right for you</h3>
-    <div class="search-result">
+  </div>
+</section>
+<section class="four_Steps">
+  <h3 class="heading_s"> Choose the plan that’s right for you</h3>
+  <div class="search-result">
     <div class="result-box" *ngFor="let value of products;index as i;">
-    <div *ngIf="i<3">
-    <div class="search-plan">
-    <h3 class="productName"> 
-    {{value.product_name}}
-    </h3>
-    <div class="main">
-    <div>
-    <div class="text-center inner price-box">
-    <div>
-    <h3>{{value.tariff_2000}}¢</h3>
-    <b>per kWh</b>
-    </div>
-    <!-- <p class="tag-line">
+      <div *ngIf="i<3">
+        <div class="search-plan">
+          <h3 class="productName">
+            {{value.product_name}}
+          </h3>
+          <div class="main">
+            <div>
+              <div class="text-center inner price-box">
+                <div>
+                  <h3>{{value.tariff_2000}}¢</h3>
+                  <b>per kWh</b>
+                </div>
+                <!-- <p class="tag-line">
     {{value.product_info}}
     </p> -->
-    </div>
-    </div>
-    <div class="bar"></div>
-    <div class="inner">
-    <div class="rateSheet">
-    <div>
-    <!-- <span>Contract Term: 6 months</span><br>
+              </div>
+            </div>
+            <div class="bar"></div>
+            <div class="inner">
+              <div class="rateSheet">
+                <div>
+                  <!-- <span>Contract Term: 6 months</span><br>
     <span>Termination Fee: $50</span><br>
     <span>Utility: OurEnergy</span> -->
-    <span >Contract Term: {{value.display_term}} months</span>
-    <span >Termination Fee: ${{value.display_termination_fee}}</span>
-    <span >Utility: {{value.vendor_company}}</span>
-    <span>Average Rate at 2000 kWhs</span>
-    </div>
-    </div>
-    </div>
-    
-    <div class="text-center inner links-list">
-    <a matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
-    <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-    <a matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
-    
-    <button class="pink_btn enroll-btn" (click)="enroll(i)">Enroll Now</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    
+                  <span>Contract Term: {{value.display_term}} months</span>
+                  <span>Termination Fee: ${{value.display_termination_fee}}</span>
+                  <span>Utility: {{value.vendor_company}}</span>
+                  <span>Average Rate at 2000 kWhs</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center inner links-list">
+              <a matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
+              <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
+                target="_blank"><b>YRAC</b></a>
+              <a matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
+
+              <button class="pink_btn enroll-btn" (click)="enroll(i)">Enroll Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- <div class="result-box">
     <div>
@@ -593,72 +595,73 @@
     </div>
     
     </div> -->
-    </div>
-   
-    <div class="faqs_home ">
-        <h3 class="heading_s">Frequently Asked Questions</h3>
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading collapsed" aria-expanded="ture" data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                  <h4 class="panel-title p__1">
-                      <!-- <i  (click)="hide = !hide" class=" {{hide ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
-                      <!-- <i class="tglClass fa fa-plus-square"></i> -->
-                    <a> Who is Our Energy?</a>
-                    <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
-                  </h4>
-                </div>
-                <div id="collapse1"  class="panel-collapse collapse in">
-                  <div class="panel-body">
-                    <p>OUR Energy is a Retail Electric Provider (REP) which is Licensed to operate in Texas in the
-                      Retail Energy Market, we are in process of expanding our operations in Retail Electricity and Gas
-                      Markets in New York and Illinois.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="panel panel-default">
-                  <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                    <h4 class="panel-title">
-                        <!-- <i  (click)="hide1 = !hide1" class=" {{hide1 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
-                      <a> Is OUR Energy certified as a Retail Electricity Provider? </a>
-  
-                    </h4>
-                  </div>
-                  <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>Yes, the Public Utility Commission for the State of Texas puts every REP through a rigid and
-                        strict process of certification. OUR Energy has met the requirements for financial, managerial and
-                        technical abilities for the privilege
-                        of selling energy in Texas (PUC Certificate Number 10170).</p>
-  
-                    </div>
-                  </div>
-                </div>
-                <div class="panel panel-default">
-                  <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                    <h4 class="panel-title">
-                        <!-- <i  (click)="hide2 = !hide2" class=" {{hide2 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
-                      <a>Why would I choose OUR Energy? </a>
-  
-                    </h4>
-                  </div>
-                  <div id="collapse4" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      <p>Honesty, Integrity and Loyalty. As a Retail Electric provider we will make sure that you THE
-                        Customer is treated as a part of OUR Energy Family, we will make sure your issues or concerns are
-                        addressed and as much as it is possible
-                        it should always be a one call resolution.</p>
-                    </div>
-                  </div>
-                </div>
-          <div class="row mg-0">
-            <div class="col-sm-12 text-right">
-              <button class="btn btn-rose" routerLink="/help">
-                View More
-              </button>
-            </div>
+  </div>
+
+  <div class="faqs_home ">
+    <h3 class="heading_s">Frequently Asked Questions</h3>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading collapsed" aria-expanded="ture" data-toggle="collapse" data-parent="#accordion"
+          href="#collapse1">
+          <h4 class="panel-title p__1">
+            <!-- <i  (click)="hide = !hide" class=" {{hide ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
+            <!-- <i class="tglClass fa fa-plus-square"></i> -->
+            <a> Who is Our Energy?</a>
+            <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <p>OUR Energy is a Retail Electric Provider (REP) which is Licensed to operate in Texas in the
+              Retail Energy Market, we are in process of expanding our operations in Retail Electricity and Gas
+              Markets in New York and Illinois.</p>
           </div>
         </div>
       </div>
+      <div class="panel panel-default">
+        <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+          <h4 class="panel-title">
+            <!-- <i  (click)="hide1 = !hide1" class=" {{hide1 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
+            <a> Is OUR Energy certified as a Retail Electricity Provider? </a>
+
+          </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Yes, the Public Utility Commission for the State of Texas puts every REP through a rigid and
+              strict process of certification. OUR Energy has met the requirements for financial, managerial and
+              technical abilities for the privilege
+              of selling energy in Texas (PUC Certificate Number 10170).</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+          <h4 class="panel-title">
+            <!-- <i  (click)="hide2 = !hide2" class=" {{hide2 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
+            <a>Why would I choose OUR Energy? </a>
+
+          </h4>
+        </div>
+        <div id="collapse4" class="panel-collapse collapse">
+          <div class="panel-body">
+            <p>Honesty, Integrity and Loyalty. As a Retail Electric provider we will make sure that you THE
+              Customer is treated as a part of OUR Energy Family, we will make sure your issues or concerns are
+              addressed and as much as it is possible
+              it should always be a one call resolution.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row mg-0">
+        <div class="col-sm-12 text-right">
+          <button class="btn btn-rose" routerLink="/help">
+            View More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- <section class="three-blog container">
     <h3 class="heading_s">Blog Feeds</h3>

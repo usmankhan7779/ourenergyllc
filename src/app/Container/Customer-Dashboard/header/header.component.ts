@@ -154,6 +154,7 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('dashboard_response');
     localStorage.removeItem('bill-details');
     localStorage.removeItem('login_res');
+    localStorage.removeItem('username');
     this.router.navigate(['/login']);
   }
 }
