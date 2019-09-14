@@ -459,8 +459,8 @@
    <section class="four_Steps">
     <h3 class="heading_s"> Choose the plan that’s right for you</h3>
     <div class="search-result">
-    <div class="result-box" *ngFor="let value of products;index as i;">
-    <div *ngIf="i<3">
+    <div class="result-box" *ngFor="let value of products | slice:0:3 ">
+    
     <div class="search-plan">
     <h3 class="productName"> 
     {{value.product_name}}
@@ -501,7 +501,7 @@
     </div>
     </div>
     </div>
-    </div>
+    
     
     </div>
     <!-- <div class="result-box">
