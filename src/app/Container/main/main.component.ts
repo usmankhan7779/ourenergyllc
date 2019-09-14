@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, ElementRef , Output , EventEmitter } from '@angular/core';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroupDirective, NgForm, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MainService, PromoCodeService } from '../../Container/Store/Services';
@@ -1069,16 +1069,8 @@ export class EstablishContractsComponent implements OnInit {
   styleUrls: ['./main.component.scss']
 })
 export class HelpComponent implements OnInit {
-  hide = true;
-  hide1 = true;
-  hide2 = true;
-  hide3 = true;
-  hide4 = true;
-  hide5 = true;
-  hide6 = true;
-  hide7 = true;
   @ViewChild('help') froms: ElementRef
-
+  featureSelected = 'firstDiv';
   tabIndex = 0
   tdsps = []
   myForm = new FormGroup({
@@ -1165,5 +1157,9 @@ export class HelpComponent implements OnInit {
       this.OurPlan = true
       this.OurPlans = false
     }
+  }
+
+  toggle(selectedSection : string) {
+    this.featureSelected = selectedSection;
   }
 }

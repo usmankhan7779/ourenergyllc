@@ -81,7 +81,7 @@ body {
 }
 
 .mat-header-row {
-    background-color: #000;
+    background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%) !important;
     text-align: center;
     mat-header-cell {
         color: #fff;
@@ -488,7 +488,12 @@ p strong,p b{
 .s_pp_term a:nth-child(2){
   margin-left:10px;
 }
-
+.mat-paginator-range-actions button{ 
+  box-shadow: none !important;
+}
+.pos_rel{
+  position: relative;
+}
 .custom-btn{
   overflow: visible !important;
 }

@@ -1,4 +1,5 @@
-<div class="col mat-elevation-z5">
+<div class="col mat-elevation-z5"  *ngFor="let info of custInfo">
+    <h2 class="dashboard_username">    {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}} </h2>
     <div class="infoBox">
         <table class="table">
             <thead>
@@ -6,14 +7,14 @@
                 <th >Name</th>
                 <th >Premise ID</th>
                 <th >Account</th>
-                <th >Amount Due</th>
+                <!-- <th >Amount Due</th>
                 <th >Due Date</th>
                 <th >Service Period</th>
-                <th >Address</th>
+                <th >Address</th> -->
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let info of custInfo">
+              <tr>
                 <td *ngIf="info.company_name == ''"> 
                     {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}}
                
@@ -23,7 +24,7 @@
                 </td>
                 <td> {{info.premise_id}}</td>
                 <td> {{info.cust_id}}</td>
-                <td> {{(info.due_amount.toString())[0] == '-' ? '-$' + info.due_amount.toString().slice(1) : '$' + info.due_amount}}
+                <!-- <td> {{(info.due_amount.toString())[0] == '-' ? '-$' + info.due_amount.toString().slice(1) : '$' + info.due_amount}}
                 </td>
                 <td>
                     {{info.due_date}}
@@ -33,7 +34,7 @@
                 </td>
                 <td>
                     {{info.premise_address2}} {{info.premise_city}}, {{info.premise_state }} {{info.premise_zip}}
-                </td>
+                </td> -->
               </tr>
             </tbody>
           </table>

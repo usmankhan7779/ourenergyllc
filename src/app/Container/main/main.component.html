@@ -455,25 +455,25 @@
     <div class="main_img">
       <img src="../../../assets/img/home-bg-04.png" class="img-responsive" alt="">
     </div>
-  </div>
-</section>
-<section class="four_Steps">
-  <h3 class="heading_s"> Choose the plan that’s right for you</h3>
-  <div class="search-result">
-    <div class="result-box" *ngFor="let value of products;index as i;">
-      <div *ngIf="i<3">
-        <div class="search-plan">
-          <h3 class="productName">
-            {{value.product_name}}
-          </h3>
-          <div class="main">
-            <div>
-              <div class="text-center inner price-box">
-                <div>
-                  <h3>{{value.tariff_2000}}¢</h3>
-                  <b>per kWh</b>
-                </div>
-                <!-- <p class="tag-line">
+    </div>
+   </section>
+   <section class="four_Steps">
+    <h3 class="heading_s"> Choose the plan that’s right for you</h3>
+    <div class="search-result">
+    <div class="result-box" *ngFor="let value of products | slice:0:3 ">
+    
+    <div class="search-plan">
+    <h3 class="productName"> 
+    {{value.product_name}}
+    </h3>
+    <div class="main">
+    <div>
+    <div class="text-center inner price-box">
+    <div>
+    <h3>{{value.tariff_2000}}¢</h3>
+    <b>per kWh</b>
+    </div>
+    <!-- <p class="tag-line">
     {{value.product_info}}
     </p> -->
               </div>
@@ -485,26 +485,25 @@
                   <!-- <span>Contract Term: 6 months</span><br>
     <span>Termination Fee: $50</span><br>
     <span>Utility: OurEnergy</span> -->
-                  <span>Contract Term: {{value.display_term}} months</span>
-                  <span>Termination Fee: ${{value.display_termination_fee}}</span>
-                  <span>Utility: {{value.vendor_company}}</span>
-                  <span>Average Rate at 2000 kWhs</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="text-center inner links-list">
-              <a matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
-              <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
-                target="_blank"><b>YRAC</b></a>
-              <a matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
-
-              <button class="pink_btn enroll-btn" (click)="enroll(i)">Enroll Now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <span >Contract Term: {{value.display_term}} months</span>
+    <span >Termination Fee: ${{value.display_termination_fee}}</span>
+    <span >Utility: {{value.vendor_company}}</span>
+    <span>Average Rate at 2000 kWhs</span>
+    </div>
+    </div>
+    </div>
+    
+    <div class="text-center inner links-list">
+    <a matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
+    <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
+    <a matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
+    
+    <button class="pink_btn enroll-btn" (click)="enroll(i)">Enroll Now</button>
+    </div>
+    </div>
+    </div>
+    
+    
     </div>
     <!-- <div class="result-box">
     <div>
