@@ -11,29 +11,6 @@ html {
 *:focus {
     outline: none;
 }
-
-.faqs_home .panel-heading:after {
-  font-family: "FontAwesome";
-  content: "\f068 ";
-  position: absolute;
-  left: 20px;
-  font-size: 16px;
-  font-weight: 400;
-  top: 50%;
-  line-height: 27px;
-  margin-top: -10px;
-  color: #fff;
-  border-radius: 5px;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #ff4270 ;
-  }
-.faqs_home .panel-heading.collapsed:after {
-  content: "\f067";
-  background-color: #273c61;
-}
 .mat-radio-label {
     white-space: normal !important;
 }
@@ -228,10 +205,10 @@ mark {
     font-size: 13px !important;
     margin: 0;
 }
-.checkbox .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar{
+ .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar{
   background-color: #ff4270 !important; 
 }
-.checkbox .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+ .mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
   background-color: #a91f73 !important;
 }
 .filter-bar .heading{
@@ -507,6 +484,73 @@ p strong,p b{
   overflow: hidden;
   padding: 10px;
 }
+// faqs
+
+.faqs_home{
+  width: 100%;
+  padding: 50px 20px 20px;
+  #accordion{
+    max-width: 1050px;
+    margin: 0 auto;
+    .panel-default{
+      border: none;
+      box-shadow: none;
+      border-bottom: 1px solid #e8e8f6;
+      border-radius: 0;
+        .panel-heading{
+          background: #fff;
+          padding: 30px;
+          cursor: pointer;
+          .panel-title{
+          color: #959fac;
+          font-size: 18px;
+          a{
+            font-weight: 300;
+            padding-left: 30px;
+          }
+          i{
+            color: #273c61;
+            font-size: 18px;
+            font-weight: 300;
+          }
+          }
+      }
+      .panel-collapse{
+      .panel-body{
+        padding-left: 80px;
+        p{
+        font-size: 13px;
+        line-height: 24px;
+        color: #959fac;
+        }
+      }
+    }
+    }
+  }
+  }
+.faqs_home .panel-heading:after {
+  font-family: "FontAwesome";
+  content: "\f068 ";
+  position: absolute;
+  left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  top: 50%;
+  line-height: 27px;
+  margin-top: -10px;
+  color: #fff;
+  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ff4270 ;
+  }
+.faqs_home .panel-heading.collapsed:after {
+  content: "\f067";
+  background-color: #273c61;
+}
+
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;

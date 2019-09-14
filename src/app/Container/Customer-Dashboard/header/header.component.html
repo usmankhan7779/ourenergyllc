@@ -96,16 +96,23 @@
                         <div id="notiTrue">
                             <div class="notification">
                                 <div [ngStyle]="{'background-color': i.read==false ? 'rgba(121, 121, 121,0.2)' : 'transparent'}" class="row">
-                                    <span (click)="ReadNoti(i)" style="text-align:center;padding-bottom:60px" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 ">
+
+                                    <div (click)="ReadNoti(i)" style="text-align:center;padding-bottom:60px" class="s_noti_img">
                                         <img *ngIf="i.type=='Payment'" src="../../../../assets/img/Icons/Payments.png">
                                         <img *ngIf="i.type=='Bill'" src="../../../../assets/img/Icons/Bills.png">
-                                    </span>
-                                    <span (click)="ReadNoti(i)" class="col-lg-7 col-md-7 col-sm-7 col-xs-7">{{i.text}}</span>
-                                    <span (click)="DeleteNoti(i)" (click)="$event.stopPropagation()" class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                        <mat-icon matTooltip="Delete" >close</mat-icon>
-                                    </span>
+                                    </div>
+                                    <div class="s_noti_msg">
+                                        <span (click)="ReadNoti(i)" >{{i.text}}
+                                          </span>
+                                    </div>
+                                    <div class="s_noti_close">
+                                        <span (click)="DeleteNoti(i)" (click)="$event.stopPropagation()" >
+                                            <mat-icon matTooltip="Delete" >close</mat-icon>
+                                        </span>
+                                    </div>
+                                    
                                 </div>
-                                <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 " style="color:red">
+                                <div class=" s_noti_Date">
                                     {{i.date}}
                                 </div>
                                 <span style="border:1px solid rgb(211, 211, 211); width: 100%;margin: auto;margin-top: 5%;margin-bottom: 5%;"></span>
