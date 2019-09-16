@@ -550,7 +550,9 @@ p strong,p b{
   content: "\f067";
   background-color: #273c61;
 }
-
+.table>tbody>tr>td{
+  word-break: break-word;
+}
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
@@ -577,4 +579,75 @@ p strong,p b{
   .result-box{
     margin-bottom: 0;
   }
+  .faqs_home .panel-heading:after{
+    left:-5px !important;
+  }
+  .faqs_home #accordion .panel-default .panel-heading {
+    padding: 20px 30px !important;
+  }
+
 }
+@media only screen and(max-width:540px){
+  .background .back-image{
+    width: 96% !important;
+  }
+  .u_flex{
+    flex-direction: column !important;
+  }
+  .headerr img {
+    width: 100% !important;
+    object-fit: contain;
+  }
+  .headerr i {
+    font-size: 20px !important;
+  }
+  .headerr .iconsss {
+    font-size: 20px !important;
+  }
+  .rightSide{
+    align-items: center;
+  }
+  .rightSide .icon .badge {
+    right: 18px;
+  }
+  .logo_wrapp img{
+    width: 100%;
+    max-width: 120px;
+    object-fit: contain;
+  }
+  .eastablish-contact .mat-card {
+    padding: 10px !important;
+  }
+  .contacts h2{
+    font-size: 22px !important;
+    margin: 15px 0px !important;
+  }
+  .contacts h3{
+    font-size: 18px !important;
+  }
+  .contacts p{
+    color: #616161 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    font-weight: normal !important;
+  }
+  .tabs-bar i {
+    font-size: 16px !important;
+    width: 20px !important;
+    margin-right: 10px !important;
+  }
+  .tabs-bar .mat-form-field {
+    font-size: 12px !important;
+    padding: 0 !important;
+  }
+  .tabs-bar .cancel-padding .mat-form-field-wrapper {
+    margin-left: 0 !important;
+  }
+  .tabs-bar input.mat-input-element{
+    font-size: 11px !important;
+  }
+  .contacts h4 {
+    font-size: 14px !important;
+  }
+}
+

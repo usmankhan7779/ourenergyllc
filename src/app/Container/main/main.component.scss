@@ -1965,11 +1965,7 @@ h3 {
 }
 .bus-banner{
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -ms-flex-pack: distribute;
+    flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     max-width: 1270px;
@@ -3972,4 +3968,45 @@ max-width: 440px;
   .heading_s{
     padding: 20px 0;
   }
+  .bus-banner{
+    flex-direction: column !important;
+  }
+  .heading_s {
+    text-align: center !important;
+  }
+  .four_Steps{
+    background-image: none !important;
+    background-position: inherit !important;
+    background-repeat: no-repeat !important;
+    background-size: auto !important;
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+    padding: 20px !important;
+  }
+  .about-4 p {
+    text-align: left !important;
+    font-size: 13px !important;
+    font-weight: 300 !important;
+  }
+  .timeline > li > .timeline-badge{
+    left: 0 !important;
+  }
+  .about_form .brokersforms {
+    padding: 10px !important;
+  }
+  .timeline > li > .timeline-badge{
+    left: 10px !important;
+  }
+  .about-4 p {
+    text-align: left !important;
+    font-size: 14px !important;
+  }
+  .s_reduce_b_cost {
+    padding: 0 10px !important;
+  }
+  .commercialforms{
+    margin: 0 auto 0 !important;
+    width: 95% !important;
+  }
+  
 }

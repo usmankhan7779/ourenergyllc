@@ -234,9 +234,7 @@
         color: #7c7c7c;
         cursor: pointer;
     }
-    .topnav {
-        display: unset;
-    }
+
     .topnav a {
         display: none;
     }
@@ -275,6 +273,9 @@
     .mainheader .mainnav {
         display: none;
     }
+    .header .inner_header .main-listt{
+      padding: 14px 0 !important;
+    }
 }
 
 p {
@@ -292,15 +293,15 @@ p {
   }
   .topnav {
     position: fixed;
-    top: 66px;
+    top: 63px;
     right: 0;
-    width: 230px;
+    width: 100%;
     z-index: 9;
     box-shadow: 0 0 5px #ccc;
+    display: unset;
   }
-  
   .topnav.responsive a {
-      padding-left: 10px;
+      padding: 10px;
   }
   .nav_right{
     display: none;
@@ -308,4 +309,8 @@ p {
   .header .inner_header{
     justify-content: space-between;
   }
+  #myTopnav a:hover{
+    background-color: #ff4270 !important;
+  }
+
 }
