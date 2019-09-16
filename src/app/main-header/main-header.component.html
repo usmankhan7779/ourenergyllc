@@ -125,14 +125,18 @@
             Sign Up
           </mat-list-item>
         </a> -->
-        <button class="sMyAccount divide_login" type="button" routerLink="/login">
-          <mat-list-item *ngIf="!show" class="main-listt  btn" role="listitem">
+        <button class="sMyAccount divide_login"*ngIf="!show"  type="button" routerLink="/dashboard">
+          My Account
+        </button>
+        <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/login">
+          My Account
+        </button>
+        <!-- <mat-list-item *ngIf="!show" class="main-listt  btn" role="listitem">
           {{username}}  
           </mat-list-item>
           <mat-list-item *ngIf="show" class="main-listt  btn" role="listitem">
               {{username}} 
-            </mat-list-item>
-        </button>
+            </mat-list-item> -->
       </mat-list>
     </div>
     <div class="Toggle">
