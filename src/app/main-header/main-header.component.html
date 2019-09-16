@@ -126,10 +126,14 @@
           </mat-list-item>
         </a> -->
         <button class="sMyAccount divide_login"*ngIf="!show"  type="button" routerLink="/dashboard">
-          My Account
+          <mat-list-item   class="main-listt  btn" role="listitem">
+           My Account
+          </mat-list-item>  
         </button>
         <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/login">
-          My Account
+          <mat-list-item   class="main-listt  btn" role="listitem">
+            My Account
+           </mat-list-item> 
         </button>
         <!-- <mat-list-item *ngIf="!show" class="main-listt  btn" role="listitem">
           {{username}}  
