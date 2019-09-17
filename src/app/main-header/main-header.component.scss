@@ -212,6 +212,32 @@
   border: none !important;
   border-radius: 8px;
 }
+#myTopnav a{
+  position: relative;
+}
+#myTopnav a:hover::after,#myTopnav a:active::after{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: #ff4270;
+  width: 100%;
+}
+#myTopnav .Active::after{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  content: "";
+  background: #ff4270;
+  width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+.s_prof_img{
+  margin-right: 10px;
+}
 @media only screen and (max-width: 991px) {
     .tempHeader {
         height: 43px;
@@ -277,6 +303,7 @@
     }
     .sMyAccount{
       padding: 0 !important;
+     
     }
 }
 
@@ -290,17 +317,16 @@ p {
   .header .inner_header .nav{
     display: none;
   }
-  .mat-list {
-    background: #fff;
-  }
   .topnav {
     position: fixed;
     top: 63px;
     right: 0;
     width: 100%;
     z-index: 9;
+    background: #fff;
+    height: 100vh;
     box-shadow: 0 0 5px #ccc;
-    display: unset;
+    height: 100vh;
   }
   .topnav.responsive a {
       padding: 10px;
@@ -314,5 +340,11 @@ p {
   #myTopnav a:hover{
     background-color: #ff4270 !important;
   }
-
+  .topnav a {
+    display: block;
+    padding: 10px 30px;
+  }
+  .sMyAccount {
+    margin-left: 38px;
+  }
 }

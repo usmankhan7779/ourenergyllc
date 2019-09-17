@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { QuickPayComponent } from '../login/login.component'
+import { QuickPayComponent } from '../login/login.component';
 import { HttpClient } from '@angular/common/http';
 declare var $: any;
 @Component({
@@ -70,17 +70,12 @@ export class MainHeaderComponent implements OnInit {
       this.http.get('https://devbackend.wattcrm.com/portal/public-news-from-ourenergy/' ).subscribe(Res => {
         console.log(Res['message']);
 this.data = Res['message'];
-      
-        
       });
-     
       }
   show_sidebar() {
-    $('#myTopnav').show(900);
+        $('#myTopnav').toggle('slow');
   }
   close_sidebar() {
-    $('#myTopnav a').click(function(){
-      $('#myTopnav').hide();
-    });
+      $('#myTopnav').hide('slow');
   }
 }
