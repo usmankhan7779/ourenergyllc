@@ -209,7 +209,6 @@
 }
 .sMyAccount{
   padding: 0;
-  background: none;
   border: none !important;
   border-radius: 8px;
 }
@@ -275,6 +274,9 @@
     }
     .header .inner_header .main-listt{
       padding: 14px 0 !important;
+    }
+    .sMyAccount{
+      padding: 0 !important;
     }
 }
 
