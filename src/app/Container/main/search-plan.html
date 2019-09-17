@@ -1,98 +1,102 @@
 <div *ngIf="!showPlans && !showTdsp" class="main-content">
-        <div class="container">
-            <section class="residential-main">
-                <div class="heading">
-                    <h1>Search Your Plan</h1>
-                </div>
-                <form style="margin-top: 35px; margin-bottom: 15px !important;" class="plan-main mat-elevation-z8">
-                    <mat-form-field>
-                        <mat-label>Zip Code</mat-label>
-                        <input matInput placeholder="Please Enter Zip Code" #input maxlength="5" [formControl]="zip_code" name="zip" [(ngModel)]='ZipCode'>
-                        <mat-icon matSuffix>place</mat-icon>
-                        <mat-error *ngIf="zip_code.hasError('pattern')">
-                            Invalid Zip Code
-                        </mat-error>
-                        <mat-error *ngIf="zip_code.hasError('required')">
-                            Zip Code is required
-                        </mat-error>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <mat-label>Promo Code</mat-label>
-                        <input matInput placeholder="Please Enter Promo Code" name="promo" [(ngModel)]="promoCode">
-                        <mat-icon matSuffix>my_location</mat-icon>
-                    </mat-form-field>
-                    <button  [disabled]="submitBtnDisabled" style="width:300px;" (click)="submit()">Search Plans</button>
-                </form>
-            </section>
-        </div>
-    </div>
-    <div class="showError" *ngIf="showError">
-        <mat-error style="margin-bottom: 25px"><b><h4>{{error}}</h4></b></mat-error>
-    </div>
-    <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
-        <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
-    </div>
-    <div *ngIf="!showPlans && !showTdsp" style="margin-top:150px"></div>
-    <div *ngIf="showPlans">
-        <div class="container residential-main">
+    <div class="container">
+        <section class="residential-main">
             <div class="heading">
-                <h1 class="text-center">Select your Energy Plan</h1>
-                <h4 style="color:#555" class="text-center">Based on your Zip Code, here are the plans we offer.</h4>
+                <h1>Search Your Plan</h1>
             </div>
+            <form style="margin-top: 35px; margin-bottom: 15px !important;" class="plan-main mat-elevation-z8">
+                <mat-form-field>
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput placeholder="Please Enter Zip Code" #input maxlength="5" [formControl]="zip_code"
+                        name="zip" [(ngModel)]='ZipCode'>
+                    <mat-icon matSuffix>place</mat-icon>
+                    <mat-error *ngIf="zip_code.hasError('pattern')">
+                        Invalid Zip Code
+                    </mat-error>
+                    <mat-error *ngIf="zip_code.hasError('required')">
+                        Zip Code is required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Promo Code</mat-label>
+                    <input matInput placeholder="Please Enter Promo Code" name="promo" [(ngModel)]="promoCode">
+                    <mat-icon matSuffix>my_location</mat-icon>
+                </mat-form-field>
+                <button [disabled]="submitBtnDisabled" style="width:300px;" (click)="submit()">Search Plans</button>
+            </form>
+        </section>
+    </div>
+</div>
+<div class="showError" *ngIf="showError">
+    <mat-error style="margin-bottom: 25px"><b>
+            <h4>{{error}}</h4>
+        </b></mat-error>
+</div>
+<div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
+    <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
+</div>
+<div *ngIf="!showPlans && !showTdsp" style="margin-top:150px"></div>
+<div *ngIf="showPlans">
+    <div class="container residential-main">
+        <div class="heading">
+            <h1 class="text-center">Select your Energy Plan</h1>
+            <h4 style="color:#555" class="text-center">Based on your Zip Code, here are the plans we offer.</h4>
         </div>
-    
-        <!-- Start filter bar -->
-        <div class="container filter-bar">
-            <div class="row">
-                <div class="col-lg-4 col-md-5 col-sm-5 estimated text-center">
-                    <label class="heading">
-                        Estimated Usage
-                    </label>
-                    <mat-radio-group [(ngModel)]="estimatedUsage" class="text-center col-lg-12 col-md-12 col-sm-12 col-sm-12">
-                        <mat-radio-button color="primary" value="500">
-                            <p class="radioText">500 kWh</p>
-                        </mat-radio-button>
-                        <mat-radio-button color="primary" value="1000" >
-                            <p class="radioText">1000 kWh</p>
-                        </mat-radio-button>
-                        <mat-radio-button color="primary" value="2000" checked="true">
-                            <p class="radioText">2000 kWh</p>
-                        </mat-radio-button>
-                    </mat-radio-group>
-                </div>
-                <div class="col-lg-8 col-md-7 col-sm-7 contract-list text-center">
-                    <label class="heading">
-                        Contract Terms
-                    </label>
-                    <section class="">
-                        <mat-slide-toggle color="primary" [(ngModel)]="term1" class="">
-                            <p>36 Months</p>
-                        </mat-slide-toggle>
-                        <mat-slide-toggle color="primary" [(ngModel)]="term2" class="">
-                            <p>24 Months</p>
-                        </mat-slide-toggle>
-                        <mat-slide-toggle color="primary" [(ngModel)]="term3" class="">
-                            <p>18 Months</p>
-                        </mat-slide-toggle>
-                        <mat-slide-toggle color="primary" [(ngModel)]="term4" class="">
-                            <p>14 Months</p>
-                        </mat-slide-toggle>
-                        <mat-slide-toggle color="primary" [(ngModel)]="term5" class="">
-                            <p>12 Months</p>
-                        </mat-slide-toggle>
-                        <mat-slide-toggle color="primary" [(ngModel)]="term6" class="">
-                            <p>6 Months</p>
-                        </mat-slide-toggle>
-                        <mat-slide-toggle color="primary" [(ngModel)]="term7" class="">
-                            <p>5 Months</p>
-                        </mat-slide-toggle>
-                    </section>
-                </div>
-                <div class="col-md-12 text-center">
-                    <button  (click)="showZip()">Change Zip Code</button>
-                    <button  [disabled]="submitBtnDisabled2" (click)="filterProduct()">Apply Filters</button>
-                </div>
-                <!-- <div class="col-lg-3 col-md-3 range-select text-center">
+    </div>
+
+    <!-- Start filter bar -->
+    <div class="container filter-bar">
+        <div class="row">
+            <div class="col-lg-4 col-md-5 col-sm-5 estimated text-center">
+                <label class="heading">
+                    Estimated Usage
+                </label>
+                <mat-radio-group [(ngModel)]="estimatedUsage"
+                    class="text-center col-lg-12 col-md-12 col-sm-12 col-sm-12">
+                    <mat-radio-button color="primary" (click)="averge_500()" value="500">
+                        <p class="radioText">500 kWh</p>
+                    </mat-radio-button>
+                    <mat-radio-button color="primary"  (click)="averge_1000()" value="1000">
+                        <p class="radioText">1000 kWh</p>
+                    </mat-radio-button>
+                    <mat-radio-button color="primary"  (click)="averge_2000()" value="2000" checked="true">
+                        <p class="radioText">2000 kWh</p>
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+            <div class="col-lg-8 col-md-7 col-sm-7 contract-list text-center">
+                <label class="heading">
+                    Contract Terms
+                </label>
+                <section class="">
+                    <mat-slide-toggle color="primary"  (change)="filterProduct()"[(ngModel)]="term1" class="">
+                        <p>36 Months</p>
+                    </mat-slide-toggle>
+                    <mat-slide-toggle color="primary" (change)="filterProduct()" [(ngModel)]="term2" class="">
+                        <p>24 Months</p>
+                    </mat-slide-toggle>
+                    <mat-slide-toggle color="primary"  (change)="filterProduct()"[(ngModel)]="term3" class="">
+                        <p>18 Months</p>
+                    </mat-slide-toggle>
+                    <mat-slide-toggle color="primary" (change)="filterProduct()" [(ngModel)]="term4" class="">
+                        <p>14 Months</p>
+                    </mat-slide-toggle>
+                    <mat-slide-toggle color="primary" (change)="filterProduct()" [(ngModel)]="term5" class="">
+                        <p>12 Months</p>
+                    </mat-slide-toggle>
+                    <mat-slide-toggle color="primary" (change)="filterProduct()"  [(ngModel)]="term6" class="">
+                        <p>6 Months</p>
+                    </mat-slide-toggle>
+                    <mat-slide-toggle color="primary" (change)="filterProduct()" [(ngModel)]="term7" class="">
+                        <p>5 Months</p>
+                    </mat-slide-toggle>
+                </section>
+            </div>
+            <div class="col-md-12 text-center">
+                <button (click)="showZip()">Change Zip Code</button>
+                <button [disabled]="submitBtnDisabled2" (click)="filterProduct()">Apply Filters</button>
+            </div>
+            <!-- <div class="col-lg-3 col-md-3 range-select text-center">
                     <label class="heading">
                             Price Range
                     </label>
@@ -117,15 +121,15 @@
                         </mat-error>
                     </mat-form-field>
                 </div> -->
-                <!-- <div class="col-lg-12 text-center">
+            <!-- <div class="col-lg-12 text-center">
                         <button  (click)="showZip()">Change Zip Code</button>
                         <button  [disabled]="submitBtnDisabled2" (click)="filterProduct()">Apply Filters</button>
                 </div> -->
-            </div>
         </div>
-        <!-- End filter bar -->
-        <div class="plan-main search_plan_main">
-            <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 myCard">
+    </div>
+    <!-- End filter bar -->
+    <div class="plan-main search_plan_main">
+        <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-sm-12 myCard">
                 <br>
                 <button  (click)="showZip()">Change Zip Code</button>
                 <br>
@@ -195,29 +199,31 @@
                 <br>
                 <br>
             </div> -->
-            
-            <div class="col-md-12 col-sm-12 col-sm-12">
-                <div class="showError" *ngIf="showError2">
-                    <mat-error style="margin-bottom: 25px"><b><h4>{{error}}</h4></b></mat-error>
-                </div>
-                <div class="spinner" *ngIf="showSpinner2" style="margin-top: 30px;">
-                    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
-                </div>
-                <div *ngIf="showFilteredProducts == true" class="search-result">
-                    <div class="result-box" *ngFor="let value of products;index as i;">
-                        <div >
-                            
-                            <div class="search-plan">
-                                <h3 class="productName">{{value.product_name}}</h3>
-                                <div [ngSwitch]="estimatedUsage" class="border_bottom">
-                                    <div class="text-center inner price-box" *ngSwitchCase="500">
-                                        <div>
-                                           
-                                            <h3 >{{value.tariff_500}}¢</h3>
-                                            <b >500 kWh</b>
-                                        </div>
-                                        <!-- this code is comment bu usman khan -->
-                                        <!-- <div style="display: flex; flex-direction: row;">
+
+        <div class="col-md-12 col-sm-12 col-sm-12">
+            <div class="showError" *ngIf="showError2">
+                <mat-error style="margin-bottom: 25px"><b>
+                        <h4>{{error}}</h4>
+                    </b></mat-error>
+            </div>
+            <div class="spinner" *ngIf="showSpinner2" style="margin-top: 30px;">
+                <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+            </div>
+            <div *ngIf="showFilteredProducts == true" class="search-result">
+                <div class="result-box" *ngFor="let value of products;index as i;">
+                    <div>
+
+                        <div class="search-plan">
+                            <h3 class="productName">{{value.product_name}}</h3>
+                            <div [ngSwitch]="estimatedUsage" class="border_bottom">
+                                <div class="text-center inner price-box" *ngSwitchCase="500">
+                                    <div>
+
+                                        <h3>{{value.tariff_500}}¢</h3>
+                                        <b>per kWh</b>
+                                    </div>
+                                    <!-- this code is comment bu usman khan -->
+                                    <!-- <div style="display: flex; flex-direction: row;">
                                             <div style="flex: 1; width: 130px;">
                                                 <b style="font-size: 15px;">1000 kWh</b>
                                                 <h3 class="rs">{{value.tariff_1000}}¢</h3>
@@ -227,16 +233,16 @@
                                                 <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                             </div>
                                         </div> -->
-                                        <!-- end   -->
+                                    <!-- end   -->
+                                </div>
+                                <div class="text-center inner price-box" *ngSwitchCase="1000">
+                                    <div>
+
+                                        <h3>{{value.tariff_1000}}¢</h3>
+                                        <b>per kWh</b>
                                     </div>
-                                    <div class="text-center inner price-box" *ngSwitchCase="1000">
-                                        <div>
-                                          
-                                            <h3 >{{value.tariff_1000}}¢</h3>
-                                            <b >per kWh</b>
-                                        </div>
-                                        <!-- this code is comment bu usman khan -->
-                                        <!-- <div style="display: flex; flex-direction: row;">
+                                    <!-- this code is comment bu usman khan -->
+                                    <!-- <div style="display: flex; flex-direction: row;">
                                             <div style="flex: 1; width: 130px;">
                                                 <b style="font-size: 15px;">500 kWh</b>
                                                 <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -246,16 +252,16 @@
                                                 <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                             </div>
                                         </div> -->
-                                        <!-- end code -->
+                                    <!-- end code -->
+                                </div>
+                                <div class="text-center inner price-box" *ngSwitchCase="2000">
+                                    <div>
+
+                                        <h3>{{value.tariff_2000}}¢</h3>
+                                        <b>per kWh</b>
                                     </div>
-                                    <div class="text-center inner price-box" *ngSwitchCase="2000">
-                                        <div>
-                                          
-                                            <h3 >{{value.tariff_2000}}¢</h3>
-                                            <b >per kWh</b>
-                                        </div>
-                                        <!-- this code is comment bu usman khan -->
-                                        <!-- <div style="display: flex; flex-direction: row;">
+                                    <!-- this code is comment bu usman khan -->
+                                    <!-- <div style="display: flex; flex-direction: row;">
                                             <div style="flex: 1; width: 130px;">
                                                 <b style="font-size: 15px;">500 kWh</b>
                                                 <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -265,18 +271,18 @@
                                                 <h3 class="rs">{{value.tariff_1000}}¢</h3>
                                             </div>
                                         </div> -->
-                                        <!-- end code comment -->
+                                    <!-- end code comment -->
+                                </div>
+                                <div class="text-center inner price-box" *ngSwitchDefault>
+                                    <div>
+                                        <h3>{{value.tariff_2000}}¢</h3>
+                                        <b>per kWh</b>
+                                        <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
                                     </div>
-                                    <div class="text-center inner price-box" *ngSwitchDefault>
-                                        <div>
-                                                <h3 >{{value.tariff_2000}}¢</h3>
-                                                <b >per kWh</b>
-                                            <!-- <h3 class="rs">{{value.tariff_2000}}¢</h3> -->
-                                        </div>
 
 
-                                        <!-- this code i comment by usman khan  start -->
-                                        <!-- <div style="display: flex; flex-direction: row;">
+                                    <!-- this code i comment by usman khan  start -->
+                                    <!-- <div style="display: flex; flex-direction: row;">
                                             <div style="flex: 1; width: 130px;">
                                                 <b style="font-size: 15px;">500 kWh</b>
                                                 <h3 class="rs">{{value.tariff_500}}¢</h3>
@@ -286,40 +292,47 @@
                                                 <h3 class="rs">{{value.tariff_2000}}¢</h3>
                                             </div>
                                         </div> -->
-                                        <!-- this code isend  -->
-                                    </div>
-                                    <!--  -->
-                                  
+                                    <!-- this code isend  -->
+                                </div>
+                                <!--  -->
+
                                 <!-- <p class="tag-line">
                                     {{value.product_info}}
                                 </p> -->
-                                </div>
-                              <!--  -->
-                                
-                                <div class="main">
-                                    <!-- <div class="text-center inner">
+                            </div>
+                            <!--  -->
+
+                            <div class="main">
+                                <!-- <div class="text-center inner">
                                         <img src="../../../assets/img/Product-image-4.png" width="100px" height="100px">
                                     </div> -->
-                                   
-                                    <div class="bar"></div>
-                                    <div class="inner">
-                                        <div class="rateSheet">
-                                            <div >
-                                                <span >Contract Term: {{value.display_term}} months</span>
-                                                <span >Termination Fee: ${{value.display_termination_fee}}</span>
-                                                <span >Utility: {{value.vendor_company}}</span>
-                                                <span>Average Rate at 2000 kWhs</span>
-                                            </div>
+
+                                <div class="bar"></div>
+                                <div class="inner">
+                                    <div class="rateSheet">
+                                        <div>
+                                            <span>Contract Term: {{value.display_term}} months</span>
+                                            <span>Termination Fee: ${{value.display_termination_fee}}</span>
+                                            <span>Utility: {{value.vendor_company}}</span>
+
+                                            <span *ngIf="average1">Average Rate at 500 kWhs</span>
+                                            <span *ngIf="average2">Average Rate at 1000 kWhs</span>
+                                            <span *ngIf="average3">Average Rate at 2000 kWhs</span>
                                         </div>
                                     </div>
-                              
-                                    <div class="text-center inner links-list">
-                                        <a  matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
-                                        <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-                                        <a  matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
-                                
-                                        <button class="pink_btn enroll-btn"  [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Enroll Now</button>
-                                    </div>
+                                </div>
+
+                                <div class="text-center inner links-list">
+                                    <a matTooltip="Terms of Service" [href]=value.product_tos_url
+                                        target="_blank"><b>TOS</b></a>
+                                    <a matTooltip="Your Rights as a Customer"
+                                        href="https://www.ourenergyllc.com/prodox/yrac.pdf"
+                                        target="_blank"><b>YRAC</b></a>
+                                    <a matTooltip="Electric Facts Label" [href]=value.product_efl_url
+                                        target="_blank"><b>EFL</b></a>
+
+                                    <button class="pink_btn enroll-btn" [disabled]="selectProductBtnDisabled[i]"
+                                        (click)="enroll(i)">Enroll Now</button>
                                 </div>
                             </div>
                         </div>
@@ -327,35 +340,38 @@
                 </div>
             </div>
         </div>
-        <br>
-        <br>
     </div>
-    <div *ngIf="showTdsp" class="residential-main">
-        <div class="container">
-            <div class="heading">
-                <h1 class="text-center">Select a Utility Provider</h1>
-                <h4 style="color:#555" class="text-center">Based on your Zip Code, multiple Utility Providers found serving your area! Please choose your Provider.</h4>
-            </div>
+    <br>
+    <br>
+</div>
+<div *ngIf="showTdsp" class="residential-main">
+    <div class="container">
+        <div class="heading">
+            <h1 class="text-center">Select a Utility Provider</h1>
+            <h4 style="color:#555" class="text-center">Based on your Zip Code, multiple Utility Providers found serving
+                your area! Please choose your Provider.</h4>
         </div>
-        <div class="container text-center">
-            <div *ngFor="let value of tdsps;index as i;">
-                <div class="text-center inner">
-                    <div class="selectBtn">
-                        <button style="width: 450px;"  (click)="searchPlansByTdsps(value.provider_id)">{{value.provider_name}}</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <h1 class="text-center">Or</h1>
-        <br>
-        <div class="container text-center">
+    </div>
+    <div class="container text-center">
+        <div *ngFor="let value of tdsps;index as i;">
             <div class="text-center inner">
                 <div class="selectBtn">
-                    <button style="width: 450px;"  (click)="showZip()">Change Zip Code</button>
+                    <button style="width: 450px;"
+                        (click)="searchPlansByTdsps(value.provider_id)">{{value.provider_name}}</button>
                 </div>
             </div>
         </div>
-        <br>
-        <br>
     </div>
+    <br>
+    <h1 class="text-center">Or</h1>
+    <br>
+    <div class="container text-center">
+        <div class="text-center inner">
+            <div class="selectBtn">
+                <button style="width: 450px;" (click)="showZip()">Change Zip Code</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</div>
