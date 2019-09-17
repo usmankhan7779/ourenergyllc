@@ -454,13 +454,15 @@
         <div *ngIf="summary" class="col-lg-3 col-lg-3 col-sm-12 col-xs-12">
             <div class="enroll-plan" *ngFor="let value of products;index as i;">
                 <div class="pro">
-                    <h3 style="font-weight: bold;">Enrollment Summary</h3>
+                    <h3 style="font-weight: bold;">Plan  Summary</h3>
+                    <!-- <h3 style="font-weight: bold;">Enrollment Summary</h3> -->
                 </div>
                 <div class="rateSheet">
                     <div>
                         <div  class="text-center price-box_en">
-                            <h3 >${{value?.tariff_2000}}¢ </h3>
-                            <b >Average Rate at 2000 kWhs</b>
+                                <!-- *ngIf="price_traffic == value?.tariff_500" -->
+                            <h3 >${{value?.tariff_500}}¢ </h3>
+                            <b >Average Rate at 500 kWhs</b>
                         </div>
                         <div *ngIf="premiseInfo != null || premiseInfo != undefined">
                             <br>

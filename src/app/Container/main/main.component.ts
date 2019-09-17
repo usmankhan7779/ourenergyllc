@@ -103,41 +103,15 @@ export class MainComponent implements OnInit {
     }
     this.promos.searchPlanhome_page(data).subscribe(res => {
       console.log(res)
-      // localStorage.removeItem('duns')
-      // if (res["status"] == false) {
-      //   this.showError = true
-      //   this.error = res["Error"]
-      //   this.submitBtnDisabled = false
-      // }
-      // if (res["status"] == true) {
-      //   // this.showSpinner = false
-      //   // this.showError = false
-      //   // this.submitBtnDisabled = false
-      //   if (res["tdsp_status"] == false) {
-      //     localStorage.setItem('duns', res['message'][0]['provider_id'])
-      //     this.showFilteredProducts = true
-      //     this.showPlans = true
+       
           this.products = res["message"]
-          console.log(this.products)
-      //     localStorage.setItem('promotionCode', JSON.stringify(res['promo_code']))
-      //     localStorage.removeItem('zip')
-      //     this.submitBtnDisabled = false
-      //   }
-      //   else {
-      //     this.showTdsp = true
-      //     this.tdsps = res['message']['row']
-      //     this.submitBtnDisabled = false
-      //   }
-      // }
-      // else if (res["status"] == false) {
-      //   this.showFilteredProducts = false
-      //   this.showSpinner = false
-      //   this.showError = true
-      //   this.showPlans = false
-      //   this.error = res["message"]
-      //   localStorage.removeItem('zip')
-      //   this.submitBtnDisabled = false
-      // }
+          // let pro = res['message']
+          for (let pro of this.products)
+          {
+            console.log(pro.id)
+          }
+          console.log(this.products.id)
+     
     })
   
   }
@@ -652,11 +626,40 @@ averge_2000(){
   showSpinner2: boolean = false
   showError2: boolean = false
   submitBtnDisabled2
-
+priceetc = 'tariff_500';
   price_from = new FormControl('', [Validators.pattern('^[0-9]*[\.]?[0-9]+$'), Validators.min(1)])
   price_to = new FormControl('', [Validators.pattern('^[0-9]*[\.]?[0-9]+$'), Validators.max(99)])
+viewprice(){
+  if ( this.estimatedUsage == "500"){
+    // alert( this.estimatedUsage)
+this.priceetc ='tariff_500'
+localStorage.setItem('tariff',this.priceetc)
+//     tariff_500: "7.9"
+// tariff_1000: "7.6"
+// tariff_2000: "7.4"
+    
+  }
+  else if ( this.estimatedUsage == "1000"){
+    // alert(this.estimatedUsage)
+    this.priceetc ='tariff_1000'
+    localStorage.setItem('tariff',this.priceetc)
 
+  }
+  else if (this.estimatedUsage == "2000")
+  {
+    // alert(this.estimatedUsage)
+    this.priceetc ='tariff_2000'
+    localStorage.setItem('tariff',this.priceetc)
+  }
+  else if (this.estimatedUsage == undefined){
+    // this.estimatedUsage = this.priceetc
+    // alert(this.priceetc)
+    this.priceetc ='tariff_500'
+    localStorage.setItem('tariff',this.priceetc)
+  }
+}
   filterProduct() {
+    // alert(this.estimatedUsage)
     if (this.price_from.valid == true && this.price_to.valid == true) {
       this.showSpinner2 = null
       this.showFilteredProducts = false
