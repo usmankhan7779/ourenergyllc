@@ -61,20 +61,9 @@
             <img src="../assets/img/log_OurEnergy.png" alt="logo" routerLink="">
           </a>
       </div>
-     
-      <!-- <img src="../assets/img/WTG-Energy-Logo.png" alt="logo" style="height: 40px" routerLink="" matTooltip="Home"> -->
-      <!-- <a routerLink="" style="text-decoration: none;">
-                <h1 style="font-size:32px;font-weight:800;margin-left:10px">
-                    <span style="color:#d00000">W</span>
-                    <span style="color:#2e2566;margin-left: -4px;">TG</span>
-                    <span style="color:#2e2566;"> ENERGY</span>
-                </h1>
-            </a>-->
-
     </div>
     <div class="nav_right">
       <mat-list role="list" class="nav">
-        
         <a routerLink="/about" routerLinkActive="Active">
           <mat-list-item class="main-listt" role="listitem">
             About Us
@@ -91,31 +80,53 @@
             For the Business
           </mat-list-item>
         </a>
-        <!-- <a class="divide_login" routerLink="/register" routerLinkActive="Active">
-          <mat-list-item class="main-listt" role="listitem">
-            Sign Up
-          </mat-list-item>
-        </a> -->
         <button class="sMyAccount divide_login"*ngIf="!show"  type="button" routerLink="/dashboard">
-          <mat-list-item   class="main-listt  btn" role="listitem">
+          <mat-list-item   class="main-listt  " role="listitem">
            My Account
           </mat-list-item>  
         </button>
-        <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/login">
+        <!-- <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/login">
           <mat-list-item   class="main-listt  btn" role="listitem">
             My Account
            </mat-list-item> 
-        </button>
-       
-      
+        </button> -->
+
+      <mat-list-item *ngIf="!show" class="main-listt  " role="listitem">
+        {{username}}
+      </mat-list-item>
+      <mat-list-item *ngIf="show" class="main-listt  " role="listitem">
+        {{username}}
+      </mat-list-item>
       </mat-list>
     </div>
-    <div class="Toggle">
-      <mat-icon (click)="myFunction()">format_align_right</mat-icon>
+    <div class="Toggle" (click)="show_sidebar()">
+      <mat-icon >format_align_right</mat-icon>
     </div>
   </div>
 
 </div>
- 
-     
-   
+
+<div class="topnav" id="myTopnav">
+  <mat-list>
+    <a routerLink="/about" routerLinkActive="Active">
+      <mat-list-item class="main-listt" role="listitem">
+        About Us
+      </mat-list-item>
+    </a>
+    <a routerLink="/residential" routerLinkActive="Active">
+      <mat-list-item class="main-listt" role="listitem">
+        For the Home
+      </mat-list-item>
+    </a>
+    <a routerLink="/commercial" routerLinkActive="Active">
+      <mat-list-item class="main-listt" role="listitem">
+        For the Business
+      </mat-list-item>
+    </a>
+    <button class="sMyAccount" type="button" routerLink="/login">
+      <mat-list-item class="main-listt  btn" role="listitem">
+        My Account
+      </mat-list-item>
+    </button>
+  </mat-list>
+</div>

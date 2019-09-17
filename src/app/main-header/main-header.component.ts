@@ -2,16 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { QuickPayComponent } from '../login/login.component'
 import { HttpClient } from '@angular/common/http';
-
+declare var $: any;
 @Component({
   selector: 'app-main-header',
   templateUrl: './main-header.component.html',
   styleUrls: ['./main-header.component.scss']
 })
 export class MainHeaderComponent implements OnInit {
-
-    
-
   myFunction = function () {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
@@ -78,4 +75,12 @@ this.data = Res['message'];
       });
      
       }
+  show_sidebar() {
+    $('#myTopnav').show(900);
+  }
+  close_sidebar() {
+    $('#myTopnav a').click(function(){
+      $('#myTopnav').hide();
+    });
+  }
 }
