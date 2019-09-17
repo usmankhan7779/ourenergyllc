@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core'
-import { UsageService, CustomerService } from '../../Store/Services'
-import { MatDialog } from '@angular/material'
-import { environment } from '../../../../environments/environment'
+import { Component, OnInit } from '@angular/core';
+import { UsageService, CustomerService } from '../../Store/Services';
+import { MatDialog } from '@angular/material';
+import { environment } from '../../../../environments/environment';
 import { BillDetailsService } from '../../Store/Services/bill-details.service';
 import { ServerSocketService } from '../header/server-socket.service';
 import { Subscription } from 'rxjs/Subscription';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
+declare var $: any;
 
 @Component({
   selector: 'app-bill-details',
@@ -51,8 +52,6 @@ this.username = localStorage.getItem('username')
       localStorage.setItem("bill-details", JSON.stringify(res["message"]))
     })
   }
-
-
   getCustomerData() {
     this.customerService.getdata().subscribe(response => {
       let product = []
@@ -96,5 +95,9 @@ this.username = localStorage.getItem('username')
         this.error = "cannot connect to server"
       }
     })
+  }
+  toggle_name(){
+    $('.infoBox').slideToggle('slow');
+    $('.fa-angle-down').toggleClass('fa-angle-down fa-angle-up');
   }
 }

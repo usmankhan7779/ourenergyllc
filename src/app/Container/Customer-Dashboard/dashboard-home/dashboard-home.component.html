@@ -68,7 +68,7 @@
 <h2 class="spinner" *ngIf="!request">{{error}}</h2>
 
 <div class="spinner" *ngIf="showSpinner">
-    <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+    <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
 </div>
 <div *ngIf="homeInfo">
     <div class="col-container">
@@ -284,7 +284,8 @@
                             <p *ngIf="info.last_paid_amount != '0' && info.last_paid_amount != '0.00' && info.last_paid_amount != 0" > Your payment of ${{info.last_paid_amount}} was received and applied on {{info.last_pay_date}}.</p>
                             <!-- <br *ngIf="showOfferMessage"> -->
                             <a *ngIf="showOfferMessage"  routerLink="/dashboard/offers">
-                               You recieved a new offer! 
+                               You recieved a new offer! <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+
                             </a>
                         </div>
                         <div class="Product_code" *ngIf="ShowPromoCode">

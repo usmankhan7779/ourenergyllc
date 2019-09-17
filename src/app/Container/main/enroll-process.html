@@ -35,12 +35,17 @@
                         <mat-icon matSuffix>my_location</mat-icon>
                         <mat-error *ngIf="enrollProcessForm.controls.premise_id.errors?.required">Premise/ESID is required</mat-error>
                     </mat-form-field>
+
                 </div>
+                                    <!--  note-->
+    <div style="display:flex; flex-direction:column">
+      <b style="margin-top:10px;"><i class="fa fa-warning" style="font-size:18px;color:#dcc70b;margin:5px;"></i>Note:If you
+        are unable to locate your address or have a special request contact us at 1-888-545-4687 and we will be happy to
+        assist you!</b>
+      <b style="margin-top:10px;text-align:center;font-weight:bold;color:red">{{errorMessagee}}</b>
+    </div>
                 <button  [disabled]="searchPremiseBtn" type="submit">Search</button>
-                <div style="display:flex; flex-direction:column">
-                    <b style="margin-top:10px;"><i class="fa fa-warning" style="font-size:18px;color:#dcc70b;margin:5px;"></i>Note:If you are unable to locate your address or have a special request contact us at 1-888-545-4687 and we will be happy to assist you!</b>
-                    <b style="margin-top:10px;text-align:center;font-weight:bold;color:red">{{errorMessagee}}</b>
-                </div>
+
                 <mat-progress-bar *ngIf="status==true" mode="indeterminate"></mat-progress-bar>
             </mat-card>
         </form>
@@ -76,7 +81,7 @@
             </div>
         </div>
     </div>
-    <div *ngIf="len > 1">
+    <div *ngIf="len > 1" class="s_address_found">
         <br>
         <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
         <h4 class="text-center">Multiple service addresses were found. Please select from the below list or refine what you entered above.</h4>
@@ -95,14 +100,14 @@
                     <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button"><h4>Select</h4></button>
                 </div>
             </div>
-            <div class="inner-premise">
+            <!-- <div class="inner-premise">
                 <div *ngIf="(ind + 1) < multiplePremise.length" style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
-            </div>
+            </div> -->
         </div>
         <br>
     </div>
     <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
-        <img src="../../../assets/img/fidget_red.gif" width="150" height="150" alt="logo">
+        <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
     </div>
     <button matStepperNext style="display:none" id="nextBtn"></button>
 </section>

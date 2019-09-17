@@ -1,5 +1,7 @@
 <div class="col mat-elevation-z5"  *ngFor="let info of custInfo">
-    <h2 class="dashboard_username">    {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}} </h2>
+    <h2 class="dashboard_username">    {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}} 
+      <i class="fa fa-angle-down" (click)="toggle_name()"></i>
+    </h2>
     <div class="infoBox">
         <table class="table">
             <thead>

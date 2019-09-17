@@ -58,7 +58,7 @@
     <div class="logo_wrapp">
       <div>
           <a class="logo" [routerLink]="['/']">
-            <img src="../assets/img/log_OurEnergy.png" alt="logo" routerLink="">
+            <img src="../assets/img/site_logo.png" alt="logo" routerLink="">
           </a>
       </div>
     </div>
@@ -80,12 +80,8 @@
             For the Business
           </mat-list-item>
         </a>
-      <button class="sMyAccount divide_login"*ngIf="!show"  type="button" routerLink="/login">
-          <mat-list-item   class="main-listt  btn" role="listitem">
-           My Account
-          </mat-list-item>  
-        </button>
-        <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/login">
+
+        <button class="sMyAccount divide_login" *ngIf="!show"  type="button" routerLink="/login">
           <mat-list-item   class="main-listt  btn" role="listitem">
             My Account
            </mat-list-item> 
@@ -108,7 +104,7 @@
   </div>
 </div>
 
-<!-- <div class="topnav" id="myTopnav">
+ <div class="topnav" id="myTopnav">
   <mat-list>
     <a routerLink="/about" routerLinkActive="Active" (click)="close_sidebar()">
       <mat-list-item class="main-listt" role="listitem">
@@ -137,4 +133,4 @@
     </a>
 
   </mat-list>
-</div> -->
+</div> 
