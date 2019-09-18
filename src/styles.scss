@@ -296,7 +296,7 @@ transition: 0.3s ease-in-out all;
   font-weight: 500;
 }
 p{
-  color: #959fac;
+  color: #333;
 }
 .input_fix .mat-input-element{
   height: 40px;
@@ -558,14 +558,23 @@ p strong,p b{
   color: #c00;
 }
 .s_popup_info_content{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .s_popup_info{
   width: 48%;
+  -webkit-box-shadow: 0 0 10px #ccc;
   box-shadow: 0 0 10px #ccc;
+  padding: 20px;
+  margin: 5px;
+  border-radius: 5px;
 }
+.s_popup_info h3{
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+} 
 .mg-0{
   margin: 0;
 }
@@ -574,6 +583,34 @@ p strong,p b{
   background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important !important;
   color: #ccc !important;
   border: 1px solid #c2dde8 !important
+}
+.s_tos_consent a{
+  margin: 0 5px;
+  font-size: 16px;
+  color: #959fac;
+  text-decoration: underline;
+
+}
+.s_consent_lastDiv{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.s_consent_lastDiv >div{
+  width: 48%;
+}
+.s_consent_lastDiv >div:first-child{
+  border-right: 1px solid #ccc;
+}
+.badge {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  background: #c00;
+  min-width: 20px;
+  min-height: 20px;
+  line-height: 15px;
 }
 //media qureis 
 @media only screen and (max-width:1500px){

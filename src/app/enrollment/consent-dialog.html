@@ -27,21 +27,32 @@
     <p>Request Type: <b>{{data.enrol_type}}</b></p>
     <p>Requested Date: <b>{{data.request_date}}</b></p>
   </div>
-  <div class="s_popup_info">
-    <h3>Product Information</h3>
-    <p><b>{{data.product_name}}</b></p>
-    <p><b>{{data.product_info}}</b></p>
-    <p>Rate: <b>{{data.tariff_1000}}¢ per kWh</b></p>
-    <p>Terms: <b>{{data.term}} Months</b></p>
-    <p>Termination Fees: <b>${{data.display_termination_fee}}</b></p>
-    <p>Utility Provider: <b>{{data.vendor_company}}</b></p>
-    <a mat-fab color="primary" matTooltip="Terms of Service" [href]=data.tos target="_blank"><b>TOS</b></a>
-    <a mat-fab color="primary" matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-    <a mat-fab color="primary" matTooltip="Electric Facts Label" [href]=data.product_efl_url target="_blank"><b>EFL</b></a>
-    <hr>
-    <p>I have reviewed the information provided above and by clicking <b>“Yes I Authorize”</b> below, I accept that I am authorizing Our Energy LLC to become my new retail electric provider and to act as my agent to perform the necessary task to establish
-        my electric service amount with Our Energy LLC. This authorization to establish or switch my provider of electric service extends to the above location.
-    </p>
+  <div class="s_popup_info s_consent_lastDiv">
+    <div>
+        <h3>Product Information</h3>
+        <p><b>{{data.product_name}}</b></p>
+        <p><b>{{data.product_info}}</b></p>
+        <p>Rate: <b>{{data.tariff_1000}}¢ per kWh</b></p>
+        <p>Terms: <b>{{data.term}} Months</b></p>
+        <p>Termination Fees: <b>${{data.display_termination_fee}}</b></p>
+        <p>Utility Provider: <b>{{data.vendor_company}}</b></p>
+    <!--  -->
+        <div class="s_tos_consent">
+            <a  matTooltip="Terms of Service" [href]=data.tos target="_blank"><b>TOS</b>
+            </a>
+            <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b>
+            </a>
+            <a  matTooltip="Electric Facts Label" [href]=data.product_efl_url target="_blank"><b>EFL</b>
+            </a>
+        </div>
+    </div>
+    <div>
+        <p>I have reviewed the information provided above and by clicking <b>“Yes I Authorize”</b> below, I accept that I am authorizing Our Energy LLC to become my new retail electric provider and to act as my agent to perform the necessary task to establish
+          my electric service amount with Our Energy LLC. This authorization to establish or switch my provider of electric service extends to the above location.
+      </p>
+    </div>
+    
+
   </div>
 </div>
 <div mat-dialog-actions>

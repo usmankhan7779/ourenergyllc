@@ -286,43 +286,48 @@
                                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 text-center">
                                       <button  (click)="findBillingAddress()" [disabled]="findBtn">Confirm Billing address</button>
                                     </div>
+                                    <!-- result start-->
+                                    <div class="col-sm-12">
+                                        <div *ngIf="billingAddresses.length == 0">
+                                            <div *ngIf="alertcondition == true">
+                                                <h1 class="alertCondition">
+                                                    {{alert}} </h1>
+                                                <h3 class="text-center" #premises>OR</h3>
+                                                <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr">Proceed with what I entered</a> </h4>
+                                            </div>
+                                        </div>
+                                        <!--  -->
+                                        <div *ngIf="billingAddresses.length > 0" class="s_address_found">
+                                            <br>
+                                            <h3 class="text-center" style="font-weight: bold !important;" *ngIf="billingAddresses.length > 0" #premises> Verify billing Address </h3>
+                                            <h4 class="text-center">Multiple mailing addresses were found. Please select from the below list or refine what you entered above.</h4>
+                                            <br>
+                                            <div class="premise" *ngFor="let value of billingAddresses; let ind = index">
+                                                <div class="inner-premise">
+                                                    <div class="premise-details">
+                                                        <h4>{{value.Address2}}</h4>
+                                                        <h4 style="margin:0px">{{value.City}} {{value.State}} {{value.Zip5}}-{{value.Zip4}}</h4>
+                                                    </div>
+                                                    <div class="premise-details">
+                                                        <button  (click)="SelectBillingPrem(value)" type="button"><h4 style="font-weight: bold !important;">Select</h4></button>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="inner-premise" *ngIf="(ind + 1) < billingAddresses.length">
+                                                    <div  style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
+                                                </div> -->
+                                            </div>
+                                            <br>
+                                            <h1 class="text-center" *ngIf="billingAddresses.length > 0" #premises>OR
+                                              
+                                            </h1>
+                                            <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr" style="text-decoration: underline">Proceed with what I entered</a> </h4>
+                                        </div>
+                                    </div>
+
+                                    <!-- result end -->
                                 </div>
-                              
                             </mat-card>
-                            <div *ngIf="billingAddresses.length == 0">
-                                <div *ngIf="alertcondition == true">
-                                    <h1 class="alertCondition">
-                                        {{alert}} </h1>
-                                    <h3 class="text-center" #premises>OR</h3>
-                                    <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr">Click here</a> to select what you entered.</h4>
-                                </div>
-                            </div>
                         </form>
-
-                        <div *ngIf="billingAddresses.length > 0" class="s_address_found">
-                            <br>
-                            <h3 class="text-center" style="font-weight: bold !important;" *ngIf="billingAddresses.length > 0" #premises> Verify billing Address </h3>
-                            <h4 class="text-center">Multiple mailing addresses were found. Please select from the below list or refine what you entered above.</h4>
-                            <br>
-                            <div class="premise" *ngFor="let value of billingAddresses; let ind = index">
-                                <div class="inner-premise">
-                                    <div class="premise-details">
-                                        <h4>{{value.Address2}}</h4>
-                                        <h4 style="margin:0px">{{value.City}} {{value.State}} {{value.Zip5}}-{{value.Zip4}}</h4>
-                                    </div>
-                                    <div class="premise-details">
-                                        <button  (click)="SelectBillingPrem(value)" type="button"><h4 style="font-weight: bold !important;">Select</h4></button>
-                                    </div>
-                                </div>
-                                <!-- <div class="inner-premise" *ngIf="(ind + 1) < billingAddresses.length">
-                                    <div  style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
-                                </div> -->
-                            </div>
-                            <br>
-                            <h1 class="text-center" *ngIf="billingAddresses.length > 0" #premises>OR</h1>
-                            <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr">Click here</a> to select what you entered.</h4>
-                        </div>
-
                     </mat-step>
                     <mat-step [stepControl]="fourFormGroup" (click)="reset()">
                         <form [formGroup]="fourFormGroup">
@@ -375,6 +380,17 @@
                                         </mat-form-field>
                                     </div>
                                 </div>
+                                <div *ngIf="setAutoPay" class="row s_terms_enrollment">
+                                    <div class="col-sm-12">
+                                      <p>
+                                          <span style="color: #ff4270">i.</span> For Pay now & Set as recurring to pay future bills automatically on the due date: 
+                                          By providing my bank account or credit/debit card account information to Our Energy LLC and checking the box provided, I hereby authorize Our Energy LLC to charge my account in the amount due on my monthly statement on an ongoing basis. I understand that debits to my bank account or credit card will be made on the due date appearing on my statement, unless such date is Saturday, Sunday, or other bank holiday, in which case Our Energy LLC will debit my account on the next banking day. I understand that my Our Energy LLC monthly statement, together with this authorization, will be notice of the amount and date of each withdrawal from my bank account or credit card. I also agree to notify Our Energy LLC if there are any changes to my bank account or credit/debit card account information. I understand that the account may be assessed a $35 Insufficient funds fee in the event the payment is declined and may also occur a 5% late fee if the payment is remitted after the due date. I understand that my information will remain strictly confidential per the privacy policy of Our Energy LLC. I understand that I will continue to receive a copy of my monthly electricity bill via email or USPS for my records, but my bill will be marked "Do Not Pay."
+                                      </p>
+                                      <p>
+                                          <span style="color: #ff4270">ii.</span>By providing my bank account or credit/debit card account information to Our Energy LLC and checking the box provided, I hereby authorize Our Energy LLC to charge my account in the amount due on my monthly statement. I understand that the account may be assessed a $35 Insufficient funds fee in the event the payment is declined and may also occur a 5% late fee if the payment is remitted after the due date. I understand that my information will remain strictly confidential per the privacy policy of Our Energy LLC. I understand that I will continue to receive a copy of my monthly electricity bill via email or USPS for my records, but my bill will be marked "Do Not Pay."
+                                      </p>
+                                    </div>
+                                  </div>
                                 <mat-card-title class="mat-elevation-z4"> Special Request </mat-card-title>
                                 <mat-checkbox formControlName="life_support"> Life Support </mat-checkbox>
                                 <p> (Choose if a resident at the selected service address requires Life Support) </p>
@@ -394,7 +410,7 @@
                                             </mat-radio-button>
                                         </mat-radio-group>
                                         <p>You can download the Waiver Form
-                                            <a class="anchor" href="http://www.puc.texas.gov/industry/electric/forms/violence/DepWaivFrm.pdf" matTooltip="Waiver Form"> here</a>. Please fax your waiver documents to us at 1-281.715.5767 or email us at CustomerService@OUREnergyLLC.com.</p>
+                                            <a class="anchor" href="http://www.puc.texas.gov/industry/electric/forms/violence/DepWaivFrm.pdf" matTooltip="Waiver Form" target="_blank"> here</a>. Please fax your waiver documents to us at 1-281.715.5767 or email us at CustomerService@OUREnergyLLC.com.</p>
                                             <p class="s_note_waive">
                                               <i class="fa fa-warning" style="font-size:14px;color:#dcc70b;margin-right:5px;"></i>   Please note that your enrollment will not be processes till we receive the waiver documents. Please send  copy of the documents through email   <span>customerservices@ourenergyllc.com</span> or fax it to us at <span>281-715-5767 </span>
                                             </p>
@@ -532,14 +548,14 @@
                             </a>
                         </div>
                         
-                        <div style="margin-top: 10px" class="headingDiv">Early Termination Fee</div>
+                        <div style="margin-top: 10px" class="headingDiv">
+                         <h2>Early Termination Fee</h2> 
+                        </div>
                         <div class="dataDiv">${{value?.display_termination_fee}}</div>
                     </div>
                 </div>
                 <div class="lable">
-                    <label>*Disclaimer - The total bill calculation is based on the monthly usage values shown. Your total bill
-          usage will vary based on actual usage. Please refer to Electricity Facts Label for details and more
-          information.</label>
+                    <label>**Disclaimer - The total bill calculation is based on the monthly usage values shown and does not include taxes and fees. Your total bill usage will vary based on actual usage. Please refer to Electricity Facts Label for details and more information.</label>
                 </div>
             </div>
         </div>

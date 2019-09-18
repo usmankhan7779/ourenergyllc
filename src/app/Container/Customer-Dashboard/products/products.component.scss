@@ -52,14 +52,6 @@
     display: flex;
     justify-content: left;
 }
-
-.dashboard_h3{
-  font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  margin-bottom: 20px;
-}
-
 .example-header-image2 {
     background-image: url('/assets/img/Icons/plans.png');
     background-size: cover;
@@ -172,4 +164,10 @@ h3 {
             }
         }
     }
+}
+.dashboard_h3{
+  font-size: 20px !important;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0 !important;
+  margin-bottom: 20px !important;
 }

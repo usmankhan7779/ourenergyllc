@@ -47,6 +47,37 @@
                 <button  [disabled]="searchPremiseBtn" type="submit">Search</button>
 
                 <mat-progress-bar *ngIf="status==true" mode="indeterminate"></mat-progress-bar>
+
+                <!-- results start -->
+                <div *ngIf="len > 1" class="s_address_found">
+                    <br>
+                    <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
+                    <h4 class="text-center">Multiple service addresses were found. Please select from the below list or refine what you entered above.</h4>
+                    <br>
+                    <div class="premise" *ngFor="let value of multiplePremise; let ind = index">
+                        <div class="inner-premise">
+                            <div class="premise-details">
+                                <h4>{{value.address1}}</h4>
+                                <h4 style="margin:0px">{{value.city}} {{value.state}} {{value.zip}}</h4>
+                            </div>
+                            <div class="premise-details">
+                                <h4>{{value.premise_id}} </h4>
+                                <h4 style="margin:0px">{{value.provider_name}}</h4>
+                            </div>
+                            <div class="premise-details">
+                                <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button"><h4>Select</h4></button>
+                            </div>
+                        </div>
+                        <!-- <div class="inner-premise">
+                            <div *ngIf="(ind + 1) < multiplePremise.length" style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
+                        </div> -->
+                    </div>
+                    <br>
+                </div>
+                <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
+                    <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
+                </div>
+                <!-- results end -->
             </mat-card>
         </form>
         <div *ngIf="summary">
@@ -81,33 +112,6 @@
             </div>
         </div>
     </div>
-    <div *ngIf="len > 1" class="s_address_found">
-        <br>
-        <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
-        <h4 class="text-center">Multiple service addresses were found. Please select from the below list or refine what you entered above.</h4>
-        <br>
-        <div class="premise" *ngFor="let value of multiplePremise; let ind = index">
-            <div class="inner-premise">
-                <div class="premise-details">
-                    <h4>{{value.address1}}</h4>
-                    <h4 style="margin:0px">{{value.city}} {{value.state}} {{value.zip}}</h4>
-                </div>
-                <div class="premise-details">
-                    <h4>{{value.premise_id}} </h4>
-                    <h4 style="margin:0px">{{value.provider_name}}</h4>
-                </div>
-                <div class="premise-details">
-                    <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button"><h4>Select</h4></button>
-                </div>
-            </div>
-            <!-- <div class="inner-premise">
-                <div *ngIf="(ind + 1) < multiplePremise.length" style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
-            </div> -->
-        </div>
-        <br>
-    </div>
-    <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
-        <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
-    </div>
+
     <button matStepperNext style="display:none" id="nextBtn"></button>
 </section>

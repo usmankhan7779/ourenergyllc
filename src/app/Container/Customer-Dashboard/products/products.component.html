@@ -7,7 +7,7 @@
     <div class="ErrormEssage">
         <span>{{ErrorResponse}}</span>
     </div>
-    <div class="side-container">
+    <div class="side-container" *ngIf="response">
         <div class="main-container">
           <h3 class="dashboard_h3">Plan Information</h3>
             <div class="sub-container" *ngFor="let i of response">

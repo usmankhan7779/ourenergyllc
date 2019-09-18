@@ -1,50 +1,3 @@
-<!-- <div class="mainheader">
-    <p class="info-bar">
-        <i class="material-icons">phone</i>CALL TOLL FREE: 1.888.545.4687 Email: info@ourenergyllc.com
-    </p>
-    <div style="display: flex; flex-direction: row; align-items: center;">
-        <mat-list role="list" class="items">
-            <button style="border: 0px; margin-top: 0px; font-weight: bold; color: red;" (click)="quickPayDialog()"> Quick Pay My Bill </button>
-            <a routerLink="/contact">
-                <p role="listitem">
-                    Contact Us
-                </p>
-            </a>
-            <a routerLink="/help">
-                <p role="listitem">
-                    Help
-                </p>
-            </a>
-            <a routerLink="/login">
-                <p role="listitem">
-                    My Account
-                </p>
-            </a>
-        </mat-list>
-        <mat-list role="list1" class="socialLinks">
-            <a href="https://www.facebook.com/ourenergytexas" rel="noreferrer" target="_blank">
-                <span role="listitem">
-                    <i class="fa fa-facebook"></i>
-                </span>
-            </a>
-            <a href="https://twitter.com/ourenergy" rel="noreferrer" target="_blank">
-                <span role="listitem">
-                    <i class="fa fa-twitter"></i>
-                </span>
-            </a>
-            <a href="https://plus.google.com/+Ourenergyllc" rel="noreferrer" target="_blank">
-                <span role="listitem">
-                    <i class="fa fa-google"></i>
-                </span>
-            </a>
-            <a href="https://www.linkedin.com/company/our-energy-llc" rel="noreferrer" target="_blank">
-                <span role="listitem">
-                    <i class="fa fa-linkedin"></i>
-                </span>
-            </a>
-        </mat-list>
-    </div>
-</div> -->
 
 <div class="header " >
     <!-- <div class="tempHeader">
@@ -90,12 +43,17 @@
       <!-- <mat-list-item *ngIf="!show" class="main-listt  one" role="listitem">
         {{username}}
       </mat-list-item> -->
-      <a *ngIf="show" routerLink="/dashboard" routerLinkActive="Active">
+
+      <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/dashboard">
+        <mat-list-item   class="main-listt  btn" role="listitem">
+          My Account
+         </mat-list-item> 
+      </button>
+      <!-- <a *ngIf="show" routerLink="/dashboard" routerLinkActive="Active">
         <mat-list-item  class="main-listt  " role="listitem" >
           <img  class="icons s_prof_img" src="../assets/img/Icons/Profile.png"> {{username}}
         </mat-list-item>
-      </a>
-    
+      </a> -->
       </mat-list>
     </div>
     <div class="Toggle" (click)="show_sidebar()">
