@@ -118,6 +118,7 @@ export class MainComponent implements OnInit {
       //     this.showFilteredProducts = true
       //     this.showPlans = true
           this.products = res["message"]
+          console.log(this.products)
       //     localStorage.setItem('promotionCode', JSON.stringify(res['promo_code']))
       //     localStorage.removeItem('zip')
       //     this.submitBtnDisabled = false
@@ -566,7 +567,9 @@ export class PlanSearchComponent {
   tdsps
   error
   x
- 
+  average1 : boolean = true;
+  average2 : boolean = false;
+  average3: boolean = false;
   ngOnInit() {
     this.products = []
     this.tdsps = []
@@ -583,6 +586,22 @@ export class PlanSearchComponent {
       }
     })
   }
+averge_500(){
+  this.average1 = true
+  this.average2 = false
+  this.average3 = false
+}
+averge_1000(){
+  this.average1 = false
+  this.average2 = true
+  this.average3 = false
+}
+averge_2000(){
+  this.average1 = false
+  this.average2 = false
+  this.average3 = true
+}
+
 
   searchPlansByTdsps(value) {
     this.showTdsp = false
@@ -745,6 +764,7 @@ export class PlanSearchComponent {
             this.showFilteredProducts = true
             this.showPlans = true
             this.products = res["message"]
+            // alert(this.products.id)
             localStorage.setItem('promotionCode', JSON.stringify(res['promo_code']))
             localStorage.removeItem('zip')
             this.submitBtnDisabled = false
