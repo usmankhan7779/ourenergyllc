@@ -86,15 +86,21 @@
             My Account
            </mat-list-item> 
         </button>
+        
+        <button class="sMyAccount divide_login" *ngIf="show"  type="button" routerLink="/dashboard">
+          <mat-list-item   class="main-listt  btn" role="listitem">
+            My Account
+           </mat-list-item> 
+        </button>
 
       <!-- <mat-list-item *ngIf="!show" class="main-listt  one" role="listitem">
         {{username}}
       </mat-list-item> -->
-      <a *ngIf="show" routerLink="/dashboard" routerLinkActive="Active">
+      <!-- <a *ngIf="show" routerLink="/dashboard" routerLinkActive="Active">
         <mat-list-item  class="main-listt  " role="listitem" >
           <img  class="icons s_prof_img" src="../assets/img/Icons/Profile.png"> {{username}}
         </mat-list-item>
-      </a>
+      </a> -->
     
       </mat-list>
     </div>
@@ -126,11 +132,16 @@
         My Account
       </mat-list-item>
     </button>
-    <a *ngIf="show" (click)="close_sidebar()" routerLink="/dashboard" routerLinkActive="Active">
+    <button class="sMyAccount" *ngIf="show" type="button" routerLink="/dashboard"  (click)="close_sidebar()">
+      <mat-list-item class="main-listt  btn" role="listitem">
+        My Account
+      </mat-list-item>
+    </button>
+    <!-- <a *ngIf="show" (click)="close_sidebar()" routerLink="/dashboard" routerLinkActive="Active">
       <mat-list-item  class="main-listt " role="listitem" >
         <img class="icons s_prof_img" src="../assets/img/Icons/Profile.png"> {{username}}
       </mat-list-item>
-    </a>
+    </a> -->
 
   </mat-list>
 </div> 
