@@ -97,7 +97,7 @@ this.username = localStorage.getItem('username')
     })
   }
   toggle_name(){
-    $('.infoBox').slideToggle('slow');
-    $('.fa-angle-down').toggleClass('fa-angle-down fa-angle-up');
+    $('.s_fix_cont').slideToggle('slow');
+    $('i.toggle_icon').toggleClass('fa-angle-down fa-angle-up');
   }
 }

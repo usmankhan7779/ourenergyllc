@@ -2,14 +2,14 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material';
 import { CustomerService } from '../../Store/Services';
-import { Subscription } from 'rxjs/Subscription'
-import { ServerSocketService } from '../header/server-socket.service'
-import { environment } from '../../../../environments/environment'
-import { EditAddressComponent } from '../edit-address/edit-address.component'
+import { Subscription } from 'rxjs/Subscription';
+import { ServerSocketService } from '../header/server-socket.service';
+import { environment } from '../../../../environments/environment';
+import { EditAddressComponent } from '../edit-address/edit-address.component';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { ChangepasswordComponent, ContactInfoComponent, LoginIDComponent, DeliveryOptionComponent } from '../../Customer-Dashboard/changepassword/changepassword.component';
-import { EnterPasswordPopup } from '../EnterPassword/EnterPassword'
-import Swal from 'sweetalert2'
+import { EnterPasswordPopup } from '../EnterPassword/EnterPassword';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-info',

@@ -1,19 +1,15 @@
 <mat-card class="productsnoffer">
-    <div class="outer-container">
-        <mat-card-header>
-            <div mat-card-avatar class="example-header-image2"></div>
-            <mat-card-title>Plan Information</mat-card-title>
-        </mat-card-header>
-    </div>
     <div class="spinner" *ngIf="showSpinner">
         <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
     </div>
+
     <h2 class="spinner" *ngIf="!request">{{error}}</h2>
     <div class="ErrormEssage">
         <span>{{ErrorResponse}}</span>
     </div>
     <div class="side-container">
         <div class="main-container">
+          <h3 class="dashboard_h3">Plan Information</h3>
             <div class="sub-container" *ngFor="let i of response">
                 <div class="inner-container">
                     <div>Product Name:</div>

@@ -248,6 +248,7 @@ mark {
 .blue-btn{
   background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important;
 }
+
 .pink_btn{
   outline: none;
   background: linear-gradient(90deg,#a91f73 0%,#ff4270 100%);
@@ -565,7 +566,15 @@ p strong,p b{
   width: 48%;
   box-shadow: 0 0 10px #ccc;
 }
-
+.mg-0{
+  margin: 0;
+}
+.blue-btn:hover{
+  color: unset !important;
+  background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important !important;
+  color: #ccc !important;
+  border: 1px solid #c2dde8 !important
+}
 //media qureis 
 @media only screen and (max-width:1500px){
   .filter-bar button{

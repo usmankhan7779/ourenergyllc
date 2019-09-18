@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mg-0">
     <div style="z-index: 0;" class="col-sm-12">
         <mat-tab-group mat-stretch-tabs>
             <mat-tab>
@@ -6,171 +6,152 @@
                     <img src="../../../../../assets/img/Icons/2.2.png" alt="offers" style="margin-top: -8px;">
                     <label style="font-size: 15px; cursor:pointer;margin-top: 12px;"> Personal Info </label>
                 </ng-template>
-                <div class="editPersonalInfo">
-                    <h3>Login Settings</h3>
-                    <div class="innerparent">
-                        <div>
-                            <mat-label>Password:</mat-label>
+                <div class="s_personel_info">
+                    <div class="editPersonalInfo">
+                        <h3>Login Settings</h3>
+                        <div class="innerparent">
+                            <div>
+                                <mat-label>Password:</mat-label>
+                            </div>
+                            <div>
+                                <mat-label style="margin:6px;">**********</mat-label>
+                            </div>
+                            <div>
+                                <mat-label> <i class="material-icons  edit-icon" (click)="changePassDialog()" matTooltip="Edit Password">mode_edit</i>
+                                </mat-label>
+                            </div>
                         </div>
-                        <div>
-                            <mat-label style="margin:6px;">**********</mat-label>
+                        
+                        <h3>Contact Information</h3>
+                        <div class="innerparent">
+                            <div>
+                                <mat-label>Email:</mat-label>
+                            </div>
+                            <div>
+                                <mat-label style="margin:6px;"> {{email}}</mat-label>
+                            </div>
+                            <div>
+                                <i class="material-icons edit-icon" matTooltip="Edit Contact Info" (click)="ContactInfoDialog()">mode_edit</i>
+                            </div>
+    
                         </div>
-                        <div>
-                            <mat-label> <i class="material-icons  edit-icon" (click)="changePassDialog()" matTooltip="Edit Password">mode_edit</i>
-                            </mat-label>
+                        <div class="innerparent">
+                            <div>
+                                <mat-label>Phone 1:</mat-label>
+                            </div>
+                            <div>
+                                <mat-label style="margin:6px;"> {{cust_phone}}</mat-label>
+                            </div>
+                        </div>
+                        <div class="innerparent">
+                            <div>
+                                <mat-label>Phone 2:</mat-label>
+                            </div>
+                            <div>
+                                <mat-label style="margin:6px;"> {{cust_phone2}}</mat-label>
+                            </div>
+                        </div>
+                        <h3>Bill Delivery Settings</h3>
+                        <!-- <h3>Bill Delivery Settings</h3> -->
+                        <div class="innerparent">
+                            <div>
+                                <mat-label>Bill Delivery:</mat-label>
+                            </div>
+                            <div>
+                                <mat-label style="margin:6px;"> {{deliveryOption?.viewValue}}</mat-label>
+                            </div>
+                            <div>
+                                <i class="material-icons  edit-icon" matTooltip="Edit Delivery Option" (click)="deliveryOptionDialog()">mode_edit</i>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="innerparent">
-                                <div>
-                                    <mat-label>Login Id:</mat-label>
-                                </div>
-                                <div>
-                                    <mat-label style="margin:6px;"> {{username}}</mat-label>
-                                </div>
-                                <div>
-                                    <mat-label> <i class="material-icons  edit-icon" matTooltip="Edit Login ID" (click)="LoginIdDialog()">mode_edit</i>
-                                    </mat-label>
-                                </div>
-                            </div> -->
-                    <h3>Contact Information</h3>
-                    <div class="innerparent">
-                        <div>
-                            <mat-label>Email:</mat-label>
+                    <!-- Billing Address -->
+                    <div>
+                        <h3>Billing Address</h3>
+                        <div class="s_service">
+                        <mat-list *ngIf="request">
+                            <mat-list-item>
+                                <mat-label>Street Address:</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label>City:</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label>State:</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label>Zip Code:</mat-label>
+                            </mat-list-item>
+                        </mat-list>
+                        <div class="spinner" *ngIf="showSpinner">
+                            <img src="../../../assets/img/Spinner-new.svg" width="100" height="100" alt="logo">
                         </div>
-                        <div>
-                            <mat-label style="margin:6px;"> {{email}}</mat-label>
+                        <mat-list *ngIf="!request">
+                            <h4>{{error}}</h4>
+                        </mat-list>
+                        <mat-list *ngFor="let bills of BillAddress">
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{bills.cust_address2}}</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{bills.cust_city}}</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{bills.cust_state}}</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{zip}}</mat-label>
+                            </mat-list-item>
+                        </mat-list>
                         </div>
-                        <div>
-                            <i class="material-icons edit-icon" matTooltip="Edit Contact Info" (click)="ContactInfoDialog()">mode_edit</i>
-                        </div>
-
                     </div>
-                    <div class="innerparent">
-                        <div>
-                            <mat-label>Phone 1:</mat-label>
+                    <!-- Service Address -->
+                    <div >
+                        <h3>Service Address</h3>
+                        <div class="s_service">
+                        <mat-list *ngIf="request">
+                            <!-- <mat-list-item>
+                                    <mat-label>Street Address 1:</mat-label>
+                                </mat-list-item> -->
+                            <mat-list-item>
+                                <mat-label>Street Address:</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label>City:</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label>State:</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label>Zip Code:</mat-label>
+                            </mat-list-item>
+                        </mat-list>
+                        <div class="spinner" *ngIf="showSpinner">
+                            <img src="../../../assets/img/Spinner-new.svg" width="100" height="100" alt="logo">
                         </div>
-                        <div>
-                            <mat-label style="margin:6px;"> {{cust_phone}}</mat-label>
-                        </div>
-                    </div>
-                    <div class="innerparent">
-                        <div>
-                            <mat-label>Phone 2:</mat-label>
-                        </div>
-                        <div>
-                            <mat-label style="margin:6px;"> {{cust_phone2}}</mat-label>
-                        </div>
-                    </div>
-                    <h3>Bill Delivery Settings</h3>
-                    <!-- <h3>Bill Delivery Settings</h3> -->
-                    <div class="innerparent">
-                        <div>
-                            <mat-label>Bill Delivery:</mat-label>
-                        </div>
-                        <div>
-                            <mat-label style="margin:6px;"> {{deliveryOption?.viewValue}}</mat-label>
-                        </div>
-                        <div>
-                            <i class="material-icons  edit-icon" matTooltip="Edit Delivery Option" (click)="deliveryOptionDialog()">mode_edit</i>
+                        <mat-list *ngIf="!request">
+                            <h4>{{error}}</h4>
+                        </mat-list>
+                        <mat-list *ngFor="let payment of ServiceAddress">
+                            
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{payment.premise_address2}}</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{payment.premise_city}}</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{payment.premise_state}}</mat-label>
+                            </mat-list-item>
+                            <mat-list-item>
+                                <mat-label class="mat-label-info">{{payment.premise_zip}}</mat-label>
+                            </mat-list-item>
+                        </mat-list>
                         </div>
                     </div>
                 </div>
             </mat-tab>
-            <mat-tab>
-                <ng-template mat-tab-label>
-                    <img src="../../../../../assets/img/Icons/1.1.png" alt="offers" style="margin-top: -8px;">
-                    <label style="font-size: 15px; cursor:pointer;margin-top: 12px;"> Billing Address </label>
-                </ng-template>
-                <br>
-                <!-- <div style="display:flex;flex-direction:row;justify-content: flex-end">                    
-                    <i class="material-icons" style="padding:5px;color:#fff;background-color:#cd0000;font-size:25px;cursor:pointer;border-radius:25px;" matTooltip="Edit Address" (click)="openDialog()">mode_edit</i>
-                </div> -->
-                <div class="personalInfo">
-                    <mat-list *ngIf="request">
-                        <mat-list-item>
-                            <mat-label>Street Address:</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label>City:</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label>State:</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label>Zip Code:</mat-label>
-                        </mat-list-item>
-                    </mat-list>
-                    <div class="spinner" *ngIf="showSpinner">
-                        <img src="../../../assets/img/Spinner-new.svg" width="100" height="100" alt="logo">
-                    </div>
-                    <mat-list *ngIf="!request">
-                        <h4>{{error}}</h4>
-                    </mat-list>
-                    <mat-list *ngFor="let bills of BillAddress">
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{bills.cust_address2}}</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{bills.cust_city}}</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{bills.cust_state}}</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{zip}}</mat-label>
-                        </mat-list-item>
-                    </mat-list>
-                </div>
-            </mat-tab>
-            <mat-tab>
-                <ng-template mat-tab-label>
-                    <img src="../../../../../assets/img/Icons/4.4.png" alt="offers" style="margin-top: -8px;">
-                    <label style="font-size: 15px; cursor:pointer;margin-top: 12px;"> Service Address </label>
-                </ng-template>
-                <br>
-                <div class="personalInfo">
-                    <mat-list *ngIf="request">
-                        <!-- <mat-list-item>
-                                <mat-label>Street Address 1:</mat-label>
-                            </mat-list-item> -->
-                        <mat-list-item>
-                            <mat-label>Street Address:</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label>City:</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label>State:</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label>Zip Code:</mat-label>
-                        </mat-list-item>
-                    </mat-list>
-                    <div class="spinner" *ngIf="showSpinner">
-                        <img src="../../../assets/img/Spinner-new.svg" width="100" height="100" alt="logo">
-                    </div>
-                    <mat-list *ngIf="!request">
-                        <h4>{{error}}</h4>
-                    </mat-list>
-                    <mat-list *ngFor="let payment of ServiceAddress">
-                        <!-- <mat-list-item>
-                                <mat-label class="mat-label-info">{{payment.premise_address1}}</mat-label>
-                            </mat-list-item> -->
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{payment.premise_address2}}</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{payment.premise_city}}</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{payment.premise_state}}</mat-label>
-                        </mat-list-item>
-                        <mat-list-item>
-                            <mat-label class="mat-label-info">{{payment.premise_zip}}</mat-label>
-                        </mat-list-item>
-                    </mat-list>
-                </div>
-            </mat-tab>
+            <!--  -->
             <mat-tab>
                 <ng-template mat-tab-label>
                     <img src="../../../../../assets/img/Icons/3.3.png" alt="offers" style="margin-top: -8px;">
@@ -219,7 +200,6 @@
                 </div>
             </mat-tab>
         </mat-tab-group>
-
     </div>
     <!-- <div class="col-sm-4" style="padding-left: 9px !important;">
         <div class="right-side-menu">
