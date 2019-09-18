@@ -238,9 +238,13 @@
 .s_prof_img{
   margin-right: 10px;
 }
+p {
+  margin: 0px 0 0px;
+}
+
 @media only screen and (max-width: 991px) {
-    .tempHeader {
-        height: 43px;
+  .tempHeader {
+    height: 43px;
     }
     .mat-list{
       padding: 0;
@@ -292,24 +296,18 @@
             color: #fff;
         }
     }
-}
-
-@media only screen and (max-width: 991px) {
     .mainheader .mainnav {
         display: none;
     }
     .header .inner_header .main-listt{
-      padding: 14px 0 !important;
+      padding: 14px 0 ;
     }
-    .sMyAccount{
-      padding: 0 !important;
-     
+    .logo_wrapp img{
+      width: 130px;
     }
 }
 
-p {
-    margin: 0px 0 0px;
-}
+
 @media only screen and(max-width:767px){
   .header .inner_header .Toggle {
     display: block;

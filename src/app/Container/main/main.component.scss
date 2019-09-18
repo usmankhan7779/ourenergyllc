@@ -1194,8 +1194,9 @@ h3{
 
 .about-4 {
     h3 {
-        font-weight: 300;
+        font-weight: 300 !important;
         text-align: center;
+        margin: 40px 0 !important;
     }
     span {
         text-align: center;
@@ -2114,12 +2115,6 @@ h3 {
     line-height: 30px;
     color: #0e0e0f;
     margin-bottom: 20px;
-}
-
-.residential-two .residential-tabs .btn1 {
-    font-size: 16px;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 .con-cumunity {
@@ -3529,20 +3524,6 @@ h3 {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        button {
-            font-weight: bold;
-            border-radius: 25px;
-            font-size: 16px;
-            padding: 5px 35px;
-        }
-        .btn1 {
-            background-color: black;
-            color: #fff;
-        }
-        .btn2 {
-            background-color: #f5f4f4;
-            color: rgb(44, 43, 43);
-        }
     }
     mat-form-field {
         font-size: 17px;
@@ -3881,57 +3862,7 @@ display: block;
 .residential-form-home{
   margin: 0 auto;
 }
-@media (max-width: 991px) {
-  .header .inner_header .main-listt {
-    padding: 15px 0px;
-}
-  .timeline>li>.timeline-panel {
-      float: right;
-      width: 86%;
-  }
-    .main_banner{
-  min-height: auto;
-}
-.main_banner .promo_img_div .main_img {
- display: none;
-}
-.main_banner .download-here {
-  position: static;
-  text-align: right;
-}
-.main_banner img{
-  max-width: 100px;
-}
-.main_banner .promo_img_div .zip_promo {
-  min-width: auto;
-}
-.promo_img_div{
-  padding: 0 30px;
-}
-.main_banner .promo_img_div .zip_promo h3{
-font-size: 30px !important;
-padding-bottom: 20px;
-}
-.form-zip {
-max-width: 440px;
-}
-  .heading_s{
-    font-size: 34px;
-  }
-  .help-sidebar{
-    display: flex;
-    flex-wrap: wrap;
-    white-space: nowrap;
-  }
-  .help-sidebar li{
-    font-size: 12px;
-    font-weight: 600;
-}
 
-  .h1, h1 {
-    font-size: 26px;
-  }
-}
 .mat-accordion p{
   font-size: 14px;
 }
@@ -3955,6 +3886,76 @@ max-width: 440px;
 .s_address_found {
   padding: 0 20px;
 }
+.four_Steps .row{
+  margin: 0;
+}
+@media (max-width: 991px) {
+  .timeline > li > .timeline-panel:after{
+    display: none !important;
+  }
+  .timeline:before{
+    display: none !important;
+  }
+  .header .inner_header .main-listt {
+    padding: 15px 0px;
+  }
+  .timeline>li>.timeline-panel {
+      float: right;
+      width: 86%;
+  }
+  .main_banner{
+  min-height: auto;
+  }
+  .main_banner .promo_img_div .main_img {
+  display: none;
+  }
+  .main_banner .download-here {
+    position: static;
+    text-align: right;
+    padding-right: 40px;
+  }
+  .sMyAccount 
+  .main_banner img{
+    max-width: 100px;
+  }
+  .main_banner .promo_img_div .zip_promo {
+    min-width: auto;
+  }
+  .promo_img_div{
+    padding: 0 30px;
+  }
+  .main_banner .promo_img_div .zip_promo h3{
+  font-size: 30px !important;
+  padding-bottom: 20px;
+  }
+  .form-zip {
+  max-width: 440px;
+  }
+  .heading_s{
+    font-weight :600;
+    font-size: 40px;
+  }
+  .heading_s br:first-child{
+    display: none;
+  }
+  .help-sidebar{
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+  }
+  .help-sidebar li{
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .h1, h1 {
+    font-size: 26px;
+  }
+
+  .download-here img{
+    width: 100px;
+  }
+}
+
 @media (max-width: 767px) {
   .logo-width a {
       margin-top: 0px;
@@ -3968,9 +3969,7 @@ max-width: 440px;
   .faqs_home #accordion .panel-default .panel-heading .panel-title{
     font-size: 16px;
   }
-  .download-here img{
-    max-width: 100px;
-  }
+
   .main_banner{
     min-height: auto !important;
   }
@@ -4017,5 +4016,18 @@ max-width: 440px;
     margin: 0 auto 0 !important;
     width: 95% !important;
   }
-  
+  .timeline > li > .timeline-badge{
+    display: none !important;
+  }
+  .four_Steps.about-4 .container{
+    padding: 0;
+  }
+  .timeline > li > .timeline-panel{
+    width: 100% !important;
+  }
+}
+@media (max-width:540px){
+  .main_banner .promo_img_div .zip_promo h3 {
+    margin-top: 20px !important;
+  }
 }

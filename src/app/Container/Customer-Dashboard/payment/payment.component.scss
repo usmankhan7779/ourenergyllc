@@ -30,20 +30,6 @@
         margin: 30px 5px;
     }
     
-    .btn1 {
-        padding: 0px 20px;
-        background-color: #000;
-        color: #fff;
-    }
-    
-    .btn1:disabled,
-    .btn1[disabled],
-    .btn2:disabled,
-    .btn2[disabled] {
-        background-color: #c3c1c1b8 !important;
-        color: #333 !important;
-    }
-    
     .btnSubmit {
         background-color: #141313;
         color: #fff;

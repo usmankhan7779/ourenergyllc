@@ -330,7 +330,6 @@
         height: 58px;
     }
     .topnav {
-        display: unset;
         mat-list-item {
             font-weight: bold;
             width: 100%;
@@ -445,4 +444,27 @@
 
 .contact-img{
     width: 10%;
+}
+.s_a_topnav{
+  position: relative;
+}
+.s_top_head{
+  top:10px !important;
+}
+#myTopnav{
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 99;
+  padding: 20px;
+  width: 100%;
+  background: #fff;
+}
+@media (min-width:767px){
+  .myTopnav{
+    display: none;
+  }
+}
+.topnav a{
+  display: block !important;
 }

@@ -3,7 +3,7 @@
         <mat-icon (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">featured_play_list</mat-icon>
     </div> -->
     <div class="back-image">
-        <mat-card style="padding-bottom:0px;" class="mainCard" *ngIf="hideLogin">
+        <mat-card  class="mainCard" *ngIf="hideLogin">
             <mat-card>
                 <h3>Sign In to Your Account</h3>
             </mat-card>
@@ -40,6 +40,7 @@
                     </div>
                     <div class="recaptcha">
                         <div class="text-center">
+                            
                             <app-recapcha></app-recapcha>
                         </div>
                         <div>
@@ -50,8 +51,11 @@
                 <div class="spinner" *ngIf="showSpinner">
                     <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
                 </div>
-                <button  class="button" *ngIf="SignInButton">Sign In</button>
-                <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
+                <div>
+                    <button  class="button" *ngIf="SignInButton">Sign In</button>
+                    <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
+                </div>
+               
                 <div *ngIf="hideLogin">
                     <button class="btn-100 quick-pay" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">
                         <img src="../../assets/img/QuickPay/qickpay11@50x.png">

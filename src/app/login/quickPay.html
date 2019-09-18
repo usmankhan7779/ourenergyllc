@@ -25,7 +25,7 @@
         <mat-error *ngIf="!quickPay.phone.errors?.pattern && quickPay.phone.errors?.minlength">Minimum of 10 characters required.</mat-error>
     </mat-form-field>
     <div class="text-center">
-        <button  type="submit" [disabled]="sbmtBtn" class="btn1">Verify Account</button>
-        <button  type="button" (click)="cancel()" class="btn2">Cancel</button>
+        <button  type="submit" [disabled]="sbmtBtn" >Verify Account</button>
+        <button  type="button" (click)="cancel()" >Cancel</button>
     </div>
 </form>

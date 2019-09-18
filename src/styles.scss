@@ -88,26 +88,13 @@ body {
     color: #fff;
     font-weight: bold;
 }
-// .mat-card,
-// .mat-list-item,
-// .mat-table,
-// .mat-paginator,
-// .mat-form-field,
-// .mat-button,
-// .mat-menu-item,
-// .mat-checkbox,
-// .mat-radio-button {
-//     font-family: 'Open Sans'
-// }
 
 .failureIcon {
     font-size: 30px;
-    color: #cd0000
 }
 
 .successIcon {
     font-size: 30px;
-    color: #1d3863;
 }
 
 .normalIcon {
@@ -116,7 +103,6 @@ body {
 
 .mainIcon {
     font-size: 30px;
-    color: goldenrod
 }
 
 .normalIcon2 {
@@ -638,7 +624,14 @@ p strong,p b{
   .faqs_home #accordion .panel-default .panel-heading {
     padding: 20px 30px !important;
   }
-
+  .App .staticContent {
+    margin-top: 10px !important;
+  }
+  .App .children{
+    width: 97% !important;
+    float: none !important;
+    margin: 0 auto !important;
+  }
 }
 @media only screen and(max-width:540px){
   .background .back-image{
@@ -701,6 +694,8 @@ p strong,p b{
   }
   .contacts h4 {
     font-size: 14px !important;
+  }.App .staticContent{
+    margin-top: 0px;
   }
 }
 

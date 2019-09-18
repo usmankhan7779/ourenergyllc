@@ -139,8 +139,8 @@
             <button mat-menu-item routerLink="contact"><img src="../assets/img/Icons/Contact.png" class="images contact-img"> Contact Us </button>
             <button mat-menu-item (click)="logOut()"><img src="../assets/img/Icons/Logout.png" class="images"> Sign Out </button>
         </mat-menu>
-        <div class="Toggle">
-            <mat-icon (click)="myFunction()">format_align_right</mat-icon>
+        <div class="Toggle" (click)="show_sidebar()">
+            <mat-icon >format_align_right</mat-icon>
         </div>
     </div>
 </div>
@@ -148,60 +148,60 @@
 </div>
 <div class="topnav" id="myTopnav">
     <mat-list>
-        <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="close_sidebar()">
             <mat-list-item>
                 <img src="../assets/img/Icons/Home.png" class="images">Home
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.profile">
+        <a *ngIf="tabs?.profile" (click)="close_sidebar()">
             <mat-list-item routerLink="customerInfo" routerLinkActive="active">
                 <img src="../assets/img/Icons/Profile.png" class="images">My Profile
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active">
+        <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active" (click)="close_sidebar()">
             <mat-list-item>
                 <img src="../assets/img/Icons/Plan.png" class="images">Plan
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.offers" routerLink="offers" routerLinkActive="active" class="plan">
+        <a *ngIf="tabs?.offers" routerLink="offers" routerLinkActive="active" class="plan s_a_topnav" (click)="close_sidebar()">
             <mat-list-item style="width: 100%;">
                 <img src="../assets/img/Icons/offer-icon-black.png" class="images">Offers
             </mat-list-item>
-            <span>
+            <span class="badge s_top_head">
                 {{offerLength}}
             </span>
         </a>
-        <a *ngIf="tabs?.paynow" routerLink="paynow" routerLinkActive="active">
+        <a *ngIf="tabs?.paynow" routerLink="paynow" routerLinkActive="active" (click)="close_sidebar()">
             <mat-list-item>
                 <img src="../assets/img/Icons/Pay-Now.png" class="images">Pay Now
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.bills" routerLink="billInfo" routerLinkActive="active">
+        <a *ngIf="tabs?.bills" routerLink="billInfo" routerLinkActive="active" (click)="close_sidebar()">
             <mat-list-item>
                 <img src="../assets/img/Icons/Bills.png" class="images">Bills
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active">
+        <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active" (click)="close_sidebar()">
             <mat-list-item>
                 <img src="../assets/img/Icons/Payments.png" class="images"> Payments
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active">
+        <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active" (click)="close_sidebar()">
             <mat-list-item>
                 <img src="../assets/img/Icons/Usage.png" class="images">Usage
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.contactus">
+        <a *ngIf="tabs?.contactus" (click)="close_sidebar()">
             <mat-list-item routerLink="contact" routerLinkActive="active">
                 <img src="../assets/img/Icons/Contact.png" class="images">Contact Us
             </mat-list-item>
         </a>
-        <a *ngIf="tabs?.notices">
+        <a *ngIf="tabs?.notices" (click)="close_sidebar()">
             <mat-list-item routerLink="notices" routerLinkActive="active">
                 <img src="../assets/img/Icons/Notices-icon.png" class="images">Notices
             </mat-list-item>
         </a>
-        <a>
+        <a (click)="close_sidebar()">
             <mat-list-item routerLink="." (click)="logOut()">
                 <img src="../assets/img/Icons/Logout.png" class="images"> Sign Out
             </mat-list-item>

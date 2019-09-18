@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs/Subscription'
-import { ServerSocketService } from './server-socket.service'
-import { Router } from "@angular/router";
+import { Subscription } from 'rxjs/Subscription';
+import { ServerSocketService } from './server-socket.service';
+import { Router } from '@angular/router';
 import { NotificationService } from '../../Store/Services';
 import { MatSnackBar } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environment'
+import { environment } from '../../../../environments/environment';
 import { DahsboardService } from '../../../AdminPortal/Store/dashboard';
+declare var $: any;
 
 let id;
 let type;
@@ -156,5 +157,12 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('login_res');
     localStorage.removeItem('username');
     this.router.navigate(['/login']);
+  }
+
+  show_sidebar() {
+    $('#myTopnav').toggle('slow');
+  }
+  close_sidebar() {
+    $('#myTopnav').hide('slow');
   }
 }
