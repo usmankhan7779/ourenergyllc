@@ -1,27 +1,33 @@
 <h1 mat-dialog-title>Proceed/Authorize Enrollment?</h1>
-<div mat-dialog-content>
-    <h3>Personal Information</h3>
-    <p>First Name: <b>{{data.cust_firstname}}</b></p>
-    <p>Last Name: <b>{{data.cust_lastname}}</b></p>
-    <p>SSN: <b>{{data.ssn}}</b></p>
-    <p>Phone: <b>{{data.phone1}}</b></p>
-    <p>Email: <b>{{data.email_address}}</b></p>
-
+<div mat-dialog-content class="s_popup_info_content">
+  <div class="s_popup_info">
+      <h3>Personal Information</h3>
+      <p>First Name: <b>{{data.cust_firstname}}</b></p>
+      <p>Last Name: <b>{{data.cust_lastname}}</b></p>
+      <p>SSN: <b>{{data.ssn}}</b></p>
+      <p>Phone: <b>{{data.phone1}}</b></p>
+      <p>Email: <b>{{data.email_address}}</b></p>
+  </div>
+    
+  <div class="s_popup_info">
     <h3>Service Address</h3>
     <p><b>{{data.pm_address2}}</b></p>
     <p><b>{{data.pm_city}}, {{data.pm_state}} {{data.pm_zip}}</b></p>
     <p>Premise/ESI ID: <b>{{data.premise_id}}</b></p>
     <p>Provider: <b>{{data.vendor_company}}</b></p>
     <p>For Outages/Emergencies Call: (800)-332-7143</p>
-
+</div>
+<div class="s_popup_info">
     <h3>Billing Address</h3>
     <p><b>{{data.cm_address2}}</b></p>
     <p><b>{{data.cm_city}}, {{data.cm_state}} {{data.cm_zip}}</b></p>
-
+</div>
+<div class="s_popup_info">
     <h3>Service Request</h3>
     <p>Request Type: <b>{{data.enrol_type}}</b></p>
     <p>Requested Date: <b>{{data.request_date}}</b></p>
-
+  </div>
+  <div class="s_popup_info">
     <h3>Product Information</h3>
     <p><b>{{data.product_name}}</b></p>
     <p><b>{{data.product_info}}</b></p>
@@ -36,8 +42,9 @@
     <p>I have reviewed the information provided above and by clicking <b>“Yes I Authorize”</b> below, I accept that I am authorizing Our Energy LLC to become my new retail electric provider and to act as my agent to perform the necessary task to establish
         my electric service amount with Our Energy LLC. This authorization to establish or switch my provider of electric service extends to the above location.
     </p>
+  </div>
 </div>
 <div mat-dialog-actions>
-    <button class="btn1"  (click)="submit()">Yes, I Authorize</button>
-    <button class="btn2"  (click)="close()">Wait, Let me Verify</button>
+    <button   (click)="submit()">Yes, I Authorize</button>
+    <button   (click)="close()">Wait, Let me Verify</button>
 </div>

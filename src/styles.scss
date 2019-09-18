@@ -221,37 +221,32 @@ mark {
 
 
 .btn,button,a.btn{
-  background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%);
-  color: #FFFFFF;
-  font-weight: 600;
-  box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
-  border: 1px solid #c2dde8 !important;
-  text-transform: capitalize;
-  display: inline-block;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  user-select: none;
-  font-size: 16px ;
-  position: relative;
-  padding: 12px 30px;
-  margin: 10px 1px;
-  letter-spacing: 0;
-  -webkit-font-smoothing: antialiased;
-  transition: 0.3s ease-in-out all;
-  border-radius: 5px;
-  font-weight: 400;
+    background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%);
+    color: #FFFFFF;
+    font-weight: 600;
+    box-shadow: 9.8px 6.9px 21px 0 rgba(0,0,0,.12);
+    border: 1px solid #c2dde8 !important;
+    text-transform: capitalize;
+    display: inline-block;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px ;
+    position: relative;
+    padding: 10px 30px;
+    margin: 10px 1px;
+    letter-spacing: 0;
+    -webkit-font-smoothing: antialiased;
+    transition: 0.3s ease-in-out all;
+    border-radius: 5px;
+    font-weight: 400;
 }
 .blue-btn{
   background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important;
-}
-.btn:focus,button:focus,a.btn:focus{
-  outline: none;
-  background: linear-gradient(90deg, #a91f73 0%, #ff4270 100%);
-  color: #FFFFFF;
 }
 
 .pink_btn{
@@ -283,11 +278,11 @@ mark {
   -webkit-font-smoothing: antialiased;
   transition: 0.3s ease-in-out all;
 }
-.btn:hover,button:hover,a.btn:hover{
+.btn:hover,button:hover,a.btn:hover,.btn:focus,button:focus,a.btn:focus{
 box-shadow:none;
 background: #fff;
-border: 1px solid #ccc !important;
-color: #B6B6B6 ;
+border: 1px solid #ff4270 !important;
+color: #ff4270 ;
 transition: 0.3s ease-in-out all;
 }
 .padding-30{
@@ -553,6 +548,34 @@ p strong,p b{
 .table>tbody>tr>td{
   word-break: break-word;
 }
+.s_address_found{
+  padding: 0 20px;
+}
+.s_note_waive{
+  margin-top: 5px;
+}
+.s_note_waive span{
+  color: #c00;
+}
+.s_popup_info_content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.s_popup_info{
+  width: 48%;
+  box-shadow: 0 0 10px #ccc;
+}
+.mg-0{
+  margin: 0;
+}
+.blue-btn:hover{
+  color: unset !important;
+  background: linear-gradient(90deg, #042863 0%, #0a97d2 100%) !important !important;
+  color: #ccc !important;
+  border: 1px solid #c2dde8 !important
+}
+//media qureis 
 @media only screen and (max-width:1500px){
   .filter-bar button{
     font-size: 14px;
