@@ -38,12 +38,12 @@ export class EnrollmentComponent implements OnInit {
   waiveDeposite: string
   CreditVerification: string = "Check My Credit"
   products = []
-  price_kwh1 :boolean
-  price_kwh2:boolean;
-  price_kwh3 :boolean;
+  price_kwh1: boolean;
+  price_kwh2: boolean;
+  price_kwh3: boolean;
   // this.price_traffic = this.products['tariff_500']
   services = ["Move-in (New Service)", "Switching from another Service Provider on Next Available Schedule Date", "Switching from another Service Provider on a Specific Date"]
-  creditCards = [{val:{ status:true ,value: "Check My Credit"}},{val:{ status:false ,value: "Dont Check Credit"}},{val:{ status:false ,value: "Waive Deposit"}} ]
+  creditCards = [{ val: { status: true, value: "Check My Credit" } }, { val: { status: false, value: "Dont Check Credit" } }, { val: { status: false, value: "Waive Deposit" } }]
   waivedeposit = ["I will submit a letter from my current provider showing timely payments for the last 12 months with no more than 1 late payment", "I am 65+ and can provide proof of timely payments to my current electric provider.", "I am a victim of family violence and will complete and return the required forms."]
   states = [{ viewValue: "Alabama", value: "AL" }, { viewValue: "Alaska", value: "AK" }, { viewValue: "Arizona", value: "AZ" }, { viewValue: "Arkansas", value: "AR" }, { viewValue: "California", value: "CA" }, { viewValue: "Colorado", value: "CO" }, { viewValue: "Connecticut", value: "CT" }, { viewValue: "Delaware", value: "DE" }, { viewValue: "District of Columbia", value: "DC" }, { viewValue: "Florida", value: "FL" }, { viewValue: "Georgia", value: "GA" }, { viewValue: "Hawaii", value: "HI" }, { viewValue: "Idaho", value: "ID" }, { viewValue: "Illinois", value: "IL" }, { viewValue: "Indiana", value: "IN" }, { viewValue: "Iowa", value: "IA" }, { viewValue: "Kansas", value: "KS" }, { viewValue: "Kentucky", value: "KY" }, { viewValue: "Louisiana", value: "LA" }, { viewValue: "Maine", value: "ME" }, { viewValue: "Maryland", value: "MD" }, { viewValue: "Massachusetts", value: "MA" }, { viewValue: "Michigan", value: "MI" }, { viewValue: "Minnesota", value: "MN" }, { viewValue: "Mississippi", value: "MS" }, { viewValue: "Missouri", value: "MO" }, { viewValue: "Montana", value: "MT" }, { viewValue: "Nebraska", value: "NE" }, { viewValue: "Nevada", value: "NV" }, { viewValue: "New Hampshire", value: "NH" }, { viewValue: "New Jersey", value: "NJ" }, { viewValue: "New Mexico", value: "NM" }, { viewValue: "New York", value: "NY" }, { viewValue: "North Carolina", value: "NC" }, { viewValue: "North Dakota", value: "ND" }, { viewValue: "Ohio", value: "OH" }, { viewValue: "Oklahoma", value: "OK" }, { viewValue: "Oregon", value: "OR" }, { viewValue: "Pennsylvania", value: "PA" }, { viewValue: "Rhode Island", value: "RI" }, { viewValue: "South Carolina", value: "SC" }, { viewValue: "South Dakota", value: "SD" }, { viewValue: "Tennessee", value: "TN" }, { viewValue: "Texas", value: "TX" }, { viewValue: "Utah", value: "UT" }, { viewValue: "Vermont", value: "VT" }, { viewValue: "Virginia", value: "VA" }, { viewValue: "Washington", value: "WA" }, { viewValue: "West Virginia", value: "WV" }, { viewValue: "Wisconsin", value: "WI" }, { viewValue: "Wyoming", value: "WY" }, { viewValue: "American Samoa", value: "AS" }, { viewValue: "Guam", value: "GU" }, { viewValue: "Northern Mariana Islands", value: "MP" }, { viewValue: "Puerto Rico", value: "PR" }, { viewValue: "U.S. Virgin Islands", value: "VI" }, { viewValue: "Micronesia", value: "FM" }, { viewValue: "Marshall Islands", value: "MH" }, { viewValue: "Palau", value: "PW" }, { viewValue: "U.S. Armed Forces – Americas[d]", value: "AA" }, { viewValue: "U.S. Armed Forces – Europe[e]", value: "AE" }, { viewValue: "U.S. Armed Forces – Pacific[f]", value: "AP" }, { viewValue: "Northern Mariana Islands", value: "CM" }, { viewValue: "Panama Canal Zone", value: "CZ" }, { viewValue: "Nebraska", value: "NB" }, { viewValue: "Philippine Islands", value: "PI" }, { viewValue: "Trust Territory of the Pacific Islands", value: "TT" }]
   questions = ["PIN", "What school did you attend sixth grade", "In what city or town was your first job", "What was the name of your favorite teacher", "What was your first car"]
@@ -87,10 +87,11 @@ export class EnrollmentComponent implements OnInit {
     this.showCheckbox = false
     console.log("check")
   }
-price_traffic;
+
+  price_traffic;
   ngOnInit() {
-this.price_traffic =  localStorage.getItem('tariff')
-console.log(this.price_traffic)
+    this.price_traffic = localStorage.getItem('tariff')
+    console.log(this.price_traffic)
     let currentYear = new Date().getFullYear()
     this.years[0] = currentYear
     for (let index = 1; index < 20; index++) {
@@ -142,11 +143,28 @@ console.log(this.price_traffic)
     })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
-    if ( this.price_traffic == this.products['tariff_500']){
-      alert(this.price_kwh1)
+    
+    // console.log(this.price_traffic)
+    if(localStorage.getItem('val1') ){
+      this.price_traffic = localStorage.getItem('val1')
+      this.price_kwh1 = true
+      this.price_kwh2 = false
+      this.price_kwh3 = false;
+
     }
-    console.log(  this.products['tariff_500'] ==this.price_traffic)
- 
+    else if (localStorage.getItem('val2')){
+      this.price_traffic = localStorage.getItem('val2')
+      this.price_kwh1 = false
+      this.price_kwh2 = true
+      this.price_kwh3 = false;
+    }
+    else if (localStorage.getItem('val3')){
+      this.price_traffic = localStorage.getItem('val3')
+      this.price_kwh1 = false
+      this.price_kwh2 = false
+      this.price_kwh3 = true;
+    }
+     
 
     setTimeout(() => {
       if (this.showSpinner == null) { this.showSpinner = true }
@@ -317,7 +335,7 @@ console.log(this.price_traffic)
       this.flow_status = '-227'
     }
   }
-  loader=false
+  loader = false
   enroll() {
     this.submitBtn = true
     if ((this.check1 == true && this.check2 == true && this.check3 == true && this.check4) || (this.check1 == true && this.check2 == true && this.check3 == true)) {
@@ -370,7 +388,7 @@ console.log(this.price_traffic)
       dialogRef.afterClosed().subscribe(result => {
         consent = result
         if (consent == true) {
-          this.loader=true
+          this.loader = true
           switch (this.flow_status) {
             // Dont Check Credit
             case '-104':
@@ -379,7 +397,7 @@ console.log(this.price_traffic)
                   obj.sys_batch_no = response['message']['SYSBATCHNO']
                   obj.use_cust_id = response['message']['use_cust_id']
                   obj.enroll_status = 'Pending for Deposit'
-                  this.loader=false
+                  this.loader = false
                   this.dialog.open(DespositPopup, {
                     autoFocus: false,
                     data: obj
@@ -418,7 +436,7 @@ console.log(this.price_traffic)
                             flow_status: "-120",
                           }
                           this.enrollment.changeEnrollmentStatus(para).subscribe(resp => {
-                            this.loader=false
+                            this.loader = false
                             this.dialog.open(DespositPopup, {
                               autoFocus: false,
                               data: obj
@@ -436,7 +454,7 @@ console.log(this.price_traffic)
                           flow_status: "-121",
                         }
                         this.enrollment.changeEnrollmentStatus(para).subscribe(resp => {
-                          this.loader=false
+                          this.loader = false
                           this.dialog.open(DespositPopup, {
                             autoFocus: false,
                             data: obj

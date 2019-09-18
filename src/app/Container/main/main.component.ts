@@ -629,33 +629,41 @@ averge_2000(){
 priceetc = 'tariff_500';
   price_from = new FormControl('', [Validators.pattern('^[0-9]*[\.]?[0-9]+$'), Validators.min(1)])
   price_to = new FormControl('', [Validators.pattern('^[0-9]*[\.]?[0-9]+$'), Validators.max(99)])
-viewprice(){
+viewprice(val1 , val2 ,val3 ){
   if ( this.estimatedUsage == "500"){
-    // alert( this.estimatedUsage)
+  
 this.priceetc ='tariff_500'
 localStorage.setItem('tariff',this.priceetc)
-//     tariff_500: "7.9"
-// tariff_1000: "7.6"
-// tariff_2000: "7.4"
+localStorage.setItem('val1',val1)
+localStorage.removeItem(val2)
+localStorage.removeItem(val3)
+ 
     
   }
   else if ( this.estimatedUsage == "1000"){
-    // alert(this.estimatedUsage)
+    
     this.priceetc ='tariff_1000'
     localStorage.setItem('tariff',this.priceetc)
+    localStorage.setItem('val2',val2)
+    localStorage.removeItem(val1)
+    localStorage.removeItem(val3)
 
   }
   else if (this.estimatedUsage == "2000")
   {
-    // alert(this.estimatedUsage)
+  
     this.priceetc ='tariff_2000'
     localStorage.setItem('tariff',this.priceetc)
+    localStorage.setItem('val3',val3)
+    localStorage.removeItem(val1)
+    localStorage.removeItem(val2)
   }
   else if (this.estimatedUsage == undefined){
     // this.estimatedUsage = this.priceetc
     // alert(this.priceetc)
     this.priceetc ='tariff_500'
     localStorage.setItem('tariff',this.priceetc)
+    localStorage.setItem('val1',val1)
   }
 }
   filterProduct() {

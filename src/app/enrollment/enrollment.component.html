@@ -461,8 +461,11 @@
                     <div>
                         <div  class="text-center price-box_en">
                                 <!-- *ngIf="price_traffic == value?.tariff_500" -->
-                            <h3 >${{value?.tariff_500}}¢ </h3>
-                            <b >Average Rate at 500 kWhs</b>
+                            <!-- <h3 >${{value?.tariff_500}}¢ </h3> -->
+                             <h3 >${{price_traffic}}¢ </h3>
+                            <b *ngIf="price_kwh1" >Average Rate at 500 kWhs</b>
+                            <b *ngIf="price_kwh2" >Average Rate at 1000 kWhs</b>
+                            <b *ngIf="price_kwh3" >Average Rate at 2000 kWhs</b>
                         </div>
                         <div *ngIf="premiseInfo != null || premiseInfo != undefined">
                             <br>
