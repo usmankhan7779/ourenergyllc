@@ -56,7 +56,7 @@ export class OffersComponent implements OnInit {
     ngOnDestroy(): void {
         this.socketSubscription.unsubscribe();
     }
-
+date;
     GetOffer() {
         this.newOffer = null
         this.http.get(environment.url + 'customers/get-cust-offer/', {
@@ -64,6 +64,8 @@ export class OffersComponent implements OnInit {
         }).subscribe(res => {
             if (res['status'] == true) {
                 this.newOffer = res['message']
+                this.date = res
+                // alert(this.date)
                 this.showMessageResponse = true
                 clearTimeout(this.y)
                 this.showSpinner1 = false
