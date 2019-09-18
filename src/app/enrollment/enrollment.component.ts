@@ -38,6 +38,7 @@ export class EnrollmentComponent implements OnInit {
   waiveDeposite: string
   CreditVerification: string = "Check My Credit"
   products = []
+  khw;
   price_kwh1: boolean;
   price_kwh2: boolean;
   price_kwh3: boolean;
@@ -145,24 +146,27 @@ export class EnrollmentComponent implements OnInit {
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
     
     // console.log(this.price_traffic)
-    if(localStorage.getItem('val1') ){
+    if(localStorage.getItem('tariff')  == 'tariff_500' ){
       this.price_traffic = localStorage.getItem('val1')
-      this.price_kwh1 = true
-      this.price_kwh2 = false
-      this.price_kwh3 = false;
+      // this.price_kwh1 = true
+      // this.price_kwh2 = false
+      // this.price_kwh3 = false;
+      this.khw = "500"
 
     }
-    else if (localStorage.getItem('val2')){
-      this.price_traffic = localStorage.getItem('val2')
+    else if (localStorage.getItem('tariff')  == 'tariff_1000'){
+      this.price_traffic = localStorage.getItem('val1')
       this.price_kwh1 = false
       this.price_kwh2 = true
       this.price_kwh3 = false;
+      this.khw = "1000"
     }
-    else if (localStorage.getItem('val3')){
-      this.price_traffic = localStorage.getItem('val3')
-      this.price_kwh1 = false
-      this.price_kwh2 = false
-      this.price_kwh3 = true;
+    else if (localStorage.getItem('tariff')  == 'tariff_2000'){
+      this.price_traffic = localStorage.getItem('val1')
+      // this.price_kwh1 = false
+      // this.price_kwh2 = false
+      // this.price_kwh3 = true;
+      this.khw = "2000"
     }
      
 
@@ -325,17 +329,22 @@ export class EnrollmentComponent implements OnInit {
       default: break;
     }
   }
-
+  show_Waiver :boolean =false;
   radioChangeCreditVerificationsub(event) {
     if (this.creditvalue == 'Waive Deposit' && event.value == 'I will submit a letter from my current provider showing timely payments for the last 12 months with no more than 1 late payment') {
       this.flow_status = '-229'
+      this.show_Waiver = false;
+      
     } else if (this.creditvalue == 'Waive Deposit' && event.value == 'I am 65+ and can provide proof of timely payments to my current electric provider.') {
       this.flow_status = '-228'
+      this.show_Waiver = false;
     } else if (this.creditvalue == 'Waive Deposit' && event.value == 'I am a victim of family violence and will complete and return the required forms.') {
       this.flow_status = '-227'
+      this.show_Waiver = true;
     }
   }
   loader = false
+
   enroll() {
     this.submitBtn = true
     if ((this.check1 == true && this.check2 == true && this.check3 == true && this.check4) || (this.check1 == true && this.check2 == true && this.check3 == true)) {
