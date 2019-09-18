@@ -393,8 +393,13 @@
                                                 {{waived}}
                                             </mat-radio-button>
                                         </mat-radio-group>
-                                        <p>You can download the Waiver Form
-                                            <a class="anchor" href="http://www.puc.texas.gov/industry/electric/forms/violence/DepWaivFrm.pdf" matTooltip="Waiver Form"> here</a>. Please fax your waiver documents to us at 1-281.715.5767 or email us at CustomerService@OUREnergyLLC.com.</p>
+                                        <p >
+                                            <b *ngIf="show_Waiver">You can download the Waiver Form 
+                                            <a class="anchor" href="http://www.puc.texas.gov/industry/electric/forms/violence/DepWaivFrm.pdf" matTooltip="Waiver Form"> here</a>.
+                                        </b>
+                                        
+                                            Please fax your waiver documents to us at 1-281.715.5767 or email us at CustomerService@OUREnergyLLC.com.</p>
+
                                             <p class="s_note_waive">
                                               <i class="fa fa-warning" style="font-size:14px;color:#dcc70b;margin-right:5px;"></i>   Please note that your enrollment will not be processes till we receive the waiver documents. Please send  copy of the documents through email   <span>customerservices@ourenergyllc.com</span> or fax it to us at <span>281-715-5767 </span>
                                             </p>
@@ -468,9 +473,9 @@
                                 <!-- *ngIf="price_traffic == value?.tariff_500" -->
                             <!-- <h3 >${{value?.tariff_500}}¢ </h3> -->
                              <h3 >${{price_traffic}}¢ </h3>
-                            <b *ngIf="price_kwh1" >Average Rate at 500 kWhs</b>
-                            <b *ngIf="price_kwh2" >Average Rate at 1000 kWhs</b>
-                            <b *ngIf="price_kwh3" >Average Rate at 2000 kWhs</b>
+                            <b >Average Rate at {{khw}} kWhs</b>
+                            <!-- <b *ngIf="price_kwh2" >Average Rate at 1000 kWhs</b>
+                            <b *ngIf="price_kwh3" >Average Rate at 2000 kWhs</b> -->
                         </div>
                         <div *ngIf="premiseInfo != null || premiseInfo != undefined">
                             <br>

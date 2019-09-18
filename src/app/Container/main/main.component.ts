@@ -633,10 +633,11 @@ viewprice(val1 , val2 ,val3 ){
   if ( this.estimatedUsage == "500"){
   
 this.priceetc ='tariff_500'
+// localStorage.removeItem(val2)
+// localStorage.removeItem(val3)
 localStorage.setItem('tariff',this.priceetc)
 localStorage.setItem('val1',val1)
-localStorage.removeItem(val2)
-localStorage.removeItem(val3)
+
  
     
   }
@@ -644,9 +645,10 @@ localStorage.removeItem(val3)
     
     this.priceetc ='tariff_1000'
     localStorage.setItem('tariff',this.priceetc)
-    localStorage.setItem('val2',val2)
-    localStorage.removeItem(val1)
-    localStorage.removeItem(val3)
+    // localStorage.removeItem(val1)
+    // localStorage.removeItem(val3)
+    localStorage.setItem('val1',val2)
+
 
   }
   else if (this.estimatedUsage == "2000")
@@ -654,15 +656,18 @@ localStorage.removeItem(val3)
   
     this.priceetc ='tariff_2000'
     localStorage.setItem('tariff',this.priceetc)
-    localStorage.setItem('val3',val3)
-    localStorage.removeItem(val1)
-    localStorage.removeItem(val2)
+    // localStorage.removeItem(val1)
+    // localStorage.removeItem(val2)
+    localStorage.setItem('val1',val3)
+
   }
   else if (this.estimatedUsage == undefined){
     // this.estimatedUsage = this.priceetc
     // alert(this.priceetc)
     this.priceetc ='tariff_500'
     localStorage.setItem('tariff',this.priceetc)
+    localStorage.removeItem(val3)
+    localStorage.removeItem(val2)
     localStorage.setItem('val1',val1)
   }
 }
