@@ -243,7 +243,9 @@
                         <form [formGroup]="thirdFormGroup">
                             <ng-template matStepLabel><b style="padding-right: 15px; padding-left: 15px;">Billing Information</b></ng-template>
                             <mat-card class="form mat-elevation-z4">
-                    <mat-card-title class="mat-elevation-z4">Billing Address</mat-card-title>
+                    <mat-card-title class="mat-elevation-z4">
+                      Billing Address
+                    </mat-card-title>
                                 <mat-checkbox (change)="SameAsServiceAddress()" [(ngModel)]="serviceAddresscheck" [ngModelOptions]="{standalone: true}">Same as Service Address</mat-checkbox>
                                 <div class="row">
                                     <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">

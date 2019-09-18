@@ -38,6 +38,10 @@ export class EnrollmentComponent implements OnInit {
   waiveDeposite: string
   CreditVerification: string = "Check My Credit"
   products = []
+  price_kwh1 :boolean
+  price_kwh2:boolean;
+  price_kwh3 :boolean;
+  // this.price_traffic = this.products['tariff_500']
   services = ["Move-in (New Service)", "Switching from another Service Provider on Next Available Schedule Date", "Switching from another Service Provider on a Specific Date"]
   creditCards = [{val:{ status:true ,value: "Check My Credit"}},{val:{ status:false ,value: "Dont Check Credit"}},{val:{ status:false ,value: "Waive Deposit"}} ]
   waivedeposit = ["I will submit a letter from my current provider showing timely payments for the last 12 months with no more than 1 late payment", "I am 65+ and can provide proof of timely payments to my current electric provider.", "I am a victim of family violence and will complete and return the required forms."]
@@ -83,8 +87,10 @@ export class EnrollmentComponent implements OnInit {
     this.showCheckbox = false
     console.log("check")
   }
-
+price_traffic;
   ngOnInit() {
+this.price_traffic =  localStorage.getItem('tariff')
+console.log(this.price_traffic)
     let currentYear = new Date().getFullYear()
     this.years[0] = currentYear
     for (let index = 1; index < 20; index++) {
@@ -136,6 +142,11 @@ export class EnrollmentComponent implements OnInit {
     })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
+    if ( this.price_traffic == this.products['tariff_500']){
+      alert(this.price_kwh1)
+    }
+    console.log(  this.products['tariff_500'] ==this.price_traffic)
+ 
 
     setTimeout(() => {
       if (this.showSpinner == null) { this.showSpinner = true }
