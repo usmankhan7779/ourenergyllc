@@ -117,10 +117,6 @@
                 .Product_code {
                     display: flex;
                     flex-direction: column;
-                    button {
-                        background-color: #000;
-                        color: #fff;
-                    }
                 }
             }
             mat-card {
@@ -170,10 +166,6 @@
         .Product_code {
             display: flex;
             flex-direction: column;
-            button {
-                background-color: #000;
-                color: #fff;
-            }
         }
     }
     mat-card {
@@ -266,13 +258,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    .manage-button {
-        border-radius: 35px;
-        background-color: #000;
-        color: #fff;
-        font-size: 15px;
-        font-weight: bold;
-    }
 }
 .s_dash.details{
     font-size: 32px;

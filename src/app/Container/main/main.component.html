@@ -1,409 +1,3 @@
-<!-- <div id="main-bg-slider" class="carousel slide carousel-fade slider-main" data-ride="carousel" data-interval="4000" style="margin-top: 0px">
- <div class="download-here">
- <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer" target="_blank">
- <img src="../../assets/img/Adroid-Badge.png">
- </a>
- <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
- <img src="../../assets/img/IOS-Badge.png">
- </a>
- </div>
- <div class="carousel-inner">
- <div class="item">
- <h1 class="search-bg__title animated fadeInDown">Powering Texas. One Smile at a Time</h1>
- <img src="../../assets/img/bg-images/bg-03.png" />
- </div>
- <div class="item active">
- <h1 class="search-bg__title animated fadeInDown"> Switch Now - Save Hundreds of Dollars per year on your Energy Bills</h1>
- <img src="../../assets/img/bg-images/bg-01.png" />
- </div>
- <div class="item">
- <h1 class="search-bg__title animated fadeInUp"> Lower your Energy Bills Today. Switch to Our Energy Now</h1>
- <img src="../../assets/img/bg-images/bg-02.png" />
- </div>
- <div class="item">
- <h1 class="search-bg__title animated fadeInDown">We offer a wide spectrum of Money Saving Plans and Products for Your Business.</h1>
- <img src="../../assets/img/bg-images/bg-04.png" />
- </div>
- <div class="item">
- <h1 class="search-bg__title animated fadeInDown">Earn Free Credits with Our Energy. There is no limit to them</h1>
- <img src="../../assets/img/bg-images/bg-05.png" />
- </div>
- </div>
- <a class="left carousel-control" href="#main-bg-slider" data-slide="prev">
- <span class="glyphicon glyphicon-chevron-left"></span>
- <span class="sr-only">Previous</span>
- </a>
- <a class="right carousel-control" href="#main-bg-slider" data-slide="next">
- <span class="glyphicon glyphicon-chevron-right"></span>
- <span class="sr-only">Next</span>
- </a>
- <div class="form-home">
- <div class="container-fluid">
- <form (ngSubmit)="onSubmit()" #f="ngForm" class="form-zip ng-untouched ng-pristine ng-valid" novalidate>
- <div class="card">
- <div class="card-header card-header-text" data-background-color="rose">
- <h4 class="card-title">Enter your Zip Code</h4>
- </div>
- <div class="clearfix mt-5">
- <div class="col-md-6 col-sm-6">
- <div class="form-group">
- <mat-form-field>
- <input matInput placeholder="Zip Code" [formControl]="zip_code" [(ngModel)]="zipCode" #zip name="zipCode" maxlength="5" />
- <mat-error *ngIf="zip_code.hasError('pattern')">
- Invalid Zip Code
- </mat-error>
- <mat-error *ngIf="zip_code.hasError('required')">
- Zip Code is required
- </mat-error>
- </mat-form-field>
- </div>
- </div>
- <div class="col-md-6 col-sm-6">
- <div class="form-group">
- <mat-form-field>
- <input matInput placeholder="Promo Code" name=promo [(ngModel)]="promoCode" />
- </mat-form-field>
- </div>
- </div>
- </div>
- <div class="clearfix">
- <div class="form-group text-center">
- <button type="submit" class="btn btn-ros">Search Plans</button>
- </div>
- </div>
- </div>
- </form>
- </div>
- </div>
-</div> -->
-<!-- <section class="choose-criteria">
- <div class="container">
- <ul>
- <li>
- <a routerLink="/residential">
- <i class="material-icons">explore</i>
- <h4>Residential</h4>
- <p>
- Are you tired of run of the mill energy companies in Texas?
- <b>Get the premium quality service and great prices you deserve.</b>
- <a routerLink="/residential">Read More..</a>
- </p>
- </a>
- </li>
- <li>
- <a routerLink="/commercial">
- <i class="material-icons">polymer</i>
- <h4>Commercial</h4>
- <p>
- <b>Hire us and we’ll help you save money. </b>Everyone could use a reduction in their electricity bill.
- <a routerLink="/commercial">Read More..</a>
- </p>
- </a>
- </li>
- <li>
- <a routerLink="/login">
- <i class="material-icons">lock_open</i>
- <h4>Member Login</h4>
- <p>
- <b>Welcome Back!</b> The OUR Energy Online Portal provides a convenient way to access your account information.
- <a routerLink="/login">Read More..</a>
- </p>
- </a>
- </li>
- </ul>
- </div>
-</section> 
- <section class="why-our">
- <div class="container">
- <div class="mainPage">
- <h2>Why Our Energy?</h2>
- <p>
- Our overhead is low. We leverage technology to the hilt. We, at Our Energy have made it our mission to bring you the most affordable rates in the industry by leveraging cutting edge technologies and exceptional customer service.
- </p>
- <p>
- <b>We propel our customers to the next level up in Energy Automation & Efficiency.</b>
- </p>
- <h4>Saving Money on Energy Bills like NEVER BEFORE - A Glimpse into Our Energy</h4>
- </div>
- <div class="content back-padding">
- <div class="rightSideContent-image">
- <img src="../assets/img/1.png" alt="logo">
- </div>
- <div class="leftSideContent">
- <p>
- <span>Save Hundreds of Dollars per year on your Energy Bills!</span> We keep our overhead low and pass on the savings to our customers.
- </p>
- </div>
- </div>
- <div class="content background">
- <div class="leftSideContent">
- <p>
- <span>We leverage cutting edge Technologies to lower costs</span> This helps us our customers save more money </p>
- </div>
- <div class="rightSideContent-image">
- <img src="../assets/img/2.png" alt="logo">
- </div>
- </div>
- <div class="content back-padding">
- <div class="rightSideContent-image">
- <img src="../assets/img/3.png" alt="logo">
- </div>
- <div class="leftSideContent">
- <p>
- <span> Lower your Energy Bills Today. Switch to Our Energy Now!</span>Our Customer Service is simply exceptional. Try Us today.
- </p>
- </div>
- </div>
- <div class="content background">
- <div class="leftSideContent">
- <p>
- <span>Powering Texas. One Smile at a Time!</span> </p>
- </div>
- <div class="rightSideContent-image">
- <img src="../assets/img/5.png" alt="logo">
- </div>
- </div>
- <div class="content background">
- <div class="rightSideContent-image">
- <img src="../assets/img/4.png" alt="logo">
- </div>
- <div class="leftSideContent">
- <p>
- <span>Shop and Manage Energy on Mobile</span> Experience our next generation Artificially Intelligent App on Google Play and Apple App Store.
- </p>
- </div>
-
- </div>
- </div>
-</section> 
- <section class="quality">
- <div class="container">
- <h2> QUALITY & AFFORDABLE RESIDENTIAL ELECTRICITY SINCE 2009 </h2>
- <p>NO Tricks. NO Hidden Fees. Get Excellent Texas Energy for the Best Price! Simple and Hassle-Free Switching. Find Your Residential Electricity Plan Today!</p>
- <mat-divider></mat-divider>
- </div>
-</section> 
- <section class="desc-banner">
- <div class="container">
- <div class="row">
- <div class="col-md-6">
- <h2>TOP QUALITY & AFFORDABLE TEXAS </h2>
- <p>ENERGY SERVICES</p>
- <h2>YOU HAVE THE POWER TO CHOOSE.</h2>
- <p> CHOOSE PRICE. CHOOSE SERVICE.</p>
- <h2>CHOOSE YOUR ENERGY LLC.</h2>
- <div class="btn-holder">
- <button type="button" class="btn btn-rose btn-lg" routerLink="/plan">VIEW PLANS
- </button>
- </div>
- </div>
- </div>
- </div>
-</section> 
- <section class="pw-solutions">
- <div class="container">
- <h1 class="text-center">OUR ENERGY TEXAS POWER SOLUTIONS</h1>
- <ul class="fourcolumns">
- <li>
- <div class="holder icons red">
- <a href="#" class="img-holder">
- <i class="fa-gift fa fa-4x"></i>
- </a>
- <h3>Specials & Refer a Friend</h3>
- <div class="txt-holder">
- <p>This is your lucky day! Take advantage of Raffles, FREE Prizes, Contests, Discounts and Refer a Friend Promotions. There’s something for everyone at OUR Energy. Sign up Today and Reap the Rewards!</p>
- </div>
- <div class="btn-holder">
- <button type="button" class="btn btn-info btn-round" routerLink="/special">View Specials </button>
- </div>
- </div>
- </li>
- <li>
- <div class="holder icons red">
- <a href="#" class="img-holder">
- <i class="fa fa-newspaper-o fa-4x"></i>
- </a>
- <h3>News and More!</h3>
- <div class="txt-holder">
- <p>Stay up to date on TX Energy News and Events, TX Energy Tips, Promotions, Sports, Activities, Texas Community, Lifestyle and much more by visiting the OUR Energy Life BLOG!</p>
- </div>
- <div class="btn-holder">
- <button type="button" class="btn btn-info btn-round" routerLink="/ourlife" style="margin-top:30px;">View Our Life Blog </button>
- </div>
- </div>
- </li>
- <li>
- <div class="holder icons red">
- <a href="#" class="img-holder">
- <i class="fa fa-truck fa-4x"></i>
- </a>
- <h3>Same Day Move Ins</h3>
- <div class="txt-holder">
- <p>Whether you’re looking for electricity providers Houston, electric companies in Dallas or Fort Worth electric companies we’ll make your move a breeze! We offer same day move ins as well as out of cycle switches.</p>
- </div>
- <div class="btn-holder">
- <button type="button" class="btn btn-info btn-round" routerLink="/help" style="margin-top:10px;">Moving Solutions</button>
- </div>
- </div>
- </li>
- <li>
- <div class="holder icons red">
- <a href="#" class="img-holder">
- <i class="fa fa-money fa-4x"></i>
- </a>
- <h3>Money and Saving Tips</h3>
- <div class="txt-holder">
- <p>Want to Save Money on your electric bill? Keep your eyes glued to our Energy Saving Tips page for the latest tips and tricks to cut down on your power bill!</p>
- </div>
- <div class="btn-holder">
- <button type="button" class="btn btn-info btn-round" routerLink="/energy-saving" style="margin-top:20px;">VIEW TIPS</button>
- </div>
- </div>
- </li>
- <li>
- <div class="holder icons red">
- <a href="#" class="img-holder">
- <i class="fa fa-heart fa-4x"></i>
- </a>
- <h3>Community</h3>
- <div class="txt-holder">
- <p>We’re active members of our beautiful Texas community! Together we can make a difference! View our recent community outreach projects.</p>
- </div>
- <div class="btn-holder">
- <button type="button" class="btn btn-info btn-round" routerLink="/community" style="margin-top:15px;">View Projects</button>
- </div>
- </div>
- </li>
- <li>
- <div class="holder icons red">
- <a href="#" class="img-holder">
- <i class="fa fa-wrench fa-4x"></i>
- </a>
- <h3>Help Tools</h3>
- <div class="txt-holder">
- <p>All the help you need is just a click away! Visit our Help Tools page for FAQs, Payment Solutions, Understand Your Bill, Forms, Historical Prices and more!</p>
- </div>
- <div class="btn-holder">
- <button type="button" class="btn btn-info btn-round" routerLink="/help">Visit Help Center</button>
- </div>
- </div>
- </li>
- </ul>
- </div>
-</section> 
- <section class="success-for-business">
- <div class="container">
- <h2>Success for your Business</h2>
- <div class="row">
- <div class="col-md-4">
- <article class="icon-box">
- <i class="material-icons">wb_sunny</i>
- <h4>Better Planning</h4>
- <p>We take the time to understand your needs by analyzing your previous energy consumption.This enables us to propose short and long term solutions.</p>
- </article>
- </div>
- <div class="col-md-4">
- <article class="icon-box">
- <i class="material-icons">blur_on</i>
- <h4>Better Business</h4>
- <p>Our Energy market experts pre-purchase bulk volumes of electricity at the lowest rates.</p>
- </article>
- </div>
- <div class="col-md-4">
- <article class="icon-box">
- <i class="material-icons">trending_down</i>
- <h4>Reduce Business Cost</h4>
- <p>Pay lower energy rates! We deliver affordable electricity prices which translate to substantial energy savings.</p>
- </article>
- </div>
- </div>
- <div style="display:flex;flex-direction:row;justify-content:center;flex-wrap:wrap">
- <button class="btn" routerLink='/commercial'> GET YOUR FREE TEXAS ENERGY QUOTE TODAY!</button>
- </div>
- </div>
-</section> 
- <section class="about-4">
-
- <div class="container">
- <h3>OUR CLIENTS</h3>
- <span> The clients listed are an example of individual franchise customers that we serve and do not represent the entire brand.</span>
- <div class="detail">
- <p> Our Energy is a premier Texas residential and commercial retail electricity provider.</p>
- <p>We pride ourselves in making quality services affordable to all such as:</p>
- <div class="row">
- <div class="col-sm-8">
- <div class="row">
- <ul class="col-sm-6">
- <li>
- <a routerLink="/help">Same Day Move-Ins or Out of Cycle Switches</a>
- </li>
- <li>
- <a routerLink="/help">Help Tools</a>
- </li>
- <li>
- <a routerLink="/energy-saving">Money Saving Tips</a>
- </li>
- </ul>
- <ul class="col-sm-6">
- <li>
- <a routerLink="/community">Community Outreach Projects</a>
- </li>
- <li>
- <a routerLink="/ourlife">OUR Life Blog</a>
- </li>
- <li>
- <a routerLink="/special">OUR Energy Member Rewards</a>
- </li>
- </ul>
- </div>
- <p>OUR Energy services of all sizes from start ups to large corporations. Our success is brought about by our special ability to customize each business plan to best suit the needs of each commercial customer.</p>
- <p>The following are a few examples of the various types of Texas industries pride ourselves in servicing:</p>
- <div class="row">
- <ul class="col-sm-6">
- <li>Agriculture</li>
- <li>Banking and Accounting</li>
- <li>Call Centers</li>
- <li>Chemical</li>
- </ul>
- <ul class="col-sm-6">
- <li>Technology</li>
- <li>Education</li>
- <li>Food and Beverage</li>
- <li>Non Profit</li>
- </ul>
- </div>
- </div>
- <div class="col-sm-4 ">
- <img class="mySlides" src="../../assets/img/TAcobel.jpg">
- <img class="mySlides" src="../../assets/img/KFC2.jpg">
- <img class="mySlides" src="../../assets/img/Longjonh.jpg">
- <img class="mySlides" src="../../assets/img/TAcobel.jpg">
- <img class="mySlides" src="../../assets/img/PizzaHut.jpg">
- <p class="clients">* The clients listed are an example of individual franchise customers that we serve and do not represent the entire brand.</p>
- </div>
- </div>
-
- <div class="row">
- <div class="col-sm-6">
- <p>We are constantly seeking feedback on how we can enhance our services. Please feel free to submit your
- <a routerLink="/contact">feedback</a> today.</p>
- </div>
- </div>
- </div>
- </div>
-</section> 
-
-<section class="main_banner">
- <div class="download-here">
- <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer" target="_blank">
- <img src="../../assets/img/Adroid-Badge.png">
- </a>
- <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
- <img src="../../assets/img/IOS-Badge.png">
- </a>
- </div>
-</section>-->
-<!-- ............................................ -->
 <section class="main_banner">
   <div class="download-here">
     <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer"
@@ -461,7 +55,6 @@
   <h3 class="heading_s"> Choose the plan that’s right for you</h3>
   <div class="search-result">
     <div class="result-box" *ngFor="let value of products | slice:0:3 ">
-
       <div class="search-plan">
         <h3 class="productName">
           {{value.product_name}}
@@ -473,18 +66,12 @@
                 <h3>{{value.tariff_2000}}¢</h3>
                 <b>per kWh</b>
               </div>
-              <!-- <p class="tag-line">
-    {{value.product_info}}
-    </p> -->
             </div>
           </div>
           <div class="bar"></div>
           <div class="inner">
             <div class="rateSheet">
               <div>
-                <!-- <span>Contract Term: 6 months</span><br>
-    <span>Termination Fee: $50</span><br>
-    <span>Utility: OurEnergy</span> -->
                 <span>Contract Term: {{value.display_term}} months</span>
                 <span>Termination Fee: ${{value.display_termination_fee}}</span>
                 <span>Utility: {{value.vendor_company}}</span>
@@ -492,111 +79,17 @@
               </div>
             </div>
           </div>
-
           <div class="text-center inner links-list">
             <a matTooltip="Terms of Service" [href]="value.product_tos_url" target="_blank"><b>TOS</b></a>
             <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
               target="_blank"><b>YRAC</b></a>
             <a matTooltip="Electric Facts Label" [href]="value.product_efl_url" target="_blank"><b>EFL</b></a>
-
             <button class="pink_btn enroll-btn" [disabled]="selectProductBtnDisabled[i]" (click)="enroll(i)">Enroll Now</button>
           </div>
         </div>
       </div>
-
-
     </div>
-    <!-- <div class="result-box">
-    <div>
-    <div class="search-plan">
-    <h3 class="productName">Product Name</h3>
-    <p class="tag-line">
-    Tagline
-    </p>
-    <div class="main">
-    
-    <div>
-    
-    <div class="text-center inner price-box">
-    <div>
-    <b>2000 kWh</b>
-    <h3>8¢</h3>
-    </div>
-    
-    </div>
-    </div>
-    <div class="bar"></div>
-    <div class="inner">
-    <div class="rateSheet">
-    <div>
-    <span>Contract Term: 6 months</span><br>
-    <span>Termination Fee: $50</span><br>
-    <span>Utility: OurEnergy</span>
-    </div>
-    </div>
-    </div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="text-center inner links-list">
-    <a matTooltip="Terms of Service" target="_blank"><b>TOS</b></a>
-    <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
-    target="_blank"><b>YRAC</b></a>
-    <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
-    
-    <button class="btn btn-rose" >Enroll Now</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    
-    </div> -->
-    <!-- <div class="result-box">
-    <div>
-    <div class="search-plan">
-    <h3 class="productName">Product Name</h3>
-    <p class="tag-line">
-    Tagline
-    </p>
-    <div class="main">
-    
-    <div>
-    
-    
-    <div class="text-center inner price-box">
-    <div>
-    <b>2000 kWh</b>
-    <h3>7¢</h3>
-    </div>
-    
-    </div>
-    </div>
-    <div class="bar"></div>
-    <div class="inner">
-    <div class="rateSheet">
-    <div>
-    <span>Contract Term: 6 months</span><br>
-    <span>Termination Fee: $50</span><br>
-    <span>Utility: OurEnergy</span>
-    </div>
-    </div>
-    </div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="text-center inner links-list">
-    <a matTooltip="Terms of Service" target="_blank"><b>TOS</b></a>
-    <a matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf"
-    target="_blank"><b>YRAC</b></a>
-    <a matTooltip="Electric Facts Label" target="_blank"><b>EFL</b></a>
-    
-    <button class="btn btn-rose" >Enroll Now</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    
-    </div> -->
   </div>
-
   <div class="faqs_home ">
     <h3 class="heading_s">Frequently Asked Questions</h3>
     <div class="panel-group" id="accordion">
@@ -604,10 +97,7 @@
         <div class="panel-heading " aria-expanded="ture" data-toggle="collapse" data-parent="#accordion"
           href="#collapse1">
           <h4 class="panel-title p__1">
-            <!-- <i  (click)="hide = !hide" class=" {{hide ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
-            <!-- <i class="tglClass fa fa-plus-square"></i> -->
             <a> Who is Our Energy?</a>
-            <!-- <i class="eye-splash" (click)="hide = !hide" class=" {{hide ? 'fa fa-angle-down' : 'fa fa-angle-up'}}"></i> -->
           </h4>
         </div>
         <div id="collapse1" class="panel-collapse collapse in">
@@ -621,9 +111,7 @@
       <div class="panel panel-default">
         <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3">
           <h4 class="panel-title">
-            <!-- <i  (click)="hide1 = !hide1" class=" {{hide1 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
             <a> Is OUR Energy certified as a Retail Electricity Provider? </a>
-
           </h4>
         </div>
         <div id="collapse3" class="panel-collapse collapse">
@@ -632,16 +120,13 @@
               strict process of certification. OUR Energy has met the requirements for financial, managerial and
               technical abilities for the privilege
               of selling energy in Texas (PUC Certificate Number 10170).</p>
-
           </div>
         </div>
       </div>
       <div class="panel panel-default">
         <div class="panel-heading collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">
           <h4 class="panel-title">
-            <!-- <i  (click)="hide2 = !hide2" class=" {{hide2 ? 'fa fa-plus-square' : 'fa fa-minus-square'}}"></i> -->
             <a>Why would I choose OUR Energy? </a>
-
           </h4>
         </div>
         <div id="collapse4" class="panel-collapse collapse">
@@ -663,35 +148,3 @@
     </div>
   </div>
 </section>
-<!-- <section class="three-blog container">
-    <h3 class="heading_s">Blog Feeds</h3>
-  <div class="row">
-    <div class="col-lg-4">
-    <div class="blog">
-    <div class="img">
-    <img src="../../../assets/img/RESIDENTIAL-ELECTRICITY.png" alt="">
-    </div>
-    <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
-    <button>Read More</button>
-    </div>
-    </div>
-    <div class="col-lg-4">
-    <div class="blog">
-    <div class="img">
-    <img src="../../../assets/img/RESIDENTIAL-ELECTRICITY.png" alt="">
-    </div>
-    <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
-    <button>Read More</button>
-    </div>
-    </div>
-    <div class="col-lg-4">
-      <div class="blog">
-        <div class="img">
-          <img src="../../../assets/img/RESIDENTIAL-ELECTRICITY.png" alt="">
-        </div>
-        <h4>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h4>
-        <button>Read More</button>
-      </div>
-    </div>
-  </div>
-</section> -->
