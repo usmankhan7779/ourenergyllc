@@ -25,6 +25,7 @@ private details: BillDetailsService,
     private http: HttpClient, private usage: UsageService, private customerService: CustomerService, private productService: ProductsService) { }
   public socketSubscription: Subscription
   bills
+  showSpinner1
   showSpinner = true
   billdetails: boolean = false
   // public socketSubscription: Subscription
@@ -40,6 +41,7 @@ private details: BillDetailsService,
   homeInfo: boolean = false
   ShowPromoCode: boolean = false
   // showSpinner
+  showMessageResponse: boolean
   request = true
   x
   smartMeter
@@ -68,7 +70,10 @@ private details: BillDetailsService,
       this.showSpinner = true
     }, 2000)
     window.scrollTo(0, 0)
+    this.GetOffer();
     this.getdetails()
+    // this.x = setTimeout(() => { this.showSpinner = true }, 2000)
+    // this.y = setTimeout(() => { this.showSpinner1 = true }, 2000)
 
     // const stream = this.socket.connect()
     // this.socketSubscription = stream.subscribe(response => {
@@ -299,7 +304,30 @@ private details: BillDetailsService,
       })
     }, 500)
   }
-
+  date
+  
+    y
+  newOffer;
+  GetOffer() {
+    // this.newOffer = null
+    this.http.get(environment.url + 'customers/get-cust-offer/', {
+        'headers': { 'Authorization': 'JWT' + ' ' + localStorage.getItem('token') }
+    }).subscribe(res => {
+        if (res['status'] == true) {
+            this.newOffer = res['message']
+            this.date = res
+            // alert(this.date)
+            this.showMessageResponse = true
+            clearTimeout(this.y)
+            // this.showSpinner1 = false
+        }
+        else {
+            this.showMessageResponse = false
+            clearTimeout(this.y)
+            // this.showSpinner1 = false
+        }
+    })
+}
   PromoDialogOpen() {
     this.dialog.open(PromoCodeModal, {
       width: "600px",

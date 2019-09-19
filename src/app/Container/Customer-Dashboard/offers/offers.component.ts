@@ -57,6 +57,7 @@ export class OffersComponent implements OnInit {
         this.socketSubscription.unsubscribe();
     }
 date;
+
     GetOffer() {
         this.newOffer = null
         this.http.get(environment.url + 'customers/get-cust-offer/', {
@@ -222,3 +223,4 @@ date;
     })
   }
 }
+ 

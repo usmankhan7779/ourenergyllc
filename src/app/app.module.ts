@@ -78,7 +78,8 @@ import { VerificationEmailComponent } from './login/verification-email/verificat
     BusinessRateComponent,
     RecapchaComponent,
     EnrollmentConsentDialog,
-    VerificationEmailComponent
+    VerificationEmailComponent,
+    
   ],
   imports: [
     SharedModule,
