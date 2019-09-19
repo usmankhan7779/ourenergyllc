@@ -16,7 +16,7 @@
             <ng-container matColumnDef="pdf">
                 <mat-header-cell *matHeaderCellDef> Download Bill </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <i class="material-icons" *ngIf="disable==false" matTooltip="Download Bill"  (click)="PDFDownload()">picture_as_pdf</i>
+                    <i class="material-icons" *ngIf="disable==false" matTooltip="Download Bill"  (click)="downloadBill(element)">picture_as_pdf</i>
                     <i class="material-icons" *ngIf="disable==true" matTooltip="Download Bill">picture_as_pdf</i>
                 </mat-cell>
             </ng-container>

@@ -34,6 +34,7 @@ export class PaymentComponent implements OnInit {
   years = []
   paymentForm: FormGroup
   viewOrNot: boolean = true
+  viewpoint :boolean =false
 
   ngOnInit() {
     window.scrollTo(0, 0)
@@ -97,7 +98,15 @@ export class PaymentComponent implements OnInit {
       }
     })
   }
+getcondition(){
+  this.viewpoint= true;
+  // alert(this.viewpoint)
+}
 
+getconditionss(){
+  this.viewpoint= false;
+  // alert(this.viewpoint)
+}
   setBillingAddressValue() {
     this.paymentForm.controls.cust_name.setValue(`${this.custPayInfo.cust_firstname} ${this.custPayInfo.cust_lastname}`)
     this.paymentForm.controls.address_2.setValue(this.custPayInfo.cust_address2)
