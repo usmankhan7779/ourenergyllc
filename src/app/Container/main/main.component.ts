@@ -541,9 +541,9 @@ export class PlanSearchComponent {
   tdsps
   error
   x
-  average1 : boolean = true;
+  average1 : boolean = false;
   average2 : boolean = false;
-  average3: boolean = false;
+  average3: boolean = true;
   ngOnInit() {
     this.products = []
     this.tdsps = []
@@ -664,11 +664,11 @@ localStorage.setItem('val1',val1)
   else if (this.estimatedUsage == undefined){
     // this.estimatedUsage = this.priceetc
     // alert(this.priceetc)
-    this.priceetc ='tariff_500'
+    this.priceetc ='tariff_2000'
     localStorage.setItem('tariff',this.priceetc)
-    localStorage.removeItem(val3)
+    localStorage.removeItem(val1)
     localStorage.removeItem(val2)
-    localStorage.setItem('val1',val1)
+    localStorage.setItem('val1',val3)
   }
 }
   filterProduct() {
