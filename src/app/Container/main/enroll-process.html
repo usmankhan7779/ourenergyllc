@@ -65,12 +65,10 @@
                                 <h4 style="margin:0px">{{value.provider_name}}</h4>
                             </div>
                             <div class="premise-details">
-                                <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button"><h4>Select</h4></button>
+                                <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button">Select</button>
                             </div>
                         </div>
-                        <!-- <div class="inner-premise">
-                            <div *ngIf="(ind + 1) < multiplePremise.length" style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
-                        </div> -->
+                        
                     </div>
                     <br>
                 </div>
@@ -112,6 +110,5 @@
             </div>
         </div>
     </div>
-
     <button matStepperNext style="display:none" id="nextBtn"></button>
 </section>

@@ -3,7 +3,7 @@
         <div class="contactalign">
             <div class="contactdate">
                 <mat-card>
-                    <mat-card-title>Personal Information</mat-card-title>
+                    <h3 class="s_pop_heading">Personal Information</h3>
                     <mat-form-field>
                         <input matInput placeholder="First Name" [value]="username" disabled>
                         <mat-icon matSuffix>lock</mat-icon>
@@ -24,7 +24,7 @@
             </div>
             <div class="contactdate">
                 <mat-card>
-                    <mat-card-title>Contact Information</mat-card-title>
+                    <h3 class="s_pop_heading">Contact Information</h3>
                     <mat-form-field>
                         <input matInput placeholder="Email" formControlName="cust_emailid">
                         <mat-error *ngIf="custInfoForm.controls.cust_emailid.hasError('required')">Email is required</mat-error>
@@ -49,7 +49,7 @@
             </div>
             <div class="contactdate">
                 <mat-card>
-                    <mat-card-title>Billing Information</mat-card-title>
+                    <h3  class="s_pop_heading">Billing Information</h3>
                     <!-- <mat-form-field>
                         <input matInput placeholder="C/O Address" [(ngModel)]='cust_address1'>
                     </mat-form-field> -->

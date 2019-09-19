@@ -289,11 +289,12 @@
                                     <!-- result start-->
                                     <div class="col-sm-12">
                                         <div *ngIf="billingAddresses.length == 0">
-                                            <div *ngIf="alertcondition == true">
+                                            <div *ngIf="alertcondition == true" class="text-center">
                                                 <h1 class="alertCondition">
                                                     {{alert}} </h1>
                                                 <h3 class="text-center" #premises>OR</h3>
-                                                <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr">Proceed with what I entered</a> </h4>
+                                               <a class="btn" (click)="SelectBillingPrem('same')" >Proceed with what I entered
+                                               </a> 
                                             </div>
                                         </div>
                                         <!--  -->
@@ -309,18 +310,18 @@
                                                         <h4 style="margin:0px">{{value.City}} {{value.State}} {{value.Zip5}}-{{value.Zip4}}</h4>
                                                     </div>
                                                     <div class="premise-details">
-                                                        <button  (click)="SelectBillingPrem(value)" type="button">Select</button>
+                                          <a class="btn" (click)="SelectBillingPrem(value)" type="button">Select</a>
                                                     </div>
+
                                                 </div>
-                                                <!-- <div class="inner-premise" *ngIf="(ind + 1) < billingAddresses.length">
-                                                    <div  style="display: flex; flex: 1; margin-top: 25px; box-shadow: 0 -5px 5px -5px #333; border: 1px solid #ccc;"></div>
-                                                </div> -->
                                             </div>
                                             <br>
-                                            <h1 class="text-center" *ngIf="billingAddresses.length > 0" #premises>OR
-                                              
-                                            </h1>
-                                            <h4 class="text-center"><a (click)="SelectBillingPrem('same')" class="anchorrrr" style="text-decoration: underline">Proceed with what I entered</a> </h4>
+                                            <div class="text-center">
+                                                <h1 class="text-center" *ngIf="billingAddresses.length > 0" #premises>OR
+                                                  </h1>
+                                                  <a class="btn" (click)="SelectBillingPrem('same')"  >Proceed with what I entered</a> 
+                                            </div>
+                                            
                                         </div>
                                     </div>
 
@@ -508,11 +509,11 @@
                         <!--  -->
 
                         <h2>{{value?.product_name}}</h2>
-                        <mat-card>
+                        <!-- <mat-card>
                             <p>
                                 {{value?.product_info}}
                             </p>
-                        </mat-card>
+                        </mat-card> -->
                         <div style="margin-top: 10px" class="headingDiv">Contract Term</div>
                         <div class="dataDiv">{{value?.display_term}} Months</div>
                         <div class="headingDiv">Utility Provider</div>

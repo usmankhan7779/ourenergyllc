@@ -165,8 +165,19 @@
             <br>
             <mat-radio-group style="display: flex; flex-direction: column; margin-top: 10px;" formControlName="auto_pay">
                 <mat-radio-button *ngIf="viewOrNot" value="Y"> Pay Now & Set as recurring to pay future bills automatically on the due date </mat-radio-button>
+                <div class="col-sm-12">
+                    <p>
+                        <span style="color: #ff4270">i.</span> For Pay now & Set as recurring to pay future bills automatically on the due date: 
+                        By providing my bank account or credit/debit card account information to Our Energy LLC and checking the box provided, I hereby authorize Our Energy LLC to charge my account in the amount due on my monthly statement on an ongoing basis. I understand that debits to my bank account or credit card will be made on the due date appearing on my statement, unless such date is Saturday, Sunday, or other bank holiday, in which case Our Energy LLC will debit my account on the next banking day. I understand that my Our Energy LLC monthly statement, together with this authorization, will be notice of the amount and date of each withdrawal from my bank account or credit card. I also agree to notify Our Energy LLC if there are any changes to my bank account or credit/debit card account information. I understand that the account may be assessed a $35 Insufficient funds fee in the event the payment is declined and may also occur a 5% late fee if the payment is remitted after the due date. I understand that my information will remain strictly confidential per the privacy policy of Our Energy LLC. I understand that I will continue to receive a copy of my monthly electricity bill via email or USPS for my records, but my bill will be marked "Do Not Pay."
+                    </p>
+                    <p>
+                        <span style="color: #ff4270">ii.</span>By providing my bank account or credit/debit card account information to Our Energy LLC and checking the box provided, I hereby authorize Our Energy LLC to charge my account in the amount due on my monthly statement. I understand that the account may be assessed a $35 Insufficient funds fee in the event the payment is declined and may also occur a 5% late fee if the payment is remitted after the due date. I understand that my information will remain strictly confidential per the privacy policy of Our Energy LLC. I understand that I will continue to receive a copy of my monthly electricity bill via email or USPS for my records, but my bill will be marked "Do Not Pay."
+                    </p>
+                  </div>
+
                 <mat-radio-button value="N" checked> Make one time payment </mat-radio-button>
             </mat-radio-group>
+            
         </div>
         <mat-slide-toggle style="margin-top: 15px;" (change)="changeAuth($event)"><span style="font-size: 16px; font-weight: bold;">Authorize Payment</span></mat-slide-toggle>
         <div>

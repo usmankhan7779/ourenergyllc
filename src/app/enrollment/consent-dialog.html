@@ -1,5 +1,9 @@
+<div class="text-right">
+  <i class="fa fa-times consent_close_btn" (click)="close()"></i>
+</div>
 <h1 mat-dialog-title>Proceed/Authorize Enrollment?</h1>
 <div mat-dialog-content class="s_popup_info_content">
+
   <div class="s_popup_info">
       <h3>Personal Information</h3>
       <p>First Name: <b>{{data.cust_firstname}}</b></p>
@@ -8,7 +12,6 @@
       <p>Phone: <b>{{data.phone1}}</b></p>
       <p>Email: <b>{{data.email_address}}</b></p>
   </div>
-    
   <div class="s_popup_info">
     <h3>Service Address</h3>
     <p><b>{{data.pm_address2}}</b></p>
