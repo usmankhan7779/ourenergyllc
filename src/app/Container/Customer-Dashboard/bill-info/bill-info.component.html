@@ -16,44 +16,44 @@
             <ng-container matColumnDef="pdf">
                 <mat-header-cell *matHeaderCellDef> Download Bill </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                    <i class="material-icons" *ngIf="disable==false" matTooltip="Download Bill" (click)="downloadBill(element)">picture_as_pdf</i>
+                    <i class="material-icons" *ngIf="disable==false" matTooltip="Download Bill"  (click)="PDFDownload()">picture_as_pdf</i>
                     <i class="material-icons" *ngIf="disable==true" matTooltip="Download Bill">picture_as_pdf</i>
                 </mat-cell>
             </ng-container>
             <ng-container matColumnDef="due_amount">
                 <mat-header-cell *matHeaderCellDef> Due Amount </mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.due_amount | highlight : search}}"><span style="color: #009688; margin-right: 5px;">$</span>{{element.due_amount}} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.due_amount | highlight : search}}"><span style="color: #009688; margin-right: 5px;">$</span>{{element.due_amount}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="bill_no">
                 <mat-header-cell *matHeaderCellDef> Bill No </mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.bill_no | highlight : search}}"> {{element.bill_no}} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.bill_no | highlight : search}}"> {{element.bill_no}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="bill_date">
                 <mat-header-cell class="custom-btn" *matHeaderCellDef mat-sort-header> Bill Date </mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.bill_date | highlight : search}}"> {{element.bill_date}} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.bill_date | highlight : search}}"> {{element.bill_date}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="service_start">
                 <mat-header-cell *matHeaderCellDef> Service Start </mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.service_start | highlight : search}}"> {{element.service_start }} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.service_start | highlight : search}}"> {{element.service_start }} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="service_end">
                 <mat-header-cell *matHeaderCellDef> Service End </mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.service_end | highlight : search}}"> {{element.service_end }} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.service_end | highlight : search}}"> {{element.service_end }} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="kh_qty">
                 <mat-header-cell class="custom-btn" *matHeaderCellDef mat-sort-header>Usage Qty</mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.kh_qty | highlight : search}}"> {{element.kh_qty}} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.kh_qty | highlight : search}}"> {{element.kh_qty}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="curr_amount">
                 <mat-header-cell class="custom-btn" *matHeaderCellDef mat-sort-header>Current Amount</mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.curr_amount | highlight : search}}"> {{element.curr_amount | currency:"CAD":"symbol-narrow"}} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.curr_amount | highlight : search}}"> {{element.curr_amount | currency:"CAD":"symbol-narrow"}} </mat-cell>
             </ng-container>
             <ng-container matColumnDef="due_date">
                 <mat-header-cell *matHeaderCellDef>Due Date</mat-header-cell>
-                <mat-cell *matCellDef="let element" innerHTML="{{ element.due_date | highlight : search}}"> {{element.due_date }} </mat-cell>
+                <mat-cell (click)="downloadBill(element)" *matCellDef="let element" innerHTML="{{ element.due_date | highlight : search}}"> {{element.due_date }} </mat-cell>
             </ng-container>
-            <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            <mat-header-row (click)="downloadBill(element)" *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+            <mat-row (click)="downloadBill(element)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
         <h3 *ngIf="error">{{error}}</h3>
         <h3 *ngIf="noRecords">{{noRecords}}</h3>

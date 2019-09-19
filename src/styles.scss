@@ -622,6 +622,10 @@ p strong,p b{
   background-color: #fff !important;
   color: #ff4270 !important;
 }
+.border_boxShadow_none{
+  border: none !important;
+  box-shadow: none !important;
+}
 //media qureis 
 @media only screen and (max-width:1500px){
   .filter-bar button{

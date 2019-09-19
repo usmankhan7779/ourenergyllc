@@ -54,14 +54,14 @@
 }
 
 .footer {
-    background-color: #0a0a0a;
+    background-color: #273c61;
     padding: 10px 10px;
     display: flex;
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    color: #6b6d72;
+    color: #ccc;
     font-size: 12px;
     text-align: center;
     span {
@@ -75,7 +75,7 @@
         justify-content: center;
         flex-direction: row;
         a {
-            color: #6b6d72;
+            color: #ccc;
             font-size: 12px;
             padding: 0px 3px;
         }

@@ -39,3 +39,14 @@ h2 {
     font-weight: bold;
     margin-top: 70px;
 }
+.container{
+  margin-bottom: 100px;
+}
+.save_menu{
+  padding:5px;
+}
+@media (min-width: 1200px){
+  .container {
+      width: 970px;
+  }
+}

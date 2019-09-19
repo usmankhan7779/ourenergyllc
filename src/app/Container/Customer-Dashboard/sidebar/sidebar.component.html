@@ -2,7 +2,7 @@
     <mat-list>
         <a style="margin-top: 15px; height: 50px; margin-bottom: 4px;" routerLink="customerInfo">
             <mat-list-item (click)="nestedList()" class="mat" matTooltip="{{username}}" matTooltipPosition="after">
-                <img class="photo" [src]=photo onerror="this.src='../../assets/img/Avatar-image-2.png'">{{custId}}
+                <img class="photo" src="../../assets/img/Avatar-image-2.png">{{custId}}
             </mat-list-item>
         </a>
         <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
@@ -41,7 +41,7 @@
         </a>
         <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active">
             <mat-list-item>
-                <img src="../assets/img/Icons/Payments.png" class="images"> Payments
+                <img src="../assets/img/Icons/Payments.png" class="images"> Payment History
             </mat-list-item>
         </a>
         <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active">

@@ -10,39 +10,6 @@
             </h1> -->
         </a>
     </div>
-    <!-- <div class="centerContent" id="center">
-        <a *ngIf="tabs?.home" routerLink="/dashboard/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-            <img width="23" height="23" src="../assets/img/Icons/Home.png" class="images">
-        </a>
-        <a *ngIf="tabs?.profile" routerLink="customerInfo" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Profile.png" class="images">
-        </a>
-        <a *ngIf="tabs?.contactus" routerLink="contact" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Contact.png" class="images">
-        </a>
-        <a *ngIf="tabs?.plan" routerLink="products" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Plan.png" class="images">
-        </a>
-        <a *ngIf="tabs?.offers" routerLink="offers" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/offer-icon-black.png" class="images">
-        </a>
-        <a *ngIf="tabs?.paynow" routerLink="paynow" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Pay-Now.png" class="images">
-        </a>
-        <a *ngIf="tabs?.bills" routerLink="billInfo" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Bills.png" class="images">
-        </a>
-        <a *ngIf="tabs?.payments" routerLink="pay" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Payments.png" class="images">
-        </a>
-        <a *ngIf="tabs?.usage" routerLink="usage" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Usage.png" class="images">
-        </a>
-        <a *ngIf="tabs?.notices" routerLink="notices" routerLinkActive="active">
-            <img width="23" height="23" src="../assets/img/Icons/Notices-icon.png" class="images">
-        </a>
-    </div> -->
-   
     <div class="rightSide">
         <div class="apple">
             <mat-menu overlapTrigger="false" #menu2="matMenu" class="mat-elevation-z10">
@@ -76,16 +43,6 @@
             </mat-menu>
             <i class="fa fa-user-circle" matTooltip="Switch Account" [matMenuTriggerFor]="menu2"></i>
         </div>
-        <!-- <div class="apple">
-            <a href="https://itunes.apple.com/us/app/our-energy/id1438707950?mt=8" rel="noreferrer" target="_blank">
-                <i class="fa fa-apple" matTooltip="IOS App"></i>
-            </a>
-        </div> -->
-        <!-- <div class="apple">
-            <a href="https://play.google.com/store/apps/details?id=com.brainplow.OurEnergythemeone" rel="noreferrer" target="_blank">
-                <i class="fa fa-android" matTooltip="Android App"></i>
-            </a>
-        </div> -->
         <div class="icon">
             <mat-menu overlapTrigger="false" #menu="matMenu" class="mat-elevation-z10">
                 <div id="title">
@@ -95,9 +52,9 @@
                     <div *ngFor="let i of notifications; let abc = index;">
                         <div id="notiTrue">
                             <div class="notification">
-                                <div [ngStyle]="{'background-color': i.read==false ? 'rgba(121, 121, 121,0.2)' : 'transparent'}" class="row">
+                                <div [ngStyle]="{'background-color': i.read==false ? 'rgba(216, 216, 216, 0.2)' : 'transparent'}" class="row mg-0 s_notification">
 
-                                    <div (click)="ReadNoti(i)" style="text-align:center;padding-bottom:60px" class="s_noti_img">
+                                    <div (click)="ReadNoti(i)"  class="s_noti_img">
                                         <img *ngIf="i.type=='Payment'" src="../../../../assets/img/Icons/Payments.png">
                                         <img *ngIf="i.type=='Bill'" src="../../../../assets/img/Icons/Bills.png">
                                     </div>
@@ -115,14 +72,15 @@
                                 <div class=" s_noti_Date">
                                     {{i.date}}
                                 </div>
-                                <span style="border:1px solid rgb(211, 211, 211); width: 100%;margin: auto;margin-top: 5%;margin-bottom: 5%;"></span>
+                                <span style="border:1px solid rgb(211, 211, 211); width: 100%;margin: auto;margin: 2px 0;"></span>
                             </div>
                         </div>
                     </div>
                 </div>
             </mat-menu>
             <div class="pos_rel">
-                <button mat-icon-button [matMenuTriggerFor]="menu"><i class="fa fa-bell iconsss" [matMenuTriggerFor]="menu"
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                  <i class="fa fa-bell iconsss" [matMenuTriggerFor]="menu"
                   (click)="disableOnClick()" matTooltip="Notifications"></i></button>
               
               <span *ngIf="unread_count!=0" (click)="disableOnClick()" class="badge ">{{unread_count}}</span>

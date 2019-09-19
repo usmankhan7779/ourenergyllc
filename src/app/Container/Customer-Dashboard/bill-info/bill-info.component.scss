@@ -107,3 +107,6 @@ mat-table {
         width: $tablewidth;
     }
 }
+.pay-bill-Table mat-cell{
+  cursor: pointer;
+}

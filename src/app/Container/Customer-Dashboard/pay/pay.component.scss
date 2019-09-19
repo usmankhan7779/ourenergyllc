@@ -48,7 +48,7 @@
 }
 .adj-bill-Table {
     overflow: auto;
-    max-height: calc(100vh - 447px);
+    max-height: calc(100vh - 380px);
     i {
         color: #c50a0a;
         font-size: 30px;
@@ -57,7 +57,7 @@
 }
 
 .spacer {
-    margin: 30px 10px 15px 10px
+    margin: 30px 10px 100px 10px
 }
 
 .fix {
@@ -130,8 +130,8 @@ mat-table {
     }
 }
 
-@media only screen and (max-width: 1366px) {
-    .adj-bill-Table {
-        max-height: calc(100vh - 515px);
-    }
-}
+// @media only screen and (max-width: 1366px) {
+//     .adj-bill-Table {
+//         max-height: calc(100vh - 515px);
+//     }
+// }

@@ -2,11 +2,11 @@
     <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Download">
                  <img src="/assets/img/graph-icons.png">
                   </button>
-    <mat-menu #menu="matMenu">
-        <a #Save> <button mat-menu-item (click)="png()"> 
+    <mat-menu #menu="matMenu" class="save_menu">
+        <a #Save> <button  (click)="png()"> 
                       <span>PNG</span>
                     </button></a>
-        <a #Saves> <button mat-menu-item (click)="jpg()">
+        <a #Saves> <button  (click)="jpg()">
                       <span>JPEG</span>
                     </button></a>
     </mat-menu>

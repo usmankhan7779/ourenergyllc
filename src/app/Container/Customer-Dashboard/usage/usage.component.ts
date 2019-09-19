@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core'
-import { UsageService } from '../../Store/Services'
-import * as Chart from 'chart.js'
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { UsageService } from '../../Store/Services';
+import * as Chart from 'chart.js';
 
 @Component({
   selector: 'app-usage',
