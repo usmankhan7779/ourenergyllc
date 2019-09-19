@@ -17,6 +17,7 @@
                 <div class="result-box" *ngFor="let value of newOffer;index as i;">
                     <div >
                         <div class="search-plan">
+                           
                             <h3 class="productName">{{value.product_name}}</h3>
                             <div [ngSwitch]="estimatedUsage" class="border_bottom">
                                 <div class="text-center inner price-box" *ngSwitchCase="500">
@@ -48,6 +49,7 @@
                                 <div class="inner">
                                     <div class="rateSheet">
                                         <div >
+                        
                                             <span >Contract Term: {{value.display_term}} months</span>
                                             <span >Termination Fee: ${{value.display_termination_fee}}</span>
                                             <span >Utility: {{value.vendor_company}}</span>
@@ -61,8 +63,14 @@
                                     <a  matTooltip="Terms of Service" href="value.product_tos_url" target="_blank"><b>TOS</b></a>
                                     <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
                                     <a  matTooltip="Electric Facts Label" href="value.product_efl_url" target="_blank"><b>EFL</b></a>
-                            
-                                    <button class="pink_btn enroll-btn" (click)="RenewNow(value)">Renew Now</button>
+                                    
+                                    <button class="pink_btn enroll-btn" data-toggle="modal" data-target="#myModal"
+                                     (click)="getvalue(value.product_name,value.tariff_500,value.tariff_1000,value.tariff_2000,
+                                    value.display_term,value.display_termination_fee,value.vendor_company,value.product_tos_url,'https://www.ourenergyllc.com/prodox/yrac.pdf',value.product_efl_url,value.offer_id,value.offer_pk,value.id)"            >
+                                            <!-- (click)="RenewNow(value)" -->
+ 
+                                        
+                                        Renew Now</button>
                         <!-- static expiry date start-->
                                   <p class="s_expiryDate">Expiry Date:<b>  {{date.expiry_date}}</b></p>
                         <!-- static expiry date end -->
@@ -184,3 +192,80 @@
         </div>
     </mat-tab>
 </mat-tab-group>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+                <!-- product_tos_url;ourenergy;product_efl_url
+                product_name;tariff_500;tariff_1000;tariff_2000;display_term;display_termination_fee;vendor_company -->
+          <p>Products Name</p>
+          <p>{{product_name}}</p>
+          <p>Price 500</p>
+          <p>{{tariff_500}}</p>
+          <p>Price 2000</p>
+          <p>{{tariff_2000}}</p>
+          <p>Price 1000</p>
+          <p>{{tariff_1000}}</p>
+          <p>termination</p>
+          <p>{{display_termination_fee}}</p>
+          <p>vendor_company</p>
+          <p>{{vendor_company}}</p>
+          <p>TOS</p>
+          <p>{{product_tos_url}}</p>
+          <p>Yrac</p>
+          <p>{{ourenergy}}</p>
+          <p> Efl</p>
+          <p>{{product_efl_url}}</p>
+<div *ngFor="let bills of BillAddress">
+          <p> Billing address</p>
+          <p>{{bills.cust_address2}}</p>
+          <p> mailing  address</p>
+          <p>{{bills.cust_address1}}</p>
+          <p> City</p>
+          <p>{{bills.cust_city}}</p>
+          <p>First Name</p>
+          <p>{{bills.cust_firstname}}</p>
+          <p>Last Name</p>
+          <p>{{bills.cust_lastname}}</p>
+          <p>Customer id </p>
+          <p>{{bills.cust_id}}</p>
+          <p>Zipcode </p>
+          <p>{{bills.cust_zip}}</p>
+          <p>Premise id</p>
+          <p>{{bills.premise_id}}</p>
+        </div>
+          
+
+<!-- 
+          company_name: ""
+          cust_address1: ""
+          cust_address2: "3500 S ECHO TRL"
+          cust_city: "PLANO"
+          cust_firstname: "AMBREEN"
+          cust_id: "1302280001"
+          cust_lastname: "JAFRI"
+          cust_state: "TX"
+          cust_zip: "75023"
+          premise_id: "10443720004171858" -->
+
+
+
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-default"  (click)="RenewNow(value)" >Yes </button>
+              </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">NO </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  

@@ -288,9 +288,19 @@
                                    You recieved a new offer! <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            
-                            
-                            <div class="s_msg_center_offers">
+                            <!-- <span *ngIf="showMessageResponse == false" class="noOffermessage">You currently don't have any special offers.</span>
+                            <h4 *ngIf="showMessageResponse == false" class="text-center">To request for an offer please call us on this number <b>1-888-545-4687</b></h4>                   -->
+                            <div class="s_msg_center_offers"  *ngFor="let value of newOffer;index as i;">
+                                <h3  class="productName"> 
+                                    {{value.product_name}}
+                                  </h3>
+                                  <h2>
+                                    {{value.tariff_500}}¢
+                                  </h2>
+                                  <b >per kWh</b>
+                                  <p  class="s_expiryDate">Expiry Date: <b>{{date.expiry_date}}</b></p>
+                            </div>
+                            <!-- <div class="s_msg_center_offers">
                                 <h3  class="productName"> 
                                     OURFIXADV
                                   </h3>
@@ -299,6 +309,15 @@
                                   </h2>
                                   <p  class="s_expiryDate">Expiry Date: <b>2019-12-31</b></p>
                             </div>
+                            <div class="s_msg_center_offers">
+                                <h3  class="productName"> 
+                                    OURFIXADV
+                                  </h3>
+                                  <h2>
+                                    11.4¢
+                                  </h2>
+                                  <p  class="s_expiryDate">Expiry Date: <b>2019-12-31</b></p>
+                            </div> -->
                         </div>
                         <div class="Product_code" *ngIf="ShowPromoCode">
                             <button  (click)="PromoDialogOpen()">Promo Code</button>
