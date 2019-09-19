@@ -298,19 +298,11 @@ mat-form-field-label-wrapper mat-form-field-placeholder-wrapper {
 .rememberforget {
     display: flex;
     flex-direction: column;
-    margin-top: 27px;
 }
 
 .forgotPassword {
-    margin-top: -21px;
     font-weight: bold;
     font-size: 13px;
-}
-
-.checkbox {
-    margin-top: -23px;
-    padding-bottom: 15px;
-    font-size: 16px;
 }
 
 .links{
@@ -319,4 +311,7 @@ mat-form-field-label-wrapper mat-form-field-placeholder-wrapper {
 }
 .buttond{
   width: 100%;
+}
+.checkbox{
+  
 }
