@@ -95,6 +95,7 @@ export class CustomerInfoComponent implements OnInit {
     else {
       this.photo = "../assets/img/no-img.png";
     }
+    
     this.customerService.getBillAddress().subscribe(response => {
       this.res = response
       if (response["status"] == true) {

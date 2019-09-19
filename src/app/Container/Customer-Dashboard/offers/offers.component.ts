@@ -9,7 +9,7 @@ import { ServerSocketService } from '../header/server-socket.service';
 import { Router } from '@angular/router';
 // import { MainService, PromoCodeService } from '../../Container/Store/Services';
 import { EnrollmentService } from '../../Store/Services/enroll.service';
-import { PromoCodeService } from '../../Store/Services';
+import { PromoCodeService, CustomerService } from '../../Store/Services';
  
 
 @Component({
@@ -36,7 +36,7 @@ export class OffersComponent implements OnInit {
     paymentColumns = ['pn', 'ad', 't1', 't2', 't3', 'tf']
     myHeaders: any = new HttpHeaders().set('content-type', 'application/json')
     router: Router
-    constructor(private socket: ServerSocketService,_router: Router,private promos: PromoCodeService, private http: HttpClient,private enrollment: EnrollmentService) { }
+    constructor(private socket: ServerSocketService,_router: Router, private customerService: CustomerService,private promos: PromoCodeService, private http: HttpClient,private enrollment: EnrollmentService) { }
 
     ngOnInit() {
         window.scrollTo(0, 0)
@@ -51,8 +51,39 @@ export class OffersComponent implements OnInit {
                 this.getOfferHistory()
             }
         })
-    }
+this.getuserhist();
 
+    }
+    res
+    request = true;
+    BillAddress = [];
+    ServiceAddress = [];
+    zip;
+getuserhist(){
+    this.customerService.getBillAddress().subscribe(response => {
+        this.res = response
+        if (response["status"] == true) {
+          this.request = true
+          clearTimeout(this.x)
+          this.showSpinner = false
+          this.BillAddress = [response["message"]]
+          console.log(this.BillAddress)
+          this.zip = response["message"]["cust_zip"].replace(/(\d{5})(\d{4})/, "$1-$2")
+        }
+      }, err => {
+        this.request = false;
+        clearTimeout(this.x)
+        if (err["status"] == 404) {
+          this.error = "Not Found"
+        }
+        if (err["status"] == 400) {
+          this.error = "Bad Request"
+        }
+        if (err["status"] == 0) {
+          this.error = "cannot connect to server"
+        }
+      });
+}
     ngOnDestroy(): void {
         this.socketSubscription.unsubscribe();
     }
@@ -101,22 +132,79 @@ date;
         })
     }
 
+    // RenewNow(data) {
+    //     let obj = {
+    //         offer_id: data['offer_id'],
+    //         offer_pk: data['offer_pk'],
+    //         id: data['id'],
+    //     }
+    //     Swal({
+    //         title: 'Are you sure?',
+    //         text: "You want to Accept this Offer!",
+    //         type: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes!'
+    //     }).then((result) => {
+    //         if (result.value) {
+    //             this.http.put(environment.url + 'customers/get-cust-offer/', obj, { 'headers': { 'Authorization': 'JWT' + ' ' + localStorage.getItem('token') } }).subscribe(res => {
+    //                 if (res['status'] == true) {
+    //                     Swal('Offer accepted.', '', 'success').then(result => {
+    //                         this.GetOffer()
+    //                         this.getOfferHistory()
+    //                     })
+    //                 } else {
+    //                     Swal('Some error occurred, please try again', '', 'error')
+    //                 }
+    //             })
+    //         }
+    //     })
+    // }
+    product_tos_url;ourenergy;product_efl_url;offer_id;offer_pk;id;
+    //   offer_id: data['offer_id'],
+    //   offer_pk: data['offer_pk'],
+    //   id: data['id'],
+      product_name;tariff_500;tariff_1000;tariff_2000;display_term;display_termination_fee;vendor_company
+      getvalue(val1,val2,val3,val4,val5,val6,val7,val8,val9,val10,val11,val12,val13){
+//value.product_name,value.tariff_500,value.tariff_1000,value.tariff_2000,
+// value.display_term,value.display_termination_fee,value.vendor_company,value.product_tos_url,https://www.ourenergyllc.com/prodox/yrac.pdf,value.product_efl_url
+this.product_name= val1;
+this.tariff_500=val2;    
+this.tariff_1000=val3;
+this.tariff_2000 = val4;
+this.display_term = val5;
+this.display_termination_fee=val6;
+this.vendor_company=val7;
+this.product_tos_url=val8;
+this.ourenergy=val9;
+this.product_efl_url=val10;
+this.offer_id = val11;
+this.offer_pk= val12;
+this.id = val13;
+console.log(val1,val2,val3,val4,val5,val6,val7,val8,val9,val10)
+
+
+}
     RenewNow(data) {
         let obj = {
-            offer_id: data['offer_id'],
-            offer_pk: data['offer_pk'],
-            id: data['id'],
+            // offer_id: data['offer_id'],
+            // offer_pk: data['offer_pk'],
+            // id: data['id'],
+              offer_id: this.offer_id,
+            offer_pk: this.offer_pk,
+            id: this.id,
         }
-        Swal({
-            title: 'Are you sure?',
-            text: "You want to Accept this Offer!",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes!'
-        }).then((result) => {
-            if (result.value) {
+        // Swal({
+        //     title: 'Are you sure?',
+        //     text: "You want to Accept this Offer!",
+        //     type: 'warning',
+        //     showCancelButton: true,
+        //     confirmButtonColor: '#3085d6',
+        //     cancelButtonColor: '#d33',
+        //     confirmButtonText: 'Yes!'
+        // }).then((result) => {
+            // if (result.value) {
                 this.http.put(environment.url + 'customers/get-cust-offer/', obj, { 'headers': { 'Authorization': 'JWT' + ' ' + localStorage.getItem('token') } }).subscribe(res => {
                     if (res['status'] == true) {
                         Swal('Offer accepted.', '', 'success').then(result => {
@@ -127,8 +215,8 @@ date;
                         Swal('Some error occurred, please try again', '', 'error')
                     }
                 })
-            }
-        })
+            // }
+        // })
     }
 
     applyFilter(filterValue: string) {
@@ -191,6 +279,7 @@ date;
         })
       
       }
+     
     selectProductBtnDisabled: boolean[] = []
   enroll(i) {
     this.selectProductBtnDisabled[i] = true
