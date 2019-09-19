@@ -2,6 +2,7 @@
     margin: 10px -10px;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
  .u_flex {
     flex-direction: row !important;
@@ -270,6 +271,7 @@
     .col-container {
         display: flex;
         flex-direction: column;
+        
         .col .infoBox {
             width: 100%;
         }
