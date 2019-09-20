@@ -1964,7 +1964,7 @@ h3 {
 }
 .bus-banner{
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     max-width: 1270px;
@@ -3942,7 +3942,7 @@ display: block;
    .heading_s {
     font-size: 26px !important;
   }
-  .faqs_home #accordion .panel-default .panel-heading .panel-title{
+  .faqs_home .panel-title{
     font-size: 16px;
   }
 
