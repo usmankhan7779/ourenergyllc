@@ -237,8 +237,9 @@ mat-table {
 .tos_pop{
   display: flex;
   justify-content: space-between;
+  padding: 0;
   li{
-    margin: 0 10px;
+    margin-right: 10px;
     a{
       font-size: 18px;
       color: #959fac;
