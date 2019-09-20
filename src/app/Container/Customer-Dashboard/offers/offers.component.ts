@@ -20,6 +20,7 @@ import { PromoCodeService, CustomerService } from '../../Store/Services';
 export class OffersComponent implements OnInit {
     showSpinner
     showSpinner1
+    value
     x
     y
     promoCode = '';
