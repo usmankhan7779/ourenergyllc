@@ -108,8 +108,6 @@ display: block;
   text-align: center;
 }
 
-// --------------------------------
-
 
 ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
     background-color: #cd0000 !important;
@@ -207,6 +205,66 @@ mat-table {
 }
 .s_expiryDate{
   margin: 5px;
+}
+.offer_pop_div1{
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 0 10px #ccc;
+  margin: 10px;
+  border-radius: 8px;
+  padding: 30px 10px;
+  width: 47%;
+   ul{
+    padding-left: 10px;
+    max-width: 370px;
+    li{
+      list-style: none;
+      p{
+        word-break: break-word;
+      }
+    }
+  }
+  .heading{
+    width: 100%;
+    max-width: 120px;
+    li{
+      p{
+        color: #273c61;
+      }
+    }
+  }
+}
+.tos_pop{
+  display: flex;
+  justify-content: space-between;
+  li{
+    margin: 0 10px;
+    a{
+      font-size: 18px;
+      color: #959fac;
+      text-decoration: underline;
+    }
+  }
+}
+.s_modalDismiss{
+  color: #ff4270;
+  background: #fff;
+  border: none !important;
+  opacity: 1;
+  font-size: 30px;
+  box-shadow: none;
+}
+#myModal{
+  .modal-dialog{
+    width: 100%;
+    max-width: 1000px;
+    left: 10px;
+  }
+}
+.outer_info{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 @media only screen and (max-width: $tablewidth) {
     mat-table {

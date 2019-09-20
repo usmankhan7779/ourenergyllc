@@ -72,67 +72,6 @@
 </div>
 <div *ngIf="homeInfo">
     <div class="col-container">
-        <!-- <div class="col mat-elevation-z5">
-            <div class="infoBox">
-                <div class="dashboardInfo">
-                    <mat-card-header>
-                        <div mat-card-avatar class="example-header-image2"> </div>
-                        <mat-card-title>Account Information</mat-card-title>
-                    </mat-card-header>
-                    <mat-card-content class="accInfo">
-                        <mat-list>
-                            <mat-list-item>
-                                Name:
-                            </mat-list-item>
-                            <mat-list-item>
-                                Premise ID:
-                            </mat-list-item>
-                            <mat-list-item>
-                                Account:
-                            </mat-list-item>
-                            <mat-list-item>
-                                Amount Due:
-                            </mat-list-item>
-                            <mat-list-item>
-                                Due Date:
-                            </mat-list-item>
-                            <mat-list-item>
-                                Service Period:
-                            </mat-list-item>
-                            <mat-list-item>
-                                Address:
-                            </mat-list-item>
-                        </mat-list>
-                        <mat-list *ngFor="let info of custInfo">
-                            <mat-list-item *ngIf="info.company_name == ''">
-                                {{info.cust_firstname | titlecase}} {{info.cust_lastname | titlecase}}
-                            </mat-list-item>
-                            <mat-list-item *ngIf="info.cust_firstname == ''">
-                                {{info.company_name}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                {{info.premise_id}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                {{info.cust_id}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                {{(info.due_amount.toString())[0] == '-' ? '-$' + info.due_amount.toString().slice(1) : '$' + info.due_amount}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                {{info.due_date}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                {{info.last_service_start}} - {{info.last_service_end}}
-                            </mat-list-item>
-                            <mat-list-item>
-                                {{info.premise_address2}} {{info.premise_city}}, {{info.premise_state }} {{info.premise_zip}}
-                            </mat-list-item>
-                        </mat-list>
-                    </mat-card-content>
-                </div>
-            </div>
-        </div> -->
         <div class="col mat-elevation-z5">
             <div class="infoBox-1 u_flex ">
                 <div class="dashboardInfo">
@@ -240,7 +179,6 @@
                         </mat-list>
                     </mat-card-content>
                 </div>
-                <br>
                 <div class="dashboardInfo">
                     <mat-card-header>
                         <div mat-card-avatar class="example-header-image6">
@@ -324,6 +262,6 @@
                         </div>
                     </div>
                 </div>
-            </mat-card>  
+        </mat-card>  
 </div>
 </div>

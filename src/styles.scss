@@ -974,14 +974,10 @@ i {
   }
 }
 
-@media only screen and(max-width:350px) {
+@media only screen and(max-width:400px) {
   .main-container .inner-container .child{
     padding-left: 0 !important;
   }
-  .col-container .col {
-    padding: 5px !important
-  }
-
   .accInfo .mat-list-item-content {
     padding: 0 1px !important;
     font-size: 12px !important
