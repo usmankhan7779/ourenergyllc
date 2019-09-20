@@ -237,6 +237,9 @@
                                   </h2>
                                   <b >per kWh</b>
                                   <p  class="s_expiryDate">Expiry Date: <b>{{date.expiry_date}}</b></p>
+                                  <a *ngIf="showOfferMessage"  routerLink="/dashboard/offers">
+                                    You recieved a new offer! <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                                 </a>
                             </div>
                             <!-- <div class="s_msg_center_offers">
                                 <h3  class="productName"> 
