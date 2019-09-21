@@ -67,10 +67,10 @@ export class MainHeaderComponent implements OnInit {
  
       //33.0604
       //-96.7333
-      this.http.get('https://devbackend.wattcrm.com/portal/public-news-from-ourenergy/' ).subscribe(Res => {
-        console.log(Res['message']);
-this.data = Res['message'];
-      });
+//       this.http.get('https://devbackend.wattcrm.com/portal/public-news-from-ourenergy/' ).subscribe(Res => {
+//         console.log(Res['message']);
+// this.data = Res['message'];
+//       });
       }
   show_sidebar() {
         $('#myTopnav').toggle('slow');
