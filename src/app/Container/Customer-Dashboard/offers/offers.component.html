@@ -199,97 +199,71 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close s_modalDismiss" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Confirm Details</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <div class="outer_info">
-            <div class="offer_pop_div1">
-              <ul class="heading">
-                <li>
-                  <p>Product Name </p>
-                </li>
-                <li>
-                  <p>Price 500 </p>
-                </li>
-                <li>
-                  <p>Price 2000 </p>
-                </li>
-                <li>
-                  <p>Price 1000 </p>
-                </li>
-                <li>
-                  <p>Termination </p>
-                </li>
-                <li>
-                  <p>Vendor Company </p>
-                </li>
-                <!-- <li>
-                  <p>TOS</p>
-                </li>
-                <li>
-                  <p>YRAC </p>
-                </li>
-                <li>
-                  <p> EFL </p>
-                </li> -->
-              </ul>
-              <ul>
-                <li><p>{{product_name}}</p></li>
-                <li> <p>{{tariff_500}}</p></li>
-                <li> <p>{{tariff_2000}}</p></li>
-                <li> <p>{{tariff_1000}}</p></li>
-                <li><p>{{display_termination_fee}}</p></li>
-                <li><p>{{vendor_company}}</p></li>
-                <li>
-                    <ul class="tos_pop">
-                        <li>
-                            <a   href="value.product_tos_url" target="_blank">TOS</a>
-                        </li>
-                        <li>
-                            <a   href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank">YRAC</a>
-                        </li>
-                        <li >                    
-                            <a   href="value.product_efl_url" target="_blank">EFL</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- <li><p>{{product_tos_url}}</p></li>
-                <li> <p>{{ourenergy}}</p></li>
-                <li><p>{{product_efl_url}}</p></li> -->
-              </ul>
-            </div>
-            <!--  -->
-            <div  class="offer_pop_div1">
-                <ul class="heading">
-                    <li><p> Billing Address </p></li>
-                    <li> <p> Mailing Address </p></li>
-                    <li> <p> City </p></li>
-                    <li> <p>First Name </p></li>
-                    <li> <p>Last Name </p></li>
-                    <li> <p>Customer ID  </p></li>
-                    <li>  <p>ZipCode </p></li>
-                    <li>  <p>Premise ID</p></li>
-                    <li></li>
-                  </ul>
-                  <ul *ngFor="let bills of BillAddress">
-                      <li> <p>{{bills.cust_address2}}</p></li>
-                      <li> <p>{{bills.cust_address1}}</p></li>
-                      <li><p>{{bills.cust_city}}</p></li>
-                      <li> <p>{{bills.cust_firstname}}</p></li>
-                      <li><p>{{bills.cust_lastname}}</p></li>
-                      <li> <p>{{bills.cust_id}}</p></li>
-                      <li> <p>{{bills.cust_zip}}</p></li>
-                      <li> <p>{{bills.premise_id}}</p></li>
-                    </ul>
-            </div>
-          </div>
-          <!--  -->
+                <!-- product_tos_url;ourenergy;product_efl_url
+                product_name;tariff_500;tariff_1000;tariff_2000;display_term;display_termination_fee;vendor_company -->
+          <p>Products Name</p>
+          <p>{{product_name}}</p>
+          <p>Price 500</p>
+          <p>{{tariff_500}}</p>
+          <p>Price 2000</p>
+          <p>{{tariff_2000}}</p>
+          <p>Price 1000</p>
+          <p>{{tariff_1000}}</p>
+          <p>termination</p>
+          <p>{{display_termination_fee}}</p>
+          <p>vendor_company</p>
+          <p>{{vendor_company}}</p>
+          <p>TOS</p>
+          <p>{{product_tos_url}}</p>
+          <p>Yrac</p>
+          <p>{{ourenergy}}</p>
+          <p> Efl</p>
+          <p>{{product_efl_url}}</p>
+<div *ngFor="let bills of BillAddress">
+          <p> Billing address</p>
+          <p>{{bills.cust_address2}}</p>
+          <p> mailing  address</p>
+          <p>{{bills.cust_address1}}</p>
+          <p> City</p>
+          <p>{{bills.cust_city}}</p>
+          <p>First Name</p>
+          <p>{{bills.cust_firstname}}</p>
+          <p>Last Name</p>
+          <p>{{bills.cust_lastname}}</p>
+          <p>Customer id </p>
+          <p>{{bills.cust_id}}</p>
+          <p>Zipcode </p>
+          <p>{{bills.cust_zip}}</p>
+          <p>Premise id</p>
+          <p>{{bills.premise_id}}</p>
         </div>
-        <div class=" text-center">
-                <button type="button"   (click)="RenewNow(value)" >Renew Now </button>
-                <button type="button"  data-dismiss="modal">NO </button>
+          
+
+<!-- 
+          company_name: ""
+          cust_address1: ""
+          cust_address2: "3500 S ECHO TRL"
+          cust_city: "PLANO"
+          cust_firstname: "AMBREEN"
+          cust_id: "1302280001"
+          cust_lastname: "JAFRI"
+          cust_state: "TX"
+          cust_zip: "75023"
+          premise_id: "10443720004171858" -->
+
+
+
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="btn btn-default"  (click)="RenewNow(value)" >Yes </button>
               </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">NO </button>
+        </div>
       </div>
       
     </div>

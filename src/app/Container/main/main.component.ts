@@ -44,7 +44,8 @@ export class MainComponent implements OnInit {
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
  
-    
+      //33.0604
+      //-96.7333
       this.http.get('https://apis.wattcrm.com/portal/zipcode-by-lat-lng/lat-->' + position.coords['latitude']  + '/lng-->' + position.coords['longitude']  +'/').subscribe(Res => {
         console.log(Res);
         if(Res['status'] == true){
@@ -134,26 +135,19 @@ local_products;
     
     this.selectProductBtnDisabled[i] = true
     let data = {
-      // product_pk: this.products[i].id,
-      // enroll_product: this.products[i].product_id,
-      // rate: this.products[i].rate,
-      // batch_rate: this.products[i].batch_rate,
-      // contract_term: this.products[i].term,
-      // tariff_2000: "7.4"
-      product_pk: product_pk,
-      enroll_product: enroll_product,
-      rate: rate,
-      batch_rate: batch_rate,
-      contract_term: contract_term,
+      product_pk: this.products[i].id,
+      enroll_product: this.products[i].product_id,
+      rate: this.products[i].rate,
+      batch_rate: this.products[i].batch_rate,
+      contract_term: this.products[i].term,
     }
     this.enrollment.sendProductDataForSession(data).subscribe(res => {
       if (res['status'] == true) {
         this.selectProductBtnDisabled[i] = false
-        localStorage.setItem('zip', this.zipCode)
+        localStorage.setItem('zip', this.ZipCode)
         this.router.navigate(['/enroll'])
 
-        // localStorage.setItem('productSummary', JSON.stringify(this.products[i]))
-        localStorage.setItem('productSummary', JSON.stringify(pros))
+        localStorage.setItem('productSummary', JSON.stringify(this.products[i]))
       }
       if (res["status"] == false && res["redirect_url"] != null && res["redirect_url"] != undefined && res["redirect_url"] != '') {
         Swal('Your session has expired. Please refresh the page and try again', '', 'error').then(() => {
@@ -168,7 +162,6 @@ local_products;
       this.selectProductBtnDisabled[i] = false
     })
   }
-  // console.log(pro.id)
 }
   }
   onSubmit() {

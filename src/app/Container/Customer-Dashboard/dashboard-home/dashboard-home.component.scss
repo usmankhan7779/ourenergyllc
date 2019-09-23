@@ -4,7 +4,9 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+ .u_flex {
+    flex-direction: row !important;
+}
 .mg-10_minus{
   margin: 10px -10px;
 }
@@ -284,9 +286,6 @@
 .s_outages{
   background-color: #ddd; color: #555; padding: 5px 10px 5px 10px; border-radius: 100px; font-size: 15px; margin: 10px 0px 0px 5px;
 }
-.u_flex {
-  flex-direction: row ;
-}
 @media screen and (max-width: 770px) {
     .col-container {
         display: flex;
@@ -297,16 +296,13 @@
         }
     }
 }
-@media screen and (max-width: 400px) {
-  .col-container .col {
-    padding: 5px !important
-  }
-  
+@media screen and (max-width: 350px) {
   .u_flex{
     flex-direction: column !important;
     padding: 20px 10px !important;
   }
   .s_outages{background-color: #ddd;
+    color: #555;
     padding: 5px 10px 5px 10px;
     border-radius: 100px;
     font-size: 11px;
