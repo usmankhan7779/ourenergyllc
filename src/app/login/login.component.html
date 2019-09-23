@@ -55,13 +55,18 @@
                     <button  disabled class="buttond" *ngIf="!SignInButton">Sign In</button>
                 </div>
                
-                <div *ngIf="hideLogin">
+               
+                
+            </form>
+             <div >
                     <button class="btn-100 quick-pay" (click)="quickPayDialog()" matTooltip="Quick Pay My Bill">
                         <img src="../../assets/img/QuickPay/qickpay11@50x.png">
                     </button>
                     
                 </div>
-            </form>
+            <!-- <button (click)="quickPayDialog()">
+                quick-pay
+            </button> -->
             <div class="links">
                 <span style="font-size: 14px;">Don’t have an online account? </span>
                 <a routerLink="/register" style="margin-left: 6px;
