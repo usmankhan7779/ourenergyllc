@@ -124,7 +124,7 @@ local_products;
     { 
       if (product_pk == pros.id){
       //  this.local_products
-        alert('usman')
+        // alert('usman')
         // this.priceetc ='tariff_2000'
         localStorage.setItem('tariff','tariff_2000')
         // localStorage.removeItem(val1)
