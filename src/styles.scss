@@ -549,7 +549,7 @@ p strong {
 }
 
 .mat-card:not([class*=mat-elevation-z]) {
-  box-shadow: 0 0 10px #ccc;
+  box-shadow: 0 0 10px #ccc !important;
   border-radius: 8px
 }
 
