@@ -272,3 +272,20 @@ mat-table {
         width: $tablewidth;
     }
 }
+@media only screen and(max-width:767px){
+  #myModal .modal-dialog{
+    width: 90%;
+  }
+}
+@media only screen and(max-width:540px){
+  #myModal .modal-dialog{
+    left: -15px;
+    width: 100%;
+  }
+  .modal-body{
+    padding: 0;
+  }
+  .offer_pop_div1{
+    width: 100%;
+  }
+}

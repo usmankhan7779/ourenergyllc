@@ -72,7 +72,7 @@
                                         
                                         Renew Now</button>
                         <!-- static expiry date start-->
-                                  <p class="s_expiryDate">Expiry Date:<b>  {{date.expiry_date}}</b></p>
+                                  <p class="s_expiryDate">Deal Expires on:<b>  {{date.expiry_date}}</b></p>
                         <!-- static expiry date end -->
                                 </div>
                             </div>
@@ -81,58 +81,7 @@
                 </div>
               </div>
               <!--  -->
-                <!-- <div *ngFor="let value of newOffer;index as i;">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <br>
-                        <div class="search-plan">
-                            <h2 class="productName">{{value.product_name}}</h2>
-                            <p style="font-weight: bold; text-align: center; margin-top: 20px;font-size: 18px;">
-                                {{value.product_info}}
-                            </p>
-                            <div class="main">
-                                <div class="text-center inner">
-                                    <img src="../../../assets/img/Product-image-4.png" width="120px" height="120px">
-                                </div>
-                                <div class="bar"></div>
-                                <div class="inner">
-                                    <div class="rateSheet">
-                                        <div style="padding-left: 15px; padding-right: 15px;">
-                                            <span style="font-size: 18px !important">Terms: {{value.display_term}} months</span><br>
-                                            <span style="font-size: 18px !important">Termination fee: ${{value.display_termination_fee}}</span><br>
-                                            <span style="font-size: 18px !important"><b>Utility: {{value.vendor_company}}</b></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bar"></div>
-                                <div class="text-center inner">
-                                    <div>
-                                        <b style="font-size: 18px;">1000 kWh</b>
-                                        <h3 style="color:#cd0000; font-weight: bold;">{{value.tariff_1000}}¢</h3>
-                                    </div>
-                                    <div style="display: flex; flex-direction: row;">
-                                        <div style="flex: 1">
-                                            <b style="font-size: 18px;">500 kWh</b>
-                                            <h3 style="color:#cd0000; font-weight: bold;">{{value.tariff_500}}¢</h3>
-                                        </div>
-                                        <div style="flex: 1">
-                                            <b style="font-size: 18px;">2000 kWh</b>
-                                            <h3 style="color:#cd0000; font-weight: bold;">{{value.tariff_2000}}¢</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="bar"></div>
-                                <div class="text-center inner">
-                                    <a mat-fab color="primary" matTooltip="Terms of Service" [href]=value.product_tos_url target="_blank"><b>TOS</b></a>
-                                    <a mat-fab color="primary" matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-                                    <a mat-fab color="primary" matTooltip="Electric Facts Label" [href]=value.product_efl_url target="_blank"><b>EFL</b></a>
-                                    <br>
-                                    <br>
-                                    <button style="width: 200px;"  (click)="RenewNow(value)">Renew Now</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+            
             </div>
         </div>
     </mat-tab>
@@ -200,7 +149,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close s_modalDismiss" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title text-center">Confirm Details</h2>
+          <h2 class="modal-title text-center">Renew Details</h2>
         </div>
         <div class="modal-body">
           <div class="outer_info">
