@@ -1,0 +1,348 @@
+.mainheader {
+    padding: 0px 30px !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eee;
+    padding: 0;
+    color: #616161;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 10;
+    .socialLinks {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        // margin-top: -4px;
+        span {
+            i {
+                padding: 3px 8px;
+            }
+        }
+    }
+    mat-list {
+        padding-top: 0px
+    }
+    .items {
+        display: flex;
+        flex-direction: row;
+        p {
+            padding: 0px 5px;
+            margin: 0px;
+        }
+    }
+    .info-bar {
+        display: inline-block;
+        font-size: 15px;
+        i {
+            vertical-align: middle;
+            font-size: 20px;
+        }
+    }
+    .mainToggle {
+        display: none;
+    }
+    .logo {
+        padding: 2px 10px;
+        i {
+            font-size: 15px;
+        }
+    }
+    mat-list-item,
+    a {
+        color: #616161;
+        font-weight: bold;
+        height: 25px;
+        padding: 2px 1px;
+        text-decoration: none;
+        // margin-top: -4px;
+    }
+    // mat-list-item:hover,
+    // a:hover {
+    //     color: #ffffff;
+    //     background-color: #ff4270;
+    //     font-weight: bold;
+    //     text-decoration: none;
+    //     cursor: pointer;
+    // }
+   
+}
+
+.tempHeader {
+    width: 100%;
+    background: #f2f2f2;
+}
+.tempHeader h3{
+  margin: 10px 0;
+}
+:host ::ng-deep .mat-list .mat-list-item .mat-list-item-content,
+.mat-list .mat-list-option .mat-list-item-content,
+.mat-nav-list .mat-list-item .mat-list-item-content,
+.mat-nav-list .mat-list-option .mat-list-item-content,
+.mat-selection-list .mat-list-item .mat-list-item-content,
+.mat-selection-list .mat-list-option .mat-list-item-content {
+    padding: 5px 8px;
+}
+.mat-list .mat-list-item{
+  height: auto;
+}
+.header {
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    .inner_header{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 0 30px;
+      min-height: 85px;
+      transition: 0.3s ease-in-out all;
+      .logo_wrapp{
+        width: 30%;
+        div{
+          width: 180px;
+        }
+      }
+      .main-listt {
+        font-size: 15px;
+        padding: 15px 8px;
+    }
+    .logo {
+        cursor: pointer;
+    }
+    .Toggle {
+        display: none;
+    }
+    .nav_right{
+      .nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        a{
+          position: relative;
+          cursor: pointer;
+        }
+        a:hover::after, a:active::after{
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          height: 2px;
+          content: "";
+          background: #ff4270;
+          width: 100%;
+        }
+        .Active::after{
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+          height: 3px;
+          content: "";
+          background: #ff4270;
+          width: 100%;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+    }
+    mat-list {
+        padding-top: 0px
+    }
+    mat-list-item,
+    a {
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: #273c61;
+   
+    }
+    
+    // mat-list-item:hover,
+    // mat-list-item:active {
+    //   border-bottom: 2px solid #ff4270;
+    //     font-weight: bold;
+    //     text-decoration: none;
+    //     cursor: pointer;
+    // }
+    // .Active{
+    //   border-bottom: 2px solid #ff4270;
+    //   font-weight: bold;
+    //   text-decoration: none;
+    //   cursor: pointer;
+    // }
+
+    }
+}
+.mainnav a:hover {
+    color: #ffffff;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.topnav {
+    display: none;
+}
+.box_shadow{
+  box-shadow: 0 0px 5px #ccc !important;
+  min-height: 65px !important;
+  background: #fff;
+}
+.divide_login{
+  margin-left: 50px;
+}
+.sMyAccount .btn{
+  background: linear-gradient(90deg,#a91f73 0%,#ff4270 100%) !important;
+  padding: 5px !important;
+  border-radius: 6px;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: none;
+  margin: 0;
+  border: none;
+}
+.sMyAccount{
+  padding: 0;
+  border: none !important;
+  border-radius: 8px;
+}
+#myTopnav a{
+  position: relative;
+}
+#myTopnav a:hover::after,#myTopnav a:active::after{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: #ff4270;
+  width: 100%;
+}
+#myTopnav .Active::after{
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 3px;
+  content: "";
+  background: #ff4270;
+  width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+.s_prof_img{
+  margin-right: 10px;
+}
+p {
+  margin: 0px 0 0px;
+}
+
+@media only screen and (max-width: 991px) {
+  .tempHeader {
+    height: 43px;
+    }
+    .mat-list{
+      padding: 0;
+    }
+    .mainheader {
+        display: none;
+    }
+    .header {
+        top: 0;
+    }
+    .header .nav {
+        display: none;
+    }
+    .header .Toggle {
+        display: unset;
+        color: #7c7c7c;
+        cursor: pointer;
+    }
+
+    .topnav a {
+        display: none;
+    }
+    .SideNavToggle a.icon {
+        display: block;
+    }
+    .SideNavToggle.responsive {
+        position: relative;
+    }
+    .SideNavToggle.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        display: block;
+        text-align: left;
+        font-weight: bold;
+        text-decoration: none;
+        mat-list-item {
+            height: 28px;
+        }
+    }
+    #myTopnav a:hover {
+        background-color: #cd0000;
+        text-decoration: none;
+        font-weight: bold;
+        color: #fff !important;
+        mat-list-item {
+            color: #fff;
+        }
+    }
+    .mainheader .mainnav {
+        display: none;
+    }
+    .header .inner_header .main-listt{
+      padding: 14px 0 ;
+    }
+    .logo_wrapp img{
+      width: 130px;
+    }
+}
+
+
+@media only screen and(max-width:767px){
+  .header .inner_header .Toggle {
+    display: block;
+  }
+  .header .inner_header .nav{
+    display: none;
+  }
+  .topnav {
+    position: fixed;
+    top: 63px;
+    right: 0;
+    width: 100%;
+    z-index: 9;
+    background: #fff;
+    height: 100vh;
+    box-shadow: 0 0 5px #ccc;
+    height: 100vh;
+  }
+  .topnav.responsive a {
+      padding: 10px;
+  }
+  .nav_right{
+    display: none;
+  }
+  .header .inner_header{
+    justify-content: space-between;
+  }
+  #myTopnav a:hover{
+    background-color: #ff4270 !important;
+  }
+  .topnav a {
+    display: block;
+    padding: 10px 30px;
+  }
+  .sMyAccount {
+    margin-left: 38px;
+  }
+}
