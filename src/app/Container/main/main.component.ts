@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 import { RecapchaService } from '../../recapcha/recapcha.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { PlatformLocation } from '@angular/common';
 // import { google } from '@agm/core/services/google-maps-types';
 declare var $: any;
 export class errorMatcher implements ErrorStateMatcher {
@@ -1026,7 +1027,11 @@ export class EnrollProcessComponent {
   styleUrls: ['./main.component.scss']
 })
 export class OurCommunityComponent {
-  constructor(public recapcha: RecapchaService, public snackBar: MatSnackBar, private community: MainService, private changeDetectorRef: ChangeDetectorRef) { }
+  constructor(location: PlatformLocation,public recapcha: RecapchaService, public snackBar: MatSnackBar, private community: MainService, private changeDetectorRef: ChangeDetectorRef) {
+    location.onPopState(() => {
+      alert(window.location);
+   });
+   }
   @ViewChild('form') froms: ElementRef
   ngOnInit() {
     window.scrollTo(0, 0)
