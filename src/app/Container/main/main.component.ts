@@ -104,12 +104,7 @@ export class MainComponent implements OnInit {
       console.log(res)
        
           this.products = res["message"]
-          // let pro = res['message']
-          for (let pro of this.products)
-          {
-            console.log(pro.id)
-          }
-          console.log(this.products.id)
+       
      
     })
   
@@ -123,14 +118,11 @@ local_products;
     for (let pros of this.products)
     { 
       if (product_pk == pros.id){
-      //  this.local_products
-        // alert('usman')
-        // this.priceetc ='tariff_2000'
+     
         localStorage.setItem('tariff','tariff_2000')
-        // localStorage.removeItem(val1)
-        // localStorage.removeItem(val2)
+      
         localStorage.setItem('val1',pros.tariff_2000)
-        // localStorage.setItem('zip',this.ZipCode)
+       
     
     this.selectProductBtnDisabled[i] = true
     let data = {
