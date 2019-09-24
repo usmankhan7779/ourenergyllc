@@ -11,6 +11,7 @@
             </div>
             <div>
                 <p>Any Enrollment Request including move-in or a switch can only be made by the service applicant or the applicant's authorized agent If you are not an authorized individual, please do not submit your request using this portal.</p>
+                
             </div>
         </mat-card>
     </div>
@@ -483,7 +484,7 @@
         <div *ngIf="summary" class="col-lg-3 col-lg-3 col-sm-12 col-xs-12">
             <div class="enroll-plan" *ngFor="let value of products;index as i;">
                 <div class="pro">
-                    <h3 style="font-weight: bold;text-align: center">Plan Summary</h3>
+                    <h3 style="font-weight: bold;text-align: center"> Plan Summary </h3>
                 </div>
                 <div class="rateSheet">
                     <div>
@@ -508,14 +509,11 @@
                         </div>
                         <!--  -->
                         <div  class="headingDiv">Product Name</div>
-                        <h2>{{value?.product_name}}</h2>
-                        <!-- <mat-card>
-                            <p>
-                                {{value?.product_info}}
-                            </p>
-                        </mat-card> -->
-                        <div style="margin-top: 10px" class="headingDiv">Contract Term</div>
+                        <div class="dataDiv">{{value?.product_name}}</div>
+
+                        <div class="headingDiv">Contract Term</div>
                         <div class="dataDiv">{{value?.display_term}} Months</div>
+
                         <div class="headingDiv">Utility Provider</div>
                         <div class="dataDiv">{{value?.vendor_company}}</div>
                        
