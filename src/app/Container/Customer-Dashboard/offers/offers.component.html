@@ -203,7 +203,7 @@
         <!--  -->
         <div  class="offer_pop_div1">
             <ul class="heading">
-                <li><p> Billing Address </p></li>
+                <!-- <li><p> Billing Address </p></li> -->
                 <li> <p> Mailing Address </p></li>
                 <li> <p> City </p></li>
                 <li> <p>First Name </p></li>
@@ -213,15 +213,16 @@
                 <li>  <p>Premise ID</p></li>
                 <li></li>
               </ul>
-              <ul *ngFor="let bills of BillAddress">
-                  <li> <p>{{bills.cust_address2}}</p></li>
-                  <li> <p>{{bills.cust_address1}}</p></li>
-                  <li><p>{{bills.cust_city}}</p></li>
-                  <li> <p>{{bills.cust_firstname}}</p></li>
-                  <li><p>{{bills.cust_lastname}}</p></li>
-                  <li> <p>{{bills.cust_id}}</p></li>
-                  <li> <p>{{bills.cust_zip}}</p></li>
-                  <li> <p>{{bills.premise_id}}</p></li>
+              <ul >
+                  <!-- <li> <p   >--</p></li> -->
+                  <!-- <li> <p >{{BillAddress[0]?.cust_address2}}</p></li> -->
+                  <li> <p>{{BillAddress[0]?.cust_address2}}</p></li>
+                  <li><p>{{BillAddress[0]?.cust_city}}</p></li>
+                  <li> <p>{{BillAddress[0]?.cust_firstname}}</p></li>
+                  <li><p>{{BillAddress[0]?.cust_lastname}}</p></li>
+                  <li> <p>{{BillAddress[0]?.cust_id}}</p></li>
+                  <li> <p>{{BillAddress[0]?.cust_zip}}</p></li>
+                  <li> <p>{{BillAddress[0]?.premise_id}}</p></li>
                 </ul>
         </div>
       </div>
