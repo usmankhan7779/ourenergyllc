@@ -34,6 +34,7 @@ export class MainHeaderComponent implements OnInit {
       this.username= "My Account"
     }
     this.setheader()
+    // sticky header start
     window.scroll(0, 0);
     window.onscroll = function () { myFunction() };
     
@@ -47,7 +48,7 @@ export class MainHeaderComponent implements OnInit {
         header.classList.remove("box_shadow");
       }
     }
-    // 
+   // sticky header End
   }
 
   dialogResult = "";
