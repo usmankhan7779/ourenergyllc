@@ -5,8 +5,8 @@
 
 export const environment = {
   production: false,
-  url: 'https://apis.wattcrm.com/',
-  // url:'https://devbackend.wattcrm.com/',
+  // url: 'https://apis.wattcrm.com/',
+  url:'https://devbackend.wattcrm.com/',
   webenrollurl: 'https://webenrollapi.smartixai.com/',
   // webenrollurl: 'http://192.168.29.165:8003/',
   backendurl: 'https://backend.wattcrm.com/',
