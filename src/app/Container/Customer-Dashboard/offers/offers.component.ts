@@ -69,6 +69,18 @@ getuserhist(){
           this.showSpinner = false
           this.BillAddress = [response["message"]]
           console.log(this.BillAddress)
+          // let bills  = this.BillAddress
+//           company_name: ""
+// cust_address1: ""
+// cust_address2: "3500 S ECHO TRL"
+// cust_city: "PLANO"
+// cust_firstname: "AMBREEN"
+// cust_id: "1302280001"
+// cust_lastname: "JAFRI"
+// cust_state: "TX"
+// cust_zip: "75023"
+// premise_id: "10443720004171858"
+          
           this.zip = response["message"]["cust_zip"].replace(/(\d{5})(\d{4})/, "$1-$2")
         }
       }, err => {
