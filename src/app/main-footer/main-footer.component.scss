@@ -134,12 +134,15 @@
     display: block;
   }
 }
-@media (max-width: 980px) {
+@media (max-width: 1024px) {
     .main-footer .inner-footer {
         display: flex;
         flex-direction: column;
         .second-list {
             margin-top: -19px;
         }
+    }
+    .main-footer h4{
+      text-align: left;
     }
 }

@@ -628,121 +628,55 @@
         <div class="tab-pane text-style text-center" id="UNDERSTAND_BILL">
           
             <h1 class="text-left">UNDERSTAND YOUR BILL</h1>
+          <div class="billing_section">
+            <div class="contents_of_bill">
+              <div *ngIf="featureSelected === 'firstDiv'">
+                  <h2 class="modal-title">This section contain your account details.</h2>
+                  <div class="tooltip_img">
+                     <img src="../../../assets/img/no1.jpg" alt="img">
+                  </div>
+              </div>
+              <!--  -->
+              <div *ngIf="featureSelected === 'secondDiv'">
+                  <h2 class="modal-title">This section contain your utility provider and Our Energy details.</h2>
+                         <div class="tooltip_img s_utlity_provider_img">
+                            <img src="../../../assets/img/no2.jpg" alt="img">
+                         </div>
+                </div>
+                <!--  -->
+                <div *ngIf="featureSelected === 'thirdDiv'">
+                    <h2 class="modal-title">This section contain your billing and payment details.</h2>
+                    <div class="tooltip_img">
+                       <img src="../../../assets/img/no3.jpg" alt="img">
+                    </div>
+                </div>
+                <!--  -->
+                <div *ngIf="featureSelected === 'fourthDiv'">
+                    <h2 class="modal-title">This section contain your address details.</h2>
+                    <div class="tooltip_img">
+                       <img src="../../../assets/img/no4.jpg" alt="img">
+                    </div>
+                </div>
+                <!--  -->
+                </div>
+              <div  class=" tab-img">
+              <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
+                data-lazy-type="image"
+                data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
+                width="576" height="745">
+              <noscript>
+                <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" width="576"
+                  height="745" />
+              </noscript>
+          <!-- buttons -->
+              <button id="btnBill1" type="button" (click)="toggle('firstDiv')">1</button>
+              <button id="btnBill2" type="button" (click)="toggle('secondDiv')">2</button>
+              <button id="btnBill3" type="button" (click)="toggle('thirdDiv')">3</button>
+              <button id="btnBill4" type="button" (click)="toggle('fourthDiv')">4</button>
+         <!-- buttons -->
+              </div>
+          </div>
 
-          <div class="col-sm-6 contents_of_bill">
-          <div *ngIf="featureSelected === 'firstDiv'">
-              <h2 class="modal-title">This section contain your account details.</h2>
-              <div class="tooltip_img">
-                 <img src="../../../assets/img/no1.jpg" alt="img">
-              </div>
-          </div>
-          <!--  -->
-          <div *ngIf="featureSelected === 'secondDiv'">
-              <h2 class="modal-title">This section contain your utility provider and Our Energy details.</h2>
-                     <div class="tooltip_img s_utlity_provider_img">
-                        <img src="../../../assets/img/no2.jpg" alt="img">
-                     </div>
-            </div>
-            <!--  -->
-            <div *ngIf="featureSelected === 'thirdDiv'">
-                <h2 class="modal-title">This section contain your billing and payment details.</h2>
-                <div class="tooltip_img">
-                   <img src="../../../assets/img/no3.jpg" alt="img">
-                </div>
-            </div>
-            <!--  -->
-            <div *ngIf="featureSelected === 'fourthDiv'">
-                <h2 class="modal-title">This section contain your address details.</h2>
-                <div class="tooltip_img">
-                   <img src="../../../assets/img/no4.jpg" alt="img">
-                </div>
-            </div>
-            <!--  -->
-            </div>
-          <div  class="col-sm-6 tab-img">
-          <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
-            data-lazy-type="image"
-            data-lazy-src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg"
-            width="576" height="745">
-          <noscript>
-            <img src="https://storage.wattcrm.com/wattcrm-images/pics/help/Sample-Bill-Residential1.jpg" width="576"
-              height="745" />
-          </noscript>
-<!-- buttons -->
-          <button id="btnBill1" type="button" (click)="toggle('firstDiv')">1</button>
-          <button id="btnBill2" type="button" (click)="toggle('secondDiv')">2</button>
-          <button id="btnBill3" type="button" (click)="toggle('thirdDiv')">3</button>
-          <button id="btnBill4" type="button" (click)="toggle('fourthDiv')">4</button>
-     <!-- buttons -->
-          <!-- models start-->
-          <!-- <div id="no1" class="modal fade" role="dialog">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h2 class="modal-title">This section contain your account details.</h2>
-                  </div>
-                  <div class="modal-body">
-                    
-                   <div class="tooltip_img">
-                      <img src="../../../assets/img/no1.jpg" alt="img">
-                   </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <!-- ------------------ -->
-            <!-- <div id="no2" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h2 class="modal-title">This section contain your utility provider and Our Energy details.</h2>
-                    </div>
-                    <div class="modal-body">
-                        <h2 class="modal-title">This section contain your utility provider and Our Energy details.</h2>
-                     <div class="tooltip_img">
-                        <img src="../../../assets/img/no2.jpg" alt="img">
-                     </div>
-                    </div>
-                  </div>
-                </div>
-            </div> -->
-            <!-- ------------------- -->
-            <!-- <div id="no3" class="modal fade" role="dialog">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h2 class="modal-title">This section contain your billing and payment details.</h2>
-                      </div>
-                      <div class="modal-body">
-                          <h2 class="modal-title">This section contain your billing and payment details.</h2>
-                       <div class="tooltip_img">
-                          <img src="../../../assets/img/no3.jpg" alt="img">
-                       </div>
-                      </div>
-                    </div>
-                  </div>
-            </div> -->
-            <!-- -------------------------- -->
-            <!-- <div id="no4" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h2 class="modal-title">This section contain your address details.</h2>
-                    </div>
-                    <div class="modal-body">
-                     <div class="tooltip_img">
-                        <img src="../../../assets/img/no4.jpg" alt="img">
-                     </div>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-          <!-- models end -->
-          </div>
         </div>
         <!--  -->
         <div class="tab-pane text-style" id="DOWNLOAD_FORMS">

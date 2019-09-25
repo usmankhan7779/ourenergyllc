@@ -84,6 +84,7 @@ p {
 .mat-select {
   padding: 0 !important;
   background: none;
+
   .mat-select-trigger {
     padding: 8px;
   }
@@ -224,7 +225,7 @@ h3 {
 
 .form-group {
   margin-top: 15px;
-  margin-bottom: 0px; 
+  margin-bottom: 0px;
 }
 
 .form-zip {
@@ -629,7 +630,7 @@ h3 {
 }
 
 .choose-criteria ul li p {
-  margin: 0; 
+  margin: 0;
 
   a:hover {
     text-decoration: underline;
@@ -2706,6 +2707,11 @@ h3 {
   padding-top: 50px;
 }
 
+.billing_section {
+  display: flex;
+  flex-direction: row;
+}
+
 @media (max-width: 1380px) {
   .plan-main {
     zoom: 90%
@@ -3030,6 +3036,7 @@ h3 {
     }
   }
 }
+
 .result-box:nth-child(2) {
   transform: scale(1.05);
   border-top: 10px solid #ff4270;
@@ -3178,6 +3185,7 @@ h3 {
   border-radius: 10px !important;
   padding: 5px;
 }
+
 .why-our {
   background-color: #fff;
 
@@ -3545,6 +3553,7 @@ h3 {
     font-size: 28px;
     margin: 25px 0px !important;
   }
+
   h4 {
     font-weight: 300 !important;
     margin-top: 30px;
@@ -3626,6 +3635,7 @@ h3 {
     list-style: none;
   }
 }
+
 .helpbutton a {
   color: #fff;
 }
@@ -3809,6 +3819,7 @@ h3 {
 
     .main_img {
       max-width: 500px;
+      margin-top: -80px;
     }
   }
 }
@@ -3821,6 +3832,7 @@ h3 {
 .fa-minus-square {
   color: #ff4072 !important;
 }
+
 .four_Steps {
   width: 100%;
   min-height: 200px;
@@ -3858,6 +3870,7 @@ h3 {
 .panel-heading:hover .panel-title {
   color: #c00 !important;
 }
+
 .residential-main .heading {
   text-align: center;
   margin-bottom: 15px;
@@ -3872,6 +3885,7 @@ h3 {
   align-items: center;
   flex-wrap: wrap;
 }
+
 .main {
   align-items: center;
   justify-content: center;
@@ -3915,6 +3929,7 @@ h3 {
   color: #959fac;
   text-decoration: underline;
 }
+
 .residential-main .heading {
   text-align: center;
   margin-bottom: 15px;
@@ -4026,7 +4041,42 @@ h3 {
   margin: 0;
 }
 
+@media (max-width:1300px) {
+  .billing_section {
+    flex-direction: column;
+  }
+
+  .contents_of_bill {
+    margin-top: 30px !important;
+  }
+}
+
 @media (max-width: 991px) {
+  .bus-banner {
+    padding: 30px;
+
+    .heading_s {
+      font-size: 26px;
+    }
+
+    .text-box {
+      min-width: auto;
+    }
+  }
+
+  .faqs_home .panel-heading:after {
+    left: 10px !important;
+  }
+
+  .faqs_home #accordion .panel-default .panel-heading .panel-title a {
+    padding-left: 20px !important;
+    font-size: 16px;
+  }
+
+  .faqs_home #accordion .panel-default .panel-heading {
+    padding-right: 10px !important;
+  }
+
   .timeline>li>.timeline-panel:after {
     display: none !important;
   }
