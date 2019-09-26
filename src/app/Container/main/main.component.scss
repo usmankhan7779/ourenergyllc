@@ -2024,6 +2024,8 @@ h3 {
 
     h3 {
       text-align: left;
+      font-size: 52px !important;
+      font-weight: 600 !important;
     }
   }
 
@@ -2879,11 +2881,7 @@ h3 {
   }
 }
 
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+
 
 @media (max-width: 991px) {
   .card .card-header.card-header-text {
@@ -3811,9 +3809,12 @@ h3 {
     .zip_promo {
       min-width: 400px;
 
-      h3 {
+    h3 {
+        font-size: 52px !important;
+        font-weight: 600 !important;
+        padding-bottom: 20px;
         text-align: left;
-        padding: 0;
+        
       }
     }
 
@@ -4041,6 +4042,20 @@ h3 {
   margin: 0;
 }
 
+@media (max-width:1175px) {
+  .panel-heading {
+    padding-left: 50px !important;
+
+    .panel-title {
+      font-size: 16px !important;
+
+       a {
+        padding-left: 10px !important;
+      }
+    }
+  }
+}
+
 @media (max-width:1300px) {
   .billing_section {
     flex-direction: column;
@@ -4049,8 +4064,18 @@ h3 {
   .contents_of_bill {
     margin-top: 30px !important;
   }
+  .tab-content h1 {
+    font-size: 26px !important;
+  }
+  .tab-content h2 {
+    font-size: 22px;
+  }
 }
-
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 @media (max-width: 991px) {
   .bus-banner {
     padding: 30px;

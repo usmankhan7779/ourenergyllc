@@ -404,16 +404,15 @@ p {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: wrap !important;
-  justify-content: space-evenly !important
 }
 
 .TOS_EFL a {
   font-size: 18px;
   font-weight: 600;
   text-decoration: underline;
-  color: #b6b6b6
+  color: #b6b6b6;
+  margin-right: 20px
 }
-
 .btn-100 {
   width: 100%
 }
@@ -800,8 +799,19 @@ i {
     padding: 5px 10px
   }
 }
-
+@media (max-width: 1200px) {
+  .enroll-plan{
+    max-width: 300px !important;
+    margin: 0 auto 30px !important;
+  }
+}
 @media only screen and(max-width:767px) {
+  .bodyy .form1 .leftSider{
+    overflow: auto !important;
+  }
+  .premise .inner-premise .premise-details{
+    padding: 5px !important;
+  }
   .mat-checkbox-layout .mat-checkbox-label{
     line-height: 14px !important;
   }
@@ -851,6 +861,9 @@ i {
 }
 
 @media only screen and(max-width:540px) {
+  .proceed_btn .btn{
+    font-size: 14px !important;
+  }
   .dashboard_username{
     font-size: 22px !important;
   }
@@ -913,11 +926,11 @@ i {
   }
 
   .rightSide {
-    align-items: center
+    align-items: center !important
   }
 
   .rightSide .icon .badge {
-    right: 18px
+    right: 18px !important
   }
 
   .logo_wrapp img {
@@ -971,6 +984,94 @@ i {
 
   .App .staticContent {
     margin-top: 0
+  }
+  .bodyy .mat-horizontal-stepper-header-container {
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .bodyy .mat-step-header{
+    width: 100% !important;
+  }
+  .bodyy .mat-horizontal-content-container{
+    padding: 0 !important;
+  }
+  .enroll-container h1{
+    font-size: 26px !important;
+  }
+  .enroll-container h3{
+    font-size: 14px !important;
+    padding: 5px;
+  }
+  .enroll-container .cart{
+    margin-top: 0 !important;
+  }
+  .enroll-container .inner .note{
+    justify-content: center !important;
+    flex-direction:column !important;
+  }
+  .enroll-container .inner mat-card p{
+    font-size: 14px !important;
+  }
+  input.mat-input-element{
+    font-size: 16px !important;
+    font-weight: 600 !important;
+  }
+  .s_address_found{
+    padding: 0 !important;
+  }
+  .premise .inner-premise .premise-details{
+    padding: 5px !important;
+  }
+  .premise .inner-premise{
+    flex-direction: column !important;
+  }
+  .mat-card-title {
+    font-size: 18px !important;
+  }
+  .bodyy .form > *{
+    margin: 10px 0 !important
+  }
+  .mat-checkbox-layout .mat-checkbox-label {
+    line-height: 14px !important;
+    font-size: 12px !important;
+  }
+  .bodyy mat-card p {
+    font-size: 12px !important;
+  }
+  .s_popup_info{
+    width: 100% !important;
+  }
+  .s_popup_info_content{
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+  }
+  .s_consent_lastDiv{
+    flex-wrap: nowrap !important;
+    flex-direction: column !important;
+  }
+  .s_consent_lastDiv > div:first-child {
+      border: none !important;
+  }
+  .s_consent_lastDiv > div {
+      width: 100% !important;
+      margin: 10px 0 !important;
+  }
+  .cdk-overlay-pane{
+    max-width: 90vw !important;
+    margin-top: 100px !important;
+  }
+  app-confirmationpopup h1{
+    font-size: 26px !important;
+  }
+  app-confirmationpopup h4{
+    font-size: 14px !important;
+  }
+  app-confirmationpopup form{
+    padding: 5px;
+  }
+  #cdk-overlay-2{
+    height: 100%;
   }
 }
 

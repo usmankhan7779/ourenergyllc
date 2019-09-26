@@ -47,7 +47,7 @@
                                         <div>
                                             <mat-radio-group class="radio-group" (change)="radioChange($event)" formControlName="enrol_type">
                                                 <mat-radio-button class="radio-button" *ngFor="let service of services" [value]=service>
-                                                    {{service}}
+                                                  <span> {{service}}</span>  
                                                 </mat-radio-button>
                                             </mat-radio-group>
                                         </div>
@@ -317,7 +317,7 @@
                                                 </div>
                                             </div>
                                             <br>
-                                            <div class="text-center">
+                                            <div class="text-center proceed_btn">
                                                 <h1 class="text-center" *ngIf="billingAddresses.length > 0" #premises>OR
                                                   </h1>
                                                   <a class="btn" (click)="SelectBillingPrem('same')"  >Proceed with what I entered</a> 
