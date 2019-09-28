@@ -2024,7 +2024,7 @@ h3 {
 
     h3 {
       text-align: left;
-      font-size: 52px !important;
+      font-size: 52px ;
       font-weight: 600 !important;
     }
   }
@@ -2886,6 +2886,10 @@ h3 {
 @media (max-width: 991px) {
   .card .card-header.card-header-text {
     display: block;
+  }
+
+  .four_Steps {
+    padding: 770px 0px 0px 0px;
   }
 }
 
@@ -3809,12 +3813,12 @@ h3 {
     .zip_promo {
       min-width: 400px;
 
-    h3 {
+      h3 {
         font-size: 52px !important;
         font-weight: 600 !important;
         padding-bottom: 20px;
         text-align: left;
-        
+
       }
     }
 
@@ -4049,7 +4053,7 @@ h3 {
     .panel-title {
       font-size: 16px !important;
 
-       a {
+      a {
         padding-left: 10px !important;
       }
     }
@@ -4057,6 +4061,12 @@ h3 {
 }
 
 @media (max-width:1300px) {
+  .bus-banner .text-box h3,.main_banner .promo_img_div .zip_promo h3 {
+    text-align: left !important;
+    font-size: 40px !important;
+    font-weight: 600 !important;
+  }
+  
   .billing_section {
     flex-direction: column;
   }
@@ -4064,31 +4074,39 @@ h3 {
   .contents_of_bill {
     margin-top: 30px !important;
   }
+
   .tab-content h1 {
     font-size: 26px !important;
   }
+
   .tab-content h2 {
     font-size: 22px;
   }
 }
+
 @media (min-width: 1200px) {
   .container {
     width: 1170px;
   }
 }
+
 @media (max-width: 991px) {
+
   .bus-banner {
     padding: 30px;
-
-    .heading_s {
-      font-size: 26px;
-    }
 
     .text-box {
       min-width: auto;
     }
   }
+  .heading_s {
+    font-size: 26px !important;
+    padding: 30px;
+  }
 
+  .heading_s br:first-child {
+    display: none;
+  }
   .faqs_home .panel-heading:after {
     left: 10px !important;
   }
@@ -4154,15 +4172,6 @@ h3 {
     max-width: 440px;
   }
 
-  .heading_s {
-    font-weight: 600;
-    font-size: 40px;
-  }
-
-  .heading_s br:first-child {
-    display: none;
-  }
-
   .help-sidebar {
     display: flex;
     flex-wrap: wrap;
@@ -4182,6 +4191,7 @@ h3 {
   .download-here img {
     width: 100px;
   }
+
 }
 
 @media (max-width: 767px) {
@@ -4195,6 +4205,8 @@ h3 {
 
   .heading_s {
     font-size: 26px !important;
+    padding: 20px 0;
+    text-align: center !important;
   }
 
   .faqs_home .panel-title {
@@ -4205,18 +4217,9 @@ h3 {
     min-height: auto !important;
   }
 
-  .heading_s {
-    padding: 20px 0;
-  }
-
   .bus-banner {
     flex-direction: column !important;
   }
-
-  .heading_s {
-    text-align: center !important;
-  }
-
   .four_Steps {
     background-image: none !important;
     background-position: inherit !important;
