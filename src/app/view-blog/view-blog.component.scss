@@ -1,0 +1,36 @@
+.blog-container{
+  width: 100%;
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 50px 0;
+  .card{
+    min-width: 320px;
+    max-width: 320px;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-height: 373px;
+    .blog-img{
+      width: 100%;
+      border-radius: 5px 5px 0 0;
+      height: 190px;
+      img{
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        height: 190px;
+        object-fit: fill;
+      }
+    }
+    .card-body{
+      padding: 10px;
+      .card-title{
+        font-size: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 33px;
+        font-weight: 900 !important;
+        text-align: center;
+      }
+    }
+  }
+}
