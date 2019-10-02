@@ -49,7 +49,7 @@ export class EnrollmentComponent implements OnInit {
   states = [{ viewValue: "Alabama", value: "AL" }, { viewValue: "Alaska", value: "AK" }, { viewValue: "Arizona", value: "AZ" }, { viewValue: "Arkansas", value: "AR" }, { viewValue: "California", value: "CA" }, { viewValue: "Colorado", value: "CO" }, { viewValue: "Connecticut", value: "CT" }, { viewValue: "Delaware", value: "DE" }, { viewValue: "District of Columbia", value: "DC" }, { viewValue: "Florida", value: "FL" }, { viewValue: "Georgia", value: "GA" }, { viewValue: "Hawaii", value: "HI" }, { viewValue: "Idaho", value: "ID" }, { viewValue: "Illinois", value: "IL" }, { viewValue: "Indiana", value: "IN" }, { viewValue: "Iowa", value: "IA" }, { viewValue: "Kansas", value: "KS" }, { viewValue: "Kentucky", value: "KY" }, { viewValue: "Louisiana", value: "LA" }, { viewValue: "Maine", value: "ME" }, { viewValue: "Maryland", value: "MD" }, { viewValue: "Massachusetts", value: "MA" }, { viewValue: "Michigan", value: "MI" }, { viewValue: "Minnesota", value: "MN" }, { viewValue: "Mississippi", value: "MS" }, { viewValue: "Missouri", value: "MO" }, { viewValue: "Montana", value: "MT" }, { viewValue: "Nebraska", value: "NE" }, { viewValue: "Nevada", value: "NV" }, { viewValue: "New Hampshire", value: "NH" }, { viewValue: "New Jersey", value: "NJ" }, { viewValue: "New Mexico", value: "NM" }, { viewValue: "New York", value: "NY" }, { viewValue: "North Carolina", value: "NC" }, { viewValue: "North Dakota", value: "ND" }, { viewValue: "Ohio", value: "OH" }, { viewValue: "Oklahoma", value: "OK" }, { viewValue: "Oregon", value: "OR" }, { viewValue: "Pennsylvania", value: "PA" }, { viewValue: "Rhode Island", value: "RI" }, { viewValue: "South Carolina", value: "SC" }, { viewValue: "South Dakota", value: "SD" }, { viewValue: "Tennessee", value: "TN" }, { viewValue: "Texas", value: "TX" }, { viewValue: "Utah", value: "UT" }, { viewValue: "Vermont", value: "VT" }, { viewValue: "Virginia", value: "VA" }, { viewValue: "Washington", value: "WA" }, { viewValue: "West Virginia", value: "WV" }, { viewValue: "Wisconsin", value: "WI" }, { viewValue: "Wyoming", value: "WY" }, { viewValue: "American Samoa", value: "AS" }, { viewValue: "Guam", value: "GU" }, { viewValue: "Northern Mariana Islands", value: "MP" }, { viewValue: "Puerto Rico", value: "PR" }, { viewValue: "U.S. Virgin Islands", value: "VI" }, { viewValue: "Micronesia", value: "FM" }, { viewValue: "Marshall Islands", value: "MH" }, { viewValue: "Palau", value: "PW" }, { viewValue: "U.S. Armed Forces – Americas[d]", value: "AA" }, { viewValue: "U.S. Armed Forces – Europe[e]", value: "AE" }, { viewValue: "U.S. Armed Forces – Pacific[f]", value: "AP" }, { viewValue: "Northern Mariana Islands", value: "CM" }, { viewValue: "Panama Canal Zone", value: "CZ" }, { viewValue: "Nebraska", value: "NB" }, { viewValue: "Philippine Islands", value: "PI" }, { viewValue: "Trust Territory of the Pacific Islands", value: "TT" }]
   questions = ["PIN", "What school did you attend sixth grade", "In what city or town was your first job", "What was the name of your favorite teacher", "What was your first car"]
   languages = [{ value: "Default", viewValue: "English" }, { value: "es.Default", viewValue: "Spanish" }]
-  aboutUs = [{ name: "Web", value: "01" }, { name: "OutBound Call TeleMarketer", value: "02" }, { name: "Inbound Call Internal", value: "03" }, { name: "Mail", value: "04" }, { name: "Other", value: "05" }]
+  aboutUs = [{ name: "Web", value: "01" }, { name: "OutBound Call TeleMarketer", value: "02" }, { name: "Inbound Call Internal", value: "03" }, { name: "Mail", value: "04" },{ name: "Social Media", value: "05" },{ name: "Other", value: "06" }]
   cards = ["Master", "Discover", "Visa"]
   providers = ["Altel", "Ameritech", "ATT Wireless", "Bell Canada", "Bellsouth", "Boost", "Cellular South", "CellularOne", "CellularOne MMS", "Centennial WireLess", "Cincinnati Bell", "Cingular", "Cricket", "Edge Wireless", "Metro PCS", "Nextel", "O2", "Orange", "Qwest", "Rogers WireLess", "Spint PCS", "Suncom", "T-Mobile", "Teleflip", "Tellus Mobility", "U.S. Cellular", "Verizon", "Virgin Mobile"]
   years = []
@@ -144,9 +144,9 @@ export class EnrollmentComponent implements OnInit {
     })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
-    
+
     // console.log(this.price_traffic)
-    if(localStorage.getItem('tariff')  == 'tariff_500' ){
+    if (localStorage.getItem('tariff') == 'tariff_500') {
       this.price_traffic = localStorage.getItem('val1')
       // this.price_kwh1 = true
       // this.price_kwh2 = false
@@ -154,21 +154,21 @@ export class EnrollmentComponent implements OnInit {
       this.khw = "500"
 
     }
-    else if (localStorage.getItem('tariff')  == 'tariff_1000'){
+    else if (localStorage.getItem('tariff') == 'tariff_1000') {
       this.price_traffic = localStorage.getItem('val1')
       this.price_kwh1 = false
       this.price_kwh2 = true
       this.price_kwh3 = false;
       this.khw = "1000"
     }
-    else if (localStorage.getItem('tariff')  == 'tariff_2000'){
+    else if (localStorage.getItem('tariff') == 'tariff_2000') {
       this.price_traffic = localStorage.getItem('val1')
       // this.price_kwh1 = false
       // this.price_kwh2 = false
       // this.price_kwh3 = true;
       this.khw = "2000"
     }
-     
+
 
     setTimeout(() => {
       if (this.showSpinner == null) { this.showSpinner = true }
@@ -329,12 +329,12 @@ export class EnrollmentComponent implements OnInit {
       default: break;
     }
   }
-  show_Waiver :boolean =false;
+  show_Waiver: boolean = false;
   radioChangeCreditVerificationsub(event) {
     if (this.creditvalue == 'Waive Deposit' && event.value == 'I will submit a letter from my current provider showing timely payments for the last 12 months with no more than 1 late payment') {
       this.flow_status = '-229'
       this.show_Waiver = false;
-      
+
     } else if (this.creditvalue == 'Waive Deposit' && event.value == 'I am 65+ and can provide proof of timely payments to my current electric provider.') {
       this.flow_status = '-228'
       this.show_Waiver = false;

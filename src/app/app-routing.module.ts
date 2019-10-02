@@ -10,6 +10,8 @@ import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { BusinessRateComponent } from './Container/business-rate-electricity/business-rate.component';
 import { EnrollmentSuccessPageComponent } from './enrollment-success-page/enrollment-success-page.component';
 import { PayEnrollDepositComponent } from './pay-enroll-deposit/pay-enroll-deposit';
+import { SingleBlogViewComponent } from './single-blog-view/single-blog-view.component';
+import { ViewBlogComponent } from './view-blog/view-blog.component';
 
 const routes: Routes = [
   {
@@ -33,6 +35,8 @@ const routes: Routes = [
       { path: 'commercial', component: CommercialComponent },
       { path: 'residential', component: ResidentialsComponent },
       { path: 'about', component: AboutUsComponent },
+      { path: 'view-blog', component: ViewBlogComponent },
+      { path: 'blog-view-details', component: SingleBlogViewComponent },
       { path: 'contact', component: EstablishContractsComponent },
       { path: 'term-and-conditions', component: TermConditionComponent },
       { path: 'privacy-policy', component: PrivacyPolicyComponent },

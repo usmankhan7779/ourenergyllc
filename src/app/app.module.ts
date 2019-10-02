@@ -30,6 +30,8 @@ import { SharedModule } from './shared.module';
 import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
 import { PayEnrollDepositComponent } from './pay-enroll-deposit/pay-enroll-deposit';
 import { VerificationEmailComponent } from './login/verification-email/verification-email.component';
+import { ViewBlogComponent } from './view-blog/view-blog.component';
+import { SingleBlogViewComponent } from './single-blog-view/single-blog-view.component';
 // Sentry.init({
 //   dsn: "https://e06be21554224e8a8e46fa0743ed7d76@sentry.io/1329724"
 // }) 
@@ -79,6 +81,8 @@ import { VerificationEmailComponent } from './login/verification-email/verificat
     RecapchaComponent,
     EnrollmentConsentDialog,
     VerificationEmailComponent,
+    ViewBlogComponent,
+    SingleBlogViewComponent,
     
   ],
   imports: [
