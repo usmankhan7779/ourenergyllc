@@ -1,20 +1,24 @@
 <div class="container-fluid">
   <h1 class="text-center">Blogs</h1>
   <div class="blog-container">
-    <div class="card" >
+    <div class="card" *ngFor="let blog of data" >
       <div class="blog-img">
           <img src="../../assets/img/blog-example.png" class="card-img-top" alt="img">
       </div>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <h5 class="card-title">{{blog.heading}}</h5>
+        <!-- <div [innerHTML]="data.content1 | slice:0:130"></div> -->
+        <!-- <p class="card-text" [innerHTML]="blog.content1 | slice:0:100"></p> -->
         <div class="text-center">
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a [routerLink]="['/blog-view-details']"
+            [queryParams]="{ ProID:blog.heading  }" class="btn btn-primary">View Blog</a>
+            <!-- <a (click)="fun(data.heading)"  target="_blank"  >
+              <button class="btn btn-fill margin-zero1" type="submit"  target="_blank" >Read more</button></a> -->
         </div>
       </div>
     </div>
     <!--  -->
-    <div class="card" >
+    <!-- <div class="card" >
         <div class="blog-img">
             <img src="../../assets/img/blog-example.png" class="card-img-top" alt="img">
         </div>
@@ -25,9 +29,9 @@
               <a href="#" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
-      </div>
+      </div> -->
       <!--  -->
-      <div class="card" >
+      <!-- <div class="card" >
           <div class="blog-img">
               <img src="../../assets/img/blog-example.png" class="card-img-top" alt="img">
           </div>
@@ -38,7 +42,7 @@
                 <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--  -->
   </div>
 </div>
