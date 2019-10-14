@@ -149,7 +149,7 @@ local_products;
         localStorage.setItem('productSummary', JSON.stringify(pros))
       }
       if (res["status"] == false && res["redirect_url"] != null && res["redirect_url"] != undefined && res["redirect_url"] != '') {
-        Swal('Your session has expired. Please refresh the page and try again', '', 'error').then(() => {
+        Swal('Opps something went worng. Please refresh the page and try again', '', 'error').then(() => {
           this.selectProductBtnDisabled[i] = false
           this.ngOnInit()
         })
@@ -846,7 +846,7 @@ localStorage.setItem('val1',val1)
         localStorage.setItem('productSummary', JSON.stringify(this.products[i]))
       }
       if (res["status"] == false && res["redirect_url"] != null && res["redirect_url"] != undefined && res["redirect_url"] != '') {
-        Swal('Your session has expired. Please refresh the page and try again', '', 'error').then(() => {
+        Swal('Opps something went worng. Please refresh the page and try again', '', 'error').then(() => {
           this.selectProductBtnDisabled[i] = false
           this.ngOnInit()
         })
@@ -936,7 +936,7 @@ export class EnrollProcessComponent {
         else if (res["status"] == false && res["redirect_url"] != null && res["redirect_url"] != undefined && res["redirect_url"] != '') {
           this.showSpinner = false
           this.searchPremiseBtn = false
-          Swal('Your session has expired.', '', 'error').then(() => {
+          Swal('Opps something went worng.', '', 'error').then(() => {
             this.router.navigate(['' + res["redirect_url"]])
           })
         }
