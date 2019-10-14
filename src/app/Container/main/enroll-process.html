@@ -49,7 +49,8 @@
                 <mat-progress-bar *ngIf="status==true" mode="indeterminate"></mat-progress-bar>
 
                 <!-- results start -->
-                <div *ngIf="len > 1" class="s_address_found">
+                <!-- *ngIf="len > 1"  -->
+                <div class="s_address_found">
                     <br>
                     <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
                     <h4 class="text-center">Multiple service addresses were found. Please select from the below list or refine what you entered above.</h4>

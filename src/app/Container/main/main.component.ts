@@ -915,15 +915,17 @@ export class EnrollProcessComponent {
         if (res["status"] == true) {
           this.showSpinner = false
           this.searchPremiseBtn = false
-          if (res['message'].length > 1) {
+          if (res['message'].length ) {
             this.multiplePremise = res['message']
             this.len = res['message'].length
             window.scrollTo(0, 600)
           }
           else {
+          
             this.multiplePremise = res['message']
             this.len = res['message'].length
-            this.SelectPremise(this.len - 1)
+            window.scrollTo(0, 600)
+            // this.SelectPremise(this.len - 1)
           }
           let value = res['message']
           let tdsp = value['provider_id']
