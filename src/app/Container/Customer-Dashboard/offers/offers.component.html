@@ -2,7 +2,8 @@
     <mat-tab>
         <ng-template mat-tab-label>
             <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" style="margin-top: -8px;">
-            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Available Offers </label>
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Available Offers
+            </label>
         </ng-template>
         <br>
         <div class="productsnoffer text-center">
@@ -10,85 +11,93 @@
                 <div class="spinner" *ngIf="showSpinner1">
                     <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
                 </div>
-                <span *ngIf="showMessageResponse == false" class="noOffermessage">You currently don't have any special offers.</span>
-                <h4 *ngIf="showMessageResponse == false" class="text-center">To request for an offer please call us on this number <b>1-888-545-4687</b></h4>
+                <span *ngIf="showMessageResponse == false" class="noOffermessage">You currently don't have any special
+                    offers.</span>
+                <h4 *ngIf="showMessageResponse == false" class="text-center">To request for an offer please call us on
+                    this number <b>1-888-545-4687</b></h4>
                 <!--  -->
                 <div class="search-result">
-                <div class="result-box" *ngFor="let value of newOffer;index as i;">
-                    <div >
-                        <div class="search-plan">
-                           
-                            <h3 class="productName">{{value.product_name}}</h3>
-                            <div [ngSwitch]="estimatedUsage" class="border_bottom">
-                                <div class="text-center inner price-box" *ngSwitchCase="500">
-                                    <div>
-                                        <h3 >{{value.tariff_500}}¢</h3>
-                                        <b >per kWh</b>
+                    <div class="result-box" *ngFor="let value of newOffer;index as i;">
+                        <div>
+                            <div class="search-plan">
+
+                                <h3 class="productName">{{value.product_name}}</h3>
+                                <div [ngSwitch]="estimatedUsage" class="border_bottom">
+                                    <div class="text-center inner price-box" *ngSwitchCase="500">
+                                        <div>
+                                            <h3>{{value.tariff_500}}¢</h3>
+                                            <b>per kWh</b>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text-center inner price-box" *ngSwitchCase="1000">
-                                    <div>
-                                        <h3 >{{value.tariff_1000}}¢</h3>
-                                        <b >per kWh</b>
+                                    <div class="text-center inner price-box" *ngSwitchCase="1000">
+                                        <div>
+                                            <h3>{{value.tariff_1000}}¢</h3>
+                                            <b>per kWh</b>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text-center inner price-box" *ngSwitchCase="2000">
-                                    <div>
-                                        <h3 >{{value.tariff_2000}}¢</h3>
-                                        <b >per kWh</b>
+                                    <div class="text-center inner price-box" *ngSwitchCase="2000">
+                                        <div>
+                                            <h3>{{value.tariff_2000}}¢</h3>
+                                            <b>per kWh</b>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="text-center inner price-box" *ngSwitchDefault>
-                                    <div>
-                                            <h3 >{{value.tariff_2000}}¢</h3>
-                                            <b >per kWh</b>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="main"> <div class="bar"></div>
-                                <div class="inner">
-                                    <div class="rateSheet">
-                                        <div >
-                        
-                                            <span >Contract Term: {{value.display_term}} months</span>
-                                            <span >Termination Fee: ${{value.display_termination_fee}}</span>
-                                            <span >Utility: {{value.vendor_company}}</span>
-                                            <span>Average Rate at 2000 kWhs</span>
+                                    <div class="text-center inner price-box" *ngSwitchDefault>
+                                        <div>
+                                            <h3>{{value.tariff_2000}}¢</h3>
+                                            <b>per kWh</b>
                                         </div>
                                     </div>
                                 </div>
-                          
-                                <div class="text-center inner links-list">
+                                <div class="main">
+                                    <div class="bar"></div>
+                                    <div class="inner">
+                                        <div class="rateSheet">
+                                            <div>
+
+                                                <span>Contract Term: {{value.display_term}} months</span>
+                                                <span>Termination Fee: ${{value.display_termination_fee}}</span>
+                                                <span>Utility: {{value.vendor_company}}</span>
+                                                <span>Average Rate at 2000 kWhs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-center inner links-list">
                                         <!-- [href]="value.product_efl_url" -->
-                                    <a  matTooltip="Terms of Service" href="value.product_tos_url" target="_blank"><b>TOS</b></a>
-                                    <a  matTooltip="Your Rights as a Customer" href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank"><b>YRAC</b></a>
-                                    <a  matTooltip="Electric Facts Label" href="value.product_efl_url" target="_blank"><b>EFL</b></a>
-                                    
-                                    <button class="pink_btn enroll-btn" data-toggle="modal" data-target="#myModal"
-                                     (click)="getvalue(value.product_name,value.tariff_500,value.tariff_1000,value.tariff_2000,
-                                    value.display_term,value.display_termination_fee,value.vendor_company,value.product_tos_url,'https://www.ourenergyllc.com/prodox/yrac.pdf',value.product_efl_url,value.offer_id,value.offer_pk,value.id)"            >
+                                        <a matTooltip="Terms of Service" href="value.product_tos_url"
+                                            target="_blank"><b>TOS</b></a>
+                                        <a matTooltip="Your Rights as a Customer"
+                                            href="https://www.ourenergyllc.com/prodox/yrac.pdf"
+                                            target="_blank"><b>YRAC</b></a>
+                                        <a matTooltip="Electric Facts Label" href="value.product_efl_url"
+                                            target="_blank"><b>EFL</b></a>
+
+                                        <button class="pink_btn enroll-btn" data-toggle="modal" data-target="#myModal"
+                                            (click)="getvalue(value.product_name,value.tariff_500,value.tariff_1000,value.tariff_2000,
+                                    value.display_term,value.display_termination_fee,value.vendor_company,value.product_tos_url,'https://www.ourenergyllc.com/prodox/yrac.pdf',value.product_efl_url,value.offer_id,value.offer_pk,value.id)">
                                             <!-- (click)="RenewNow(value)" -->
- 
-                                        
-                                        Renew Now</button>
-                        <!-- static expiry date start-->
-                                  <p class="s_expiryDate">Deal Expires on:<b>  {{date.expiry_date}}</b></p>
-                        <!-- static expiry date end -->
+
+
+                                            Renew Now</button>
+                                        <!-- static expiry date start-->
+                                        <p class="s_expiryDate">Deal Expires on:<b> {{date.expiry_date}}</b></p>
+                                        <!-- static expiry date end -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-              </div>
-              <!--  -->
-            
+                <!--  -->
+
             </div>
         </div>
     </mat-tab>
     <mat-tab>
         <ng-template mat-tab-label>
             <img src="../../../../../assets/img/Icons/offer-icon-black.png" alt="offers" style="margin-top: -8px;">
-            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Offer History <span class="badge">{{offerHistoryarrayLength}}</span> </label>
+            <label for="Offers" style="color: #000; font-size: 16px; cursor:pointer;margin-top: 12px;"> Offer History
+                <span class="badge">{{offerHistoryarrayLength}}</span> </label>
         </ng-template>
         <div class="spacer mat-elevation-z6">
             <div class="fix">
@@ -144,96 +153,160 @@
 
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
-    
-      <!-- Modal content-->
-   <!-- Modal content-->
-   <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close s_modalDismiss" data-dismiss="modal">&times;</button>
-      <h2 class="modal-title text-center">Renew Details</h2>
-    </div>
-    <div class="modal-body">
-      <div class="outer_info">
-        <div class="offer_pop_div1">
-          <ul class="heading">
-            <li>
-              <p>Product Name </p>
-            </li>
-            <li>
-              <p>Price 500 </p>
-            </li>
-            <li>
-              <p>Price 2000 </p>
-            </li>
-            <li>
-              <p>Price 1000 </p>
-            </li>
-            <li>
-              <p>Termination </p>
-            </li>
-            <li>
-              <p>Vendor Company </p>
-            </li>
-          </ul>
-          <ul>
-            <li><p>{{product_name}}</p></li>
-            <li> <p>{{tariff_500}}</p></li>
-            <li> <p>{{tariff_2000}}</p></li>
-            <li> <p>{{tariff_1000}}</p></li>
-            <li><p>{{display_termination_fee}}</p></li>
-            <li><p>{{vendor_company}}</p></li>
-            <li>
-                <ul class="tos_pop">
-                    <li>
-                        <a   href="value.product_tos_url" target="_blank">TOS</a>
-                    </li>
-                    <li>
-                        <a   href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank">YRAC</a>
-                    </li>
-                    <li >                    
-                        <a   href="value.product_efl_url" target="_blank">EFL</a>
-                    </li>
-                </ul>
-            </li>
-            <!-- <li><p>{{product_tos_url}}</p></li>
+
+        <!-- Modal content-->
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close s_modalDismiss" data-dismiss="modal">&times;</button>
+                <h2 class="modal-title text-center">Renew Details</h2>
+            </div>
+            <div class="modal-body">
+                <div class="outer_info">
+                    <div class="offer_pop_div1">
+                        <ul class="heading">
+                            <li>
+                                <p>Product Name </p>
+                            </li>
+                            <li>
+                                <p>Price 500 </p>
+                            </li>
+                            <li>
+                                <p>Price 2000 </p>
+                            </li>
+                            <li>
+                                <p>Price 1000 </p>
+                            </li>
+                            <li>
+                                <p>Termination </p>
+                            </li>
+                            <li>
+                                <p>Vendor Company </p>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <p>{{product_name}}</p>
+                            </li>
+                            <li>
+                                <p>{{tariff_500}}</p>
+                            </li>
+                            <li>
+                                <p>{{tariff_2000}}</p>
+                            </li>
+                            <li>
+                                <p>{{tariff_1000}}</p>
+                            </li>
+                            <li>
+                                <p>{{display_termination_fee}}</p>
+                            </li>
+                            <li>
+                                <p>{{vendor_company}}</p>
+                            </li>
+                            <li>
+                                <ul class="tos_pop">
+                                    <li>
+                                        <a href="value.product_tos_url" target="_blank">TOS</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.ourenergyllc.com/prodox/yrac.pdf" target="_blank">YRAC</a>
+                                    </li>
+                                    <li>
+                                        <a href="value.product_efl_url" target="_blank">EFL</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- <li><p>{{product_tos_url}}</p></li>
             <li> <p>{{ourenergy}}</p></li>
             <li><p>{{product_efl_url}}</p></li> -->
-          </ul>
+                        </ul>
+                    </div>
+                    <!--  -->
+                    <div class="offer_pop_div1">
+                        <ul class="heading">
+                            <!-- <li><p> Billing Address </p></li> -->
+                            <li>
+                                <p> Mailing Address </p>
+                            </li>
+                            <li>
+                                <p> City </p>
+                            </li>
+                            <li>
+                                <p>First Name </p>
+                            </li>
+                            <li>
+                                <p>Last Name </p>
+                            </li>
+                            <li>
+                                <p>Customer ID </p>
+                            </li>
+                            <li>
+                                <p>ZipCode </p>
+                            </li>
+                            <li>
+                                <p>Premise ID</p>
+                            </li>
+                            <li></li>
+                        </ul>
+                        <ul>
+                            <!-- <li> <p   >--</p></li> -->
+                            <!-- <li> <p >{{BillAddress[0]?.cust_address2}}</p></li> -->
+                            <li>
+                                <p>{{BillAddress[0]?.cust_address2}}</p>
+                            </li>
+                            <li>
+                                <p>{{BillAddress[0]?.cust_city}}</p>
+                            </li>
+                            <li>
+                                <p>{{BillAddress[0]?.cust_firstname}}</p>
+                            </li>
+                            <li>
+                                <p>{{BillAddress[0]?.cust_lastname}}</p>
+                            </li>
+                            <li>
+                                <p>{{BillAddress[0]?.cust_id}}</p>
+                            </li>
+                            <li>
+                                <p>{{BillAddress[0]?.cust_zip}}</p>
+                            </li>
+                            <li>
+                                <p>{{BillAddress[0]?.premise_id}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--  -->
+            </div>
+            <div class="check renew_check">
+                <mat-checkbox  name="check1" [(ngModel)]=check1 value="check1"   
+                (change)="checked1($event)"><b> I am choosing Our Energy LLC | TX PUCT # 10170 to
+                        provide energy services for the selected location.</b></mat-checkbox>
+
+                <mat-checkbox [(ngModel)]=check2 (change)="checked2($event)"><b>
+                        I am an authorized person to request service for the selected location.</b></mat-checkbox>
+
+                <mat-checkbox [(ngModel)]=check3 (change)="checked3($event)"><b> Any Enrollment request including move-in or a switch can
+                        only be made by the service applicant or the applicant's authorized agent. If you are not an
+                        authorized individual, please do not submit your request using this portal.
+                    </b></mat-checkbox>
+
+                    <mat-checkbox [(ngModel)]=check4 (change)="checked4($event)"><b> 
+                            I have reviewed the information provided and by clicking “Renew Now” below, I accept that I am authorizing Our Energy LLC to become my new retail electric provider and to act as my agent to perform the necessary task to establish my electric service amount with Our Energy LLC. This authorization to establish or switch my provider of electric service extends to the above location.
+                        </b></mat-checkbox>
+
+
+
+
+
+
+<!--  
+                <label class="checkbox-font">
+        <input type="checkbox" name="check1" [(ngModel)]=check1 value="check1" (change)="checked1($event,i)">36
+        Months
+      </label> -->
+            </div>
+            <div class=" text-center">
+                <button type="button" *ngIf="buttonVisible==true" (click)="RenewNow(value)">Renew Now </button>
+                <button type="button" data-dismiss="modal">NO </button>
+            </div>
         </div>
-        <!--  -->
-        <div  class="offer_pop_div1">
-            <ul class="heading">
-                <!-- <li><p> Billing Address </p></li> -->
-                <li> <p> Mailing Address </p></li>
-                <li> <p> City </p></li>
-                <li> <p>First Name </p></li>
-                <li> <p>Last Name </p></li>
-                <li> <p>Customer ID  </p></li>
-                <li>  <p>ZipCode </p></li>
-                <li>  <p>Premise ID</p></li>
-                <li></li>
-              </ul>
-              <ul >
-                  <!-- <li> <p   >--</p></li> -->
-                  <!-- <li> <p >{{BillAddress[0]?.cust_address2}}</p></li> -->
-                  <li> <p>{{BillAddress[0]?.cust_address2}}</p></li>
-                  <li><p>{{BillAddress[0]?.cust_city}}</p></li>
-                  <li> <p>{{BillAddress[0]?.cust_firstname}}</p></li>
-                  <li><p>{{BillAddress[0]?.cust_lastname}}</p></li>
-                  <li> <p>{{BillAddress[0]?.cust_id}}</p></li>
-                  <li> <p>{{BillAddress[0]?.cust_zip}}</p></li>
-                  <li> <p>{{BillAddress[0]?.premise_id}}</p></li>
-                </ul>
-        </div>
-      </div>
-      <!--  -->
-    </div>
-    <div class="check renew_check">
-      <mat-checkbox  ><b>Option Name here</b></mat-checkbox>
-  </div>
-    <div class=" text-center">
-      <button type="button"   (click)="RenewNow(value)" >Renew Now </button>
-      <button type="button"  data-dismiss="modal">NO </button>
-      </div>
-  </div>
-  
