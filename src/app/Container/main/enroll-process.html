@@ -50,10 +50,12 @@
 
                 <!-- results start -->
                 <!-- *ngIf="len > 1"  -->
-                <div class="s_address_found">
+                <div class="s_address_found" style="
+                width: 1000px;
+            ">
                     <br>
                     <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
-                    <h4 class="text-center">Please select from the below list or refine what you entered above.</h4>
+                    <h4 class="text-center" >Please select from the below list or refine what you entered above.</h4>
                     <br>
                     <div class="premise" *ngFor="let value of multiplePremise; let ind = index">
                         <div class="inner-premise">
