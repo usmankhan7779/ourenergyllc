@@ -140,7 +140,14 @@ export class EnrollmentComponent implements OnInit {
       deposit_security_code: [{ value: '', disabled: true }, [Validators.required, Validators.pattern("[0-9]+")]],
       deposit_expiry_MM: [{ value: '', disabled: true }, [Validators.required]],
       deposit_expiry_YYYY: [{ value: '', disabled: true }, [Validators.required]],
-      save_acct_ref_on_file: ['0']
+      save_acct_ref_on_file: ['0'],
+     
+      deposit_acct_type:['', [Validators.required]],
+      deposit_account_no:['', [Validators.required]],
+      deposit_aba_nbr:['', [Validators.required]],
+      confirm_routing:['', [Validators.required]],
+      confirm_account:['', [Validators.required]],
+
     })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
@@ -277,10 +284,66 @@ export class EnrollmentComponent implements OnInit {
   showSummary() {
     this.summary = this.summary == false ? true : false
   }
+viewpaybutton:boolean =false;
+viewpay(event){
+if (event.checked){
+  this.viewpaybutton = true
+}
+else if (!event.checked) {
+  this.viewpaybutton=false
 
-  setAutoPay: boolean = false
-  changeAutoBillPay(event) {
+}
+}
+
+
+
+// IF ACH AUTO PAY:
+
+// deposit_acct_tpye can be  :-             [	 
+// 			  bchecking ( for ACH Business Checking)
+// 			, bsavings (for ACH Business Saving)
+// 			, nbchecking ( for Non-ACH Business Checking) 
+// 			, nbsavings (for ACH Non-Business Saving )
+  setAutoPay: boolean = true
+  changeAutoBillPay(event,a) {
+    
     this.setAutoPay = event.checked
+    
+     
+    this.fourFormGroup.controls.deposit_card_type.setValue('')
+    this.fourFormGroup.controls.deposit_cc_no.setValue('')
+    this.fourFormGroup.controls.deposit_security_code.setValue('')
+    this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
+    this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
+    if (event.checked || a) {
+      this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
+      this.fourFormGroup.controls.deposit_card_type.enable()
+      this.fourFormGroup.controls.deposit_cc_no.enable()
+      this.fourFormGroup.controls.deposit_security_code.enable()
+      this.fourFormGroup.controls.deposit_expiry_MM.enable()
+      this.fourFormGroup.controls.deposit_expiry_YYYY.enable()
+    } else {
+      
+      this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0')
+      this.fourFormGroup.controls.deposit_card_type.disable()
+      this.fourFormGroup.controls.deposit_cc_no.disable()
+      this.fourFormGroup.controls.deposit_security_code.disable()
+      this.fourFormGroup.controls.deposit_expiry_MM.disable()
+      this.fourFormGroup.controls.deposit_expiry_YYYY.disable()
+    }
+
+
+   
+    this.setAutoPay = true;
+    console.log(this.setAutoPay)
+    this.setAutoPayACH = false
+    console.log(this.setAutoPayACH)
+  }
+  setAutoPayACH: boolean = false
+  changeAutoBillPayACH(event) {
+  
+  
+    this.setAutoPayACH = event.checked
     this.fourFormGroup.controls.deposit_card_type.setValue('')
     this.fourFormGroup.controls.deposit_cc_no.setValue('')
     this.fourFormGroup.controls.deposit_security_code.setValue('')
@@ -301,7 +364,12 @@ export class EnrollmentComponent implements OnInit {
       this.fourFormGroup.controls.deposit_expiry_MM.disable()
       this.fourFormGroup.controls.deposit_expiry_YYYY.disable()
     }
+    this.setAutoPayACH= true
+    console.log(this.setAutoPayACH)
+    this.setAutoPay=false
+    console.log(this.setAutoPay)
   }
+
 
   SameAsServiceAddress() {
     if (this.premiseInfo != null || this.premiseInfo != undefined) {
@@ -346,6 +414,7 @@ export class EnrollmentComponent implements OnInit {
   loader = false
 
   enroll() {
+    console.log(this.firstFormGroup,this.secondFormGroup,this.thirdFormGroup,this.fourFormGroup)
     this.submitBtn = true
     if ((this.check1 == true && this.check2 == true && this.check3 == true && this.check4) || (this.check1 == true && this.check2 == true && this.check3 == true)) {
       let second = this.secondFormGroup.value
@@ -388,11 +457,17 @@ export class EnrollmentComponent implements OnInit {
         obj['deposit_pay_type'] = "C"
         obj['deposit_acct_type'] = "ccard"
       }
+      else if (this.setAutoPayACH == true){
+        obj['save_acct_ref_on_file']=this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
+        obj['deposit_pay_type'] = "6"
+        obj['deposit_acct_type'] = this.fourFormGroup.controls.deposit_acct_type.value
+      }
       const dialogRef = this.dialog.open(EnrollmentConsentDialog, {
         width: '750px',
         data: obj,
         autoFocus: false
       })
+      
       let consent: boolean
       dialogRef.afterClosed().subscribe(result => {
         consent = result
