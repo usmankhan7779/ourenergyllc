@@ -337,11 +337,12 @@
                             <mat-card class="form mat-elevation-z4">
                                 <mat-card-title class="mat-elevation-z4"> Automatic Bill Pay </mat-card-title>
                                 <div class="w-100 d-flex">
-                                    <mat-checkbox (change)="changeAutoBillPay($event)"> Sign-up for Auto Bill Pay </mat-checkbox>
+                                    <!-- <mat-checkbox > Sign-up for Auto Bill Pay </mat-checkbox> -->
+                                    <!-- (change)="changePayMode($event)"  -->
                                   <div class="inside-center-row ml-auto">
-                                    <mat-radio-group (change)="changePayMode($event)" formControlName="sched_type">
+                                    <mat-radio-group formControlName="sched_type">
                                         <mat-radio-button value="6" checked> Bank Draft (ACH) </mat-radio-button>
-                                        <mat-radio-button value="C"> Credit/Debit Card </mat-radio-button>
+                                        <mat-radio-button value="C" (change)="changeAutoBillPay($event)"> Credit/Debit Card </mat-radio-button>
                                     </mat-radio-group>
                                 </div>
                                 </div>
