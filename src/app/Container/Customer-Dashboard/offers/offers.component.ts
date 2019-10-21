@@ -20,6 +20,11 @@ import { PromoCodeService, CustomerService } from '../../Store/Services';
 export class OffersComponent implements OnInit {
   showSpinner
   showSpinner1
+  // checked1;
+  check1
+  check2
+  check3
+  check4
   value
   x
   y
@@ -301,13 +306,13 @@ export class OffersComponent implements OnInit {
 //   checked1(i){
 // alert('usman 1')
 //   }
-check1;
-check2;
-check3;
-check4;
+// check1;
+// check2;
+// check3;
+// check4;
 checks =[]
 buttonVisible
-  checked1(event, i) {
+  checked1(event) {
         if(this.check1==true){
           this.checks.push(this.check1)
         }
@@ -319,7 +324,7 @@ buttonVisible
        this.buttonVisible=true
      }
 }
-checked2(event, i) {
+checked2(event) {
       if(this.check2==true){
      this.checks.push(this.check2)
       }
@@ -332,7 +337,7 @@ checked2(event, i) {
      } 
 }
 
-checked3(event, i) {
+checked3(event) {
       if(this.check3==true){
      this.checks.push(this.check3)
       }
@@ -345,7 +350,7 @@ checked3(event, i) {
      }  
 }
 
-checked4(event, i) {
+checked4(event) {
       if(this.check4==true){
      this.checks.push(this.check4)
       }

@@ -305,7 +305,7 @@ else if (!event.checked) {
 // 			, nbchecking ( for Non-ACH Business Checking) 
 // 			, nbsavings (for ACH Non-Business Saving )
   setAutoPay: boolean = true
-  changeAutoBillPay(event,a) {
+  changeAutoBillPay(event) {
     
     this.setAutoPay = event.checked
     
@@ -315,7 +315,7 @@ else if (!event.checked) {
     this.fourFormGroup.controls.deposit_security_code.setValue('')
     this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
     this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
-    if (event.checked || a) {
+    if (event.checked ) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_card_type.enable()
       this.fourFormGroup.controls.deposit_cc_no.enable()
