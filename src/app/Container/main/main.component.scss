@@ -2711,7 +2711,8 @@ h3 {
 .search_back{
   width: 100%;
   display: flex;
-  button:first-child{
+  justify-content: center;
+  button{
     max-width: 200px;
   }
 }
@@ -4046,6 +4047,7 @@ h3 {
 
 .s_address_found {
   padding: 0 20px;
+  width: 100%;
 }
 
 .four_Steps .row {
