@@ -44,43 +44,45 @@
         assist you!</b>
       <b style="margin-top:10px;text-align:center;font-weight:bold;color:red">{{errorMessagee}}</b>
     </div>
-                <button  [disabled]="searchPremiseBtn" type="submit">Search</button>
 
-                <mat-progress-bar *ngIf="status==true" mode="indeterminate"></mat-progress-bar>
-
-                <!-- results start -->
-                <!-- *ngIf="len > 1"  -->
-                <div class="s_address_found" style="
-                width: 1000px;
-            ">
-                    <br>
-                    <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
-                    <h4 class="text-center"  *ngIf="len > 0">Please select from the below list or refine what you entered above.</h4>
-                    <br>
-                    <div class="premise" *ngFor="let value of multiplePremise; let ind = index">
-                        <div class="inner-premise">
-                            <div class="premise-details">
-                                <h4>{{value.address1}}</h4>
-                                <h4 style="margin:0px">{{value.city}} {{value.state}} {{value.zip}}</h4>
-                            </div>
-                            <div class="premise-details">
-                                <h4>{{value.premise_id}} </h4>
-                                <h4 style="margin:0px">{{value.provider_name}}</h4>
-                            </div>
-                            <div class="premise-details">
-                                <button  [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button">Select</button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <br>
-                </div>
-                <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
-                    <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
-                </div>
-                <!-- results end -->
-            </mat-card>
-        </form>
+    <div class="search_back">
+      <button  matStepperPrevious (click)="goToTop()" class="m-2">Back</button>
+      <button [disabled]="searchPremiseBtn" type="submit" class="m-2">Search</button>
+    </div>
+ 
+    
+    <mat-progress-bar *ngIf="status==true" mode="indeterminate"></mat-progress-bar>
+    
+    <!-- results start -->
+    <!-- *ngIf="len > 1"  -->
+    <div class="s_address_found">
+      <br>
+      <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
+      <h4 class="text-center" *ngIf="len > 0">Please select from the below list or refine what you entered above.</h4>
+      <br>
+      <div class="premise" *ngFor="let value of multiplePremise; let ind = index">
+        <div class="inner-premise">
+          <div class="premise-details">
+            <h4>{{value.address1}}</h4>
+            <h4 style="margin:0px">{{value.city}} {{value.state}} {{value.zip}}</h4>
+          </div>
+          <div class="premise-details">
+            <h4>{{value.premise_id}} </h4>
+            <h4 style="margin:0px">{{value.provider_name}}</h4>
+          </div>
+          <div class="premise-details">
+            <button [disabled]="selectPremiseBtnDisabled[ind]" (click)="SelectPremise(ind)" type="button">Select</button>
+          </div>
+        </div>
+    
+      </div>
+      <br>
+    </div>
+    <div class="spinner" *ngIf="showSpinner" style="margin-top: 30px;">
+      <img src="../../../assets/img/Spinner-new.svg" width="150" height="150" alt="logo">
+    </div>
+    <!-- results end -->
+    </mat-card> </form>
         <div *ngIf="summary">
             <div class="enroll-plan" *ngFor="let value of products;index as i;">
                 <div class="pro">
@@ -113,7 +115,6 @@
             </div>
         </div>
     </div>
-    <button matStepperNext style="display:none" id="nextBtn"></button>
+    <!-- <button matStepperNext style="display:none" id="nextBtn"></button> -->
 
-    <button  matStepperPrevious (click)="goToTop()">Back</button>
 </section>

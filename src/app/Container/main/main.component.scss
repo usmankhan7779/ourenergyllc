@@ -2708,7 +2708,13 @@ h3 {
   padding: 0;
   padding-top: 50px;
 }
-
+.search_back{
+  width: 100%;
+  display: flex;
+  button:first-child{
+    max-width: 200px;
+  }
+}
 .billing_section {
   display: flex;
   flex-direction: row;
