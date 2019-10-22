@@ -142,11 +142,11 @@ export class EnrollmentComponent implements OnInit {
       deposit_expiry_YYYY: [{ value: '', disabled: true }, [Validators.required]],
       save_acct_ref_on_file: ['0'],
      
-      deposit_acct_type:['', [Validators.required]],
-      deposit_account_no:['', [Validators.required]],
-      deposit_aba_nbr:['', [Validators.required]],
-      confirm_routing:['', [Validators.required]],
-      confirm_account:['', [Validators.required]],
+      deposit_acct_type:[''],
+      deposit_account_no:[''],
+      deposit_aba_nbr:[''],
+      confirm_routing:[''],
+      confirm_account:[''],
 
     })
     window.scrollTo(0, 0)
