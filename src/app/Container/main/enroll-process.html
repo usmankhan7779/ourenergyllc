@@ -55,7 +55,7 @@
             ">
                     <br>
                     <h1 class="text-center" *ngIf="len > 0" #premises>Select Your Address</h1>
-                    <h4 class="text-center" >Please select from the below list or refine what you entered above.</h4>
+                    <h4 class="text-center"  *ngIf="len > 0">Please select from the below list or refine what you entered above.</h4>
                     <br>
                     <div class="premise" *ngFor="let value of multiplePremise; let ind = index">
                         <div class="inner-premise">
@@ -114,4 +114,6 @@
         </div>
     </div>
     <button matStepperNext style="display:none" id="nextBtn"></button>
+
+    <button  matStepperPrevious (click)="goToTop()">Back</button>
 </section>
