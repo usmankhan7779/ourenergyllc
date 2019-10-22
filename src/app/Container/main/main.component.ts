@@ -887,6 +887,9 @@ export class EnrollProcessComponent {
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
   }
+  goToTop(){
+    this.router.navigate(['/search-plan'])
+  }
   ESID
   summary = false
   showSummary() {

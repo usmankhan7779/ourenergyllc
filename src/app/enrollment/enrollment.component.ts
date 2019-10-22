@@ -135,11 +135,11 @@ export class EnrollmentComponent implements OnInit {
     })
     this.fourFormGroup = this.formBuilder.group({
       life_support: [''],
-      deposit_card_type: [{ value: '', disabled: true }, [Validators.required]],
-      deposit_cc_no: [{ value: '', disabled: true }, [Validators.required, Validators.pattern("[0-9-]+")]],
-      deposit_security_code: [{ value: '', disabled: true }, [Validators.required, Validators.pattern("[0-9]+")]],
-      deposit_expiry_MM: [{ value: '', disabled: true }, [Validators.required]],
-      deposit_expiry_YYYY: [{ value: '', disabled: true }, [Validators.required]],
+      deposit_card_type: [{ value: ''  }, [Validators.required]],
+      deposit_cc_no: [{ value: ''}, [Validators.required, Validators.pattern("[0-9-]+")]],
+      deposit_security_code: [{ value: ''  }, [Validators.required, Validators.pattern("[0-9]+")]],
+      deposit_expiry_MM: [{ value: '' }, [Validators.required]],
+      deposit_expiry_YYYY: [{ value: '' }, [Validators.required]],
       save_acct_ref_on_file: ['0'],
      
       deposit_acct_type:[''],
@@ -325,11 +325,11 @@ else if (!event.checked) {
     } else {
       
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0')
-      this.fourFormGroup.controls.deposit_card_type.disable()
-      this.fourFormGroup.controls.deposit_cc_no.disable()
-      this.fourFormGroup.controls.deposit_security_code.disable()
-      this.fourFormGroup.controls.deposit_expiry_MM.disable()
-      this.fourFormGroup.controls.deposit_expiry_YYYY.disable()
+      this.fourFormGroup.controls.deposit_card_type.enable()
+      this.fourFormGroup.controls.deposit_cc_no.enable()
+      this.fourFormGroup.controls.deposit_security_code.enable()
+      this.fourFormGroup.controls.deposit_expiry_MM.enable()
+      this.fourFormGroup.controls.deposit_expiry_YYYY.enable()
     }
 
 
