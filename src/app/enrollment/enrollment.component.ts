@@ -135,11 +135,11 @@ export class EnrollmentComponent implements OnInit {
     })
     this.fourFormGroup = this.formBuilder.group({
       life_support: [''],
-      deposit_card_type: [{ value: ''  }, [Validators.required]],
-      deposit_cc_no: [{ value: ''}, [Validators.required, Validators.pattern("[0-9-]+")]],
-      deposit_security_code: [{ value: ''  }, [Validators.required, Validators.pattern("[0-9]+")]],
-      deposit_expiry_MM: [{ value: '' }, [Validators.required]],
-      deposit_expiry_YYYY: [{ value: '' }, [Validators.required]],
+      deposit_card_type: [{ value: ''}],
+      deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
+      deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
+      deposit_expiry_MM: [{ value: ''  } ],
+      deposit_expiry_YYYY: [{ value: '' } ],
       save_acct_ref_on_file: ['0'],
      
       deposit_acct_type:[''],
@@ -180,6 +180,7 @@ export class EnrollmentComponent implements OnInit {
     setTimeout(() => {
       if (this.showSpinner == null) { this.showSpinner = true }
     }, 500)
+    this.changeAutoBillPay()
   }
 
   creditCardString = '';
@@ -297,39 +298,35 @@ else if (!event.checked) {
 
 
 
-// IF ACH AUTO PAY:
-
-// deposit_acct_tpye can be  :-             [	 
-// 			  bchecking ( for ACH Business Checking)
-// 			, bsavings (for ACH Business Saving)
-// 			, nbchecking ( for Non-ACH Business Checking) 
-// 			, nbsavings (for ACH Non-Business Saving )
-  setAutoPay: boolean = true
-  changeAutoBillPay(event) {
+  setAutoPay: boolean = false ;
+  model:any
+  autopay
+  changeAutoBillPay() {
     
-    this.setAutoPay = event.checked
-    
+    // this.setAutoPay = event.checked
+  
+  // alert(this.autopay)
      
     this.fourFormGroup.controls.deposit_card_type.setValue('')
     this.fourFormGroup.controls.deposit_cc_no.setValue('')
     this.fourFormGroup.controls.deposit_security_code.setValue('')
     this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
     this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
-    if (event.checked ) {
+    if (this.autopay == true ) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_card_type.enable()
       this.fourFormGroup.controls.deposit_cc_no.enable()
       this.fourFormGroup.controls.deposit_security_code.enable()
       this.fourFormGroup.controls.deposit_expiry_MM.enable()
       this.fourFormGroup.controls.deposit_expiry_YYYY.enable()
-    } else {
+    } else  if (this.autopay == false){
       
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0')
-      this.fourFormGroup.controls.deposit_card_type.enable()
-      this.fourFormGroup.controls.deposit_cc_no.enable()
-      this.fourFormGroup.controls.deposit_security_code.enable()
-      this.fourFormGroup.controls.deposit_expiry_MM.enable()
-      this.fourFormGroup.controls.deposit_expiry_YYYY.enable()
+      this.fourFormGroup.controls.deposit_card_type.disable()
+      this.fourFormGroup.controls.deposit_cc_no.disable()
+      this.fourFormGroup.controls.deposit_security_code.disable()
+      this.fourFormGroup.controls.deposit_expiry_MM.disable()
+      this.fourFormGroup.controls.deposit_expiry_YYYY.disable()
     }
 
 
@@ -339,30 +336,33 @@ else if (!event.checked) {
     this.setAutoPayACH = false
     console.log(this.setAutoPayACH)
   }
-  setAutoPayACH: boolean = false
+
+
+
+  setAutoPayACH: boolean;
   changeAutoBillPayACH(event) {
   
-  
-    this.setAutoPayACH = event.checked
-    this.fourFormGroup.controls.deposit_card_type.setValue('')
-    this.fourFormGroup.controls.deposit_cc_no.setValue('')
-    this.fourFormGroup.controls.deposit_security_code.setValue('')
-    this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
-    this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
-    if (event.checked) {
+  // alert(event)
+    // this.setAutoPayACH = event.checked
+    this.fourFormGroup.controls.deposit_acct_type.setValue('')
+    this.fourFormGroup.controls.deposit_account_no.setValue('')
+    this.fourFormGroup.controls.deposit_aba_nbr.setValue('')
+    this.fourFormGroup.controls.confirm_routing.setValue('')
+    this.fourFormGroup.controls.confirm_account.setValue('')
+    if (event.checked == true) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
-      this.fourFormGroup.controls.deposit_card_type.enable()
-      this.fourFormGroup.controls.deposit_cc_no.enable()
-      this.fourFormGroup.controls.deposit_security_code.enable()
-      this.fourFormGroup.controls.deposit_expiry_MM.enable()
-      this.fourFormGroup.controls.deposit_expiry_YYYY.enable()
-    } else {
+      this.fourFormGroup.controls.deposit_acct_type.enable()
+      this.fourFormGroup.controls.deposit_account_no.enable()
+      this.fourFormGroup.controls.deposit_aba_nbr.enable()
+      // this.fourFormGroup.controls.confirm_routing.enable()
+      // this.fourFormGroup.controls.confirm_account.enable()
+    } else if (event.checked == false){
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0')
-      this.fourFormGroup.controls.deposit_card_type.disable()
-      this.fourFormGroup.controls.deposit_cc_no.disable()
-      this.fourFormGroup.controls.deposit_security_code.disable()
-      this.fourFormGroup.controls.deposit_expiry_MM.disable()
-      this.fourFormGroup.controls.deposit_expiry_YYYY.disable()
+      this.fourFormGroup.controls.deposit_acct_type.disable()
+      this.fourFormGroup.controls.deposit_account_no.disable()
+      this.fourFormGroup.controls.deposit_aba_nbr.disable()
+      // this.fourFormGroup.controls.confirm_routing.disable()
+      // this.fourFormGroup.controls.confirm_account.disable()
     }
     this.setAutoPayACH= true
     console.log(this.setAutoPayACH)

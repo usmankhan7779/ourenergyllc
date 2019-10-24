@@ -2,7 +2,7 @@
     <h1 class="text-center">Deposit Submission</h1>
     <br>
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row contains">
                 <h3>Product Details</h3>
                 <div style="font-size: 20px; margin: 15px 0px 0px 15px;">
@@ -21,7 +21,7 @@
                     <input matInput placeholder="Early Termination Fee" [value]="response?.display_termination_fee ? ('$' + response?.display_termination_fee) : ''" disabled>
                 </mat-form-field>
             </div>
-        </div>
+        </div> -->
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="row contains">
                 <h3>Customer Details</h3>
@@ -37,11 +37,18 @@
                 <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <input matInput placeholder="Phone No." [value]="response?.phone1" disabled>
                 </mat-form-field>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Phone No." [value]="response?.phone1" disabled>
+                </mat-form-field>
+                <mat-form-field class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <input matInput placeholder="Deposit" value="$300.00" disabled>
+                </mat-form-field>
+             
             </div>
         </div>
     </div>
     <br>
-    <h4>You are required to submit a deposit of $300.00</h4>
+    
     <br>
     <form [formGroup]="sendingData" (ngSubmit)="submit()">
         <div mat-dialog-content>
