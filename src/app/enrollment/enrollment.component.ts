@@ -49,7 +49,7 @@ export class EnrollmentComponent implements OnInit {
   states = [{ viewValue: "Alabama", value: "AL" }, { viewValue: "Alaska", value: "AK" }, { viewValue: "Arizona", value: "AZ" }, { viewValue: "Arkansas", value: "AR" }, { viewValue: "California", value: "CA" }, { viewValue: "Colorado", value: "CO" }, { viewValue: "Connecticut", value: "CT" }, { viewValue: "Delaware", value: "DE" }, { viewValue: "District of Columbia", value: "DC" }, { viewValue: "Florida", value: "FL" }, { viewValue: "Georgia", value: "GA" }, { viewValue: "Hawaii", value: "HI" }, { viewValue: "Idaho", value: "ID" }, { viewValue: "Illinois", value: "IL" }, { viewValue: "Indiana", value: "IN" }, { viewValue: "Iowa", value: "IA" }, { viewValue: "Kansas", value: "KS" }, { viewValue: "Kentucky", value: "KY" }, { viewValue: "Louisiana", value: "LA" }, { viewValue: "Maine", value: "ME" }, { viewValue: "Maryland", value: "MD" }, { viewValue: "Massachusetts", value: "MA" }, { viewValue: "Michigan", value: "MI" }, { viewValue: "Minnesota", value: "MN" }, { viewValue: "Mississippi", value: "MS" }, { viewValue: "Missouri", value: "MO" }, { viewValue: "Montana", value: "MT" }, { viewValue: "Nebraska", value: "NE" }, { viewValue: "Nevada", value: "NV" }, { viewValue: "New Hampshire", value: "NH" }, { viewValue: "New Jersey", value: "NJ" }, { viewValue: "New Mexico", value: "NM" }, { viewValue: "New York", value: "NY" }, { viewValue: "North Carolina", value: "NC" }, { viewValue: "North Dakota", value: "ND" }, { viewValue: "Ohio", value: "OH" }, { viewValue: "Oklahoma", value: "OK" }, { viewValue: "Oregon", value: "OR" }, { viewValue: "Pennsylvania", value: "PA" }, { viewValue: "Rhode Island", value: "RI" }, { viewValue: "South Carolina", value: "SC" }, { viewValue: "South Dakota", value: "SD" }, { viewValue: "Tennessee", value: "TN" }, { viewValue: "Texas", value: "TX" }, { viewValue: "Utah", value: "UT" }, { viewValue: "Vermont", value: "VT" }, { viewValue: "Virginia", value: "VA" }, { viewValue: "Washington", value: "WA" }, { viewValue: "West Virginia", value: "WV" }, { viewValue: "Wisconsin", value: "WI" }, { viewValue: "Wyoming", value: "WY" }, { viewValue: "American Samoa", value: "AS" }, { viewValue: "Guam", value: "GU" }, { viewValue: "Northern Mariana Islands", value: "MP" }, { viewValue: "Puerto Rico", value: "PR" }, { viewValue: "U.S. Virgin Islands", value: "VI" }, { viewValue: "Micronesia", value: "FM" }, { viewValue: "Marshall Islands", value: "MH" }, { viewValue: "Palau", value: "PW" }, { viewValue: "U.S. Armed Forces – Americas[d]", value: "AA" }, { viewValue: "U.S. Armed Forces – Europe[e]", value: "AE" }, { viewValue: "U.S. Armed Forces – Pacific[f]", value: "AP" }, { viewValue: "Northern Mariana Islands", value: "CM" }, { viewValue: "Panama Canal Zone", value: "CZ" }, { viewValue: "Nebraska", value: "NB" }, { viewValue: "Philippine Islands", value: "PI" }, { viewValue: "Trust Territory of the Pacific Islands", value: "TT" }]
   questions = ["PIN", "What school did you attend sixth grade", "In what city or town was your first job", "What was the name of your favorite teacher", "What was your first car"]
   languages = [{ value: "Default", viewValue: "English" }, { value: "es.Default", viewValue: "Spanish" }]
-  aboutUs = [{ name: "Web", value: "01" }, { name: "OutBound Call TeleMarketer", value: "02" }, { name: "Inbound Call Internal", value: "03" }, { name: "Mail", value: "04" },{ name: "Social Media", value: "05" },{ name: "Other", value: "06" }]
+  aboutUs = [{ name: "Web", value: "01" }, { name: "OutBound Call TeleMarketer", value: "02" }, { name: "Inbound Call Internal", value: "03" }, { name: "Mail", value: "04" }, { name: "Social Media", value: "05" }, { name: "Other", value: "06" }]
   cards = ["Master", "Discover", "Visa"]
   providers = ["Altel", "Ameritech", "ATT Wireless", "Bell Canada", "Bellsouth", "Boost", "Cellular South", "CellularOne", "CellularOne MMS", "Centennial WireLess", "Cincinnati Bell", "Cingular", "Cricket", "Edge Wireless", "Metro PCS", "Nextel", "O2", "Orange", "Qwest", "Rogers WireLess", "Spint PCS", "Suncom", "T-Mobile", "Teleflip", "Tellus Mobility", "U.S. Cellular", "Verizon", "Virgin Mobile"]
   years = []
@@ -58,6 +58,7 @@ export class EnrollmentComponent implements OnInit {
   secondFormGroup: FormGroup
   thirdFormGroup: FormGroup
   fourFormGroup: FormGroup
+  fourFormGroup2: FormGroup
   startFormGroup: FormGroup
   billingGroup: FormGroup
 
@@ -134,19 +135,28 @@ export class EnrollmentComponent implements OnInit {
       complete: ['', Validators.required]
     })
     this.fourFormGroup = this.formBuilder.group({
+      // select:[''],
       life_support: [''],
-      deposit_card_type: [{ value: ''}],
-      deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
-      deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
-      deposit_expiry_MM: [{ value: ''  } ],
-      deposit_expiry_YYYY: [{ value: '' } ],
+      // deposit_card_type: [{ value: ''}],
+      // deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
+      // deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
+      // deposit_expiry_MM: [{ value: ''  } ],
+      // deposit_expiry_YYYY: [{ value: '' } ],
       save_acct_ref_on_file: ['0'],
-     
-      deposit_acct_type:[''],
-      deposit_account_no:[''],
-      deposit_aba_nbr:[''],
-      confirm_routing:[''],
-      confirm_account:[''],
+
+      deposit_acct_type: [''],
+      deposit_account_no: [''],
+      deposit_aba_nbr: [''],
+      confirm_routing: [''],
+      confirm_account: [''],
+
+    })
+    this.fourFormGroup2 = this.formBuilder.group({
+      deposit_card_type: [{ value: '' }],
+      deposit_cc_no: [{ value: '' }, [Validators.pattern("[0-9-]+")]],
+      deposit_security_code: [{ value: '' }, [Validators.pattern("[0-9]+")]],
+      deposit_expiry_MM: [{ value: '' }],
+      deposit_expiry_YYYY: [{ value: '' }],
 
     })
     window.scrollTo(0, 0)
@@ -275,9 +285,16 @@ export class EnrollmentComponent implements OnInit {
         cust_mi: this.secondFormGroup.controls.cust_mi.value,
         offcycle_switch_date: this.enrollment.Date(this.firstFormGroup.controls.request_date.value),
         request_date: this.enrollment.Date(this.firstFormGroup.controls.request_date.value),
-        enrol_type: "",
+        enrol_type: this.firstFormGroup.controls.enrol_type.value
+
       }
-      data.enrol_type = data.enrol_type == 'Move-in (New Service)' ? "M" : "S"
+      if (data.enrol_type == 'Move-in (New Service)') {
+        data.enrol_type = 'M'
+      }
+      else if (data.enrol_type == 'Switching from another Service Provider on Next Available Schedule Date' || data.enrol_type == 'Switching from another Service Provider on a Specific Date') {
+        data.enrol_type = 'S'
+      }
+      // data.enrol_type = data.enrol_type == 'Move-in (New Service)' ? "M" : "S"
       this.enrollment.nextSessionStep(data).subscribe(res => { })
     }
   }
@@ -285,42 +302,40 @@ export class EnrollmentComponent implements OnInit {
   showSummary() {
     this.summary = this.summary == false ? true : false
   }
-viewpaybutton:boolean =false;
-viewpay(event){
-if (event.checked){
-  this.viewpaybutton = true
-}
-else if (!event.checked) {
-  this.viewpaybutton=false
+  viewpaybutton: boolean = false;
+  viewpay(event) {
+    if (event == true) {
+      this.viewpaybutton = true
+    }
+    else if (event == false) {
+      this.viewpaybutton = false
 
-}
-}
-
-
-
-  setAutoPay: boolean = false ;
-  model:any
+    }
+  }
+  setAutoPay: boolean = false;
+  model: any
   autopay
+  selection = 'C'
   changeAutoBillPay() {
-    
+
     // this.setAutoPay = event.checked
-  
-  // alert(this.autopay)
-     
-    this.fourFormGroup.controls.deposit_card_type.setValue('')
-    this.fourFormGroup.controls.deposit_cc_no.setValue('')
-    this.fourFormGroup.controls.deposit_security_code.setValue('')
-    this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
-    this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
-    if (this.autopay == true ) {
+
+    // alert(this.autopay)
+
+    this.fourFormGroup2.controls.deposit_card_type.setValue('')
+    this.fourFormGroup2.controls.deposit_cc_no.setValue('')
+    this.fourFormGroup2.controls.deposit_security_code.setValue('')
+    this.fourFormGroup2.controls.deposit_expiry_MM.setValue('')
+    this.fourFormGroup2.controls.deposit_expiry_YYYY.setValue('')
+    if (this.autopay == true) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_card_type.enable()
       this.fourFormGroup.controls.deposit_cc_no.enable()
       this.fourFormGroup.controls.deposit_security_code.enable()
       this.fourFormGroup.controls.deposit_expiry_MM.enable()
       this.fourFormGroup.controls.deposit_expiry_YYYY.enable()
-    } else  if (this.autopay == false){
-      
+    } else if (this.autopay == false) {
+
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0')
       this.fourFormGroup.controls.deposit_card_type.disable()
       this.fourFormGroup.controls.deposit_cc_no.disable()
@@ -330,7 +345,7 @@ else if (!event.checked) {
     }
 
 
-   
+
     this.setAutoPay = true;
     console.log(this.setAutoPay)
     this.setAutoPayACH = false
@@ -341,8 +356,8 @@ else if (!event.checked) {
 
   setAutoPayACH: boolean;
   changeAutoBillPayACH(event) {
-  
-  // alert(event)
+
+    // alert(event)
     // this.setAutoPayACH = event.checked
     this.fourFormGroup.controls.deposit_acct_type.setValue('')
     this.fourFormGroup.controls.deposit_account_no.setValue('')
@@ -356,7 +371,7 @@ else if (!event.checked) {
       this.fourFormGroup.controls.deposit_aba_nbr.enable()
       // this.fourFormGroup.controls.confirm_routing.enable()
       // this.fourFormGroup.controls.confirm_account.enable()
-    } else if (event.checked == false){
+    } else if (event.checked == false) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0')
       this.fourFormGroup.controls.deposit_acct_type.disable()
       this.fourFormGroup.controls.deposit_account_no.disable()
@@ -364,9 +379,9 @@ else if (!event.checked) {
       // this.fourFormGroup.controls.confirm_routing.disable()
       // this.fourFormGroup.controls.confirm_account.disable()
     }
-    this.setAutoPayACH= true
+    this.setAutoPayACH = true
     console.log(this.setAutoPayACH)
-    this.setAutoPay=false
+    this.setAutoPay = false
     console.log(this.setAutoPay)
   }
 
@@ -414,7 +429,7 @@ else if (!event.checked) {
   loader = false
 
   enroll() {
-    console.log(this.firstFormGroup,this.secondFormGroup,this.thirdFormGroup,this.fourFormGroup)
+    console.log(this.firstFormGroup, this.secondFormGroup, this.thirdFormGroup, this.fourFormGroup)
     this.submitBtn = true
     if ((this.check1 == true && this.check2 == true && this.check3 == true && this.check4) || (this.check1 == true && this.check2 == true && this.check3 == true)) {
       let second = this.secondFormGroup.value
@@ -457,8 +472,8 @@ else if (!event.checked) {
         obj['deposit_pay_type'] = "C"
         obj['deposit_acct_type'] = "ccard"
       }
-      else if (this.setAutoPayACH == true){
-        obj['save_acct_ref_on_file']=this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
+      else if (this.setAutoPayACH == true) {
+        obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
         obj['deposit_pay_type'] = "6"
         obj['deposit_acct_type'] = this.fourFormGroup.controls.deposit_acct_type.value
       }
@@ -467,7 +482,7 @@ else if (!event.checked) {
         data: obj,
         autoFocus: false
       })
-      
+
       let consent: boolean
       dialogRef.afterClosed().subscribe(result => {
         consent = result
