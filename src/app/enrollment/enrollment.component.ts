@@ -611,6 +611,7 @@ else if (!event.checked) {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_available_date.slice(0, 10)
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
+      // alert(this.first_available_date)
     }
     else if (event.value == 'Switching from another Energy Provider on a Specific Date') {
       this.ReqDateResponse.map(value => {
@@ -621,6 +622,7 @@ else if (!event.checked) {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_standard_date
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
+      alert(this.first_available_date)
     }
     else {
       this.firstFormGroup.controls.request_date.enable()
@@ -631,6 +633,7 @@ else if (!event.checked) {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_available_date.slice(0, 10)
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
+      alert(this.first_available_date)
     }
   }
 }
