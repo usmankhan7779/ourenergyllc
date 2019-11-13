@@ -652,7 +652,7 @@ export class EnrollmentComponent implements OnInit {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_standard_date
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
-      alert(this.first_available_date)
+      // alert(this.first_available_date)
     }
     else {
       this.firstFormGroup.controls.request_date.enable()
@@ -663,7 +663,7 @@ export class EnrollmentComponent implements OnInit {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_available_date.slice(0, 10)
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
-      alert(this.first_available_date)
+      // alert(this.first_available_date)
     }
   }
 }

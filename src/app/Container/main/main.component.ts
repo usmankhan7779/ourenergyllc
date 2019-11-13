@@ -1034,7 +1034,7 @@ export class EnrollProcessComponent {
 export class OurCommunityComponent {
   constructor(location: PlatformLocation,public recapcha: RecapchaService, public snackBar: MatSnackBar, private community: MainService, private changeDetectorRef: ChangeDetectorRef) {
     location.onPopState(() => {
-      alert(window.location);
+      // alert(window.location);
    });
    }
   @ViewChild('form') froms: ElementRef
