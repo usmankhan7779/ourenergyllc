@@ -137,35 +137,35 @@ export class EnrollmentComponent implements OnInit {
     this.fourFormGroup = this.formBuilder.group({
       // select:[''],
       life_support: [''],
-      // deposit_card_type: [{ value: ''}],
-      // deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
-      // deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
-      // deposit_expiry_MM: [{ value: ''  } ],
-      // deposit_expiry_YYYY: [{ value: '' } ],
+      deposit_card_type: [{ value: ''}],
+      deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
+      deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
+      deposit_expiry_MM: [{ value: ''  } ],
+      deposit_expiry_YYYY: [{ value: '' } ],
       save_acct_ref_on_file: ['0'],
 
-      // deposit_acct_type: [''],
-      // deposit_account_no: [''],
-      // deposit_aba_nbr: [''],
-      // confirm_routing: [''],
-      // confirm_account: [''],
-
-    })
-    this.fourFormGroup2 = this.formBuilder.group({
-      deposit_card_type: [{ value: '' }],
-      deposit_cc_no: [{ value: '' }, [Validators.pattern("[0-9-]+")]],
-      deposit_security_code: [{ value: '' }, [Validators.pattern("[0-9]+")]],
-      deposit_expiry_MM: [{ value: '' }],
-      deposit_expiry_YYYY: [{ value: '' }],
-
-    })
-    this.AutoPayACH = this.formBuilder.group({
       deposit_acct_type: [''],
       deposit_account_no: [''],
       deposit_aba_nbr: [''],
       confirm_routing: [''],
       confirm_account: [''],
+
     })
+    // this.fourFormGroup2 = this.formBuilder.group({
+    //   deposit_card_type: [{ value: '' }],
+    //   deposit_cc_no: [{ value: '' }, [Validators.pattern("[0-9-]+")]],
+    //   deposit_security_code: [{ value: '' }, [Validators.pattern("[0-9]+")]],
+    //   deposit_expiry_MM: [{ value: '' }],
+    //   deposit_expiry_YYYY: [{ value: '' }],
+
+    // })
+    // this.AutoPayACH = this.formBuilder.group({
+    //   deposit_acct_type: [''],
+    //   deposit_account_no: [''],
+    //   deposit_aba_nbr: [''],
+    //   confirm_routing: [''],
+    //   confirm_account: [''],
+    // })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
 
@@ -200,8 +200,8 @@ export class EnrollmentComponent implements OnInit {
     this.changeAutoBillPay()
   }
   resetcheck() {
-    this.fourFormGroup2.reset()
-    this.AutoPayACH.reset()
+    // this.fourFormGroup2.reset()
+    // this.AutoPayACH.reset()
   }
   creditCardString = '';
   CraditCardNo
@@ -333,11 +333,11 @@ export class EnrollmentComponent implements OnInit {
 
     // alert(this.autopay)
 
-    this.fourFormGroup2.controls.deposit_card_type.setValue('')
-    this.fourFormGroup2.controls.deposit_cc_no.setValue('')
-    this.fourFormGroup2.controls.deposit_security_code.setValue('')
-    this.fourFormGroup2.controls.deposit_expiry_MM.setValue('')
-    this.fourFormGroup2.controls.deposit_expiry_YYYY.setValue('')
+    this.fourFormGroup.controls.deposit_card_type.setValue('')
+    this.fourFormGroup.controls.deposit_cc_no.setValue('')
+    this.fourFormGroup.controls.deposit_security_code.setValue('')
+    this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
+    this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
     if (this.autopay == true) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_card_type.enable()
@@ -370,11 +370,11 @@ export class EnrollmentComponent implements OnInit {
 
     // alert(event)
     // this.setAutoPayACH = event.checked
-    this.AutoPayACH.controls.deposit_acct_type.setValue('')
-    this.AutoPayACH.controls.deposit_account_no.setValue('')
-    this.AutoPayACH.controls.deposit_aba_nbr.setValue('')
-    this.AutoPayACH.controls.confirm_routing.setValue('')
-    this.AutoPayACH.controls.confirm_account.setValue('')
+    this.fourFormGroup.controls.deposit_acct_type.setValue('')
+    this.fourFormGroup.controls.deposit_account_no.setValue('')
+    this.fourFormGroup.controls.deposit_aba_nbr.setValue('')
+    this.fourFormGroup.controls.confirm_routing.setValue('')
+    this.fourFormGroup.controls.confirm_account.setValue('')
     if (event.checked == true) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_acct_type.enable()
