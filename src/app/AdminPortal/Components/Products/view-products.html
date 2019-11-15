@@ -166,9 +166,9 @@
         </mat-table>
     </div>
 </div>
-<div class="my" *ngIf="products=='Active Products'">
-    <div class="y" *ngIf="ActivedataSource.data.length==0">No Matching Data Found</div>
-    <div class="y" *ngIf="ActivedataSource.data.length!=0">
+<div class="" *ngIf="products=='Active Products'">
+    <div class="y no-data" *ngIf="ActivedataSource.data.length==0">No Matching Data Found</div>
+    <div class="y my" *ngIf="ActivedataSource.data.length!=0">
         <mat-table #table [dataSource]="ActivedataSource" class="abc">
             <ng-container matColumnDef="e">
                 <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
@@ -308,9 +308,9 @@
         </mat-table>
     </div>
 </div>
-<div class="my" *ngIf="products=='Inactive Products'">
-    <div class="y" *ngIf="InactivedataSource.data.length==0">No Matching Data Found</div>
-    <div class="y" *ngIf="InactivedataSource.data.length!=0">
+<div class="" *ngIf="products=='Inactive Products'">
+    <div class="y no-data" *ngIf="InactivedataSource.data.length==0">No Matching Data Found</div>
+    <div class="y my" *ngIf="InactivedataSource.data.length!=0">
         <mat-table #table [dataSource]="InactivedataSource" class="abc">
             <ng-container matColumnDef="e">
                 <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>

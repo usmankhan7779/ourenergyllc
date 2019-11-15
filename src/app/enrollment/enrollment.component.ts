@@ -137,11 +137,11 @@ export class EnrollmentComponent implements OnInit {
     this.fourFormGroup = this.formBuilder.group({
       // select:[''],
       life_support: [''],
-      deposit_card_type: [{ value: ''}],
-      deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
-      deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
-      deposit_expiry_MM: [{ value: ''  } ],
-      deposit_expiry_YYYY: [{ value: '' } ],
+      deposit_card_type: [{ value: '' }],
+      deposit_cc_no: [{ value: '' }, [Validators.pattern("[0-9-]+")]],
+      deposit_security_code: [{ value: '' }, [Validators.pattern("[0-9]+")]],
+      deposit_expiry_MM: [{ value: '' }],
+      deposit_expiry_YYYY: [{ value: '' }],
       save_acct_ref_on_file: ['0'],
 
       deposit_acct_type: [''],
@@ -200,8 +200,7 @@ export class EnrollmentComponent implements OnInit {
     this.changeAutoBillPay()
   }
   resetcheck() {
-    // this.fourFormGroup2.reset()
-    // this.AutoPayACH.reset()
+    this.fourFormGroup.reset()
   }
   creditCardString = '';
   CraditCardNo
@@ -313,26 +312,35 @@ export class EnrollmentComponent implements OnInit {
     this.summary = this.summary == false ? true : false
   }
   viewpaybutton: boolean = false;
+  uncechk
   viewpay(event) {
+    // alert(event)
     if (event == true) {
       this.viewpaybutton = true
+    //   alert(this.viewpaybutton)
+    //  alert(this.autopay)
     }
     else if (event == false) {
-      this.viewpaybutton = false
-      this.resetcheck()
-
+      this.viewpaybutton=false
+      // alert(this.viewpaybutton)
+      // alert(this.autopay)
+      // this.resetcheck()
     }
   }
   setAutoPay: boolean = false;
   model: any
   autopay
-  selection = 'C'
+  // selection
+  selected = 'C'
+  selectedval
   changeAutoBillPay() {
-
+    this.selectedval='C'
+    // console.log(event,'eeev')
+    // alert(val)
+    // alert(this.selected)
     // this.setAutoPay = event.checked
 
     // alert(this.autopay)
-
     this.fourFormGroup.controls.deposit_card_type.setValue('')
     this.fourFormGroup.controls.deposit_cc_no.setValue('')
     this.fourFormGroup.controls.deposit_security_code.setValue('')
@@ -367,7 +375,9 @@ export class EnrollmentComponent implements OnInit {
 
   setAutoPayACH: boolean;
   changeAutoBillPayACH(event) {
-
+    this.selectedval='ACH'
+    // alert(val)
+    // alert(this.selected)
     // alert(event)
     // this.setAutoPayACH = event.checked
     this.fourFormGroup.controls.deposit_acct_type.setValue('')
@@ -415,7 +425,7 @@ export class EnrollmentComponent implements OnInit {
   }
   credit_verification = 'Check My Credit'
   showCheckbox
-  flow_status = '-102'
+  flow_status
   radioChangeCreditVerification(event: MatRadioChange) {
     this.creditvalue = event.value
     switch (event.value) {
@@ -482,14 +492,23 @@ export class EnrollmentComponent implements OnInit {
       obj['pm_zip'] = this.premiseInfo['zip']
       obj['pm_county'] = this.premiseInfo['countyname']
       obj['waiver_notice'] = 'Y'
-      if (this.setAutoPay == true) {
-        obj['deposit_pay_type'] = "C"
-        obj['deposit_acct_type'] = "ccard"
-      }
-      else if (this.setAutoPayACH == true) {
+      if (this.setAutoPayACH == true) {
+        // alert('b')
         obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
         obj['deposit_pay_type'] = "6"
         obj['deposit_acct_type'] = this.fourFormGroup.controls.deposit_acct_type.value
+      }
+      else if (this.setAutoPay == true && this.viewpaybutton == false) {
+        // alert('c')
+        obj['deposit_pay_type'] = ""
+        obj['deposit_acct_type'] = ""
+        obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0');
+      }
+      else if (this.setAutoPay == true) {
+        // alert('a')
+        obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
+        obj['deposit_pay_type'] = "C"
+        obj['deposit_acct_type'] = "ccard"
       }
       const dialogRef = this.dialog.open(EnrollmentConsentDialog, {
         width: '750px',
@@ -609,7 +628,18 @@ export class EnrollmentComponent implements OnInit {
               })
               break;
             default:
-              this.flow_status = '-102'
+              this.enrollment.initialSubmit(obj).subscribe(response => {
+                if (response['status'] == true) {
+                  obj.sys_batch_no = response['message']['SYSBATCHNO']
+                  obj.use_cust_id = response['message']['use_cust_id']
+                  obj.enroll_status = 'Pending for Deposit'
+                  this.loader = false
+                  this.dialog.open(DespositPopup, {
+                    autoFocus: false,
+                    data: obj
+                  })
+                } else { Swal(`Could not connect to server, please try again.`, '', 'error').then(t => this.submitBtn = false) }
+              })
               break;
           }
         }
@@ -713,7 +743,7 @@ export class DespositPopup {
       `${this.years[index] = this.years[index - 1] + 1}`
     }
   }
-
+  // selectDefault='C'
   submit() {
     if (this.sendingData.valid == true) {
       this.btnDisabled = true

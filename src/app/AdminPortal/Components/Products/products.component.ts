@@ -58,7 +58,6 @@ export class ViewProducts implements OnInit, AfterViewInit {
     this.customer.getInactiveProducts().subscribe(res => {
       if (res['status'] == true) {
         this.InactivedataSource.data = res['message']
-        console.log( this.InactivedataSource.data,'IN')
       }
     })
   }
