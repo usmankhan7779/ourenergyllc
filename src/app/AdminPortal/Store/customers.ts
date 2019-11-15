@@ -33,7 +33,16 @@ export class CustomersService {
             'headers': { 'Authorization': `JWT ${this.token}` }
         })
     }
-
+    getActiveProducts(){
+        return this.http.get(`${environment.url}portal/get-products-active/`, {
+            'headers': { 'Authorization': `JWT ${this.token}` }
+        })
+    }
+    getInactiveProducts(){
+        return this.http.get(`${environment.url}portal/get-products-inactive/`, {
+            'headers': { 'Authorization': `JWT ${this.token}` }
+        })  
+    }
     // Holidays
     getAllHolidays() {
         return this.http.get(`${environment.url}enroll/holidays/`, {
