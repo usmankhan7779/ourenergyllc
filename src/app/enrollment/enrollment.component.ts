@@ -18,7 +18,7 @@ export class EnrollmentComponent implements OnInit {
   check1 = false
   check2 = false
   check3 = false
-  check4 = true
+  check4 = false
   status = true
   serviceAddresscheck = false
   showSpinner: boolean = false
@@ -26,6 +26,7 @@ export class EnrollmentComponent implements OnInit {
   birthDate = new Date()
   date = this.currentdate.getDate() + "/" + (this.currentdate.getMonth() + 1) + "/" + this.currentdate.getFullYear()
   productDetails
+  flow_status
   submitBtn
   premiseInfo
   ReqDateResponse
@@ -33,7 +34,7 @@ export class EnrollmentComponent implements OnInit {
   first_available_date
   end_date
   holidays
-  // credit_verification
+  credit_verification
   waiveDeposite: string
   CreditVerification: string = "Check My Credit"
   products = []
@@ -43,7 +44,7 @@ export class EnrollmentComponent implements OnInit {
   price_kwh3: boolean;
   // this.price_traffic = this.products['tariff_500']
   services = ["Move-in (New Service)", "Switching from another Service Provider on Next Available Schedule Date", "Switching from another Service Provider on a Specific Date"]
-  creditCards = [{ val: { status: true, isDefault: true, value: "Check My Credit" } }, { val: { status: false, isDefault: false, value: "Dont Check Credit" } }, { val: { status: false, isDefault: false, value: "Waive Deposit" } }]
+  creditCards = [{ val: { status: true, value: "Check My Credit" } }, { val: { status: false, value: "Dont Check Credit" } }, { val: { status: false, value: "Waive Deposit" } }]
   waivedeposit = ["I will submit a letter from my current provider showing timely payments for the last 12 months with no more than 1 late payment", "I am 65+ and can provide proof of timely payments to my current electric provider.", "I am a victim of family violence and will complete and return the required forms."]
   states = [{ viewValue: "Alabama", value: "AL" }, { viewValue: "Alaska", value: "AK" }, { viewValue: "Arizona", value: "AZ" }, { viewValue: "Arkansas", value: "AR" }, { viewValue: "California", value: "CA" }, { viewValue: "Colorado", value: "CO" }, { viewValue: "Connecticut", value: "CT" }, { viewValue: "Delaware", value: "DE" }, { viewValue: "District of Columbia", value: "DC" }, { viewValue: "Florida", value: "FL" }, { viewValue: "Georgia", value: "GA" }, { viewValue: "Hawaii", value: "HI" }, { viewValue: "Idaho", value: "ID" }, { viewValue: "Illinois", value: "IL" }, { viewValue: "Indiana", value: "IN" }, { viewValue: "Iowa", value: "IA" }, { viewValue: "Kansas", value: "KS" }, { viewValue: "Kentucky", value: "KY" }, { viewValue: "Louisiana", value: "LA" }, { viewValue: "Maine", value: "ME" }, { viewValue: "Maryland", value: "MD" }, { viewValue: "Massachusetts", value: "MA" }, { viewValue: "Michigan", value: "MI" }, { viewValue: "Minnesota", value: "MN" }, { viewValue: "Mississippi", value: "MS" }, { viewValue: "Missouri", value: "MO" }, { viewValue: "Montana", value: "MT" }, { viewValue: "Nebraska", value: "NE" }, { viewValue: "Nevada", value: "NV" }, { viewValue: "New Hampshire", value: "NH" }, { viewValue: "New Jersey", value: "NJ" }, { viewValue: "New Mexico", value: "NM" }, { viewValue: "New York", value: "NY" }, { viewValue: "North Carolina", value: "NC" }, { viewValue: "North Dakota", value: "ND" }, { viewValue: "Ohio", value: "OH" }, { viewValue: "Oklahoma", value: "OK" }, { viewValue: "Oregon", value: "OR" }, { viewValue: "Pennsylvania", value: "PA" }, { viewValue: "Rhode Island", value: "RI" }, { viewValue: "South Carolina", value: "SC" }, { viewValue: "South Dakota", value: "SD" }, { viewValue: "Tennessee", value: "TN" }, { viewValue: "Texas", value: "TX" }, { viewValue: "Utah", value: "UT" }, { viewValue: "Vermont", value: "VT" }, { viewValue: "Virginia", value: "VA" }, { viewValue: "Washington", value: "WA" }, { viewValue: "West Virginia", value: "WV" }, { viewValue: "Wisconsin", value: "WI" }, { viewValue: "Wyoming", value: "WY" }, { viewValue: "American Samoa", value: "AS" }, { viewValue: "Guam", value: "GU" }, { viewValue: "Northern Mariana Islands", value: "MP" }, { viewValue: "Puerto Rico", value: "PR" }, { viewValue: "U.S. Virgin Islands", value: "VI" }, { viewValue: "Micronesia", value: "FM" }, { viewValue: "Marshall Islands", value: "MH" }, { viewValue: "Palau", value: "PW" }, { viewValue: "U.S. Armed Forces – Americas[d]", value: "AA" }, { viewValue: "U.S. Armed Forces – Europe[e]", value: "AE" }, { viewValue: "U.S. Armed Forces – Pacific[f]", value: "AP" }, { viewValue: "Northern Mariana Islands", value: "CM" }, { viewValue: "Panama Canal Zone", value: "CZ" }, { viewValue: "Nebraska", value: "NB" }, { viewValue: "Philippine Islands", value: "PI" }, { viewValue: "Trust Territory of the Pacific Islands", value: "TT" }]
   questions = ["PIN", "What school did you attend sixth grade", "In what city or town was your first job", "What was the name of your favorite teacher", "What was your first car"]
@@ -60,7 +61,7 @@ export class EnrollmentComponent implements OnInit {
   fourFormGroup2: FormGroup
   startFormGroup: FormGroup
   billingGroup: FormGroup
-  AutoPayACH: FormGroup
+
   myFilter = (d: Date): boolean => {
     const day = d.getDay()
     const date = d.getDate()
@@ -88,7 +89,6 @@ export class EnrollmentComponent implements OnInit {
     this.showCheckbox = false
     console.log("check")
   }
-
 
   price_traffic;
   ngOnInit() {
@@ -144,11 +144,11 @@ export class EnrollmentComponent implements OnInit {
       // deposit_expiry_YYYY: [{ value: '' } ],
       save_acct_ref_on_file: ['0'],
 
-      // deposit_acct_type: [''],
-      // deposit_account_no: [''],
-      // deposit_aba_nbr: [''],
-      // confirm_routing: [''],
-      // confirm_account: [''],
+      deposit_acct_type: [''],
+      deposit_account_no: [''],
+      deposit_aba_nbr: [''],
+      confirm_routing: [''],
+      confirm_account: [''],
 
     })
     this.fourFormGroup2 = this.formBuilder.group({
@@ -158,13 +158,6 @@ export class EnrollmentComponent implements OnInit {
       deposit_expiry_MM: [{ value: '' }],
       deposit_expiry_YYYY: [{ value: '' }],
 
-    })
-    this.AutoPayACH = this.formBuilder.group({
-      deposit_acct_type: [''],
-      deposit_account_no: [''],
-      deposit_aba_nbr: [''],
-      confirm_routing: [''],
-      confirm_account: [''],
     })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
@@ -199,10 +192,7 @@ export class EnrollmentComponent implements OnInit {
     }, 500)
     this.changeAutoBillPay()
   }
-  resetcheck() {
-    this.fourFormGroup2.reset()
-    this.AutoPayACH.reset()
-  }
+
   creditCardString = '';
   CraditCardNo
   findBtn = false
@@ -319,7 +309,6 @@ export class EnrollmentComponent implements OnInit {
     }
     else if (event == false) {
       this.viewpaybutton = false
-      this.resetcheck()
 
     }
   }
@@ -370,11 +359,11 @@ export class EnrollmentComponent implements OnInit {
 
     // alert(event)
     // this.setAutoPayACH = event.checked
-    this.AutoPayACH.controls.deposit_acct_type.setValue('')
-    this.AutoPayACH.controls.deposit_account_no.setValue('')
-    this.AutoPayACH.controls.deposit_aba_nbr.setValue('')
-    this.AutoPayACH.controls.confirm_routing.setValue('')
-    this.AutoPayACH.controls.confirm_account.setValue('')
+    this.fourFormGroup.controls.deposit_acct_type.setValue('')
+    this.fourFormGroup.controls.deposit_account_no.setValue('')
+    this.fourFormGroup.controls.deposit_aba_nbr.setValue('')
+    this.fourFormGroup.controls.confirm_routing.setValue('')
+    this.fourFormGroup.controls.confirm_account.setValue('')
     if (event.checked == true) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_acct_type.enable()
@@ -413,19 +402,16 @@ export class EnrollmentComponent implements OnInit {
       }
     }
   }
-  credit_verification = 'Check My Credit'
-  showCheckbox
-  flow_status = '-102'
+  showCheckbox = false
   radioChangeCreditVerification(event: MatRadioChange) {
     this.creditvalue = event.value
     switch (event.value) {
-      case "Check My Credit": this.flow_status = '-102'; break;
+      case "Check My Credit": this.flow_status = '-102'; this.showCheckbox = true; break;
       case "Dont Check Credit": this.flow_status = '-104'; break;
       case "Waive Deposit": this.flow_status = '-229'; break;
       default: break;
     }
   }
-
   show_Waiver: boolean = false;
   radioChangeCreditVerificationsub(event) {
     if (this.creditvalue == 'Waive Deposit' && event.value == 'I will submit a letter from my current provider showing timely payments for the last 12 months with no more than 1 late payment') {
@@ -444,8 +430,8 @@ export class EnrollmentComponent implements OnInit {
 
   enroll() {
     console.log(this.firstFormGroup, this.secondFormGroup, this.thirdFormGroup, this.fourFormGroup)
-    // this.submitBtn = true
-    if ((this.check1 == true && this.check2 == true && this.check3 == true && this.check4 == true) || (this.check1 == true && this.check2 == true && this.check3 == true)) {
+    this.submitBtn = true
+    if ((this.check1 == true && this.check2 == true && this.check3 == true && this.check4) || (this.check1 == true && this.check2 == true && this.check3 == true)) {
       let second = this.secondFormGroup.value
       second.personal_pin = `[{\"id\":\"1\",\"q\":\"30\",\"a\":\"${this.secondFormGroup.controls.personal_ref_code.value}\",\"q_d\":\"${this.secondFormGroup.controls.personal_pin.value}\"}]`
       let obj = { ...this.firstFormGroup.value, ...second, ...this.thirdFormGroup.value, ...this.fourFormGroup.getRawValue() }
@@ -609,7 +595,6 @@ export class EnrollmentComponent implements OnInit {
               })
               break;
             default:
-              this.flow_status = '-102'
               break;
           }
         }

@@ -468,7 +468,7 @@ export class AddAdditionalProduct implements OnInit {
     tos: new FormControl('', [Validators.required]),
     electricity_price_text: new FormControl('Energy Charges is bundled and include all recurring delivery fees imposed by your local regulated TDU. This fixed price disclosure does not include applicable federal, state and local taxes or any fees (including gross receipt tax reimbursement), and all other non-recurring fees. Energy charge or Minimum Usage Fee is not prorated for short or nonstandard billing cycles.'),
     other_key_term_and_ques_text: new FormControl('See Terms of Service for full listing of fees, deposit policy, and other terms.'),
-    fees_may_be_charged_text: new FormControl('Fees not included in the price above: Insufficient funds:$25 Late Fee: 5% of past due balances. Disconnect/Reconnect for Non-Pay: $50. Information on other non-recurring fees is available on your “Terms of Service” document.'),
+    fees_may_be_charged_text: new FormControl('Fees not included in the price above: Insufficient funds:$30 Late Fee: 5% of past due balances. Disconnect/Reconnect for Non-Pay: $50. Information on other non-recurring fees is available on your “Terms of Service” document.'),
   })
 
   ngOnInit() {
