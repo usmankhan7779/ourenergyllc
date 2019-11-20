@@ -473,9 +473,12 @@ else if (!event.checked) {
         consent = result
         if (consent == true) {
           this.loader = true
+          alert(this.flow_status)
           switch (this.flow_status) {
+
             // Dont Check Credit
             case '-104':
+              alert(this.flow_status+'-104')
               this.enrollment.initialSubmit(obj).subscribe(response => {
                 if (response['status'] == true) {
                   obj.sys_batch_no = response['message']['SYSBATCHNO']
@@ -492,6 +495,7 @@ else if (!event.checked) {
             // Check Credit
             case '-102':
               obj.enroll_status = 'Pending for Deposit'
+              alert(obj.enroll_status+'case -102')
               this.enrollment.initialSubmit(obj).subscribe(initialRes => {
                 if (initialRes['status'] == true) {
                   obj.sys_batch_no = initialRes['message']['SYSBATCHNO']
