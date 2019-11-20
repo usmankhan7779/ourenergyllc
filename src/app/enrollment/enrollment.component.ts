@@ -135,20 +135,35 @@ export class EnrollmentComponent implements OnInit {
     })
     this.fourFormGroup = this.formBuilder.group({
       life_support: [''],
-      deposit_card_type: [{ value: ''}],
-      deposit_cc_no: [{ value: '' }, [  Validators.pattern("[0-9-]+")]],
-      deposit_security_code: [{ value: ''   }, [  Validators.pattern("[0-9]+")]],
-      deposit_expiry_MM: [{ value: ''  } ],
-      deposit_expiry_YYYY: [{ value: '' } ],
+      deposit_card_type: [{ value: '' }],
+      deposit_cc_no: [{ value: '' }, [Validators.pattern("[0-9-]+")]],
+      deposit_security_code: [{ value: '' }, [Validators.pattern("[0-9]+")]],
+      deposit_expiry_MM: [{ value: '' }],
+      deposit_expiry_YYYY: [{ value: '' }],
       save_acct_ref_on_file: ['0'],
-     
-      deposit_acct_type:[''],
-      deposit_account_no:[''],
-      deposit_aba_nbr:[''],
-      confirm_routing:[''],
-      confirm_account:[''],
+
+      deposit_acct_type: [''],
+      deposit_account_no: [''],
+      deposit_aba_nbr: [''],
+      confirm_routing: [''],
+      confirm_account: [''],
 
     })
+    // this.fourFormGroup2 = this.formBuilder.group({
+    //   deposit_card_type: [{ value: '' }],
+    //   deposit_cc_no: [{ value: '' }, [Validators.pattern("[0-9-]+")]],
+    //   deposit_security_code: [{ value: '' }, [Validators.pattern("[0-9]+")]],
+    //   deposit_expiry_MM: [{ value: '' }],
+    //   deposit_expiry_YYYY: [{ value: '' }],
+
+    // })
+    // this.AutoPayACH = this.formBuilder.group({
+    //   deposit_acct_type: [''],
+    //   deposit_account_no: [''],
+    //   deposit_aba_nbr: [''],
+    //   confirm_routing: [''],
+    //   confirm_account: [''],
+    // })
     window.scrollTo(0, 0)
     this.products.push(JSON.parse(localStorage.getItem('productSummary')))
 
@@ -182,7 +197,9 @@ export class EnrollmentComponent implements OnInit {
     }, 500)
     this.changeAutoBillPay()
   }
-
+  resetcheck() {
+    this.fourFormGroup.reset()
+  }
   creditCardString = '';
   CraditCardNo
   findBtn = false
@@ -285,34 +302,42 @@ export class EnrollmentComponent implements OnInit {
   showSummary() {
     this.summary = this.summary == false ? true : false
   }
-viewpaybutton:boolean =false;
-viewpay(event){
-if (event.checked){
-  this.viewpaybutton = true
-}
-else if (!event.checked) {
-  this.viewpaybutton=false
-
-}
-}
-
-
-
-  setAutoPay: boolean = false ;
-  model:any
+  viewpaybutton: boolean = false;
+  uncechk
+  viewpay(event) {
+    // alert(event)
+    if (event == true) {
+      this.viewpaybutton = true
+    //   alert(this.viewpaybutton)
+    //  alert(this.autopay)
+    }
+    else if (event == false) {
+      this.viewpaybutton=false
+      // alert(this.viewpaybutton)
+      // alert(this.autopay)
+      // this.resetcheck()
+    }
+  }
+  setAutoPay: boolean = false;
+  model: any
   autopay
+  // selection
+  selected = 'C'
+  selectedval
   changeAutoBillPay() {
-    
+    this.selectedval='C'
+    // console.log(event,'eeev')
+    // alert(val)
+    // alert(this.selected)
     // this.setAutoPay = event.checked
-  
-  // alert(this.autopay)
-     
+
+    // alert(this.autopay)
     this.fourFormGroup.controls.deposit_card_type.setValue('')
     this.fourFormGroup.controls.deposit_cc_no.setValue('')
     this.fourFormGroup.controls.deposit_security_code.setValue('')
     this.fourFormGroup.controls.deposit_expiry_MM.setValue('')
     this.fourFormGroup.controls.deposit_expiry_YYYY.setValue('')
-    if (this.autopay == true ) {
+    if (this.autopay == true) {
       this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1')
       this.fourFormGroup.controls.deposit_card_type.enable()
       this.fourFormGroup.controls.deposit_cc_no.enable()
@@ -341,8 +366,10 @@ else if (!event.checked) {
 
   setAutoPayACH: boolean;
   changeAutoBillPayACH(event) {
-  
-  // alert(event)
+    this.selectedval='ACH'
+    // alert(val)
+    // alert(this.selected)
+    // alert(event)
     // this.setAutoPayACH = event.checked
     this.fourFormGroup.controls.deposit_acct_type.setValue('')
     this.fourFormGroup.controls.deposit_account_no.setValue('')
@@ -387,7 +414,9 @@ else if (!event.checked) {
       }
     }
   }
-  showCheckbox = false
+  credit_verification = 'Check My Credit'
+  showCheckbox
+  flow_status
   radioChangeCreditVerification(event: MatRadioChange) {
     this.creditvalue = event.value
     switch (event.value) {
@@ -453,14 +482,23 @@ else if (!event.checked) {
       obj['pm_zip'] = this.premiseInfo['zip']
       obj['pm_county'] = this.premiseInfo['countyname']
       obj['waiver_notice'] = 'Y'
-      if (this.setAutoPay == true) {
-        obj['deposit_pay_type'] = "C"
-        obj['deposit_acct_type'] = "ccard"
-      }
-      else if (this.setAutoPayACH == true){
-        obj['save_acct_ref_on_file']=this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
+      if (this.setAutoPayACH == true) {
+        // alert('b')
+        obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
         obj['deposit_pay_type'] = "6"
         obj['deposit_acct_type'] = this.fourFormGroup.controls.deposit_acct_type.value
+      }
+      else if (this.setAutoPay == true && this.viewpaybutton == false) {
+        // alert('c')
+        obj['deposit_pay_type'] = ""
+        obj['deposit_acct_type'] = ""
+        obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('0');
+      }
+      else if (this.setAutoPay == true) {
+        // alert('a')
+        obj['save_acct_ref_on_file'] = this.fourFormGroup.controls.save_acct_ref_on_file.setValue('1');
+        obj['deposit_pay_type'] = "C"
+        obj['deposit_acct_type'] = "ccard"
       }
       const dialogRef = this.dialog.open(EnrollmentConsentDialog, {
         width: '750px',
@@ -584,6 +622,18 @@ else if (!event.checked) {
               })
               break;
             default:
+              this.enrollment.initialSubmit(obj).subscribe(response => {
+                if (response['status'] == true) {
+                  obj.sys_batch_no = response['message']['SYSBATCHNO']
+                  obj.use_cust_id = response['message']['use_cust_id']
+                  obj.enroll_status = 'Pending for Deposit'
+                  this.loader = false
+                  this.dialog.open(DespositPopup, {
+                    autoFocus: false,
+                    data: obj
+                  })
+                } else { Swal(`Could not connect to server, please try again.`, '', 'error').then(t => this.submitBtn = false) }
+              })
               break;
           }
         }
@@ -626,7 +676,7 @@ else if (!event.checked) {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_standard_date
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
-      alert(this.first_available_date)
+      // alert(this.first_available_date)
     }
     else {
       this.firstFormGroup.controls.request_date.enable()
@@ -637,7 +687,7 @@ else if (!event.checked) {
       this.first_standard_date = this.first_standard_date.slice(0, 10)
       this.first_available_date = this.first_available_date.slice(0, 10)
       this.firstFormGroup.controls.request_date.setValue(this.first_standard_date)
-      alert(this.first_available_date)
+      // alert(this.first_available_date)
     }
   }
 }
@@ -687,7 +737,7 @@ export class DespositPopup {
       `${this.years[index] = this.years[index - 1] + 1}`
     }
   }
-
+  // selectDefault='C'
   submit() {
     if (this.sendingData.valid == true) {
       this.btnDisabled = true

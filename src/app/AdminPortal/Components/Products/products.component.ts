@@ -16,15 +16,30 @@ import Swal from 'sweetalert2'
 export class ViewProducts implements OnInit, AfterViewInit {
   constructor(private customer: CustomersService, private http: HttpClient, public dialog: MatDialog) { }
   @ViewChild(MatPaginator) paginator: MatPaginator
+  products = 'All Products';
+  view_products = [
+    { value: 'All Products', viewValue: 'All Products' },
+    { value: 'Active Products', viewValue: 'Active Products' },
+    { value: 'Inactive Products', viewValue: 'Inactive Products' }
+  ]
   displayedColumns = ['e', 'prid', 'chid', 'n', 'is', 's', 'tdsp', 'promo', 'r', 'br', 't', 'pg', 'sd', 'ed', 'pt', 'st', 'v', 'i']
   dataSource = new MatTableDataSource()
+  ActivedataSource = new MatTableDataSource()
+  InactivedataSource = new MatTableDataSource()
   isMainDisabled = []
   isStatusDisabled = []
 
   ngOnInit() {
     this.getProducts()
   }
-
+  OnChange(event) {
+    if (event == 'Active Products') {
+      this.getActiveProd()
+    }
+    else if(event=='Inactive Products'){
+      this.getInctiveProd()
+    }
+  }
   getProducts() {
     this.customer.getAllProducts().subscribe(res => {
       if (res['status'] == true) {
@@ -32,7 +47,20 @@ export class ViewProducts implements OnInit, AfterViewInit {
       }
     })
   }
-
+  getActiveProd() {
+    this.customer.getActiveProducts().subscribe(res => {
+      if (res['status'] == true) {
+        this.ActivedataSource.data = res['message']
+      }
+    })
+  }
+  getInctiveProd() {
+    this.customer.getInactiveProducts().subscribe(res => {
+      if (res['status'] == true) {
+        this.InactivedataSource.data = res['message']
+      }
+    })
+  }
   openEditProductDialog(obj) {
     let dialogRef = this.dialog.open(EditProductDialog, {
       data: obj,
